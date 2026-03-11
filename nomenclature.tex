@@ -1,0 +1,88 @@
+\nomenclature{$\mathit{Re}$}{Reynolds number}
+\nomenclature{$\mathbf{x}$}{State vector}
+\nomenclature{$\alpha$}{Angle of attack}
+\nomenclature{$\beta$}{Sideslip angle}
+\nomenclature{$\gamma$}{Climb angle}
+\nomenclature{$p$}{Roll rate}
+\nomenclature{$q$}{Pitch rate}
+\nomenclature{$r$}{Yaw rate}
+\nomenclature{$P$}{Covariance matrix}
+
+
+
+%Section on VTOL actuators
+\nomenclature[Quad]{$\delta_e$}{Elevator control input}
+\nomenclature[Quad]{$\delta_f$}{Front vertical thruster input}
+\nomenclature[Quad]{$\delta_r$}{Rear vertical thruster input}
+\nomenclature[Quad]{$\delta_t$}{Forward thruster input}
+
+%Section on VTOL dynamics
+
+%VTOL state variables
+\nomenclature[Quad]{$p_n$}{eVTOL north position in the inertial frame}
+\nomenclature[Quad]{$p_d$}{eVTOL north position in the inertial frame}
+\nomenclature[Quad]{$\dot{p}_n$}{eVTOL north velocity in the inertial frame}
+\nomenclature[Quad]{$\dot{p}_d$}{eVTOL down velocity in the inertial frame}
+\nomenclature[Quad]{$\ddot{p}_n$}{eVTOL north acceleration in the inertial frame}
+\nomenclature[Quad]{$\ddot{p}_d$}{eVTOL down acceleration in the inertial frame}
+\nomenclature[Quad]{$\theta$}{eVTOL pitch}
+\nomenclature[Quad]{$q$}{eVTOL pitch derivative}
+\nomenclature[Quad]{$\dot{q}$}{eVTOL pitch second derivative}
+
+
+%VTOL state vectors
+\nomenclature[Quad]{$\bs{p}_{i/i}^{i}$}{eVTOL position in the inertial frame}
+\nomenclature[Quad]{$\dot{\bs{p}}_{i/i}^{i}$}{eVTOL velocity in the inertial frame}
+\nomenclature[Quad]{$R_a^b(\vartheta)$}{Rotation matrix from frame $a$ to frame $b$}
+
+%section on more parts from the equations of motion
+\nomenclature[Quad]{$m$}{eVTOL mass}
+\nomenclature[Quad]{$J_y$}{eVTOL rotational inertial about the y (pitch or $\theta$) axis}
+
+%section on Forces and Moments
+\nomenclature[Quad]{$\bs{F}^i$}{2D force on aircraft in the inertial frame}
+\nomenclature[Quad]{$\bs{F}^b$}{2D force on aircraft in the body frame}
+\nomenclature[Quad]{$M$}{Moment or torque acting on the aircraft about the y (pitch or $\theta$) axis.}
+\nomenclature[Quad]{$\bs{e}_z^i$}{Direction of gravitational acceleration in the inertial frame.}
+
+
+
+%Section on symbols for the airframe
+\nomenclature[Quad]{$Va$}{Airspeed}
+\nomenclature[Quad]{$\rho$}{Air density}
+\nomenclature[Quad]{$S$}{Surface area of the wing}
+\nomenclature[Quad]{$c$}{Mean wing chord}
+
+%section for Aerodynamic Coefficients
+%Section on Lift
+\nomenclature[Quad Lift]{$C_{L_0}$}{Lift from airfoil}
+\nomenclature[Quad Lift]{$C_{L_{\alpha}}$}{Lift from angle of attack}
+\nomenclature[Quad Lift]{$C_{L_q}$}{Lift from pitch rate}
+\nomenclature[Quad Lift]{$C_{L_{\delta_e}}$}{Lift from elevator}
+
+%section on Drag
+\nomenclature[Quad Drag]{$C_{D_0}$}{Drag from airfoil}
+\nomenclature[Quad Drag]{$C_{D_{\alpha}}$}{Drag from angle of attack}
+\nomenclature[Quad Drag]{$C_{D_q}$}{Drag from pitch rate}
+\nomenclature[Quad Drag]{$C_{D_{\delta_e}}$}{Drag from elevator}
+
+%section on Pitch Moment
+\nomenclature[Quad Moment]{$C_{m_0}$}{Moment from airfoil}
+\nomenclature[Quad Moment]{$C_{m_{\alpha}}$}{Moment from angle of attack}
+\nomenclature[Quad Moment]{$C_{m_q}$}{Moment from pitch rate}
+\nomenclature[Quad Moment]{$C_{m_{\delta_e}}$}{Moment from elevator}
+
+
+%section on B-Splines
+\nomenclature[BSpline]{$M$}{Number of Intervals of Interest for B-Spline}
+\nomenclature[BSpline]{$d$}{Degree of  B-Spline, or degree of largest polynomial in basis function}
+\nomenclature[BSpline]{$\bs{k_M^d}$}{Knot vector}
+\nomenclature[BSpline]{$\bs{c}_m$}{Control point}
+\nomenclature[BSpline]{$\bs{C}$}{Matrix of Control Points}
+\nomenclature[BSpline]{$b_M^d(t)$}{Vector of time shifted basis functions}
+\nomenclature[BSpline]{D_M^d}{Derivative matrix}
+\nomenclature[BSpline]{$B_M^d(t)$}{Matrix of time shifted basis functions with derivative matrix}
+\nomenclature[BSpline]{$\hat{B}_M^d$}{Non-zero section of $B_M^d(t)$}
+
+
+\printnomenclature

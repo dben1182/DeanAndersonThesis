@@ -1,0 +1,56 @@
+\nomenclatureentry{a$\mathit{Re}$@[{$\mathit{Re}$}]\begingroup Reynolds number\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\mathbf{x}$@[{$\mathbf{x}$}]\begingroup State vector\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\alpha$@[{$\alpha$}]\begingroup Angle of attack\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\beta$@[{$\beta$}]\begingroup Sideslip angle\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\gamma$@[{$\gamma$}]\begingroup Climb angle\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$p$@[{$p$}]\begingroup Roll rate\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$q$@[{$q$}]\begingroup Pitch rate\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$r$@[{$r$}]\begingroup Yaw rate\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$P$@[{$P$}]\begingroup Covariance matrix\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\delta_e$@[{$\delta_e$}]\begingroup Elevator control input\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\delta_f$@[{$\delta_f$}]\begingroup Front vertical thruster input\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\delta_r$@[{$\delta_r$}]\begingroup Rear vertical thruster input\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\delta_t$@[{$\delta_t$}]\begingroup Forward thruster input\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$p_n$@[{$p_n$}]\begingroup eVTOL north position in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$p_d$@[{$p_d$}]\begingroup eVTOL north position in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\dot{p}_n$@[{$\dot{p}_n$}]\begingroup eVTOL north velocity in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\dot{p}_d$@[{$\dot{p}_d$}]\begingroup eVTOL down velocity in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\ddot{p}_n$@[{$\ddot{p}_n$}]\begingroup eVTOL north acceleration in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\ddot{p}_d$@[{$\ddot{p}_d$}]\begingroup eVTOL down acceleration in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\theta$@[{$\theta$}]\begingroup eVTOL pitch\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$q$@[{$q$}]\begingroup eVTOL pitch derivative\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\dot{q}$@[{$\dot{q}$}]\begingroup eVTOL pitch second derivative\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\bs{p}_{i/i}^{i}$@[{$\bs{p}_{i/i}^{i}$}]\begingroup eVTOL position in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\dot{\bs{p}}_{i/i}^{i}$@[{$\dot{\bs{p}}_{i/i}^{i}$}]\begingroup eVTOL velocity in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$R_a^b(\vartheta)$@[{$R_a^b(\vartheta)$}]\begingroup Rotation matrix from frame $a$ to frame $b$\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$m$@[{$m$}]\begingroup eVTOL mass\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$J_y$@[{$J_y$}]\begingroup eVTOL rotational inertial about the y (pitch or $\theta$) axis\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\bs{F}^i$@[{$\bs{F}^i$}]\begingroup 2D force on aircraft in the inertial frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\bs{F}^b$@[{$\bs{F}^b$}]\begingroup 2D force on aircraft in the body frame\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$M$@[{$M$}]\begingroup Moment or torque acting on the aircraft about the y (pitch or $\theta$) axis.\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\bs{e}_z^i$@[{$\bs{e}_z^i$}]\begingroup Direction of gravitational acceleration in the inertial frame.\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$Va$@[{$Va$}]\begingroup Airspeed\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$\rho$@[{$\rho$}]\begingroup Air density\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$S$@[{$S$}]\begingroup Surface area of the wing\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad$c$@[{$c$}]\begingroup Mean wing chord\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Lift$C_{L_0}$@[{$C_{L_0}$}]\begingroup Lift from airfoil\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Lift$C_{L_{\alpha}}$@[{$C_{L_{\alpha}}$}]\begingroup Lift from angle of attack\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Lift$C_{L_q}$@[{$C_{L_q}$}]\begingroup Lift from pitch rate\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Lift$C_{L_{\delta_e}}$@[{$C_{L_{\delta_e}}$}]\begingroup Lift from elevator\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Drag$C_{D_0}$@[{$C_{D_0}$}]\begingroup Drag from airfoil\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Drag$C_{D_{\alpha}}$@[{$C_{D_{\alpha}}$}]\begingroup Drag from angle of attack\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Drag$C_{D_q}$@[{$C_{D_q}$}]\begingroup Drag from pitch rate\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Drag$C_{D_{\delta_e}}$@[{$C_{D_{\delta_e}}$}]\begingroup Drag from elevator\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Moment$C_{m_0}$@[{$C_{m_0}$}]\begingroup Moment from airfoil\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Moment$C_{m_{\alpha}}$@[{$C_{m_{\alpha}}$}]\begingroup Moment from angle of attack\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Moment$C_{m_q}$@[{$C_{m_q}$}]\begingroup Moment from pitch rate\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{Quad Moment$C_{m_{\delta_e}}$@[{$C_{m_{\delta_e}}$}]\begingroup Moment from elevator\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSpline$M$@[{$M$}]\begingroup Number of Intervals of Interest for B-Spline\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSpline$d$@[{$d$}]\begingroup Degree of  B-Spline, or degree of largest polynomial in basis function\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSpline$\bs{k_M^d}$@[{$\bs{k_M^d}$}]\begingroup Knot vector\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSpline$\bs{c}_m$@[{$\bs{c}_m$}]\begingroup Control point\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSpline$\bs{C}$@[{$\bs{C}$}]\begingroup Matrix of Control Points\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSpline$b_M^d(t)$@[{$b_M^d(t)$}]\begingroup Vector of time shifted basis functions\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSplineD_M^d@[{D_M^d}]\begingroup Derivative matrix\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSpline$B_M^d(t)$@[{$B_M^d(t)$}]\begingroup Matrix of time shifted basis functions with derivative matrix\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{BSpline$\hat{B}_M^d$@[{$\hat{B}_M^d$}]\begingroup Non-zero section of $B_M^d(t)$\nomeqref {0}|nompageref}{1}
