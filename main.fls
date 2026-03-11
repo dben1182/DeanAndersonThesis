@@ -733,19 +733,64 @@ INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
 INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Regular-T1-TLF.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Regular-T1-TLF.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Regular-T1-TLF--base.tfm
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/PosComparison.png
+INPUT ./figs/chap1/Takeoff/PosComparison.png
+INPUT ./figs/chap1/Takeoff/PosComparison.png
+INPUT ./figs/chap1/Takeoff/PosComparison.png
+INPUT ./figs/chap1/Takeoff/PosComparison.png
+INPUT ./figs/chap1/Takeoff/VelComparison.png
+INPUT ./figs/chap1/Takeoff/VelComparison.png
+INPUT ./figs/chap1/Takeoff/VelComparison.png
+INPUT ./figs/chap1/Takeoff/VelComparison.png
+INPUT ./figs/chap1/Takeoff/VelComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/pxb-lms.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
