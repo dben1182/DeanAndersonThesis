@@ -1,19 +1,19 @@
-[1] Config.pm:328> INFO - This is Biber 2.21
-[1] Config.pm:331> INFO - Logfile is 'main.blg'
-[229] biber:342> INFO - === Wed Mar 11, 2026, 19:27:20
-[270] Biber.pm:421> INFO - Reading 'main.bcf'
-[531] Biber.pm:1002> INFO - Found 40 citekeys in bib section 0
-[579] Biber.pm:4487> INFO - Processing section 0
-[602] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[606] bibtex.pm:1713> INFO - LaTeX decoding ...
-[743] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[1624] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1625] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1625] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[1625] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[1694] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[1738] bbl.pm:779> INFO - Output to main.bbl
-[1739] Biber.pm:132> WARN - legacy month field 'October' in entry 'Urmson_2003_8792' is not an integer - this will probably not sort properly.
-[1739] Biber.pm:132> WARN - legacy month field 'September' in entry 'Gammell-2014-7921' is not an integer - this will probably not sort properly.
-[1739] Biber.pm:132> WARN - BibTeX subsystem: /tmp/biber_tmp_Zhyg/33e59b5ca9ec342068223d604c3f8d55_549594.utf8, line 444, warning: 11 characters of junk seen at toplevel
-[1739] Biber.pm:134> INFO - WARNINGS: 3
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'main.blg'
+[117] biber:342> INFO - === Thu Mar 12, 2026, 11:45:47
+[138] Biber.pm:421> INFO - Reading 'main.bcf'
+[246] Biber.pm:1002> INFO - Found 40 citekeys in bib section 0
+[267] Biber.pm:4487> INFO - Processing section 0
+[279] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[281] bibtex.pm:1713> INFO - LaTeX decoding ...
+[345] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[749] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[749] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[749] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[749] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[785] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[806] bbl.pm:779> INFO - Output to main.bbl
+[806] Biber.pm:132> WARN - legacy month field 'October' in entry 'Urmson_2003_8792' is not an integer - this will probably not sort properly.
+[806] Biber.pm:132> WARN - legacy month field 'September' in entry 'Gammell-2014-7921' is not an integer - this will probably not sort properly.
+[807] Biber.pm:132> WARN - BibTeX subsystem: /tmp/biber_tmp_AqwY/33e59b5ca9ec342068223d604c3f8d55_701970.utf8, line 444, warning: 11 characters of junk seen at toplevel
+[807] Biber.pm:134> INFO - WARNINGS: 3

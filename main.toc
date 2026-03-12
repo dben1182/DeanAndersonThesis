@@ -25,113 +25,113 @@
 \contentsline {section}{\numberline {2.9}Elevator Control}{17}{section.2.9}%
 \contentsline {section}{\numberline {2.10}Rotor control}{19}{section.2.10}%
 \contentsline {section}{\numberline {2.11}Path Planning}{21}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}flight paths shape}{21}{subsection.2.11.1}%
-\contentsline {section}{\numberline {2.12}Root Flight Path}{21}{section.2.12}%
-\contentsline {section}{\numberline {2.13}Results}{22}{section.2.13}%
-\contentsline {subsubsection}{A Note On Initial and Final Conditions}{22}{table.caption.13}%
-\contentsline {subsection}{\numberline {2.13.1}Takeoff}{23}{subsection.2.13.1}%
-\contentsline {subsection}{\numberline {2.13.2}Transition}{24}{subsection.2.13.2}%
-\contentsline {subsection}{\numberline {2.13.3}Landing}{24}{subsection.2.13.3}%
-\contentsline {subsection}{\numberline {2.13.4}Forward Flight}{27}{subsection.2.13.4}%
-\contentsline {subsection}{\numberline {2.13.5}Vertical Flight}{27}{subsection.2.13.5}%
-\contentsline {subsection}{\numberline {2.13.6}Successive Ascent}{27}{subsection.2.13.6}%
-\contentsline {subsection}{\numberline {2.13.7}Step Convergence}{27}{subsection.2.13.7}%
-\contentsline {section}{\numberline {2.14}Current Issues and Future Work}{27}{section.2.14}%
-\contentsline {subsection}{\numberline {2.14.1}Energy Consumption Metric}{29}{subsection.2.14.1}%
-\contentsline {subsection}{\numberline {2.14.2}Oscillations}{29}{subsection.2.14.2}%
-\contentsline {subsection}{\numberline {2.14.3}Landing and Negative North Forces}{29}{subsection.2.14.3}%
-\contentsline {subsubsection}{North Forces Example}{31}{equation.2.98}%
-\contentsline {subsection}{\numberline {2.14.4}Safety Mechanisms}{31}{subsection.2.14.4}%
-\contentsline {subsection}{\numberline {2.14.5}Model Uncertainty}{31}{subsection.2.14.5}%
-\contentsline {subsection}{\numberline {2.14.6}Error Convergence}{31}{subsection.2.14.6}%
-\contentsline {subsubsection}{Aerodynamic Model}{31}{figure.caption.23}%
-\contentsline {subsubsection}{3D Implementation}{31}{figure.caption.23}%
-\contentsline {subsubsection}{Thrust Model}{33}{figure.caption.23}%
-\contentsline {subsubsection}{Alternative Hardware Designs}{33}{figure.caption.23}%
-\contentsline {subsection}{\numberline {2.14.7}Computation}{33}{subsection.2.14.7}%
-\contentsline {section}{\numberline {2.15}Conclusion}{33}{section.2.15}%
-\contentsline {chapter}{\chapternumberline {3}System Identification}{35}{chapter.3}%
-\contentsline {subsection}{\numberline {3.0.1}Accuracy test}{35}{subsection.3.0.1}%
-\contentsline {section}{\numberline {3.1}Aerodynamic Coefficients}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Aerodynamic Modes}{36}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Phughoid Mode}{36}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Dutch Roll Mode}{36}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Recursive Least Squares}{37}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}RLS Derivation}{38}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Batch Least Squares}{39}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Recursive Algorithm}{39}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Coefficient Equations for Fixed Wing Aircraft}{40}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Y Coefficients}{41}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Lift and Drag Coefficients}{41}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}l Estimator}{41}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}m Estimator}{41}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}n Estimator}{41}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}A Note on Gravity}{41}{subsection.3.4.6}%
-\contentsline {section}{\numberline {3.5}2D VTOL Equations}{42}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Lift And Drag}{42}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}m moment}{42}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Input Signals}{42}{section.3.6}%
-\contentsline {section}{\numberline {3.7}MAVSIM Results}{43}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Coefficient Comparison Table}{44}{subsection.3.7.1}%
-\contentsline {section}{\numberline {3.8}ROSFlight Flight Data Results}{44}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Limitations}{44}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Noise}{44}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Nonlinearities}{44}{subsection.3.9.2}%
-\contentsline {subsection}{\numberline {3.9.3}Design}{45}{subsection.3.9.3}%
-\contentsline {subsection}{\numberline {3.9.4}Safety}{46}{subsection.3.9.4}%
-\contentsline {subsection}{\numberline {3.9.5}Calibration}{46}{subsection.3.9.5}%
-\contentsline {section}{\numberline {3.10}Other Implementations}{46}{section.3.10}%
-\contentsline {subsection}{\numberline {3.10.1}Signal Processing}{46}{subsection.3.10.1}%
-\contentsline {chapter}{\chapternumberline {4}B-Spline Computation and Generation}{47}{chapter.4}%
-\contentsline {section}{\numberline {4.1}B-Spline Background}{47}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Finite Support}{48}{subsection.4.1.1}%
-\contentsline {section}{\numberline {4.2}Matrix Representation of B-Splines}{50}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Derivatives of Uniform B-Splines}{51}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Endpoint Constraints}{52}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Minimum Snap Trajectory}{55}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Integral objective}{55}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Contributions}{56}{section.4.7}%
-\contentsline {subsubsection}{B Matrices}{57}{section.4.7}%
-\contentsline {subsubsection}{Y Z Lookup Tables}{57}{equation.4.43}%
-\contentsline {section}{\numberline {4.8}Results}{58}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Future Work}{59}{subsection.4.8.1}%
-\contentsline {chapter}{\chapternumberline {5}RRT Flight Corridors}{60}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Rapidly Exploring Random Trees (RRT)}{60}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Safe Flight Corridors}{63}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Convexity}{64}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Enclosure within Safe Flight Corridors}{65}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Turn Constraints}{66}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Turn Constraints Enforcement}{68}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}Path Smoothing}{68}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Objective Function}{70}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Minimum Distance}{70}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Minimum Velocity}{71}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Minimum Acceleration}{71}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}A Note on 2D slices of 3D obstacles}{72}{subsection.5.4.4}%
-\contentsline {section}{\numberline {5.5}2D Results}{73}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}$4 \times 4$ grid}{74}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}6x6 Grid}{75}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Maze}{75}{subsection.5.5.3}%
-\contentsline {section}{\numberline {5.6}3D RRT Extension}{76}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}3D Object Definitions}{76}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}3D Results}{81}{subsection.5.6.2}%
-\contentsline {section}{\numberline {5.7}2D Shapes Within a 3D Environment}{82}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Future Work}{83}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}Dijkstra's Algorithm and Turn Constraints}{83}{subsection.5.8.1}%
-\contentsline {subsection}{\numberline {5.8.2}Turn Constraints}{84}{subsection.5.8.2}%
-\contentsline {subsection}{\numberline {5.8.3}Real Time Implementation}{85}{subsection.5.8.3}%
-\contentsline {subsection}{\numberline {5.8.4}3D limitations}{86}{subsection.5.8.4}%
-\contentsline {subsection}{\numberline {5.8.5}Annulus Constraints}{86}{subsection.5.8.5}%
-\contentsline {section}{\numberline {5.9}Conclusion}{87}{section.5.9}%
-\contentsline {chapter}{\chapternumberline {6}Conclusion}{88}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Safe Flight Corridor Path Following}{88}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Controller Failure}{88}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Conclusion}{89}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Contributions Summary}{89}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}Future Work}{89}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Rosflight Integration}{89}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}RViz and Unreal Simulation}{90}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Real-Time RRT}{90}{subsection.6.3.3}%
-\contentsline {chapter}{References}{91}{section*.73}%
-\contentsline {chapter}{Appendices}{95}{chapter*.74}%
-\contentsline {section}{\numberline {.1}Code Repositories and User Information}{96}{section.Alph0.1}%
+\contentsline {subsection}{\numberline {2.11.1}Flight Path Shape}{21}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}Root Flight Path}{21}{subsection.2.11.2}%
+\contentsline {section}{\numberline {2.12}Controller Tuning}{22}{section.2.12}%
+\contentsline {subsection}{\numberline {2.12.1}LQR Tuning}{22}{subsection.2.12.1}%
+\contentsline {subsection}{\numberline {2.12.2}Feedforward Control Tuning}{23}{subsection.2.12.2}%
+\contentsline {section}{\numberline {2.13}Results}{23}{section.2.13}%
+\contentsline {subsubsection}{A Note On Initial and Final Conditions}{23}{table.caption.13}%
+\contentsline {subsection}{\numberline {2.13.1}Takeoff}{24}{subsection.2.13.1}%
+\contentsline {subsection}{\numberline {2.13.2}Transition}{25}{subsection.2.13.2}%
+\contentsline {subsection}{\numberline {2.13.3}Landing}{25}{subsection.2.13.3}%
+\contentsline {subsection}{\numberline {2.13.4}Successive Ascent}{28}{subsection.2.13.4}%
+\contentsline {subsection}{\numberline {2.13.5}Step Convergence}{28}{subsection.2.13.5}%
+\contentsline {section}{\numberline {2.14}Current Issues and Future Work}{30}{section.2.14}%
+\contentsline {subsection}{\numberline {2.14.1}Energy Consumption Metric}{30}{subsection.2.14.1}%
+\contentsline {subsection}{\numberline {2.14.2}Oscillations}{30}{subsection.2.14.2}%
+\contentsline {subsection}{\numberline {2.14.3}Landing and Negative North Forces}{30}{subsection.2.14.3}%
+\contentsline {subsubsection}{North Forces Example}{34}{equation.2.110}%
+\contentsline {subsection}{\numberline {2.14.4}Safety Mechanisms}{34}{subsection.2.14.4}%
+\contentsline {subsection}{\numberline {2.14.5}Model Uncertainty}{34}{subsection.2.14.5}%
+\contentsline {subsection}{\numberline {2.14.6}3D Implementation}{34}{subsection.2.14.6}%
+\contentsline {subsection}{\numberline {2.14.7}Hardware}{34}{subsection.2.14.7}%
+\contentsline {subsection}{\numberline {2.14.8}Thrust Model}{35}{subsection.2.14.8}%
+\contentsline {subsection}{\numberline {2.14.9}Alternative Hardware Designs}{35}{subsection.2.14.9}%
+\contentsline {subsection}{\numberline {2.14.10}Computation}{35}{subsection.2.14.10}%
+\contentsline {section}{\numberline {2.15}Conclusion}{35}{section.2.15}%
+\contentsline {chapter}{\chapternumberline {3}System Identification}{37}{chapter.3}%
+\contentsline {subsection}{\numberline {3.0.1}Accuracy test}{37}{subsection.3.0.1}%
+\contentsline {section}{\numberline {3.1}Aerodynamic Coefficients}{37}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Aerodynamic Modes}{38}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Phughoid Mode}{38}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Dutch Roll Mode}{38}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Recursive Least Squares}{39}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}RLS Derivation}{40}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Batch Least Squares}{41}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Recursive Algorithm}{41}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Coefficient Equations for Fixed Wing Aircraft}{42}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Y Coefficients}{43}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Lift and Drag Coefficients}{43}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}l Estimator}{43}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}m Estimator}{43}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}n Estimator}{43}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}A Note on Gravity}{43}{subsection.3.4.6}%
+\contentsline {section}{\numberline {3.5}2D VTOL Equations}{44}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Lift And Drag}{44}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}m moment}{44}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Input Signals}{44}{section.3.6}%
+\contentsline {section}{\numberline {3.7}MAVSIM Results}{45}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Coefficient Comparison Table}{46}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.8}ROSFlight Flight Data Results}{46}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Limitations}{46}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Noise}{46}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Nonlinearities}{46}{subsection.3.9.2}%
+\contentsline {subsection}{\numberline {3.9.3}Design}{47}{subsection.3.9.3}%
+\contentsline {subsection}{\numberline {3.9.4}Safety}{48}{subsection.3.9.4}%
+\contentsline {subsection}{\numberline {3.9.5}Calibration}{48}{subsection.3.9.5}%
+\contentsline {section}{\numberline {3.10}Other Implementations}{48}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Signal Processing}{48}{subsection.3.10.1}%
+\contentsline {chapter}{\chapternumberline {4}B-Spline Computation and Generation}{49}{chapter.4}%
+\contentsline {section}{\numberline {4.1}B-Spline Background}{49}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Finite Support}{50}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Matrix Representation of B-Splines}{52}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Derivatives of Uniform B-Splines}{53}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Endpoint Constraints}{54}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Minimum Snap Trajectory}{57}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Integral objective}{57}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Contributions}{58}{section.4.7}%
+\contentsline {subsubsection}{B Matrices}{59}{section.4.7}%
+\contentsline {subsubsection}{Y Z Lookup Tables}{59}{equation.4.43}%
+\contentsline {section}{\numberline {4.8}Results}{60}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Future Work}{61}{subsection.4.8.1}%
+\contentsline {chapter}{\chapternumberline {5}RRT Flight Corridors}{62}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Rapidly Exploring Random Trees (RRT)}{62}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Safe Flight Corridors}{65}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Convexity}{66}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Enclosure within Safe Flight Corridors}{67}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Turn Constraints}{68}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Turn Constraints Enforcement}{70}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Path Smoothing}{70}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Objective Function}{72}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Minimum Distance}{72}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Minimum Velocity}{73}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Minimum Acceleration}{73}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}A Note on 2D slices of 3D obstacles}{74}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}2D Results}{75}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}$4 \times 4$ grid}{76}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}6x6 Grid}{77}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Maze}{77}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}3D RRT Extension}{78}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}3D Object Definitions}{78}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}3D Results}{83}{subsection.5.6.2}%
+\contentsline {section}{\numberline {5.7}2D Shapes Within a 3D Environment}{84}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Future Work}{85}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Dijkstra's Algorithm and Turn Constraints}{85}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Turn Constraints}{86}{subsection.5.8.2}%
+\contentsline {subsection}{\numberline {5.8.3}Real Time Implementation}{87}{subsection.5.8.3}%
+\contentsline {subsection}{\numberline {5.8.4}3D limitations}{88}{subsection.5.8.4}%
+\contentsline {subsection}{\numberline {5.8.5}Annulus Constraints}{88}{subsection.5.8.5}%
+\contentsline {section}{\numberline {5.9}Conclusion}{89}{section.5.9}%
+\contentsline {chapter}{\chapternumberline {6}Conclusion}{90}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Safe Flight Corridor Path Following}{90}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Controller Failure}{90}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Conclusion}{91}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Contributions Summary}{91}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Future Work}{91}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Rosflight Integration}{91}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}RViz and Unreal Simulation}{92}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Real-Time RRT}{92}{subsection.6.3.3}%
+\contentsline {chapter}{References}{93}{section*.72}%
+\contentsline {chapter}{Appendices}{97}{chapter*.73}%
+\contentsline {section}{\numberline {.1}Code Repositories and User Information}{98}{section.Alph0.1}%

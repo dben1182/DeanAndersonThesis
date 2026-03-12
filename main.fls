@@ -850,21 +850,41 @@ INPUT ./figs/chap1/successiveAscent/angles.png
 INPUT ./figs/chap1/successiveAscent/angles.png
 INPUT ./figs/chap1/successiveAscent/angles.png
 INPUT ./figs/chap1/successiveAscent/angles.png
-INPUT ./figs/chap1/Step Error/Position Error.png
-INPUT ./figs/chap1/Step Error/Position Error.png
-INPUT ./figs/chap1/Step Error/Position Error.png
-INPUT ./figs/chap1/Step Error/Position Error.png
-INPUT ./figs/chap1/Step Error/Position Error.png
-INPUT ./figs/chap1/Step Error/deltas.png
-INPUT ./figs/chap1/Step Error/deltas.png
-INPUT ./figs/chap1/Step Error/deltas.png
-INPUT ./figs/chap1/Step Error/deltas.png
-INPUT ./figs/chap1/Step Error/deltas.png
-INPUT ./figs/chap1/Step Error/angles.png
-INPUT ./figs/chap1/Step Error/angles.png
-INPUT ./figs/chap1/Step Error/angles.png
-INPUT ./figs/chap1/Step Error/angles.png
-INPUT ./figs/chap1/Step Error/angles.png
+INPUT ./figs/chap1/successiveAscent/VelocitiesComparisons.png
+INPUT ./figs/chap1/successiveAscent/VelocitiesComparisons.png
+INPUT ./figs/chap1/successiveAscent/VelocitiesComparisons.png
+INPUT ./figs/chap1/successiveAscent/VelocitiesComparisons.png
+INPUT ./figs/chap1/successiveAscent/VelocitiesComparisons.png
+INPUT ./figs/chap1/StepError/PosVelErrors.png
+INPUT ./figs/chap1/StepError/PosVelErrors.png
+INPUT ./figs/chap1/StepError/PosVelErrors.png
+INPUT ./figs/chap1/StepError/PosVelErrors.png
+INPUT ./figs/chap1/StepError/PosVelErrors.png
+INPUT ./figs/chap1/StepError/forcesComparison.png
+INPUT ./figs/chap1/StepError/forcesComparison.png
+INPUT ./figs/chap1/StepError/forcesComparison.png
+INPUT ./figs/chap1/StepError/forcesComparison.png
+INPUT ./figs/chap1/StepError/forcesComparison.png
+INPUT ./figs/chap1/StepError/PosComparisons.png
+INPUT ./figs/chap1/StepError/PosComparisons.png
+INPUT ./figs/chap1/StepError/PosComparisons.png
+INPUT ./figs/chap1/StepError/PosComparisons.png
+INPUT ./figs/chap1/StepError/PosComparisons.png
+INPUT ./figs/chap1/StepError/VelComparisons.png
+INPUT ./figs/chap1/StepError/VelComparisons.png
+INPUT ./figs/chap1/StepError/VelComparisons.png
+INPUT ./figs/chap1/StepError/VelComparisons.png
+INPUT ./figs/chap1/StepError/VelComparisons.png
+INPUT ./figs/chap1/StepError/Deltas2.png
+INPUT ./figs/chap1/StepError/Deltas2.png
+INPUT ./figs/chap1/StepError/Deltas2.png
+INPUT ./figs/chap1/StepError/Deltas2.png
+INPUT ./figs/chap1/StepError/Deltas2.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/StepError/angles.png
 INPUT ./fancychapters/chap2.tex
 INPUT ./fancychapters/chap2.tex
 OUTPUT fancychapters/chap2.aux

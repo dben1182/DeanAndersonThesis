@@ -3,10 +3,20 @@
 
 \section{Introduction}
 
-The primary project in this thesis is VTOL Transition. VTOL stands for vertical takeoff and landing vehicles. There are various types of vtols extant today,  from tiltrotors to quadplanes. We decided to go with Quadplane design, because of the lack of moving parts and relative simplicity. 
+As discussed in the introduction, a VTOL is a vehicle that can take off and land vertically.
+Quadplanes are a fairly common implementation of a VTOL, in part because of their relative simplicity compared to other VTOL designs.
+Quadplanes are a combination of two standardized hardware implementations: an airplane and a quadcopter.
+They also do not need a rotor tilting mechanism, which simplifies design complexity significantly.
 
-while VTOL hardware has been well established, VTOL control software has been particularly difficult to develop. To explain this, let us look at an aircraft and compare it with the two main subcomponents: fixed-wing and quadrotor design. 
+Most small airplanes have a naturally stable airframe, which means that the craft will return to flying a gentle, straight trajectory if the pilot lets go of the controls.
+For this reason, airplanes can be flown by direct control surface inputs, without a stabilization flight controller, although this still requires great skill.
+On the other hand, most rotorcraft, such as quadrotors are not naturally stable aircraft.
+It is very difficult for rotorcraft to be controlled by a pilot using direct actuator inputs. 
+When a pilot is manually flying a quadrotor via remote control, control stick inputs map to relative position and angle controls, so even manual flying includes some sort of control input.
 
+While recreational flying is certainly fun, most unmanned work requires some sort of autopilot to accurately control the aircraft.
+In the public sphere, there are many open source autopilots available for 
+One may refer to \cite{uav_book} and \cite{vtol_book} for more information on the development of full autopilot stacks.
 
 \section{Literature}
 
@@ -858,14 +868,14 @@ For an LQR controller, $Q$ and $R$ matrices must be selected. In this realizatio
 
 \begin{align}
     P_{err,max} = 10.0\\
-    p = \frac{1}{P_{err,max}^2}
+    p = \frac{1}{P_{err,max}^2}\\
     V_{err,max} = 1.0\\
-    v = \frac{1}{V_{err,max}^2}
+    v = \frac{1}{V_{err,max}^2}\\
     I_{max} = 5.0\\
-    i = \frac{1}{I_{max}^2}
-    Q = \mathrm{diag}(p,p,v,v,i,i)
-    R = diag(1.0, 1.0)
-\eng{align}
+    i = \frac{1}{I_{max}^2}\\
+    Q = \mathrm{diag}(p,p,v,v,i,i)\\
+    R = diag(1.0, 1.0)\\
+\end{align}
 
 $K$ and $k_i$ are then selected using the python control library LQR function.
 
@@ -1071,6 +1081,7 @@ Recall from subsection \ref{sec:one norm} the discussion on the importance of 1-
 The transition is well portrayed during takeoff, when the VTOL transitions from vertical hover into fixed-wing flight. We analyze data from the state of the aircraft and flight controller to understand each part. The following example is the takeoff segment described in the previous section, followed by a period of straight, level flight. The takeoff segment takes approximately $60.0$ seconds; the straight, level flight goes for $25.0$ seconds beyond that, for a total of $85.0$ seconds. 
 
 \subsection{Landing}
+\label{sec:landing}
 
 In order for this aircraft controller to be a viable solution, the aircraft must land. A trajectory very similar to the takeoff trajectory was constructed, except in the opposite direction. The start and end conditions are reversed along with the direction of the square root function as
 
@@ -1171,7 +1182,6 @@ Another test for the autopilot is with a series increasing slopes to test whethe
 
 In this case, the aircraft starts out level, with an initial north velocity of $V_n = 25.0 \frac{m}{s}$. To be clear, this diagram shows the lines along which control points are placed. The actual trajectory will somewhat smooth out the corners. The control points are spaced in a manner such that the reference velocity remains $25.0 \frac{m}{s}$ for the entire trajectory. A full video of the simulation may be found at the following URL \href{https://youtu.be/-ZMKCkmkpCI}{Successive Ascent Video}
 
-
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.48\textwidth}
@@ -1234,7 +1244,63 @@ Looking closely at each, they look remarkably similar to an overshooting signal 
 
 The autopilot should also be subject to tests against error, to determine if the aircraft can converge to a trajectory when it does not start directly on the desired trajectory.
 For this reason, a test was constructed. The input trajectory was a constant forward trajectory with a constant forward velocity of $25 \frac{m}{s}$ at an altitude of 0. The aircraft started with an initial altitude of $-25$ meters, and an initial forward velocity of $25 \frac{m}{s}$.
-This is the equivalent of a step input reference to the system for altitude. The video for this experiment is found at 
+This is the equivalent of a step input reference to the system for altitude. The metrics for this experiment are shown in figure \ref{fig:StepMetrics}, and the video for this experiment is found at \href{https://youtu.be/AVDS21xf7JI}{https://youtu.be/AVDS21xf7JI}. 
+
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/StepError/PosVelErrors.png}
+        \caption{Position and velocity errors in both north and down directions over successive ascent trajectory.}
+        \label{fig:StepPosVelError}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/StepError/forcesComparison.png}
+        \caption{Compares actual and desired forces and the error between them}
+        \label{fig:StepForcesComparison}
+    \end{subfigure}
+
+    \vspace{0.5cm}  % vertical spacing between rows
+
+    % Row 2
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/StepError/PosComparisons.png}
+        \caption{Comparison of the actual position versus desired position.}
+        \label{fig:StepPosComparison}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/StepError/VelComparisons.png}
+        \caption{Comparison of the actual velocity versus desired velocity.}
+        \label{fig:StepVelComparison}
+    \end{subfigure}
+    \hfill
+    \vspace{0.5cm}  % vertical spacing between rows
+
+    % Row 2
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/StepError/Deltas2.png}
+        \caption{Deltas control inputs for the controller.}
+        \label{fig:StepDeltas}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/StepError/angles.png}
+        \caption{Pitch, flight path angle, and angle of attack for the aircraft through successive ascent trajectory.}
+        \label{fig:StepAngles}
+    \end{subfigure}    
+    \label{fig:StepMetrics}
+    \caption{Step metrics and plots.}
+\end{figure}
+
+From figure \ref{fig:StepMetrics}, we see that although the aircraft does converge to the main trajectory almost immediately, the aircraft continues to oscillate between north position and north velocity errors as it attempts to converge. This could probably be solved with better tuning.
 
 \section{Current Issues and Future Work}
 
@@ -1287,8 +1353,7 @@ This constrains the achievable thrust to be a positive value. If the desired for
 
 \subsubsection{North Forces Example}
 
-An example of when this effect takes place during the aircraft landing. H
-
+An example of when this effect takes place during the aircraft landing, as described in subsection H
 
 
 \subsection{Safety Mechanisms}
@@ -1301,55 +1366,75 @@ This will be especially important for the case where the aircraft is not physica
 
 Perhaps the largest deficiency in this model and controller is its lack of robust and adaptive control. That is, this controller is entirely model dependent, and any discrepancy between the model will surely cause the aircraft to enter instability. In the case of this 2D model, this is especially true for lift and drag due to angle of attack during the transition phase, which applies primarily to 
 
-\subsection{Error Convergence}
 
-Another problem we notice with the current controller is the ability of the aircraft to converge onto a desired trajectory when a relatively large error has developed.
 
-A simple test may be performed to demonstrate this convergence issue. This is to start the aircraft in a straight-line trajectory, with its velocity matching the desired velocity, but with an initial altitude error. A video of this is shown at:  \href{https://youtu.be/AVDS21xf7JI}{Step Altitude Error}. The three respective plots for position and velocity error, delta control inputs, and angles are shown in Figures \ref{fig:StepErrorPositionError}, \ref{fig:stepErrorDeltas}, \ref{fig:stepErrorAngles}.
+\subsection{3D Implementation}
+
+Before this controller can be implemented in hardware, it must be generalized to a 3D model. This work originally started with a 3D model, with an attempt at model inversion. However, this proved unstable at the time and had to be abandoned temporarily.
+A 3D implementation of the quadplane would include movement in the east $\hat{e}$ direction, roll $\phi$ about the $\hat{n}$ axis, and yaw $\psi$ about the $\hat{d}$ axis. This model would also include four vertical rotors, instead of two, ailerons $\delta_a$, and rudder $\delta_r$.
+It must be demonstrated that this 3D model is differentially flat. Doing so will allow for the development of a 3D trajectory tracking controller, coupled $\phi$, $\theta$, and $\psi$ controllers, and a 3D dynamically inverting low level controller.
+
+When such a controller is well proven in simulation, then hardware implementation on a real quadplane may be demonstrated.
+
+\subsection{Hardware}
+
+Although this 2D quadplane controller is not ready for hardware testing, much hardware development has already taken place in this research group. 
+Unfortunately, VTOL aircraft are currently a somewhat niche product. 
+Even quadplanes tend to cost an order of magnitude more than their airplane and quadcopter counterpart, and often do not include replaceable parts. 
+For these reasons, the research team has invested heavily in 3D printing airframes, specifically quadplane VTOL airframes. 
+In the event of a crash that partially destroys a section of the airplane, that section can be reprinted and replaced quickly and cheaply.
+By 3D printing aircraft, the research group is able to make custom modifications and additions to airframes, such as lidar mounts, weathervanes, and payloads.
+This is done using foaming filaments, such as HT-LW PLA and ASA Aero.
+Though 3D printing work extends to development of standard fixed-wing aircraft and quadrotor frames, the first fully functional 3D printed airframe has been a quadplane VTOL, as shown in figure \ref{fig:quadplane3DPrinted}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/chap1/Step Error/Position Error.png}
-    \caption{Position and Velocity Error Plots. Notice that the initial vertical position error causes a massive error oscillation pattern in the north position and north velocity errors.}
-    \label{fig:StepErrorPositionError}
+    \includegraphics[width=\linewidth]{figs/chap1/quadplane.jpg}
+    \caption{3D printed quadplane prototype for future use in autopilot tests.}
+    \label{fig:quadplane3DPrinted}
 \end{figure}
+
+It is certainly worthwhile developing controllers for the quadplane platform due to its relative simplicity, as it combines the two well studied aircraft models of a fixed-wing airplane and a quadcopter. 
+The aircraft can revert to a standard autopilot configuration, either quadrotor or airplane, as a failsafe in the case of failure of the experimental autopilot.
+
+However, the quadplane is rather inefficient with its motor use.
+The vertical motors are only used during for a short period during takeoff and landing, while the forward rotor does most of the long-range work.
+Four of five motors are not used for the majority of the flight, which means a reduced payload due to the extra weight, and increased drag from the vertical rotors.
+Some quadplanes use tilting mechanisms to utilize rotors as both vertical and forward thrusters, as described in \cite{tiltQuadplane}, though this adds complexity with the need for reliable motor tilting mechanisms.
+
+Another promising VTOL is the tilt body design, as described in \cite{lou_unified_energy_control_tilt_body}. 
+This aircraft has offset front and rear wings, with sets of propellers on both, as shown in figure \ref{fig:tiltbodyDesign}. 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/chap1/Step Error/deltas.png}
-    \caption{Deltas for initial step error. Notice the large spikes in the forward thruster, and periods of zero. This is caused by the position and velocity error oscillations.}
-    \label{fig:stepErrorDeltas}
+    \includegraphics[width=\linewidth]{figs/chap1/tiltbodyDesign.png}
+    \caption{Tiltbody design and configuration. Reproduced from \cite{lou_unified_energy_control_tilt_body} figure 3.}
+    \label{fig:tiltbodyDesign}
 \end{figure}
+
+During takeoff, the two sets of rotors actuate differentially to rotate the aircraft to a vertical orientation for takeoff.
+Using differential actuation of the rotors, the aircraft then rotates forward to move into fixed-wing flight. 
+A diagram of these maneuvers is shown in \ref{fig:tiltbodyControl}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/chap1/Step Error/angles.png}
-    \caption{Pitch, flight path angle, flight path angle reference, and angle of attack for step error trajectory tracking.}
-    \label{fig:stepErrorAngles}
+    \includegraphics[width=\linewidth]{figs/chap1/tiltbodyManeuver.png}
+    \caption{Tiltbody control map. Reproduced from \cite{lou_unified_energy_control_tilt_body} figure 2.}
+    \label{fig:tiltbodyControl}
 \end{figure}
 
+This configuration of VTOL makes a more efficient use of all propellers, without the need for a motor rotating mechanism.
+As tilt-body designs are not widely available for purchase, a 3D printed reproduction of this is currently being developed for future use and autopilot development in this research group.
 
 
-\subsubsection{Aerodynamic Model}
-
-
-\subsubsection{3D Implementation}
-
-Before this controller can be implemented in hardware, it must be generalized to a 3D model. 
-
-\subsubsection{Thrust Model}
+\subsection{Thrust Model}
 
 In this paper and in our simulations, we assumed that the relationship between $\delta$ control input and thrust from the motor can be given as $T(\delta_t) = T_{max} \delta_t$. We did this for simplicity and stability in our simulation. For a much more complicated, but accurate equation for aerodynamic thrust and moments from propellers, refer to section 4.3 on page 55 of Small Unmanned Aircraft \cite{uav_book}. Solutions for $\delta_t$ from these sets of equations would require another optimization step, which adds a potential failure point. Hardware implementation will require implementation of this or another accurate thrust model.
 
-\subsubsection{Alternative Hardware Designs}
-
-It is worthwhile developing controllers for the quadplane platform due to its relative simplicity. It combines the two well studied aircraft models of a fixed-wing airplane and a quadcopter. The aircraft can always revert to one of these two autopilots in the case of emergency.
-
-However, a major issue with hardware implementation of this aircraft is 
-
 \subsection{Computation}
 
-At present, this controller stack is not ready for real-time hardware implementation due to the intensive computational burden. In this simulation environment, the TODO figure out specific time metrics for everything. 
+At present, this controller stack is not ready for real-time hardware implementation due to the intensive computational burden. 
+In this simulation environment, the TODO figure out specific time metrics for everything. 
 
 \section{Conclusion}
 
