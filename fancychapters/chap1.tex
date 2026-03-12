@@ -986,28 +986,21 @@ This flight path was loaded into the controller, and the following results were 
     \hfill
     \begin{subfigure}{0.48\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{figs/chap1/Takeoff/PosComparison.png}
-        \caption{Position desired versus actual for both north and down directions}
-        \label{fig:TakeoffPosComparison}
+        \includegraphics[width=\linewidth]{figs/chap1/Takeoff/ForcesComparison.png}
+        \caption{Compares actual and desired forces and the error between them}
+        \label{fig:TakeoffForceComparison}
     \end{subfigure}
 
     \vspace{0.5cm}  % vertical spacing between rows
 
     % Row 2
-    \begin{subfigure}{0.48\textwidth}
+    \begin{subfigure}{1.0\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{figs/chap1/Takeoff/VelComparison.png}
-        \caption{Velocity desired versus actual for both north and down directions}
+        \includegraphics[width=\linewidth]{figs/chap1/Takeoff/TrajectorActualAndDesired.png}
+        \caption{Comparison of the actual trajectory versus desired trajectory.}
         \label{fig:TakeoffVelComparison}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figs/chap1/Takeoff/ForcesComparison.png}
-        \caption{Comparison between desired forces (output from high level controller), and actual non-gravitational forces experienced by the quadplane.}
-        \label{fig:TakeoffForcesComparison}
-    \end{subfigure}    
-    
     \vspace{0.5cm}  % vertical spacing between rows
 
     % Row 2
@@ -1035,21 +1028,91 @@ Recall from subsection \ref{sec:one norm} the discussion on the importance of 1-
 
 The transition is well portrayed during takeoff, when the VTOL transitions from vertical hover into fixed-wing flight. We analyze data from the state of the aircraft and flight controller to understand each part. The following example is the takeoff segment described in the previous section, followed by a period of straight, level flight. The takeoff segment takes approximately $60.0$ seconds; the straight, level flight goes for $25.0$ seconds beyond that, for a total of $85.0$ seconds. 
 
-The first thing to analyze is the the value of the objective function plotted over time, as shown in Figure \ref{fig:ObjectiveFunctionPlot}. The pitch optimizer finds a pitch $\theta$ that minimizes the 1-Norm of a Force differential, as previously described. The following plot is the value of the objective function evaluated at the chosen output $\theta$; this is done in the program after $\theta$ has been calculated. From the same function, the individual forces $\bs{F}^b_{n,diff}$ and $\bs{F}^b_{d,diff}$, which form the sum of the objective function, are also plotted and shown in Figure \ref{fig:ForceDifferentialPlot}. 
+\subsection{Landing}
+
+In order for this aircraft controller to be a viable solution, the aircraft must land. A trajectory very similar to the takeoff trajectory was constructed, except in the opposite direction. The start and end conditions are reversed along with the direction of the square root function as
+
+\begin{align}
+    \bs{S} = 
+    \begin{bmatrix}
+        \bs(p)(0) & \frac{d\bs{p}}{dt}(0) & \frac{d^2 \bs{p}}{dt^2}(0)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & 25 & 0\\
+        -100 & 0 & 0\\
+    \end{bmatrix}
+
+    \bs{E} = 
+    \begin{bmatrix}
+        \bs(p)(M) & \frac{d\bs{p}}{dt}(M) & \frac{d^2 \bs{p}}{dt^2}(M)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        500.0 & 0.0 & 0.0\\
+        0.0 & -0.1 & 0.0\\
+    \end{bmatrix}
+\end{align}.
+
+This produces the trajectory in figure \ref{fig:LandingTrajectory}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/chap1/Transition/Force differential alpha comparison 67.png}
-    \caption{Force Differentials Compared with Angle of attack from $t=0 \space sec$ to $t=67 \space sec$. Transition}
-    \label{fig:Transition Force alpha 67}
+    \includegraphics[width=0.7\linewidth]{figs/chap1/landing/ReferenceTrajectory.png}
+    \caption{Landing trajectory both with and without control points, with an initial velocity of $25 \frac{m}{s}$ and altitude of $100 m$, and landing $500$ meters north.}
+    \label{fig:LandingTrajectory}
 \end{figure}
 
-\begin{figure}
+In simulation, the aircraft is started with the same conditions as the trajectory, which is velocity of $25 \frac{m}{s}$ and altitude of $100 m$. A video of this manuever may be found at \href{https://youtu.be/w4bYAqHPQaI}{https://youtu.be/w4bYAqHPQaI}, and metrics for the controller are shown in figure
+
+
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/chap1/Transition/force differential alpha comparison 85.png}
-    \caption{Caption}
-    \label{fig:Transition Force alpha 85}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/PosVelErrors.png}
+        \caption{Position and velocity errors in both north and down directions over landing trajectory.}
+        \label{fig:LandingPosVelError}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/ForcesComparisons.png}
+        \caption{Compares actual and desired forces and the error between them}
+        \label{fig:LandingForceComparison}
+    \end{subfigure}
+
+    \vspace{0.5cm}  % vertical spacing between rows
+
+    % Row 2
+    \begin{subfigure}{1.0\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/DesiredActualTrajectory.png}
+        \caption{Comparison of the actual trajectory versus desired trajectory.}
+        \label{fig:LandingVelComparison}
+    \end{subfigure}
+    \hfill
+    \vspace{0.5cm}  % vertical spacing between rows
+
+    % Row 2
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/Deltas.png}
+        \caption{Deltas control inputs for the controller.}
+        \label{fig:LandingDeltas}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/Angles.png}
+        \caption{Pitch, flight path angle, and angle of attack for the aircraft through landing trajectory.}
+        \label{fig:LandingAngles}
+    \end{subfigure}    
+    \label{fig:LandingMetrics}
 \end{figure}
+
+In this case, it is immediately obvious that the aircraft does not follow the desired trajectory. Instead of slowing down and closely tracking the trajectory, the aircraft does not slow down, but keeps going forward at relatively the same velocity. This phenomenon will be discussed in more detail in the future work section. If the trajectory requires a negative force, or negative acceleration, in the body frame north direction, the aircraft will be unable to follow.
+
 
 
 \subsection{Forward Flight}
@@ -1073,37 +1136,55 @@ Another test for the autopilot is with a series increasing slopes to test whethe
     \label{fig:successiveAscent}
 \end{figure}
 
-In this case, the aircraft starts out level, with an initial north velocity of $V_n = 25.0 \frac{m}{s}$. To be clear, this diagram shows the lines along which control points are placed. The actual trajectory will somewhat smooth out the corners. The control points are spaced in a manner such that the reference velocity remains $25.0 \frac{m}{s}$ for the entire trajectory.
+In this case, the aircraft starts out level, with an initial north velocity of $V_n = 25.0 \frac{m}{s}$. To be clear, this diagram shows the lines along which control points are placed. The actual trajectory will somewhat smooth out the corners. The control points are spaced in a manner such that the reference velocity remains $25.0 \frac{m}{s}$ for the entire trajectory. A full video of the simulation may be found at the following URL \href{https://youtu.be/-ZMKCkmkpCI}{Successive Ascent Video}
 
-This trajectory was created and tested in simulation, and it actually tracks the desired position fairly accurately. 
 
-We begin by plotting the positional and velocity error with respect to time, as shown in Figure \ref{fig:successiveAscentPosVelError}. The control inputs through time are shown in Figure \ref{fig:successiveAscentControlInputs}. The pitch, flight path angle, and angle of attack are shown in Figure \ref{fig:successiveAscentAngles}.
-
-\begin{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\linewidth]{figs/chap1/successive ascent/Position Velocity Error.png}
-    \caption{Position and Velocity error over the ascent course. Notice that each large jump in error corresponds to the corner of a new ascending course.}
-    \label{fig:successiveAscentPosVelError}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/successiveAscent/PosVelErrors.png}
+        \caption{Position and velocity errors in both north and down directions over successive ascent trajectory.}
+        \label{fig:SuccessivePosVelError}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/forcesComparisons.png}
+        \caption{Compares actual and desired forces and the error between them}
+        \label{fig:SuccessivePosComparison}
+    \end{subfigure}
+
+    \vspace{0.5cm}  % vertical spacing between rows
+
+    % Row 2
+    \begin{subfigure}{1.0\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/TrajectoryComparisons.png}
+        \caption{Comparison of the actual trajectory versus desired trajectory.}
+        \label{fig:SuccessiveVelComparison}
+    \end{subfigure}
+    \hfill
+    \vspace{0.5cm}  % vertical spacing between rows
+
+    % Row 2
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/Deltas.png}
+        \caption{Deltas control inputs for the controller.}
+        \label{fig:SuccessiveDeltas}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/landing/angles.png}
+        \caption{Pitch, flight path angle, and angle of attack for the aircraft through successive ascent trajectory.}
+        \label{fig:SuccessiveAngles}
+    \end{subfigure}    
+    \label{fig:SuccessiveMetrics}
 \end{figure}
 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\linewidth]{figs/chap1/successive ascent/Control Inputs.png}
-    \caption{Control inputs for the successive ascent course. Notice that when the aircraft is at too steep of an angle to maintain lift and stability by forward propulsion and elevator control alone, it also uses the vertical rotors to keep it on trajectory.}
-    \label{fig:successiveAscentControlInputs}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\linewidth]{figs/chap1/successive ascent/angles.png}
-    \caption{Pitch, flight path angle, reference flight path angle, and angle of attack for the aircraft over the course.}
-    \label{fig:successiveAscentAngles}
-\end{figure}
-
-
-A full video of the simulation may be found at the following URL \href{https://youtu.be/-ZMKCkmkpCI}{Successive Ascent Video}
-
+In these successively steeper flight paths, the aircraft was successfully able to track the trajectory. 
 
 \subsection{Step Convergence}
 

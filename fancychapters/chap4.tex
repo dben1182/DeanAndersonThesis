@@ -301,7 +301,7 @@ The minimum distance optimization function then becomes:\\
 \textbf{Minimum Distance Objective}
 \begin{equation}\label{eq:controlPointsOptimization}
     \begin{aligned}
-        &\text{minimize} && \sum_{k=0}^{N-1} \|C_{pts}[0:N-2] - C_{pts}[1:N-2]\|\\
+        &\text{minimize} && \sum_{k=0}^{N-1} \|C_{0:N-2}(k) - C_{1:N-2}(k)\|\\
         &\text{with respect to} && C_{pts}\\
         &\text{subject to} && A_{tot} C_{pts} < b_{tot}\\
         &&& C_{1:d} = S \hat{B}_M^d(0)^{-1}\\
@@ -326,7 +326,7 @@ The minimum velocity optimization function then becomes:\\
 \textbf{Minimum Velocity Objective}
 \begin{equation}\label{eq:controlPointsOptimization}
     \begin{aligned}
-        &\text{minimize} && \sum_{k=0}^{N-2} \|C_{pts}[0:N-3] + C_{pts}[2:N-1] - 2 C_{pts}[1:N-2]\|\\
+        &\text{minimize} && \sum_{k=0}^{N-2} \|C_{0:N-3}(k) + C_{2:N-1}(k) - 2 C_{1:N-2}(k)\|\\
         &\text{with respect to} && C_{pts}\\
         &\text{subject to} && A_{tot} C_{pts} < b_{tot}\\
         &&& C_{1:d} = S \hat{B}_M^d(0)^{-1}\\
@@ -336,26 +336,26 @@ The minimum velocity optimization function then becomes:\\
 
 \subsection{Minimum Acceleration}
 
-Likewise, we may also minimize an acceleration objective function using the jerk control points as:
+Likewise, we may also minimize an acceleration objective function using the jerk control points as
 
 \begin{align}
     J = C_{3:N-1} - 3 \cdot C_{2:N-2} + 3 \cdot C_{1:N-3} - C_{0:N-4}\\
     A_{max} = 
     \sum_{i=0}^{N-3} |J(i)|\\
-\end{align}
+\end{align}.
 
-The minimum acceleration optimization function then becomes:\\
+The minimum acceleration optimization function then becomes
 
 \textbf{Minimum Acceleration Objective}
 \begin{equation}\label{eq:controlPointsOptimization}
     \begin{aligned}
-        &\text{minimize} && \sum_{k=0}^{N-2} \|C_{pts}[3:N-1] - 3 C_{pts}[2:N-2] + 3 C_{pts}[1:N-3] - C_{pts}[0:N-4]\|\\
+        &\text{minimize} && \sum_{k=0}^{N-2} \|C_{3:N-1}(k) - 3 C_{2:N-2}(k) + 3 C_{1:N-3}(k) - C_{0:N-4}(k)\|\\
         &\text{with respect to} && C_{pts}\\
         &\text{subject to} && A_{tot} C_{pts} < b_{tot}\\
         &&& C_{1:d} = S \hat{B}_M^d(0)^{-1}\\
         &&& C_{(M+1):(M+d)} = E \hat{B}_M^d(0)^{-1}\\
     \end{aligned}
-\end{equation} 
+\end{equation}.
 
 Minimization of Distance and Acceleration are particularly useful to us. The former method connects start to end in the most direct way, given the Safe Flight Corridor constraints. The latter connects start to end while minimizing accelerations, which is particularly useful for an airplane that has minimum turning radius constraints. In this case, the most gradual turn may be the most effective.
 
