@@ -391,6 +391,7 @@ Becuse each
 
 
 \section{Pitch Free Trajectory Tracking}
+\label{sec:PitchFree}
 
 The first section of the controller is to determine the force needed to be acted on the aircraft by the actuators. This is determined by the reference trajectory and the current state of the aircraft, at a particular point in time. The desired position from the reference trajectory, is given as $\bs{z}_{p,ref}^{i}$, with its derivatives for position and velocity as $\dot{\bs{z}}_{p,ref}^{i}$ and $\ddot{\bs{z}}_{p,ref}^i$ respectively. The advantage of using B-Splines for the reference trajectory is that they automatically produce this reference position, velocity, and acceleration. Remember that each $\bs{z}_{ref}$ is a vector containing information position, velocity, or acceleration for north and down respectively.
 
@@ -466,8 +467,8 @@ where
             0 & 0  \\
             1 & 0  \\
             0 & 1  
-         \end{pmatrix}.
-\end{align*}
+         \end{pmatrix}
+\end{align*}.
 
 
 Using LQR, design a linear control law
@@ -799,6 +800,7 @@ And then they must be each saturated to stay within the bounds of: $0 \leq \delt
     \delta_t = sat(\delta_{t,unsat})\\
 \end{align}
 
+
 \section{Path Planning}
 \label{sec:vtol path planning}
 
@@ -813,7 +815,7 @@ This required calculating the arc length of a section of the polynomial. The sim
 This is computed numerically in code, and split up to gradually increase the spacing of control points to provide continuous increase of desired velocity.
 
 
-\subsection{flight paths shape}
+\subsection{Flight Path Shape}
 
 It is necessary to develop a useful flight path for the VTOL. One might ask what shape of path will provide a lower energy consumption while also providing stability. One promising path type is the parabolic, or rather radical, trajectory which is modeled after a 
 
@@ -821,7 +823,7 @@ It is necessary to develop a useful flight path for the VTOL. One might ask what
 One possibility is a parabolic flight path, where the VTOL starts at the vertex in vertical lift-off mode, and slowly transitions jnto a forward trajectory. at some point, the curvature is close enough to straight to justify transition to forward flight.
 
 
-\section{Root Flight Path}
+\subsection{Root Flight Path}
 
 It is desirable to create a flight path for the eVTOL to follow between a vertical takeoff and forward flight. A well behaved function shape for a takeoff or landing is a square root function, which can be given as:
 
@@ -845,6 +847,45 @@ The parametric derivative of that function is given as:
 \end{align}
 
 $t$ in this case is not the actual trajectory time, but is merely a construct needed to create the path. $A$ and $B$ are vertical and horizontal scalars for the equations, and $n_0$ and $a_0$ represent the starting north and altitude positions respectively.
+
+\section{Controller Tuning}
+
+\subsection{LQR Tuning}
+As with almost all other controllers, this controller contains tuning gains, which are set initially, and then require adjustment later. 
+
+Recall from section \ref{sec:PitchFree} that $K$ must be selected for $\tilde{\bs{u}}_F^i = -K \tilde{\bs{x}}^i$.
+For an LQR controller, $Q$ and $R$ matrices must be selected. In this realization, we elected to include an integrator term as well. For most of the results that follow, we selected
+
+\begin{align}
+    P_{err,max} = 10.0\\
+    p = \frac{1}{P_{err,max}^2}
+    V_{err,max} = 1.0\\
+    v = \frac{1}{V_{err,max}^2}
+    I_{max} = 5.0\\
+    i = \frac{1}{I_{max}^2}
+    Q = \mathrm{diag}(p,p,v,v,i,i)
+    R = diag(1.0, 1.0)
+\eng{align}
+
+$K$ and $k_i$ are then selected using the python control library LQR function.
+
+\subsection{Feedforward Control Tuning}
+
+Recall from subsection \ref{sec:momentControl} that the control law for desired moment is
+
+\begin{align}
+    m_{des} = J_y \left(\ddot{\theta}_{ref} + k_d\left(\dot{\theta}_{ref} - q \right) + k_p\left(\theta_{ref} - \theta \right) \right)
+\end{align}.
+
+In this case, $k_p$ and $k_d$ were selected using rise time $t_r$ and damping coefficient $\zeta$ as
+
+\begin{align}
+    \omega_n = \frac{\pi}{2 t_r \sqrt{1 - \zeta^2}}\\
+    k_p = \frac{\omega_n^2}{J_y}
+    k_d = \frac{2 \zeta \omega_n}{J_y}
+\end{align}
+
+In this case $t_r = 2.0$ and $\zeta = 0.707$.
 
 \section{Results}
 
@@ -1018,6 +1059,7 @@ This flight path was loaded into the controller, and the following results were 
         \label{fig:TakeoffAngles}
     \end{subfigure}    
     \label{fig:TakeoffMetrics}
+    \caption{Takeoff metrics and plots}
 \end{figure}
 
 From figure \ref{fig:TakeoffMetrics}, we may notice the control inputs and the transition from vertical hover to forward flight.
@@ -1032,8 +1074,9 @@ The transition is well portrayed during takeoff, when the VTOL transitions from 
 
 In order for this aircraft controller to be a viable solution, the aircraft must land. A trajectory very similar to the takeoff trajectory was constructed, except in the opposite direction. The start and end conditions are reversed along with the direction of the square root function as
 
+
 \begin{align}
-    \bs{S} = 
+    \bs{S} =
     \begin{bmatrix}
         \bs(p)(0) & \frac{d\bs{p}}{dt}(0) & \frac{d^2 \bs{p}}{dt^2}(0)
     \end{bmatrix}
@@ -1041,9 +1084,8 @@ In order for this aircraft controller to be a viable solution, the aircraft must
     \begin{bmatrix}
         0 & 25 & 0\\
         -100 & 0 & 0\\
-    \end{bmatrix}
-
-    \bs{E} = 
+    \end{bmatrix}\\
+    \bs{E} =
     \begin{bmatrix}
         \bs(p)(M) & \frac{d\bs{p}}{dt}(M) & \frac{d^2 \bs{p}}{dt^2}(M)
     \end{bmatrix}
@@ -1052,7 +1094,7 @@ In order for this aircraft controller to be a viable solution, the aircraft must
         500.0 & 0.0 & 0.0\\
         0.0 & -0.1 & 0.0\\
     \end{bmatrix}
-\end{align}.
+\end{align}
 
 This produces the trajectory in figure \ref{fig:LandingTrajectory}.
 
@@ -1109,21 +1151,12 @@ In simulation, the aircraft is started with the same conditions as the trajector
         \label{fig:LandingAngles}
     \end{subfigure}    
     \label{fig:LandingMetrics}
+    \caption{Landing metrics and plots}
 \end{figure}
 
 In this case, it is immediately obvious that the aircraft does not follow the desired trajectory. Instead of slowing down and closely tracking the trajectory, the aircraft does not slow down, but keeps going forward at relatively the same velocity. This phenomenon will be discussed in more detail in the future work section. If the trajectory requires a negative force, or negative acceleration, in the body frame north direction, the aircraft will be unable to follow.
 
 
-
-\subsection{Forward Flight}
-
-Forward flight is simply the aircraft in a state of straight forward flight, just as the aircraft does when using a standard autopilot.
-In the first test, an evenly spaced line of control points was created to give a constant forward velocity of 25 $\frac{m}{s}$. The aircraft was given an initial velocity matching this exactly, and the following resulted.
-
-
-
-
-\subsection{Vertical Flight}
 
 \subsection{Successive Ascent}
 
@@ -1131,7 +1164,7 @@ Another test for the autopilot is with a series increasing slopes to test whethe
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{figs/chap1/successive ascent/Successive Ascent.drawio.png}
+    \includegraphics[width=0.7\linewidth]{figs/chap1/successiveAscent/Successive Ascent.drawio.png}
     \caption{Example of successive ascent flight path, where each segment has a north length of $400$ meters. Each segment has a path angle $\gamma$ of $0^{\circ}$, $10^{\circ}$, $20^{\circ}$, and $30^{\circ}$ respectively.}
     \label{fig:successiveAscent}
 \end{figure}
@@ -1150,7 +1183,7 @@ In this case, the aircraft starts out level, with an initial north velocity of $
     \hfill
     \begin{subfigure}{0.48\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{figs/chap1/landing/forcesComparisons.png}
+        \includegraphics[width=\linewidth]{figs/chap1/successiveAscent/forceComparisons.png}
         \caption{Compares actual and desired forces and the error between them}
         \label{fig:SuccessivePosComparison}
     \end{subfigure}
@@ -1160,9 +1193,9 @@ In this case, the aircraft starts out level, with an initial north velocity of $
     % Row 2
     \begin{subfigure}{1.0\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{figs/chap1/landing/TrajectoryComparisons.png}
+        \includegraphics[width=\linewidth]{figs/chap1/successiveAscent/TrajectoryComparisons.png}
         \caption{Comparison of the actual trajectory versus desired trajectory.}
-        \label{fig:SuccessiveVelComparison}
+        \label{fig:SuccessiveTrajComparison}
     \end{subfigure}
     \hfill
     \vspace{0.5cm}  % vertical spacing between rows
@@ -1170,25 +1203,38 @@ In this case, the aircraft starts out level, with an initial north velocity of $
     % Row 2
     \begin{subfigure}{0.48\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{figs/chap1/landing/Deltas.png}
+        \includegraphics[width=\linewidth]{figs/chap1/successiveAscent/Deltas.png}
         \caption{Deltas control inputs for the controller.}
         \label{fig:SuccessiveDeltas}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.48\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{figs/chap1/landing/angles.png}
+        \includegraphics[width=\linewidth]{figs/chap1/successiveAscent/angles.png}
         \caption{Pitch, flight path angle, and angle of attack for the aircraft through successive ascent trajectory.}
         \label{fig:SuccessiveAngles}
     \end{subfigure}    
     \label{fig:SuccessiveMetrics}
+    \caption{Successive ascent metrics and plots.}
 \end{figure}
 
-In these successively steeper flight paths, the aircraft was successfully able to track the trajectory. 
+In these successively steeper flight paths, the aircraft was successfully able to track the trajectory. Notice that as the angle gets progressively steeper, the vertical propellers have to do more work to keep the aircraft on trajectory.
+
+After analyzing the velocity comparisons shown in figure \ref{fig:SuccessiveVelComparison}, we notice the actual velocities approach the desired velocities, but don't quite get there until the end of each segment.
+Looking closely at each, they look remarkably similar to an overshooting signal in a PID controller. This is an underdamped controller, for the velocity. We may experiment on this by modifying our LQR control law.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figs/chap1/successiveAscent/VelocitiesComparisons.png}
+    \caption{Comparison of desired versus actual velocities in the north and down directions for successive ascent.}
+    \label{fig:SuccessiveVelComparison}
+\end{figure}
 
 \subsection{Step Convergence}
 
-
+The autopilot should also be subject to tests against error, to determine if the aircraft can converge to a trajectory when it does not start directly on the desired trajectory.
+For this reason, a test was constructed. The input trajectory was a constant forward trajectory with a constant forward velocity of $25 \frac{m}{s}$ at an altitude of 0. The aircraft started with an initial altitude of $-25$ meters, and an initial forward velocity of $25 \frac{m}{s}$.
+This is the equivalent of a step input reference to the system for altitude. The video for this experiment is found at 
 
 \section{Current Issues and Future Work}
 

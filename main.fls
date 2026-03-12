@@ -551,13 +551,13 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT ./main.lot
 INPUT ./main.lot
 INPUT main.lot
@@ -766,21 +766,16 @@ INPUT ./figs/chap1/Takeoff/posVelError.png
 INPUT ./figs/chap1/Takeoff/posVelError.png
 INPUT ./figs/chap1/Takeoff/posVelError.png
 INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/PosComparison.png
-INPUT ./figs/chap1/Takeoff/PosComparison.png
-INPUT ./figs/chap1/Takeoff/PosComparison.png
-INPUT ./figs/chap1/Takeoff/PosComparison.png
-INPUT ./figs/chap1/Takeoff/PosComparison.png
-INPUT ./figs/chap1/Takeoff/VelComparison.png
-INPUT ./figs/chap1/Takeoff/VelComparison.png
-INPUT ./figs/chap1/Takeoff/VelComparison.png
-INPUT ./figs/chap1/Takeoff/VelComparison.png
-INPUT ./figs/chap1/Takeoff/VelComparison.png
 INPUT ./figs/chap1/Takeoff/ForcesComparison.png
 INPUT ./figs/chap1/Takeoff/ForcesComparison.png
 INPUT ./figs/chap1/Takeoff/ForcesComparison.png
 INPUT ./figs/chap1/Takeoff/ForcesComparison.png
 INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
 INPUT ./figs/chap1/Takeoff/Deltas.png
 INPUT ./figs/chap1/Takeoff/Deltas.png
 INPUT ./figs/chap1/Takeoff/Deltas.png
@@ -795,36 +790,66 @@ INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/pxb-lms.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
-INPUT ./figs/chap1/Transition/Force differential alpha comparison 67.png
-INPUT ./figs/chap1/Transition/Force differential alpha comparison 67.png
-INPUT ./figs/chap1/Transition/Force differential alpha comparison 67.png
-INPUT ./figs/chap1/Transition/Force differential alpha comparison 67.png
-INPUT ./figs/chap1/Transition/Force differential alpha comparison 67.png
-INPUT ./figs/chap1/Transition/force differential alpha comparison 85.png
-INPUT ./figs/chap1/Transition/force differential alpha comparison 85.png
-INPUT ./figs/chap1/Transition/force differential alpha comparison 85.png
-INPUT ./figs/chap1/Transition/force differential alpha comparison 85.png
-INPUT ./figs/chap1/Transition/force differential alpha comparison 85.png
-INPUT ./figs/chap1/successive ascent/Successive Ascent.drawio.png
-INPUT ./figs/chap1/successive ascent/Successive Ascent.drawio.png
-INPUT ./figs/chap1/successive ascent/Successive Ascent.drawio.png
-INPUT ./figs/chap1/successive ascent/Successive Ascent.drawio.png
-INPUT ./figs/chap1/successive ascent/Successive Ascent.drawio.png
-INPUT ./figs/chap1/successive ascent/Position Velocity Error.png
-INPUT ./figs/chap1/successive ascent/Position Velocity Error.png
-INPUT ./figs/chap1/successive ascent/Position Velocity Error.png
-INPUT ./figs/chap1/successive ascent/Position Velocity Error.png
-INPUT ./figs/chap1/successive ascent/Position Velocity Error.png
-INPUT ./figs/chap1/successive ascent/Control Inputs.png
-INPUT ./figs/chap1/successive ascent/Control Inputs.png
-INPUT ./figs/chap1/successive ascent/Control Inputs.png
-INPUT ./figs/chap1/successive ascent/Control Inputs.png
-INPUT ./figs/chap1/successive ascent/Control Inputs.png
-INPUT ./figs/chap1/successive ascent/angles.png
-INPUT ./figs/chap1/successive ascent/angles.png
-INPUT ./figs/chap1/successive ascent/angles.png
-INPUT ./figs/chap1/successive ascent/angles.png
-INPUT ./figs/chap1/successive ascent/angles.png
+INPUT ./figs/chap1/landing/ReferenceTrajectory.png
+INPUT ./figs/chap1/landing/ReferenceTrajectory.png
+INPUT ./figs/chap1/landing/ReferenceTrajectory.png
+INPUT ./figs/chap1/landing/ReferenceTrajectory.png
+INPUT ./figs/chap1/landing/ReferenceTrajectory.png
+INPUT ./figs/chap1/landing/PosVelErrors.png
+INPUT ./figs/chap1/landing/PosVelErrors.png
+INPUT ./figs/chap1/landing/PosVelErrors.png
+INPUT ./figs/chap1/landing/PosVelErrors.png
+INPUT ./figs/chap1/landing/PosVelErrors.png
+INPUT ./figs/chap1/landing/ForcesComparisons.png
+INPUT ./figs/chap1/landing/ForcesComparisons.png
+INPUT ./figs/chap1/landing/ForcesComparisons.png
+INPUT ./figs/chap1/landing/ForcesComparisons.png
+INPUT ./figs/chap1/landing/ForcesComparisons.png
+INPUT ./figs/chap1/landing/DesiredActualTrajectory.png
+INPUT ./figs/chap1/landing/DesiredActualTrajectory.png
+INPUT ./figs/chap1/landing/DesiredActualTrajectory.png
+INPUT ./figs/chap1/landing/DesiredActualTrajectory.png
+INPUT ./figs/chap1/landing/DesiredActualTrajectory.png
+INPUT ./figs/chap1/landing/Deltas.png
+INPUT ./figs/chap1/landing/Deltas.png
+INPUT ./figs/chap1/landing/Deltas.png
+INPUT ./figs/chap1/landing/Deltas.png
+INPUT ./figs/chap1/landing/Deltas.png
+INPUT ./figs/chap1/landing/Angles.png
+INPUT ./figs/chap1/landing/Angles.png
+INPUT ./figs/chap1/landing/Angles.png
+INPUT ./figs/chap1/landing/Angles.png
+INPUT ./figs/chap1/landing/Angles.png
+INPUT ./figs/chap1/successiveAscent/Successive Ascent.drawio.png
+INPUT ./figs/chap1/successiveAscent/Successive Ascent.drawio.png
+INPUT ./figs/chap1/successiveAscent/Successive Ascent.drawio.png
+INPUT ./figs/chap1/successiveAscent/Successive Ascent.drawio.png
+INPUT ./figs/chap1/successiveAscent/Successive Ascent.drawio.png
+INPUT ./figs/chap1/successiveAscent/PosVelErrors.png
+INPUT ./figs/chap1/successiveAscent/PosVelErrors.png
+INPUT ./figs/chap1/successiveAscent/PosVelErrors.png
+INPUT ./figs/chap1/successiveAscent/PosVelErrors.png
+INPUT ./figs/chap1/successiveAscent/PosVelErrors.png
+INPUT ./figs/chap1/successiveAscent/forceComparisons.png
+INPUT ./figs/chap1/successiveAscent/forceComparisons.png
+INPUT ./figs/chap1/successiveAscent/forceComparisons.png
+INPUT ./figs/chap1/successiveAscent/forceComparisons.png
+INPUT ./figs/chap1/successiveAscent/forceComparisons.png
+INPUT ./figs/chap1/successiveAscent/TrajectoryComparisons.png
+INPUT ./figs/chap1/successiveAscent/TrajectoryComparisons.png
+INPUT ./figs/chap1/successiveAscent/TrajectoryComparisons.png
+INPUT ./figs/chap1/successiveAscent/TrajectoryComparisons.png
+INPUT ./figs/chap1/successiveAscent/TrajectoryComparisons.png
+INPUT ./figs/chap1/successiveAscent/Deltas.png
+INPUT ./figs/chap1/successiveAscent/Deltas.png
+INPUT ./figs/chap1/successiveAscent/Deltas.png
+INPUT ./figs/chap1/successiveAscent/Deltas.png
+INPUT ./figs/chap1/successiveAscent/Deltas.png
+INPUT ./figs/chap1/successiveAscent/angles.png
+INPUT ./figs/chap1/successiveAscent/angles.png
+INPUT ./figs/chap1/successiveAscent/angles.png
+INPUT ./figs/chap1/successiveAscent/angles.png
+INPUT ./figs/chap1/successiveAscent/angles.png
 INPUT ./figs/chap1/Step Error/Position Error.png
 INPUT ./figs/chap1/Step Error/Position Error.png
 INPUT ./figs/chap1/Step Error/Position Error.png
