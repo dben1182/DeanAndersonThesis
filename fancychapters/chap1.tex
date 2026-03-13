@@ -15,11 +15,71 @@ It is very difficult for rotorcraft to be controlled by a pilot using direct act
 When a pilot is manually flying a quadrotor via remote control, control stick inputs map to relative position and angle controls, so even manual flying includes some sort of control input.
 
 While recreational flying is certainly fun, most unmanned work requires some sort of autopilot to accurately control the aircraft.
-In the public sphere, there are many open source autopilots available for 
+There exist many open source autopilots available for public use, such as Ardupilot, Px4, Rosflight, and Betaflight.
+These autopilots include controllers for a variety of aircraft, such as airplanes, quadrotors, airships, flying wings, and many VTOL designs.
+They allow a pilot to manually control the aircraft while maintaining stability, as well as automatic trajectory tracking, such as waypoint following, orbiting, and spline tracking control laws.
 One may refer to \cite{uav_book} and \cite{vtol_book} for more information on the development of full autopilot stacks.
 
-\section{Literature}
+Although these autopilots include control for VTOL aircraft, these control laws are somewhat inefficient as they underutilize the physical capabilities of the system.
+For example, the Px4 controller for VTOLs aircraft controls the aircraft as either a rotorcraft or an airplane.
+When taking off, the aircraft will fly to a set altitude in multicopter (rotorcraft) mode and then slowly start the forward motor, or slowly tilt the forward rotors forward, until sufficient airspeed for foward flight has been reached. 
+The reverse happens during landing, where the aircraft slowly slows down until multicopter control takes effect, and the aircraft can descend.
+These methods are shown in figure \ref{fig:Px4}, and a video of transitioning may be found at \href{https://www.youtube.com/watch?v=f81n0aXdvKc}{https://www.youtube.com/watch?v=f81n0aXdvKc} \cite{transition_video}.
 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/Px4VTOL.png}
+        \caption{Px4 VTOL control law. Notice the switching mechanism from multicopter to forward attitude controls, Modified from Px4 controller diagrams page \cite{px4_controller_diagrams}.}
+        \label{fig:Px4ControlLaw}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/chap1/Px4VTOLFlightPath.jpg}
+        \caption{Flight path of Px4 controller compared with a more efficient path design.}
+        \label{fig:Px4FlightPath}
+    \end{subfigure} 
+    \label{fig:Px4}
+\end{figure}
+
+While this method certainly works, it does not allow the aircraft to follow a generalized trajectory, nor does it utilize its actuators fully.
+It is desirable to develop an autopilot that follows any general type of trajectory, such as a circle or a parabola.
+The controller that is described in the following section generalizes the transition of the VTOL.
+That is to say, we develop an autopilot for a VTOL quadplane that is able to follow a spline trajectory while hovering as a multicopter, flying forward as an airplane, and transitioning in between the two.
+
+\section{Literature Review}
+
+Although the simplest and most common VTOL transition flight controller is described in the above section, hundreds of other flight control laws have been developed in control literature.
+We review several of them in order to understand options for controlling VTOL controllers.
+
+\subsection{Gain Scheduling}
+
+One of the most prominent control methods for the transition of VTOL aircraft in particular, as well as all areas of aircraft experiencing nonlinearities is gain scheduling. 
+Gain scheduling control of a nonlinear system is typically Jacobian linearization of a nonlinear system around numerous setpoints, typically equilibrium points, of the system \cite{gain_scheduling}.
+In other words, it is linearization of the system around enough set states or operating regions of the sytem that the aircraft is expected to be able to stay controlled.
+In the introduction, it was shown that the Px4 autopilot does a sort of binary gain scheduling between two operating points; more sophisticated gain schedulers simply use more operating points.
+
+
+\subsubsection{Linear Parameter Varying Gain Scheduling}
+
+A more advanced segmend of gain scheduling is linear parameter varying (LPV) gain scheduling, which means modification of the equations of motion and the controller gains using a varying parameter as the aircraft changes state.
+The state transition equations become 
+
+\begin{align}
+    \dot{x} = A(\theta) x + B(\theta) u, \qquad y = C(\theta)x + D(\theta)u\\
+\end{align}
+
+where $\theta$ is a function of time or state of the aircraft.
+As the VTOL changes its state during its transition, $\theta$ is altered accordingly, and the feedback matrix $K$ is updated using LQR, $H_\infinity$, or another control law.
+$\theta$ can be chosen to represent airspeed, angle of attach $\alpha$, tiltrotor angle, or some other similar control method.
+For example, \cite{lpv_controller} presents an LPV controller for an octocopter plane using airspeed as the $\theta$ parameter.
+Using this method, they are able to guarantee stability for the aircraft in the specified flight regime, though admittedly not through a full flight transition.
+
+\subsection{Model Predictive Control}
+
+Model Predictive Control (MPC) represents 
 
 \subsection{Dynamic Inversion Controllers}
 
