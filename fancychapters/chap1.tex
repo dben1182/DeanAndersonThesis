@@ -171,6 +171,13 @@ That is, the elevator can swing between the positive and negatives of $\Bar{\del
 
 \subsection{Equations of Motion}
 
+Dynamic equations of motion relate the state of a system $x$ and that system's control inputs $u$ to the derivative of the state vector $\dot{x}$ for the general nonlinear case and the special linear case as
+
+\begin{align}
+  \dot{x} = f(x,u)\\
+  \dot{x} = Ax + Bu
+\end{align}
+
 Let $\bs{p}_{a/b}^c\in\mathbb{R}^2$ and $\bs{v}_{a/b}^c\in\mathbb{R}^2$ represent the north and down position and velocity vectors for the state of the eVTOL. They are the position and velocity of frame $a$ relative to frame $b$ expressed in frame $c$. In this paper, $i$ represents the inertial or world frame, and $b$ represents the body frame of the aircraft. 
 
 \begin{align}
@@ -336,9 +343,10 @@ To be clear, the actual equations of motion exist only in the 2D North-Down fram
 
 Given the velocity vector $\bs{v}_{b/i}^b\doteq (u, w)^\top$, we compute the airspeed $V_a$ and angle-of-attack $\alpha$ as
 \begin{align*}
-    V_a(\boldsymbol{v}_{b/i}^b) &= \norm{\boldsymbol{v}_{b/i}^b} = \sqrt{u^2+w^2} \\
-    \alpha(\boldsymbol{v}_{b/i}^b)  &= \angle{\boldsymbol{v}_{b/i}^b} =\tan^{-1}\left(\frac{w}{u}\right)\\
+  V_a(\boldsymbol{v}_{b/i}^b) &= \norm{\boldsymbol{v}_{b/i}^b} = \sqrt{\dot{p}_n^2+\dot{p}_d^2} \\
+  \alpha(\boldsymbol{v}_{b/i}^b)  &= \angle{\boldsymbol{v}_{b/i}^b} =\tan^{-1}\left(\frac{\dot{p}_d}{\dot{p}_n}\right)\\
 \end{align*}
+
 Given the angle of attack $\alpha$, the rotation matrix from the wind to body frame is given by
 \[
 %    R_w^b(\boldsymbol{v}_{b/i}^b) = 
@@ -461,7 +469,7 @@ Of particular note to us is the equation for $u(t)$ being able to not only repre
 
 In order for this system to be differentially flat, the state variables $\bs{p}_{b/i}^i$, $\bs{v}_{b/i}^i$, $\theta$, $q$ and the input variables $\bs{F}^b$ and $M$ must all be expressed in terms of the flat outputs $\bs{z}_p^i$ and $z_\theta$ and their derivatives. That is, we measure the current position $\bs{z}_p^i$ and pitch $z_\theta$ of our system.
 
-The position states are directly expressed in the flat outputs as $\bs{p}_{b/i}^i = \bs{z}_p^i(t)$.  The velocity states are directly expressed in the derivative of the flat outputs as $\bs{v}_{d/i}^i = \dot{\bs{z}}^i_p(t)$. The pitch angle and pitch rate are directly expressed in terms of the flat output as $\theta(t)=z_\theta(t)$, and $q(t)=\dot{z}_\theta(t)$.  The forces in the body angle are given by
+The position states are directly expressed in the flat outputs as $\bs{p}_{b/i}^i = \bs{z}_p^i(t)$.  The velocity states are directly expressed in the derivative of the flat outputs as $\bs{v}_{d/i}^i = \dot{\bs{z}}^i_p(t)$. The pitch angle and pitch rate are directly expressed in terms of the flat output as $\theta(t)=z_\theta(t)$, and $q(t)=\dot{z}_\theta(t)$.  The forces in the body frame are given by
 \(
 \bs{F}^b = R_b^{i\top}(z_\theta)\left(m\ddot{\bs{z}}_p^i - mg\bs{e}_z^i\right),
 \)

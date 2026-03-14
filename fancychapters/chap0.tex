@@ -108,14 +108,36 @@ The most difficult challenge for VTOL control is transitioning. Transition refer
 
 A problem with many current solutions is that they bifracate the transition of aircraft into multiple parts. In other words, aircraft are only thought of as fixed-wing aircraft or multicopter aircraft, and that an aircraft can only be one of those at a given time. In other words, when the VTOL aircraft is moving at low lateral airspeed, it is considered to actually be a multicopter and thus uses a multicopter autopilot framework. Likewise, when the aircraft is moving at a high lateral airspeed, the aircraft is considered to be a fixed-wing airplane with a fixed-wing autopilot framework. This mentality leads to a bifurcation in autopilot design; both fixed-wing and quadrotor control are excellent in their own domains, but their isolation from each other causes significant issues in bridging between the two. 
 
-Although VTOL control research was the main focus of this paper, there were other related areas we explored to produce research. These areas were aerodynamic coefficient estimation, B-Spline generation, and path planning algorithms
+In addition to the VTOL controller, several other tangential areas for control and planning were explored and developed.
+First, during the first stages of development of the VTOL controller, it became apparent that the controller would be model dependent.
+In particular, we desired to obtain the aerodynamic coeffients for the vehicle.
+There was no 3D CAD model of the first VTOL aircraft being developed, so it was not feasible to use aerodynamic software to determine a model for the aircraft.
+However, real flight data was and is readily accessible to the user after a fixed-wing flight.
+Therefore, a system identification scheme was developed that used flight data with an assumed system structure to recursively estimate the coefficients of aerodynamics.
+This system identification scheme was implemented for a fixed-wing simulation successfully identified the majority of coefficients of aerodynamics for the vehicle.
 
-In order to produce an accurate 
+The 2D VTOL quadplane controller requires a reference trajectory to be followed by the quadplane.
+This reference trajectory must include a reference position, velocity, and acceleration; each of these references are required for the VTOL to function.
+$3^{rd}$ degree basis splines (B-Splines) intrinsically include $1^{st}$ and $2^{nd}$ derivatives, which are easily calculated due to their polynomial composition; therefore $3^{rd}$ degree uniform B-Splines were used for the entirety of this paper to represent reference position.
+Due to their practical applications, it is desired to generate B-Splines as quickly and computationally efficiently as possible.
+In order to facilitate this, a set of look up tables were created to efficiently generate a particular class of B-Splines trajectories, called minimum snap trajectories.
+In the implementation developed here, the control points that define a minimum-snap trajectory are generated using stored data in lookup tables.
+That data is then accessed and combined to generate the control points for the desired trajectory.
 
+However, this method is not able to account for obstacles in the environment. 
+The final contribution of this paper is a path planning algorithm that avoids obstacles and generates a B-Spline trajectory between a start and end point.
+This path planning method uses the Rapidly Exploring Random Trees (RRT) algorithm to generate a safe set of spaces or corridors between start and end points.
+Within this set of corridors a $3^{rd}$ degree B-Spline is generated as the actual flight path between start and end points.
+This algorithm further facilitates the generation of smooth paths without intersection of obstacles.
 
-
-\section{Thesis Outline}
-
+Each of these components are part of the growing framework for the development of unmanned aerial robotics systems.
 
 \subsection{Contributions}
+
+\begin{itemize}
+    \item Differentially flat 2D quadplane controller
+    \item Aerodynamic coefficient system identification
+    \item B-Spline look up tables for minimum snap trajectory generation
+    \item Obstacle avoidance path planner using safe flight corridors and an optimized B-Spline path
+\end{itemize}
 
