@@ -72,21 +72,36 @@ The state transition equations become
 \end{align}
 
 where $\theta$ is a function of time or state of the aircraft.
-As the VTOL changes its state during its transition, $\theta$ is altered accordingly, and the feedback matrix $K$ is updated using LQR, $H_\infinity$, or another control law.
+As the VTOL changes its state during its transition, $\theta$ is altered accordingly, and the feedback matrix $K$ is updated using LQR, $H_\infty$, or another control law.
 $\theta$ can be chosen to represent airspeed, angle of attach $\alpha$, tiltrotor angle, or some other similar control method.
 For example, \cite{lpv_controller} presents an LPV controller for an octocopter plane using airspeed as the $\theta$ parameter.
 Using this method, they are able to guarantee stability for the aircraft in the specified flight regime, though admittedly not through a full flight transition.
 
 \subsection{Model Predictive Control}
 
-Model Predictive Control (MPC) represents 
+Model Predictive Control (MPC) refers to a control method that iterates over short time intervals to bring the system to the desired state.
+In other words, MPC finds a control input $u$ that will bring the system state closer to a reference state by running an optimization algorithm for that time interval.
+Because of this optimization, MPC converges on an optimal control input that takes into account all states and control inputs.
+This method is particularly useful for nonlinear systems with highly coupled dynamics, such as a VTOL during transition.
+A complete autopilot stack was developed in \cite{mpc_controller} for a tiltrotor VTOL, and was successfully implemented in hardware. 
+Using the dynamic model of the aircraft, an optimization function was developed that finds optimal actuator controls $\bs{\delta}$ for controlling the VTOL as desired.
+One section of the controller is an optimizer that finds the desired forces and moments that the should be actuated on the aircraft to take it to its desired trajectory.
+Another optimizer then finds the actuator values and tiltrotor angles that will control the aircraft to obtain those desired forces and moments.
 
-\subsection{Dynamic Inversion Controllers}
+\subsection{Nonlinear Dynamic Inversion Controllers}
 
-Dynamic Inversion 
+Nonlinear dynamic inversion, is essentially feedback linearization for control systems.
+Feedback linearization cancels nonlinear dynamic terms in a system's dynamic equations of motion, which enables implementation of linear control laws for the system.
+This means that the controller automatically actuates opposite to the undesired, nonlinear term to cancel it out and make the system better behaved. 
+NDI control requires that the system model is accurate so that a zeroing input actually removes undesired dynamic terms.
+If this is not the case, NDI may cause the system to become unstable.
+Incremental nonlinear dynamic inversion (INDI) attempts to solve this problem using incremental sensor data to actively estimate the aircraft dynamics. 
+Doing so matches the controller to reality and reduces the probability of instability.
+As the 
 
 In \cite{incremental_nonlinear_dynamic_inversion}, \citeauthor{incremental_nonlinear_dynamic_inversion}. This current paper is model-dependent. That is, it requires an accurate model of the aircraft in order to accurately control it to a particular desired trajectory. 
 
+\subsection{Differentially Flat Controllers}
 
 \section{2-D VTOL Mathematical Model}
 

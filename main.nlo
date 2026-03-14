@@ -34,23 +34,4 @@
 \nomenclatureentry{Quad$S$@[{$S$}]\begingroup Surface area of the wing\nomeqref {0}|nompageref}{1}
 \nomenclatureentry{Quad$c$@[{$c$}]\begingroup Mean wing chord\nomeqref {0}|nompageref}{1}
 \nomenclatureentry{Quad Lift$C_{L_0}$@[{$C_{L_0}$}]\begingroup Lift from airfoil\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Lift$C_{L_{\alpha}}$@[{$C_{L_{\alpha}}$}]\begingroup Lift from angle of attack\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Lift$C_{L_q}$@[{$C_{L_q}$}]\begingroup Lift from pitch rate\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Lift$C_{L_{\delta_e}}$@[{$C_{L_{\delta_e}}$}]\begingroup Lift from elevator\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Drag$C_{D_0}$@[{$C_{D_0}$}]\begingroup Drag from airfoil\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Drag$C_{D_{\alpha}}$@[{$C_{D_{\alpha}}$}]\begingroup Drag from angle of attack\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Drag$C_{D_q}$@[{$C_{D_q}$}]\begingroup Drag from pitch rate\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Drag$C_{D_{\delta_e}}$@[{$C_{D_{\delta_e}}$}]\begingroup Drag from elevator\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Moment$C_{m_0}$@[{$C_{m_0}$}]\begingroup Moment from airfoil\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Moment$C_{m_{\alpha}}$@[{$C_{m_{\alpha}}$}]\begingroup Moment from angle of attack\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Moment$C_{m_q}$@[{$C_{m_q}$}]\begingroup Moment from pitch rate\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{Quad Moment$C_{m_{\delta_e}}$@[{$C_{m_{\delta_e}}$}]\begingroup Moment from elevator\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSpline$M$@[{$M$}]\begingroup Number of Intervals of Interest for B-Spline\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSpline$d$@[{$d$}]\begingroup Degree of  B-Spline, or degree of largest polynomial in basis function\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSpline$\bs{k_M^d}$@[{$\bs{k_M^d}$}]\begingroup Knot vector\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSpline$\bs{c}_m$@[{$\bs{c}_m$}]\begingroup Control point\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSpline$\bs{C}$@[{$\bs{C}$}]\begingroup Matrix of Control Points\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSpline$b_M^d(t)$@[{$b_M^d(t)$}]\begingroup Vector of time shifted basis functions\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSplineD_M^d@[{D_M^d}]\begingroup Derivative matrix\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSpline$B_M^d(t)$@[{$B_M^d(t)$}]\begingroup Matrix of time shifted basis functions with derivative matrix\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{BSpline$\hat{B}_M^d$@[{$\hat{B}_M^d$}]\begingroup Non-zero section of $B_M^d(t)$\nomeqref {0}|nompageref}{1}
+\nomenclature

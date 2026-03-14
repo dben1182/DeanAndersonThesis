@@ -106,9 +106,7 @@ The primary interest of this research has been to study control for a specific t
 
 The most difficult challenge for VTOL control is transitioning. Transition refers changing from rotorcraft hovering flight into airframe forward flight and vice versa. The goal for a transition autopilot is to take the aircraft from hover to forward flight and back again as quickly, efficiently, and stabily as possible. During takeoff transition, the aircraft needs to slowly gain altitude while simultaneously gaining forward airspeed to generate more lift, while the opposite is true for landing. Unfortunately, during the transision, the aircraft is subject to uncertain dynamics and conditions that hold for neither mode of control. For example, angle of attack $\alpha$ is often far larger than permissible for a standard airplane controller. This makes it impossible to use a purely standard control law. 
 
-Many solutions exist in literature. The 
-
-A problem with these solutions is that they bifracate the transition of aircraft into multiple parts. In other words, aircraft are only thought of as fixed-wing aircraft or multicopter aircraft, and that an aircraft can only be one of those at a given time. In other words, when the VTOL aircraft is moving at low lateral airspeed, it is considered to actually be a multicopter and thus uses a multicopter autopilot framework. Likewise, when the aircraft is moving at a high lateral airspeed, the aircraft is considered to be a fixed-wing airplane with a fixed-wing autopilot framework. This mentality leads to a bifurcation in autopilot design; both fixed-wing and quadrotor control are excellent in their own domains, but their isolation from each other causes significant issues in bridging between the two. 
+A problem with many current solutions is that they bifracate the transition of aircraft into multiple parts. In other words, aircraft are only thought of as fixed-wing aircraft or multicopter aircraft, and that an aircraft can only be one of those at a given time. In other words, when the VTOL aircraft is moving at low lateral airspeed, it is considered to actually be a multicopter and thus uses a multicopter autopilot framework. Likewise, when the aircraft is moving at a high lateral airspeed, the aircraft is considered to be a fixed-wing airplane with a fixed-wing autopilot framework. This mentality leads to a bifurcation in autopilot design; both fixed-wing and quadrotor control are excellent in their own domains, but their isolation from each other causes significant issues in bridging between the two. 
 
 Although VTOL control research was the main focus of this paper, there were other related areas we explored to produce research. These areas were aerodynamic coefficient estimation, B-Spline generation, and path planning algorithms
 
@@ -120,6 +118,4 @@ In order to produce an accurate
 
 
 \subsection{Contributions}
-
-
 
