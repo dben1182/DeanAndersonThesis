@@ -1,0 +1,2063 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{sabour2023applications}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=c937888eb8a8df07a18b2f1dd54809e6}{%
+           family={Sabour},
+           familyi={S\bibinitperiod},
+           given={MH},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e68b7a631f241f7df82bc649611861d3}{%
+           family={Jafary},
+           familyi={J\bibinitperiod},
+           given={P},
+           giveni={P\bibinitperiod}}}%
+        {{hash=98daa34d904e43024dff7700bf5785ec}{%
+           family={Nematiyan},
+           familyi={N\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{f430d628619241f15b8fbc4e2c2b9aa4}
+      \strng{fullhash}{a4525a7ed10d8642de861437ecaffc31}
+      \strng{fullhashraw}{a4525a7ed10d8642de861437ecaffc31}
+      \strng{bibnamehash}{a4525a7ed10d8642de861437ecaffc31}
+      \strng{authorbibnamehash}{a4525a7ed10d8642de861437ecaffc31}
+      \strng{authornamehash}{f430d628619241f15b8fbc4e2c2b9aa4}
+      \strng{authorfullhash}{a4525a7ed10d8642de861437ecaffc31}
+      \strng{authorfullhashraw}{a4525a7ed10d8642de861437ecaffc31}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Aeronautical Journal}
+      \field{number}{1309}
+      \field{title}{Applications and classifications of unmanned aerial vehicles: A literature review with focus on multi-rotors}
+      \field{volume}{127}
+      \field{year}{2023}
+      \field{pages}{466\bibrangedash 490}
+      \range{pages}{25}
+    \endentry
+    \entry{aerial_shot}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c78b78184c2a91af1cee8a326420d8cb}{%
+           family={Özgen},
+           familyi={Ö\bibinitperiod},
+           given={Kurtuluş},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c78b78184c2a91af1cee8a326420d8cb}
+      \strng{fullhash}{c78b78184c2a91af1cee8a326420d8cb}
+      \strng{fullhashraw}{c78b78184c2a91af1cee8a326420d8cb}
+      \strng{bibnamehash}{c78b78184c2a91af1cee8a326420d8cb}
+      \strng{authorbibnamehash}{c78b78184c2a91af1cee8a326420d8cb}
+      \strng{authornamehash}{c78b78184c2a91af1cee8a326420d8cb}
+      \strng{authorfullhash}{c78b78184c2a91af1cee8a326420d8cb}
+      \strng{authorfullhashraw}{c78b78184c2a91af1cee8a326420d8cb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AVANCA | CINEMA}
+      \field{month}{01}
+      \field{title}{The impact of drones in documentary filmmaking: Renaissance of aerial shot}
+      \field{year}{2020}
+      \field{pages}{559\bibrangedash 563}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.37390/ac.v0i0.74
+      \endverb
+    \endentry
+    \entry{drones6050117}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=5230ef76c3ab2fba2c8a33c6425bb4b3}{%
+           family={Guan},
+           familyi={G\bibinitperiod},
+           given={Shanyue},
+           giveni={S\bibinitperiod}}}%
+        {{hash=548bd5533808db7db16fbf5ffb75426b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Zhen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0c83837baa16fc4917ab0a1254497654}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b26407cdcfa9cc94e2fe08d321bb0aa}
+      \strng{fullhash}{6eac83ab2f10618b4e8e364034e606e4}
+      \strng{fullhashraw}{6eac83ab2f10618b4e8e364034e606e4}
+      \strng{bibnamehash}{6eac83ab2f10618b4e8e364034e606e4}
+      \strng{authorbibnamehash}{6eac83ab2f10618b4e8e364034e606e4}
+      \strng{authornamehash}{4b26407cdcfa9cc94e2fe08d321bb0aa}
+      \strng{authorfullhash}{6eac83ab2f10618b4e8e364034e606e4}
+      \strng{authorfullhashraw}{6eac83ab2f10618b4e8e364034e606e4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2504-446X}
+      \field{journaltitle}{Drones}
+      \field{number}{5}
+      \field{title}{A Review on UAV-Based Remote Sensing Technologies for Construction and Civil Applications}
+      \field{volume}{6}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.3390/drones6050117
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2504-446X/6/5/117
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2504-446X/6/5/117
+      \endverb
+    \endentry
+    \entry{lapd_bell206_jetranger}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=698986d2589a0e0f4de623ba6997478d}{%
+           family={{Mfield – Matthew Field}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{698986d2589a0e0f4de623ba6997478d}
+      \strng{fullhash}{698986d2589a0e0f4de623ba6997478d}
+      \strng{fullhashraw}{698986d2589a0e0f4de623ba6997478d}
+      \strng{bibnamehash}{698986d2589a0e0f4de623ba6997478d}
+      \strng{authorbibnamehash}{698986d2589a0e0f4de623ba6997478d}
+      \strng{authornamehash}{698986d2589a0e0f4de623ba6997478d}
+      \strng{authorfullhash}{698986d2589a0e0f4de623ba6997478d}
+      \strng{authorfullhashraw}{698986d2589a0e0f4de623ba6997478d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Wikimedia Commons, the free media repository}
+      \field{note}{\url{https://commons.wikimedia.org/wiki/File:LAPD_Bell_206_Jetranger.jpg}}
+      \field{title}{LAPD Bell 206 Jetranger.jpg}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikipedia/commons/8/8a/LAPD_Bell_206_Jetranger.jpg
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/8/8a/LAPD_Bell_206_Jetranger.jpg
+      \endverb
+    \endentry
+    \entry{onyxstar_foxc8_xt_xender_360}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=92d343d8a05f7ec3fcf0ce3ce81fa614}{%
+           family={{ZullyC3P}},
+           familyi={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{92d343d8a05f7ec3fcf0ce3ce81fa614}
+      \strng{fullhash}{92d343d8a05f7ec3fcf0ce3ce81fa614}
+      \strng{fullhashraw}{92d343d8a05f7ec3fcf0ce3ce81fa614}
+      \strng{bibnamehash}{92d343d8a05f7ec3fcf0ce3ce81fa614}
+      \strng{authorbibnamehash}{92d343d8a05f7ec3fcf0ce3ce81fa614}
+      \strng{authornamehash}{92d343d8a05f7ec3fcf0ce3ce81fa614}
+      \strng{authorfullhash}{92d343d8a05f7ec3fcf0ce3ce81fa614}
+      \strng{authorfullhashraw}{92d343d8a05f7ec3fcf0ce3ce81fa614}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Wikimedia Commons, the free media repository}
+      \field{note}{\url{https://commons.wikimedia.org/wiki/File:Onyxstar_Fox-C8_XT_xender_360.jpg}}
+      \field{title}{Onyxstar Fox-C8 XT xender 360.jpg}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikipedia/commons/f/fd/Onyxstar_Fox-C8_XT_xender_360.jpg
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/f/fd/Onyxstar_Fox-C8_XT_xender_360.jpg
+      \endverb
+    \endentry
+    \entry{the_hexacopter}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=22f0250e9c553920c0f90eac551ff654}{%
+           family={{ALMA (ESO/NAOJ/NRAO)}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{22f0250e9c553920c0f90eac551ff654}
+      \strng{fullhash}{22f0250e9c553920c0f90eac551ff654}
+      \strng{fullhashraw}{22f0250e9c553920c0f90eac551ff654}
+      \strng{bibnamehash}{22f0250e9c553920c0f90eac551ff654}
+      \strng{authorbibnamehash}{22f0250e9c553920c0f90eac551ff654}
+      \strng{authornamehash}{22f0250e9c553920c0f90eac551ff654}
+      \strng{authorfullhash}{22f0250e9c553920c0f90eac551ff654}
+      \strng{authorfullhashraw}{22f0250e9c553920c0f90eac551ff654}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Wikimedia Commons, the free media repository}
+      \field{note}{\url{https://commons.wikimedia.org/wiki/File:The_Hexacopter.jpg}}
+      \field{title}{The Hexacopter.jpg}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikipedia/commons/1/1a/The_Hexacopter.jpg
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/1/1a/The_Hexacopter.jpg
+      \endverb
+    \endentry
+    \entry{tnw_fastest_camera_drone_image}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4a9018c4ed9b7dc009098df5342be707}{%
+           family={{The Next Web}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a9018c4ed9b7dc009098df5342be707}
+      \strng{fullhash}{4a9018c4ed9b7dc009098df5342be707}
+      \strng{fullhashraw}{4a9018c4ed9b7dc009098df5342be707}
+      \strng{bibnamehash}{4a9018c4ed9b7dc009098df5342be707}
+      \strng{authorbibnamehash}{4a9018c4ed9b7dc009098df5342be707}
+      \strng{authornamehash}{4a9018c4ed9b7dc009098df5342be707}
+      \strng{authorfullhash}{4a9018c4ed9b7dc009098df5342be707}
+      \strng{authorfullhashraw}{4a9018c4ed9b7dc009098df5342be707}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Image from The Next Web article}
+      \field{note}{\url{https://thenextweb.com/news/worlds-fastest-camera-drone-f1-max-verstappen-dutch-drone-gods}}
+      \field{title}{Main image from “Watch: World’s fastest camera drone races F1 champ Max Verstappen”}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://thenextweb.com/news/worlds-fastest-camera-drone-f1-max-verstappen-dutch-drone-gods
+      \endverb
+      \verb{url}
+      \verb https://thenextweb.com/news/worlds-fastest-camera-drone-f1-max-verstappen-dutch-drone-gods
+      \endverb
+    \endentry
+    \entry{mq9_reaper_uav_cropped}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ca00c06d6d4aed3126762ebc9482c4bd}{%
+           family={{Lt. Col. Leslie Pratt / U.S. Air Force}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca00c06d6d4aed3126762ebc9482c4bd}
+      \strng{fullhash}{ca00c06d6d4aed3126762ebc9482c4bd}
+      \strng{fullhashraw}{ca00c06d6d4aed3126762ebc9482c4bd}
+      \strng{bibnamehash}{ca00c06d6d4aed3126762ebc9482c4bd}
+      \strng{authorbibnamehash}{ca00c06d6d4aed3126762ebc9482c4bd}
+      \strng{authornamehash}{ca00c06d6d4aed3126762ebc9482c4bd}
+      \strng{authorfullhash}{ca00c06d6d4aed3126762ebc9482c4bd}
+      \strng{authorfullhashraw}{ca00c06d6d4aed3126762ebc9482c4bd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Wikimedia Commons, the free media repository}
+      \field{note}{\url{https://commons.wikimedia.org/wiki/File:MQ-9_Reaper_UAV_(cropped).jpg}}
+      \field{title}{MQ-9 Reaper UAV (cropped).jpg}
+      \field{year}{2008}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikipedia/commons/1/12/MQ-9_Reaper_UAV_%28cropped%29.jpg
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/1/12/MQ-9_Reaper_UAV_%28cropped%29.jpg
+      \endverb
+    \endentry
+    \entry{zipline_drone_launch}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c3f6a0b3846b3e5379ca46da5f7c03b4}{%
+           family={{Zipline, Inc.}},
+           familyi={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{c3f6a0b3846b3e5379ca46da5f7c03b4}
+      \strng{fullhash}{c3f6a0b3846b3e5379ca46da5f7c03b4}
+      \strng{fullhashraw}{c3f6a0b3846b3e5379ca46da5f7c03b4}
+      \strng{bibnamehash}{c3f6a0b3846b3e5379ca46da5f7c03b4}
+      \strng{authorbibnamehash}{c3f6a0b3846b3e5379ca46da5f7c03b4}
+      \strng{authornamehash}{c3f6a0b3846b3e5379ca46da5f7c03b4}
+      \strng{authorfullhash}{c3f6a0b3846b3e5379ca46da5f7c03b4}
+      \strng{authorfullhashraw}{c3f6a0b3846b3e5379ca46da5f7c03b4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Wikimedia Commons, the free media repository}
+      \field{note}{\url{https://commons.wikimedia.org/wiki/File:Zipline_Drone_Launch.jpg}}
+      \field{title}{Zipline Drone Launch.jpg}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikipedia/commons/9/9e/Zipline_Drone_Launch.jpg
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/9/9e/Zipline_Drone_Launch.jpg
+      \endverb
+    \endentry
+    \entry{uav_book}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=31202dc567c14cdad27077b94672f7ea}{%
+           family={Beard},
+           familyi={B\bibinitperiod},
+           given={Randal\bibnamedelima W.},
+           giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=8c867ef5eb3b7279701cc97b35988d55}{%
+           family={McLain},
+           familyi={M\bibinitperiod},
+           given={Timothy\bibnamedelima W.},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{b4c59d606b96e3ecd2f2dd7e41ab61a1}
+      \strng{fullhash}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{fullhashraw}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{bibnamehash}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{authorbibnamehash}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{authornamehash}{b4c59d606b96e3ecd2f2dd7e41ab61a1}
+      \strng{authorfullhash}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{authorfullhashraw}{bbe10ba64615fbffe34f97523b362d0e}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Fig. 12.2, pg. 255}
+      \field{title}{Small Unmanned Aircraft}
+    \endentry
+    \entry{vtol_book}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=31202dc567c14cdad27077b94672f7ea}{%
+           family={Beard},
+           familyi={B\bibinitperiod},
+           given={Randal\bibnamedelima W.},
+           giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=8c867ef5eb3b7279701cc97b35988d55}{%
+           family={McLain},
+           familyi={M\bibinitperiod},
+           given={Timothy\bibnamedelima W.},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Brigham Young University}%
+      }
+      \strng{namehash}{b4c59d606b96e3ecd2f2dd7e41ab61a1}
+      \strng{fullhash}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{fullhashraw}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{bibnamehash}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{authorbibnamehash}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{authornamehash}{b4c59d606b96e3ecd2f2dd7e41ab61a1}
+      \strng{authorfullhash}{bbe10ba64615fbffe34f97523b362d0e}
+      \strng{authorfullhashraw}{bbe10ba64615fbffe34f97523b362d0e}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Vision-Based Estimation and Control of Multirotor and Winged VTOL Systems}
+      \field{year}{2023}
+    \endentry
+    \entry{Rehan_Akram_Shahzad_Shams_Ali_2022}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=1e0f488f1d5b872231dd16983c244c34}{%
+           family={Rehan},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1d5885f2f982708ad6db2ff83887b3f4}{%
+           family={Akram},
+           familyi={A\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=0117b75cfa2c0bf9c9f770aee4854af9}{%
+           family={Shahzad},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d758b0e3ab5a1158d5022692e1bcd605}{%
+           family={Shams},
+           familyi={S\bibinitperiod},
+           given={T.A.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6bdb68d3fccd7b5bd551a05add06be7a}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{06a2a233329f411a44b8bed90f1833a5}
+      \strng{fullhash}{12fca7fffc59a1149933118877f1aa98}
+      \strng{fullhashraw}{12fca7fffc59a1149933118877f1aa98}
+      \strng{bibnamehash}{12fca7fffc59a1149933118877f1aa98}
+      \strng{authorbibnamehash}{12fca7fffc59a1149933118877f1aa98}
+      \strng{authornamehash}{06a2a233329f411a44b8bed90f1833a5}
+      \strng{authorfullhash}{12fca7fffc59a1149933118877f1aa98}
+      \strng{authorfullhashraw}{12fca7fffc59a1149933118877f1aa98}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Aeronautical Journal}
+      \field{number}{1306}
+      \field{title}{Vertical take-off and landing hybrid unmanned aerial vehicles: An overview}
+      \field{volume}{126}
+      \field{year}{2022}
+      \field{pages}{2017\bibrangedash 2057}
+      \range{pages}{41}
+      \verb{doi}
+      \verb 10.1017/aer.2022.29
+      \endverb
+    \endentry
+    \entry{evtolnews_archer_image}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=daf3cdfe7a7ca9abe5e745e5b9ebc6a2}{%
+           family={{eVTOL News}},
+           familyi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{daf3cdfe7a7ca9abe5e745e5b9ebc6a2}
+      \strng{fullhash}{daf3cdfe7a7ca9abe5e745e5b9ebc6a2}
+      \strng{fullhashraw}{daf3cdfe7a7ca9abe5e745e5b9ebc6a2}
+      \strng{bibnamehash}{daf3cdfe7a7ca9abe5e745e5b9ebc6a2}
+      \strng{authorbibnamehash}{daf3cdfe7a7ca9abe5e745e5b9ebc6a2}
+      \strng{authornamehash}{daf3cdfe7a7ca9abe5e745e5b9ebc6a2}
+      \strng{authorfullhash}{daf3cdfe7a7ca9abe5e745e5b9ebc6a2}
+      \strng{authorfullhashraw}{daf3cdfe7a7ca9abe5e745e5b9ebc6a2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Image from article on eVTOL News}
+      \field{note}{\url{https://evtol.news/archer/}}
+      \field{title}{Main image from “Archer Aviation Midnight (production aircraft)”}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://evtol.news/archer/
+      \endverb
+      \verb{url}
+      \verb https://evtol.news/archer/
+      \endverb
+    \endentry
+    \entry{beta_a250_evtol_prototype}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7ed33886f5dd3acbfbdbbc19e90b1092}{%
+           family={{Brian Jenkins / BETA Technologies}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ed33886f5dd3acbfbdbbc19e90b1092}
+      \strng{fullhash}{7ed33886f5dd3acbfbdbbc19e90b1092}
+      \strng{fullhashraw}{7ed33886f5dd3acbfbdbbc19e90b1092}
+      \strng{bibnamehash}{7ed33886f5dd3acbfbdbbc19e90b1092}
+      \strng{authorbibnamehash}{7ed33886f5dd3acbfbdbbc19e90b1092}
+      \strng{authornamehash}{7ed33886f5dd3acbfbdbbc19e90b1092}
+      \strng{authorfullhash}{7ed33886f5dd3acbfbdbbc19e90b1092}
+      \strng{authorfullhashraw}{7ed33886f5dd3acbfbdbbc19e90b1092}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Wikimedia Commons, the free media repository}
+      \field{note}{\url{https://commons.wikimedia.org/wiki/File:BETA_Technologies_A250_eVTOL_Prototype_Aircraft.jpg}}
+      \field{title}{BETA Technologies A250 eVTOL Prototype Aircraft.jpg}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikipedia/commons/1/19/BETA_Technologies_A250_eVTOL_Prototype_Aircraft.jpg
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/1/19/BETA_Technologies_A250_eVTOL_Prototype_Aircraft.jpg
+      \endverb
+    \endentry
+    \entry{mv22_mcas_miramar_2014}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b9e5c8401d6ae8b0f144044d2a528f0a}{%
+           family={{FOX 52}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{b9e5c8401d6ae8b0f144044d2a528f0a}
+      \strng{fullhash}{b9e5c8401d6ae8b0f144044d2a528f0a}
+      \strng{fullhashraw}{b9e5c8401d6ae8b0f144044d2a528f0a}
+      \strng{bibnamehash}{b9e5c8401d6ae8b0f144044d2a528f0a}
+      \strng{authorbibnamehash}{b9e5c8401d6ae8b0f144044d2a528f0a}
+      \strng{authornamehash}{b9e5c8401d6ae8b0f144044d2a528f0a}
+      \strng{authorfullhash}{b9e5c8401d6ae8b0f144044d2a528f0a}
+      \strng{authorfullhashraw}{b9e5c8401d6ae8b0f144044d2a528f0a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Wikimedia Commons, the free media repository}
+      \field{note}{\url{https://commons.wikimedia.org/wiki/File:MV-22_mcas_Miramar_2014.JPG}}
+      \field{title}{MV-22 mcas Miramar 2014.JPG}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikipedia/commons/7/75/MV-22_mcas_Miramar_2014.JPG
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/7/75/MV-22_mcas_Miramar_2014.JPG
+      \endverb
+    \endentry
+    \entry{zipline_p2_drone_aviationweek}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=98a7b1d69fbf1fdae59f6f38ec41c6dd}{%
+           family={{Bill Carey / Aviation Week Network}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{98a7b1d69fbf1fdae59f6f38ec41c6dd}
+      \strng{fullhash}{98a7b1d69fbf1fdae59f6f38ec41c6dd}
+      \strng{fullhashraw}{98a7b1d69fbf1fdae59f6f38ec41c6dd}
+      \strng{bibnamehash}{98a7b1d69fbf1fdae59f6f38ec41c6dd}
+      \strng{authorbibnamehash}{98a7b1d69fbf1fdae59f6f38ec41c6dd}
+      \strng{authornamehash}{98a7b1d69fbf1fdae59f6f38ec41c6dd}
+      \strng{authorfullhash}{98a7b1d69fbf1fdae59f6f38ec41c6dd}
+      \strng{authorfullhashraw}{98a7b1d69fbf1fdae59f6f38ec41c6dd}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Image from Aviation Week Network article}
+      \field{note}{\url{https://aviationweek.com/business-aviation/aircraft-propulsion/zipline-exhibits-2nd-generation-p2-drone}}
+      \field{title}{Main image from “Zipline Exhibits 2nd Generation P2 Drone”}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://aviationweek.com/business-aviation/aircraft-propulsion/zipline-exhibits-2nd-generation-p2-drone
+      \endverb
+      \verb{url}
+      \verb https://aviationweek.com/business-aviation/aircraft-propulsion/zipline-exhibits-2nd-generation-p2-drone
+      \endverb
+    \endentry
+    \entry{transition_video}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f06209fe204127a346dd7c6e02d0739c}{%
+           family={SamIam},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{f06209fe204127a346dd7c6e02d0739c}
+      \strng{fullhash}{f06209fe204127a346dd7c6e02d0739c}
+      \strng{fullhashraw}{f06209fe204127a346dd7c6e02d0739c}
+      \strng{bibnamehash}{f06209fe204127a346dd7c6e02d0739c}
+      \strng{authorbibnamehash}{f06209fe204127a346dd7c6e02d0739c}
+      \strng{authornamehash}{f06209fe204127a346dd7c6e02d0739c}
+      \strng{authorfullhash}{f06209fe204127a346dd7c6e02d0739c}
+      \strng{authorfullhashraw}{f06209fe204127a346dd7c6e02d0739c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.youtube.com/watch?v=f81n0aXdvKc}}
+      \field{note}{YouTube video, Quadplane takeoff using Ardupilot.}
+      \field{title}{Arduplane QuadPlane Takeoff and transition}
+      \field{year}{2016}
+    \endentry
+    \entry{px4_controller_diagrams}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b52b778c63203841cf2cbbd45551085d}{%
+           family={{PX4 Development Team}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{b52b778c63203841cf2cbbd45551085d}
+      \strng{fullhash}{b52b778c63203841cf2cbbd45551085d}
+      \strng{fullhashraw}{b52b778c63203841cf2cbbd45551085d}
+      \strng{bibnamehash}{b52b778c63203841cf2cbbd45551085d}
+      \strng{authorbibnamehash}{b52b778c63203841cf2cbbd45551085d}
+      \strng{authornamehash}{b52b778c63203841cf2cbbd45551085d}
+      \strng{authorfullhash}{b52b778c63203841cf2cbbd45551085d}
+      \strng{authorfullhashraw}{b52b778c63203841cf2cbbd45551085d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://px4.gitbook.io/px4-user-guide/development/concept/architecture/controller_diagrams}}
+      \field{note}{PX4 User Guide}
+      \field{title}{Controller Diagrams}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+    \endentry
+    \entry{gain_scheduling}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9108913e611b419a233a9e92376fae82}{%
+           family={Rugh},
+           familyi={R\bibinitperiod},
+           given={Wilson\bibnamedelima J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b053fd262aa960d62554a7b0770a8f69}{%
+           family={Shamma},
+           familyi={S\bibinitperiod},
+           given={Jeff\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{924b6ae09af51fc2774b289b007ab7ac}
+      \strng{fullhash}{e93f79645e27a62478d595424f9246fe}
+      \strng{fullhashraw}{e93f79645e27a62478d595424f9246fe}
+      \strng{bibnamehash}{e93f79645e27a62478d595424f9246fe}
+      \strng{authorbibnamehash}{e93f79645e27a62478d595424f9246fe}
+      \strng{authornamehash}{924b6ae09af51fc2774b289b007ab7ac}
+      \strng{authorfullhash}{e93f79645e27a62478d595424f9246fe}
+      \strng{authorfullhashraw}{e93f79645e27a62478d595424f9246fe}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Gain scheduling for nonlinear controller design is described in terms of general features of the approach and in terms of early examples of applications in flight control and automotive engine control. Then recent research is discussed, emphasizing work on linearization-based scheduling and work on linear parameter-varying approaches.}
+      \field{issn}{0005-1098}
+      \field{journaltitle}{Automatica}
+      \field{number}{10}
+      \field{title}{Research on gain scheduling}
+      \field{volume}{36}
+      \field{year}{2000}
+      \field{pages}{1401\bibrangedash 1425}
+      \range{pages}{25}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0005-1098(00)00058-3
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0005109800000583
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0005109800000583
+      \endverb
+      \keyw{Gain scheduling,Linear parameter-varying systems,Nonlinear control systems}
+    \endentry
+    \entry{lpv_controller}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e791c3bfa061b61e2aa8028bf3848330}{%
+           family={Snyder},
+           familyi={S\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1037245688d5805434c84c142fe78512}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Pan},
+           giveni={P\bibinitperiod}}}%
+        {{hash=6816b45971a7290526789e1b21e9802d}{%
+           family={Hovakimyan},
+           familyi={H\bibinitperiod},
+           given={Naira},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{7fba62c6b5877beefcbb84efd57be331}
+      \strng{fullhash}{3d46259b76aa7a92502ca6eb7213613c}
+      \strng{fullhashraw}{3d46259b76aa7a92502ca6eb7213613c}
+      \strng{bibnamehash}{3d46259b76aa7a92502ca6eb7213613c}
+      \strng{authorbibnamehash}{3d46259b76aa7a92502ca6eb7213613c}
+      \strng{authornamehash}{7fba62c6b5877beefcbb84efd57be331}
+      \strng{authorfullhash}{3d46259b76aa7a92502ca6eb7213613c}
+      \strng{authorfullhashraw}{3d46259b76aa7a92502ca6eb7213613c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1270-9638}
+      \field{journaltitle}{Aerospace Science and Technology}
+      \field{title}{Adaptive control for linear parameter-varying systems with application to a VTOL aircraft}
+      \field{volume}{112}
+      \field{year}{2021}
+      \field{pages}{106621}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.ast.2021.106621
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1270963821001310
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1270963821001310
+      \endverb
+      \keyw{Robust adaptive control,LPV system,Disturbance rejection,Aircraft control}
+    \endentry
+    \entry{mpc_controller}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f02a169aeb1e682ae2a8dc971ae40f71}{%
+           family={Allenspach},
+           familyi={A\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b87754afa400bb6bba280e8843bc4a85}{%
+           family={Ducard},
+           familyi={D\bibinitperiod},
+           given={Guillaume\bibnamedelimb Jacques\bibnamedelima Joseph},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{47a5063360ea15cfba3ac8c955be6015}
+      \strng{fullhash}{dae3d83e92efefcddea3a31a1cbd6cd6}
+      \strng{fullhashraw}{dae3d83e92efefcddea3a31a1cbd6cd6}
+      \strng{bibnamehash}{dae3d83e92efefcddea3a31a1cbd6cd6}
+      \strng{authorbibnamehash}{dae3d83e92efefcddea3a31a1cbd6cd6}
+      \strng{authornamehash}{47a5063360ea15cfba3ac8c955be6015}
+      \strng{authorfullhash}{dae3d83e92efefcddea3a31a1cbd6cd6}
+      \strng{authorfullhashraw}{dae3d83e92efefcddea3a31a1cbd6cd6}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0005-1098}
+      \field{journaltitle}{Automatica}
+      \field{title}{Nonlinear model predictive control and guidance for a propeller-tilting hybrid unmanned air vehicle}
+      \field{volume}{132}
+      \field{year}{2021}
+      \field{pages}{109790}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.automatica.2021.109790
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0005109821003101
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0005109821003101
+      \endverb
+      \keyw{Nonlinear control,MPC,Convertible UAV}
+    \endentry
+    \entry{ndi_firstPaper}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=bdc34642e598d9a70301419df787439d}{%
+           family={ENNS},
+           familyi={E\bibinitperiod},
+           given={DALE},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c98a0f6749bd80c90b37592d41f81ea3}{%
+           family={BUGAJSKI},
+           familyi={B\bibinitperiod},
+           given={DAN},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5f86069365bf0a62f5c3fcc6e9112472}{%
+           family={HENDRICK},
+           familyi={H\bibinitperiod},
+           given={RUSS},
+           giveni={R\bibinitperiod}}}%
+        {{hash=be1d3bfdf5864ef86884177b4332b375}{%
+           family={STEIN},
+           familyi={S\bibinitperiod},
+           given={GUNTER},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{205fe73daf9a1e2fdb1ef1044d05a036}
+      \strng{fullhash}{7702fde394b46ecc63cc8157765162f3}
+      \strng{fullhashraw}{7702fde394b46ecc63cc8157765162f3}
+      \strng{bibnamehash}{7702fde394b46ecc63cc8157765162f3}
+      \strng{authorbibnamehash}{7702fde394b46ecc63cc8157765162f3}
+      \strng{authornamehash}{205fe73daf9a1e2fdb1ef1044d05a036}
+      \strng{authorfullhash}{7702fde394b46ecc63cc8157765162f3}
+      \strng{authorfullhashraw}{7702fde394b46ecc63cc8157765162f3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Control}
+      \field{number}{1}
+      \field{title}{Dynamic inversion: an evolving methodology for flight control design}
+      \field{volume}{59}
+      \field{year}{1994}
+      \field{pages}{71\bibrangedash 91}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1080/00207179408923070
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/00207179408923070
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/00207179408923070
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/00207179408923070
+      \endverb
+    \endentry
+    \entry{incremental_nonlinear_dynamic_inversion}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=cbe3d4d62aa7eb719d3fc6882e631041}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=fbd7a08e55c46fa6ee2765601e281334}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Jingtao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=69cf5638f340ef6c1507543afe5d581c}{%
+           family={Strampe},
+           familyi={S\bibinitperiod},
+           given={Tilman},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1109a766ce930d89772c81ee9e632254}{%
+           family={Klingauf},
+           familyi={K\bibinitperiod},
+           given={Uwe},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{f49e8a7e7446aa25757dcf2a45fe4f3e}
+      \strng{fullhash}{5b69c0cd2aeb3f2f202ba3017e3303a7}
+      \strng{fullhashraw}{5b69c0cd2aeb3f2f202ba3017e3303a7}
+      \strng{bibnamehash}{5b69c0cd2aeb3f2f202ba3017e3303a7}
+      \strng{authorbibnamehash}{5b69c0cd2aeb3f2f202ba3017e3303a7}
+      \strng{authornamehash}{f49e8a7e7446aa25757dcf2a45fe4f3e}
+      \strng{authorfullhash}{5b69c0cd2aeb3f2f202ba3017e3303a7}
+      \strng{authorfullhashraw}{5b69c0cd2aeb3f2f202ba3017e3303a7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Robust and Nonlinear Control}
+      \field{number}{17}
+      \field{title}{Incremental nonlinear dynamic inversion based path-following control for a hybrid quad-plane unmanned aerial vehicle}
+      \field{volume}{33}
+      \field{year}{2023}
+      \field{pages}{10304\bibrangedash 10327}
+      \range{pages}{24}
+      \verb{doi}
+      \verb https://doi.org/10.1002/rnc.6503
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/rnc.6503
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/rnc.6503
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/rnc.6503
+      \endverb
+      \keyw{hybrid quad-plane unmanned aerial vehicle,incremental nonlinear dynamic inversion,nonlinear control,path following}
+    \endentry
+    \entry{nasa_hover}{inbook}{}{}
+      \name{author}{6}{}{%
+        {{hash=ddeaaafd3b4b3b5f5be9cb24c618970b}{%
+           family={Lombaerts},
+           familyi={L\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9f231b9c5f69c0a46b5f05ccfe893db2}{%
+           family={Kaneshige},
+           familyi={K\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0087c22a08986690c860941bafaf4cfc}{%
+           family={Schuet},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cd706f2d65711028864738fc232b8961}{%
+           family={Hardy},
+           familyi={H\bibinitperiod},
+           given={Gordon},
+           giveni={G\bibinitperiod}}}%
+        {{hash=863830299285679872a6222ab0be7e9f}{%
+           family={Aponso},
+           familyi={A\bibinitperiod},
+           given={Bimal\bibnamedelima L.},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=3ed6fbfbbca647671b1841d78645a64d}{%
+           family={Shish},
+           familyi={S\bibinitperiod},
+           given={Kimberlee\bibnamedelima H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{bbfb8bcc6da1caab4069af5ec50cda08}
+      \strng{fullhash}{0da6a7a7d4b87b8b5f8c334baa2cc1e2}
+      \strng{fullhashraw}{0da6a7a7d4b87b8b5f8c334baa2cc1e2}
+      \strng{bibnamehash}{0da6a7a7d4b87b8b5f8c334baa2cc1e2}
+      \strng{authorbibnamehash}{0da6a7a7d4b87b8b5f8c334baa2cc1e2}
+      \strng{authornamehash}{bbfb8bcc6da1caab4069af5ec50cda08}
+      \strng{authorfullhash}{0da6a7a7d4b87b8b5f8c334baa2cc1e2}
+      \strng{authorfullhashraw}{0da6a7a7d4b87b8b5f8c334baa2cc1e2}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradate}{1}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AIAA Scitech 2019 Forum}
+      \field{title}{Nonlinear Dynamic Inversion Based Attitude Control for a hovering quad tiltrotor eVTOL vehicle}
+      \verb{doi}
+      \verb 10.2514/6.2019-0134
+      \endverb
+      \verb{eprint}
+      \verb https://arc.aiaa.org/doi/pdf/10.2514/6.2019-0134
+      \endverb
+      \verb{urlraw}
+      \verb https://arc.aiaa.org/doi/abs/10.2514/6.2019-0134
+      \endverb
+      \verb{url}
+      \verb https://arc.aiaa.org/doi/abs/10.2514/6.2019-0134
+      \endverb
+    \endentry
+    \entry{nasa_hover_2}{inbook}{}{}
+      \name{author}{6}{}{%
+        {{hash=ddeaaafd3b4b3b5f5be9cb24c618970b}{%
+           family={Lombaerts},
+           familyi={L\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9f231b9c5f69c0a46b5f05ccfe893db2}{%
+           family={Kaneshige},
+           familyi={K\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0087c22a08986690c860941bafaf4cfc}{%
+           family={Schuet},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=863830299285679872a6222ab0be7e9f}{%
+           family={Aponso},
+           familyi={A\bibinitperiod},
+           given={Bimal\bibnamedelima L.},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=3ed6fbfbbca647671b1841d78645a64d}{%
+           family={Shish},
+           familyi={S\bibinitperiod},
+           given={Kimberlee\bibnamedelima H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cd706f2d65711028864738fc232b8961}{%
+           family={Hardy},
+           familyi={H\bibinitperiod},
+           given={Gordon},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{bbfb8bcc6da1caab4069af5ec50cda08}
+      \strng{fullhash}{bd80b5a3cedc94fbe37b1e96a511d38b}
+      \strng{fullhashraw}{bd80b5a3cedc94fbe37b1e96a511d38b}
+      \strng{bibnamehash}{bd80b5a3cedc94fbe37b1e96a511d38b}
+      \strng{authorbibnamehash}{bd80b5a3cedc94fbe37b1e96a511d38b}
+      \strng{authornamehash}{bbfb8bcc6da1caab4069af5ec50cda08}
+      \strng{authorfullhash}{bd80b5a3cedc94fbe37b1e96a511d38b}
+      \strng{authorfullhashraw}{bd80b5a3cedc94fbe37b1e96a511d38b}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradate}{2}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AIAA Scitech 2020 Forum}
+      \field{title}{Dynamic Inversion based Full Envelope Flight Control for an eVTOL Vehicle using a Unified Framework}
+      \verb{doi}
+      \verb 10.2514/6.2020-1619
+      \endverb
+      \verb{eprint}
+      \verb https://arc.aiaa.org/doi/pdf/10.2514/6.2020-1619
+      \endverb
+      \verb{urlraw}
+      \verb https://arc.aiaa.org/doi/abs/10.2514/6.2020-1619
+      \endverb
+      \verb{url}
+      \verb https://arc.aiaa.org/doi/abs/10.2514/6.2020-1619
+      \endverb
+    \endentry
+    \entry{duffBuildingOrthonormalBasis}{online}{}{}
+      \name{author}{7}{}{%
+        {{hash=5900607ea19fcc07e44f505b669bb9c2}{%
+           family={Duff},
+           familyi={D\bibinitperiod}}}%
+        {{hash=f2a7fcaf43e3d86084519c94c2e7e406}{%
+           family={Burgess},
+           familyi={B\bibinitperiod}}}%
+        {{hash=105c6b20803f2f3c108cea462b24a83f}{%
+           family={Christensen},
+           familyi={C\bibinitperiod}}}%
+        {{hash=407b2b8fcb2fd977fc766d5df3f4dff9}{%
+           family={Hery},
+           familyi={H\bibinitperiod}}}%
+        {{hash=8890fb5e00494ad18853255843bbf7df}{%
+           family={Kensler},
+           familyi={K\bibinitperiod}}}%
+        {{hash=ad95ff692271376fe551c5dc18468d6b}{%
+           family={Liani},
+           familyi={L\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aa97a92daae1d0ce3734eaa6ac7d8c0c}{%
+           family={Villemin},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b324894d4da540dc904106f248f92ce}
+      \strng{fullhash}{78d5c843329f760f74d78b27ad68d1e5}
+      \strng{fullhashraw}{78d5c843329f760f74d78b27ad68d1e5}
+      \strng{bibnamehash}{78d5c843329f760f74d78b27ad68d1e5}
+      \strng{authorbibnamehash}{78d5c843329f760f74d78b27ad68d1e5}
+      \strng{authornamehash}{2b324894d4da540dc904106f248f92ce}
+      \strng{authorfullhash}{78d5c843329f760f74d78b27ad68d1e5}
+      \strng{authorfullhashraw}{78d5c843329f760f74d78b27ad68d1e5}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building an {{Orthonormal Basis}}, {{Revisited}} ({{JCGT}})}
+      \field{urlday}{7}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/benjamin/Zotero/storage/LTAQ82DT/Building an Orthonormal Basis, Revisited (JCGT).pdf;/home/benjamin/Zotero/storage/R9VG2465/01.html
+      \endverb
+      \verb{urlraw}
+      \verb https://jcgt.org/published/0006/01/01/
+      \endverb
+      \verb{url}
+      \verb https://jcgt.org/published/0006/01/01/
+      \endverb
+    \endentry
+    \entry{orthogonal_projection_rg}{misc}{}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.researchgate.net/figure/Orthogonal-projection-T-p-of-a-point-p-onto-a-plane-q-represents-a-point-on-the-plane_fig2_267955495}}
+      \field{note}{Figure retrieved from ResearchGate, accessed 2026-02-20}
+      \field{title}{Orthogonal projection $T(p)$ of a point $p$ onto a plane}
+    \endentry
+    \entry{tiltQuadplane}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=1cfba30b402591ef63193b7129921c50}{%
+           family={Sulistijono},
+           familyi={S\bibinitperiod},
+           given={Indra\bibnamedelima Adji},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e2c5785e2059c1ab8352f664389cbafa}{%
+           family={Mahendra},
+           familyi={M\bibinitperiod},
+           given={Ade\bibnamedelima Yogi},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=5a371de3243da09cf8936be8577d405e}{%
+           family={Risnumawan},
+           familyi={R\bibinitperiod},
+           given={Anhar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=443fb0686d7405991934c041ce9c85f8}{%
+           family={Hanafi},
+           familyi={H\bibinitperiod},
+           given={Nofria},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{10c2b451f5b164be7fa71c8919e352cb}
+      \strng{fullhash}{0e7941d735d106c3d0ebaff9570a0f46}
+      \strng{fullhashraw}{0e7941d735d106c3d0ebaff9570a0f46}
+      \strng{bibnamehash}{0e7941d735d106c3d0ebaff9570a0f46}
+      \strng{authorbibnamehash}{0e7941d735d106c3d0ebaff9570a0f46}
+      \strng{authornamehash}{10c2b451f5b164be7fa71c8919e352cb}
+      \strng{authorfullhash}{0e7941d735d106c3d0ebaff9570a0f46}
+      \strng{authorfullhashraw}{0e7941d735d106c3d0ebaff9570a0f46}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2023 8th International Conference on Electrical, Electronics and Information Engineering (ICEEIE)}
+      \field{title}{Flight Dynamics and Dual Front Rotor Tilt Mechanism for a Quad Plane UAV}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICEEIE59078.2023.10334764
+      \endverb
+      \keyw{Technological innovation;Surveillance;Rotors;Transforms;Tail;Autonomous aerial vehicles;Stability analysis;Quad Plane;Unmanned Aerial Vehicle;PID Control;Surveillance}
+    \endentry
+    \entry{lou_unified_energy_control_tilt_body}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=2a03cfadc5519f053f9a38434292493c}{%
+           family={Lou},
+           familyi={L\bibinitperiod},
+           given={Jinhao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0f6db1042e1ff1e5b8f58223112782b7}{%
+           family={Shang},
+           familyi={S\bibinitperiod},
+           given={Yaoxing},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8b73716b4c49ea527fef95ee4feb95b0}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Longfei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5dd6f5d90e0df3f5df334a1bdf6c7002}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Jingfeng},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f152cbf581a1b319ae978104ad9819c0}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={Wanli},
+           giveni={W\bibinitperiod}}}%
+        {{hash=2ccead0226705701db8d73c04598a2cd}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yuhang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=87a990ea65b0243209e81567f6800172}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Jiong},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Beihang University}%
+      }
+      \list{location}{1}{%
+        {Beijing, China}%
+      }
+      \strng{namehash}{a00f5c9907a5962241c7063a9df1ff55}
+      \strng{fullhash}{ab2f01af8bce82dcd813bcb761f371f5}
+      \strng{fullhashraw}{ab2f01af8bce82dcd813bcb761f371f5}
+      \strng{bibnamehash}{ab2f01af8bce82dcd813bcb761f371f5}
+      \strng{authorbibnamehash}{ab2f01af8bce82dcd813bcb761f371f5}
+      \strng{authornamehash}{a00f5c9907a5962241c7063a9df1ff55}
+      \strng{authorfullhash}{ab2f01af8bce82dcd813bcb761f371f5}
+      \strng{authorfullhashraw}{ab2f01af8bce82dcd813bcb761f371f5}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AIAA Journal / AIAA Conference Manuscript}
+      \field{title}{Unified Energy Control for Wide-Speed-Range Tilt-Body Flight}
+      \field{year}{2025}
+    \endentry
+    \entry{flightDynamicsPrinciples}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=2044054ab2b3590688099da0db3963d1}{%
+           family={Cook},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima V.},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=2044054ab2b3590688099da0db3963d1}{%
+           family={Cook},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima V.},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Butterworth-Heinemann}%
+      }
+      \strng{namehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{fullhash}{2044054ab2b3590688099da0db3963d1}
+      \strng{fullhashraw}{2044054ab2b3590688099da0db3963d1}
+      \strng{bibnamehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{authorbibnamehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{authornamehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{authorfullhash}{2044054ab2b3590688099da0db3963d1}
+      \strng{authorfullhashraw}{2044054ab2b3590688099da0db3963d1}
+      \strng{editorbibnamehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{editornamehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{editorfullhash}{2044054ab2b3590688099da0db3963d1}
+      \strng{editorfullhashraw}{2044054ab2b3590688099da0db3963d1}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Flight Dynamics Principles (Third Edition)}
+      \field{edition}{Third Edition}
+      \field{isbn}{978-0-08-098242-7}
+      \field{title}{Chapter 6 - Longitudinal Dynamics}
+      \field{year}{2013}
+      \field{pages}{147\bibrangedash 181}
+      \range{pages}{35}
+      \verb{doi}
+      \verb https://doi.org/10.1016/B978-0-08-098242-7.00006-7
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/B9780080982427000067
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/B9780080982427000067
+      \endverb
+    \endentry
+    \entry{pilotinstitute_phugoid}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=246347b83b62012a8f8ef513f9f1c2ef}{%
+           family={{Pilot Institute}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{246347b83b62012a8f8ef513f9f1c2ef}
+      \strng{fullhash}{246347b83b62012a8f8ef513f9f1c2ef}
+      \strng{fullhashraw}{246347b83b62012a8f8ef513f9f1c2ef}
+      \strng{bibnamehash}{246347b83b62012a8f8ef513f9f1c2ef}
+      \strng{authorbibnamehash}{246347b83b62012a8f8ef513f9f1c2ef}
+      \strng{authornamehash}{246347b83b62012a8f8ef513f9f1c2ef}
+      \strng{authorfullhash}{246347b83b62012a8f8ef513f9f1c2ef}
+      \strng{authorfullhashraw}{246347b83b62012a8f8ef513f9f1c2ef}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Pilot Institute}
+      \field{note}{\url{https://pilotinstitute.com/phugoid-motion/}}
+      \field{title}{Phugoid Motion in Aviation: What It Is and Why It Matters}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://pilotinstitute.com/phugoid-motion/
+      \endverb
+      \verb{url}
+      \verb https://pilotinstitute.com/phugoid-motion/
+      \endverb
+    \endentry
+    \entry{cookLateralDirectionalDynamics}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=2044054ab2b3590688099da0db3963d1}{%
+           family={Cook},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima V.},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{fullhash}{2044054ab2b3590688099da0db3963d1}
+      \strng{fullhashraw}{2044054ab2b3590688099da0db3963d1}
+      \strng{bibnamehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{authorbibnamehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{authornamehash}{2044054ab2b3590688099da0db3963d1}
+      \strng{authorfullhash}{2044054ab2b3590688099da0db3963d1}
+      \strng{authorfullhashraw}{2044054ab2b3590688099da0db3963d1}
+      \field{extraname}{2}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.sciencedirect.com/science/chapter/monograph/pii/B9780080982427000079}
+      \field{langid}{american}
+      \field{title}{Lateral-{{Directional Dynamics}}}
+      \field{urlday}{1}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/B978-0-08-098242-7.00007-9
+      \endverb
+      \verb{file}
+      \verb /home/benjamin/Zotero/storage/FPD7BWAL/Lateral-Directional Dynamics.pdf;/home/benjamin/Zotero/storage/Z62NATCF/B9780080982427000079.html
+      \endverb
+    \endentry
+    \entry{beardRLS}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=31202dc567c14cdad27077b94672f7ea}{%
+           family={Beard},
+           familyi={B\bibinitperiod},
+           given={Randal\bibnamedelima W.},
+           giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{fullhash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{fullhashraw}{31202dc567c14cdad27077b94672f7ea}
+      \strng{bibnamehash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{authorbibnamehash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{authornamehash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{authorfullhash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{authorfullhashraw}{31202dc567c14cdad27077b94672f7ea}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Lecture Slides for Mathematics of Signals and Systems, Brigham Young University}
+      \field{title}{Recursive Least Squares}
+      \field{year}{2023}
+    \endentry
+    \entry{IIRfilterImage}{misc}{}{}
+      \list{organization}{1}{%
+        {Wikimedia Commons}%
+      }
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://commons.wikimedia.org/wiki/File:IIR-filter.png}}
+      \field{note}{Created by User:Mwilde; licensed under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0).}
+      \field{title}{Diagram of an IIR Filter}
+      \field{year}{2005}
+    \endentry
+    \entry{beard2025BSplines}{unpublished}{}{}
+      \name{author}{1}{}{%
+        {{hash=31202dc567c14cdad27077b94672f7ea}{%
+           family={Beard},
+           familyi={B\bibinitperiod},
+           given={Randal\bibnamedelima W},
+           giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{fullhash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{fullhashraw}{31202dc567c14cdad27077b94672f7ea}
+      \strng{bibnamehash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{authorbibnamehash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{authornamehash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{authorfullhash}{31202dc567c14cdad27077b94672f7ea}
+      \strng{authorfullhashraw}{31202dc567c14cdad27077b94672f7ea}
+      \field{extraname}{2}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Manuscript in preparation}
+      \field{title}{Robotics Applications of Uniform B-Spline Trajectories}
+      \field{year}{2025}
+    \endentry
+    \entry{david_bspline}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=59134a1f9e9ebca3a276da725b24bd78}{%
+           family={Christensen},
+           familyi={C\bibinitperiod},
+           given={David\bibnamedelima LaVae},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Brigham Young University}%
+      }
+      \list{location}{1}{%
+        {Provo, UT}%
+      }
+      \strng{namehash}{59134a1f9e9ebca3a276da725b24bd78}
+      \strng{fullhash}{59134a1f9e9ebca3a276da725b24bd78}
+      \strng{fullhashraw}{59134a1f9e9ebca3a276da725b24bd78}
+      \strng{bibnamehash}{59134a1f9e9ebca3a276da725b24bd78}
+      \strng{authorbibnamehash}{59134a1f9e9ebca3a276da725b24bd78}
+      \strng{authornamehash}{59134a1f9e9ebca3a276da725b24bd78}
+      \strng{authorfullhash}{59134a1f9e9ebca3a276da725b24bd78}
+      \strng{authorfullhashraw}{59134a1f9e9ebca3a276da725b24bd78}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Real-Time Dynamically Feasible B-Spline Trajectory Generation for Unmanned Aircraft}
+      \field{type}{Master's thesis}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://scholarsarchive.byu.edu/etd/10560/
+      \endverb
+      \verb{url}
+      \verb https://scholarsarchive.byu.edu/etd/10560/
+      \endverb
+    \endentry
+    \entry{Lavalle_rrt}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=325241b13fb6310d847924b577e55bab}{%
+           family={LaValle},
+           familyi={L\bibinitperiod},
+           given={S.M.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=92b0cf37758e40d42334e7bfec86241a}{%
+           family={Kuffner},
+           familyi={K\bibinitperiod},
+           given={J.J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a69065eab9a08e0ee2b10f1f74f24494}
+      \strng{fullhash}{41e5d04bb1d7eff40c765c2a71916859}
+      \strng{fullhashraw}{41e5d04bb1d7eff40c765c2a71916859}
+      \strng{bibnamehash}{41e5d04bb1d7eff40c765c2a71916859}
+      \strng{authorbibnamehash}{41e5d04bb1d7eff40c765c2a71916859}
+      \strng{authornamehash}{a69065eab9a08e0ee2b10f1f74f24494}
+      \strng{authorfullhash}{41e5d04bb1d7eff40c765c2a71916859}
+      \strng{authorfullhashraw}{41e5d04bb1d7eff40c765c2a71916859}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings 1999 IEEE International Conference on Robotics and Automation (Cat. No.99CH36288C)}
+      \field{title}{Randomized kinodynamic planning}
+      \field{volume}{1}
+      \field{year}{1999}
+      \field{pages}{473\bibrangedash 479 vol.1}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/ROBOT.1999.770022
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/770022
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/770022
+      \endverb
+      \keyw{Path planning;State-space methods;Orbital robotics;Vehicle dynamics;Kinematics;Trajectory;Mobile robots;Computer science;Space exploration;Velocity control}
+    \endentry
+    \entry{varricchioSamplingbasedAlgorithmsOptimal2014}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=377fd029e8dbe989d6bd857a5cde015c}{%
+           family={Varricchio},
+           familyi={V\bibinitperiod},
+           given={Valerio},
+           giveni={V\bibinitperiod}}}%
+        {{hash=8649bae54f337c079528ff9706949220}{%
+           family={Chaudhari},
+           familyi={C\bibinitperiod},
+           given={Pratik},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7fe896e8ed8d5f30af73e472ebedcec9}{%
+           family={Frazzoli},
+           familyi={F\bibinitperiod},
+           given={Emilio},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{d98b9758186483d068bc6221efa82fc7}
+      \strng{fullhash}{c9c1850ce06bac65576234e866eb4ca2}
+      \strng{fullhashraw}{c9c1850ce06bac65576234e866eb4ca2}
+      \strng{bibnamehash}{c9c1850ce06bac65576234e866eb4ca2}
+      \strng{authorbibnamehash}{c9c1850ce06bac65576234e866eb4ca2}
+      \strng{authornamehash}{d98b9758186483d068bc6221efa82fc7}
+      \strng{authorfullhash}{c9c1850ce06bac65576234e866eb4ca2}
+      \strng{authorfullhashraw}{c9c1850ce06bac65576234e866eb4ca2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper investigates motion-planning using formal language specifications for dynamical systems with differential constraints. In particular, we focus on process algebra as a language to specify complex task specifications motivated by autonomous electric vehicles operating in a mobility-on-demand scenario. We use ideas from sampling-based motion-planning algorithms to incrementally construct a finite abstraction of the dynamical system as a Kripke structure. Given a task specification expressed as a process graph, we use model checking techniques to construct a weighted product graph of the specification with the Kripke structure. We then devise an algorithm that provably converges to the optimal trajectory of the dynamical system that satisfies the task specification as the number of the states in the Kripke structure goes to infinity. The algorithm is demonstrated in simulation experiments, viz., charging the electric car at a busy charging station and scheduling pick-ups and drop-offs of passengers.}
+      \field{booktitle}{2014 {{IEEE International Conference}} on {{Robotics}} and {{Automation}} ({{ICRA}})}
+      \field{issn}{1050-4729}
+      \field{month}{5}
+      \field{title}{Sampling-Based Algorithms for Optimal Motion Planning Using Process Algebra Specifications}
+      \field{urlday}{24}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{5326\bibrangedash 5332}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/ICRA.2014.6907642
+      \endverb
+      \verb{file}
+      \verb /home/benjamin/Zotero/storage/Z4NGH6MC/Varricchio et al. - 2014 - Sampling-based algorithms for optimal motion planning using process algebra specifications.pdf
+      \endverb
+      \keyw{Algebra,Charging stations,Cost function,Heuristic algorithms,Model checking,Robots,Trajectory}
+    \endentry
+    \entry{yangDubinsPathOrientedRapidly2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6585778d94583929b9013227c46b1109}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Youyoung},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fec95c7bc28efc38615a4f1de2ff444b}{%
+           family={Leeghim},
+           familyi={L\bibinitperiod},
+           given={Henzeh},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1408e24df809033aae869051ae6040dc}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Donghoon},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {publisher}%
+      }
+      \strng{namehash}{0736f8177d4d4982778038617e331858}
+      \strng{fullhash}{481e0df24f2a533f8e422984fa679832}
+      \strng{fullhashraw}{481e0df24f2a533f8e422984fa679832}
+      \strng{bibnamehash}{481e0df24f2a533f8e422984fa679832}
+      \strng{authorbibnamehash}{481e0df24f2a533f8e422984fa679832}
+      \strng{authornamehash}{0736f8177d4d4982778038617e331858}
+      \strng{authorfullhash}{481e0df24f2a533f8e422984fa679832}
+      \strng{authorfullhashraw}{481e0df24f2a533f8e422984fa679832}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Unmanned aerial vehicles (UAVs) do not collide with obstacles, generate a path in real-time, and must fly to the target point. The sampling-based rapi...}
+      \field{issn}{2079-9292}
+      \field{journaltitle}{Electronics}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{15}
+      \field{title}{Dubins {{Path-Oriented Rapidly Exploring Random Tree}}* for {{Three-Dimensional Path Planning}} of {{Unmanned Aerial Vehicles}}}
+      \field{urlday}{26}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{11}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3390/electronics11152338
+      \endverb
+      \verb{file}
+      \verb /home/benjamin/Zotero/storage/E8EQC2AB/Yang et al. - 2022 - Dubins Path-Oriented Rapidly Exploring Random Tree for Three-Dimensional Path Planning of Unmanned.pdf
+      \endverb
+      \keyw{Dubins path,path planning,rapidly-exploring random tree,unmanned aerial vehicle}
+    \endentry
+    \entry{shanDynamicRRTPath2009}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=a5559c625d46174bf64abe7596baa690}{%
+           family={Shan},
+           familyi={S\bibinitperiod},
+           given={Enzhong},
+           giveni={E\bibinitperiod}}}%
+        {{hash=71d8f67795a219bd82bcdf9afdecec87}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=529de25a2caa1b148b26e7971b3a8534}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Jinze},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b5e6f199dea905be38eeac1467ca867b}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Zhenping},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{5a03bd232daa7a90cd99f24d10172bcf}
+      \strng{fullhash}{d81136d4b49b720e48dbda4f04b89b1d}
+      \strng{fullhashraw}{d81136d4b49b720e48dbda4f04b89b1d}
+      \strng{bibnamehash}{d81136d4b49b720e48dbda4f04b89b1d}
+      \strng{authorbibnamehash}{d81136d4b49b720e48dbda4f04b89b1d}
+      \strng{authornamehash}{5a03bd232daa7a90cd99f24d10172bcf}
+      \strng{authorfullhash}{d81136d4b49b720e48dbda4f04b89b1d}
+      \strng{authorfullhashraw}{d81136d4b49b720e48dbda4f04b89b1d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{For the application of ALV (Automatic Land Vehicle) running in a dynamic environment, an improved dynamic RRT(Rapidly exploring Random Trees ) path planning algorithm is proposed. The algorithm combines the noholonomic constraints of the vehicle with double extend RRTs, and the three order B-spline basic functions are used to approach and create a new smooth route which suits for the vehicle to follow. The algorithm not only improves the efficiency of searching but also guarantees the feasibility of the path at the same time. Based on the idea of rolling optimization, the algorithm is improved for real-time path planning in a dynamic environment. The simulation outcomes and field tests verify the effectiveness of the method proposed.}
+      \field{booktitle}{2009 {{Second International Symposium}} on {{Computational Intelligence}} and {{Design}}}
+      \field{month}{12}
+      \field{title}{A {{Dynamic RRT Path Planning Algorithm Based}} on {{B-Spline}}}
+      \field{urlday}{24}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{2}
+      \field{year}{2009}
+      \field{urldateera}{ce}
+      \field{pages}{25\bibrangedash 29}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ISCID.2009.155
+      \endverb
+      \verb{file}
+      \verb /home/benjamin/Zotero/storage/JNSYV6UY/Shan et al. - 2009 - A Dynamic RRT Path Planning Algorithm Based on B-Spline.pdf
+      \endverb
+      \keyw{Algorithm design and analysis,B-spline,Computational intelligence,dynamic RRT,Heuristic algorithms,Land vehicles,path planning,Path planning,Sampling methods,Space vehicles,Spline,Sun,Vehicle dynamics}
+    \endentry
+    \entry{eshtehardianContinuousRRTbasedPath2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=bd393dd73102769f2404364c3f04158e}{%
+           family={Eshtehardian},
+           familyi={E\bibinitperiod},
+           given={S.\bibnamedelimi A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=99ca0689bf55e8218428a5ca1dd1f423}{%
+           family={Khodaygan},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f4a99fc5d23ba23537765e802fca0fa}
+      \strng{fullhash}{98cefeaee95951b47614332441e70749}
+      \strng{fullhashraw}{98cefeaee95951b47614332441e70749}
+      \strng{bibnamehash}{98cefeaee95951b47614332441e70749}
+      \strng{authorbibnamehash}{98cefeaee95951b47614332441e70749}
+      \strng{authornamehash}{4f4a99fc5d23ba23537765e802fca0fa}
+      \strng{authorfullhash}{98cefeaee95951b47614332441e70749}
+      \strng{authorfullhashraw}{98cefeaee95951b47614332441e70749}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Rapidly exploring random trees (RRT) are sampling-based approaches being widely applied for path planning of mobile robots. Since the output of these algorithms usually is a stream of discrete lines involving discontinuity at the linking points, kinematic constraints restrict the robot's movements. Consequently, robots may not pass discrete points in the path correctly. Hence, the using CAGD (Computer-Aided Geometry Design) curves can run simultaneously alongside those algorithms or may run after that to make a smooth path and that's the way in which non-holonomic constraints can be considered perfect and robots can be droved autonomously across them about the collision detection method which executed by the main sampling-based algorithm like RRT*. In this paper, an approach based on the combination of RRT* and B-spline is proposed for smoothing the path which is generated by RRT*-based algorithms, which are one of the most famous groups of algorithms in artificial intelligence. Some new functions are added to the outcome of the RRT* algorithm. To avoid collision in the generated path, some corrections are also provided. Finally, for illustrating the efficiency of the proposed method, the algorithm is implemented in the simulation environment of Webots®{} and for verification, the obtained results are compared and discussed.}
+      \field{issn}{1868-5145}
+      \field{journaltitle}{Journal of Ambient Intelligence and Humanized Computing}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{A Continuous {{RRT}}*-Based Path Planning Method for Non-Holonomic Mobile Robots Using {{B-spline}} Curves}
+      \field{urlday}{24}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{8693\bibrangedash 8702}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/s12652-021-03625-8
+      \endverb
+      \verb{file}
+      \verb /home/benjamin/Zotero/storage/4UJAI6SE/Eshtehardian and Khodaygan - 2023 - A continuous RRT-based path planning method for non-holonomic mobile robots using B-spline curves.pdf
+      \endverb
+      \keyw{Algorithm,B-spline curves,Non-holonomic mobile robots,Path planning,RRT,Smoothing algorithm}
+    \endentry
+    \entry{EWD:NumerMath59}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2066778d476d4368455cb8e3ba6d03b4}{%
+           family={Dijkstra},
+           familyi={D\bibinitperiod},
+           given={Edsger.\bibnamedelimi W.},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{fullhash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{fullhashraw}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{bibnamehash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{authorbibnamehash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{authornamehash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{authorfullhash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{authorfullhashraw}{2066778d476d4368455cb8e3ba6d03b4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Numerische Mathematik}
+      \field{title}{A note on two problems in connexion with graphs.}
+      \field{volume}{1}
+      \field{year}{1959}
+      \field{pages}{269\bibrangedash 271}
+      \range{pages}{3}
+    \endentry
+    \entry{SUN2025103174}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=fc8e850e6e58820e06c7e7e66d78760d}{%
+           family={SUN},
+           familyi={S\bibinitperiod},
+           given={Jing},
+           giveni={J\bibinitperiod}}}%
+        {{hash=08940f7a15049d28e5ddc192a2af222c}{%
+           family={XU},
+           familyi={X\bibinitperiod},
+           given={Guangtong},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3ce9b3fd98e179b14d3f08e797d2847d}{%
+           family={WANG},
+           familyi={W\bibinitperiod},
+           given={Zhu},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=c0392eaecb067e8dc5976a4faef64ffd}{%
+           family={LONG},
+           familyi={L\bibinitperiod},
+           given={Teng},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8834ae0349ba2dcfe72cc9a75b31908a}{%
+           family={SUN},
+           familyi={S\bibinitperiod},
+           given={Jingliang},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{93c605980622c6007816afeec62ab64d}
+      \strng{fullhash}{76c57554b4be7a17c13bc5acf4084c98}
+      \strng{fullhashraw}{76c57554b4be7a17c13bc5acf4084c98}
+      \strng{bibnamehash}{76c57554b4be7a17c13bc5acf4084c98}
+      \strng{authorbibnamehash}{76c57554b4be7a17c13bc5acf4084c98}
+      \strng{authornamehash}{93c605980622c6007816afeec62ab64d}
+      \strng{authorfullhash}{76c57554b4be7a17c13bc5acf4084c98}
+      \strng{authorfullhashraw}{76c57554b4be7a17c13bc5acf4084c98}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1000-9361}
+      \field{journaltitle}{Chinese Journal of Aeronautics}
+      \field{number}{1}
+      \field{title}{Safe flight corridor constrained sequential convex programming for efficient trajectory generation of fixed-wing UAVs}
+      \field{volume}{38}
+      \field{year}{2025}
+      \field{pages}{103174}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.cja.2024.08.005
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1000936124003078
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1000936124003078
+      \endverb
+      \keyw{Fixed-wing unmanned aerial vehicle,Efficient trajectory planning,Safe flight corridor,Sequential convex programming,Customized convex optimizer}
+    \endentry
+    \entry{osburn}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=edf7b6808780b8caa61c879c43f2dec7}{%
+           family={Osburn},
+           familyi={O\bibinitperiod},
+           given={Matthew\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=fceeb09358f6cf9fb8f1ee3bc4fd29e2}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Cameron\bibnamedelima K.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=832a2c4892478d4017de6de994243149}{%
+           family={Salmon},
+           familyi={S\bibinitperiod},
+           given={John\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e5e8bd34019e9923b74b354878dd5c8d}
+      \strng{fullhash}{9fa50ea68bc5ab9d6d364738565cdfed}
+      \strng{fullhashraw}{9fa50ea68bc5ab9d6d364738565cdfed}
+      \strng{bibnamehash}{9fa50ea68bc5ab9d6d364738565cdfed}
+      \strng{authorbibnamehash}{9fa50ea68bc5ab9d6d364738565cdfed}
+      \strng{authornamehash}{e5e8bd34019e9923b74b354878dd5c8d}
+      \strng{authorfullhash}{9fa50ea68bc5ab9d6d364738565cdfed}
+      \strng{authorfullhashraw}{9fa50ea68bc5ab9d6d364738565cdfed}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.RO}
+      \field{eprinttype}{arXiv}
+      \field{title}{Systematic Constraint Formulation and Collision-Free Trajectory Planning Using Space-Time Graphs of Convex Sets}
+      \field{year}{2025}
+      \verb{eprint}
+      \verb 2508.10203
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2508.10203
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2508.10203
+      \endverb
+    \endentry
+    \entry{LIAN}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d9e18c3e9d6a42d24f77212386c53097}{%
+           family={Yakovlev},
+           familyi={Y\bibinitperiod},
+           given={Konstantin\bibnamedelima S.},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=b5b59bc334a414710fb7bbf70a0cdd54}{%
+           family={Baskin},
+           familyi={B\bibinitperiod},
+           given={Egor},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a11c56431873b74572305406bf75ab1d}{%
+           family={Hramoin},
+           familyi={H\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{c08c07c73da0b7aa69ab1a4829443265}
+      \strng{fullhash}{f37b82943c2036a4aafb687d8b699b54}
+      \strng{fullhashraw}{f37b82943c2036a4aafb687d8b699b54}
+      \strng{bibnamehash}{f37b82943c2036a4aafb687d8b699b54}
+      \strng{authorbibnamehash}{f37b82943c2036a4aafb687d8b699b54}
+      \strng{authornamehash}{c08c07c73da0b7aa69ab1a4829443265}
+      \strng{authorfullhash}{f37b82943c2036a4aafb687d8b699b54}
+      \strng{authorfullhashraw}{f37b82943c2036a4aafb687d8b699b54}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Grid-based angle-constrained path planning}
+      \field{volume}{abs/1506.01864}
+      \field{year}{2015}
+      \verb{eprint}
+      \verb 1506.01864
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1506.01864
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1506.01864
+      \endverb
+    \endentry
+    \entry{laube2018deeplearningparametrizationbspline}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=52db33328c19c562628f81f9bb22ddec}{%
+           family={Laube},
+           familyi={L\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bf1b19f25dc47c418ba7c56324d6cc21}{%
+           family={Franz},
+           familyi={F\bibinitperiod},
+           given={Matthias\bibnamedelima O.},
+           giveni={M\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=ce54e3bcd79a28e05ba63c8dc2bfecda}{%
+           family={Umlauf},
+           familyi={U\bibinitperiod},
+           given={Georg},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{3763791b13a731534aecf120ab4c6ce6}
+      \strng{fullhash}{1c414fae2bd751fd43e92718016a15ac}
+      \strng{fullhashraw}{1c414fae2bd751fd43e92718016a15ac}
+      \strng{bibnamehash}{1c414fae2bd751fd43e92718016a15ac}
+      \strng{authorbibnamehash}{1c414fae2bd751fd43e92718016a15ac}
+      \strng{authornamehash}{3763791b13a731534aecf120ab4c6ce6}
+      \strng{authorfullhash}{1c414fae2bd751fd43e92718016a15ac}
+      \strng{authorfullhashraw}{1c414fae2bd751fd43e92718016a15ac}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CG}
+      \field{eprinttype}{arXiv}
+      \field{title}{Deep Learning Parametrization for B-Spline Curve Approximation}
+      \field{year}{2018}
+      \verb{eprint}
+      \verb 1807.08304
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1807.08304
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1807.08304
+      \endverb
+    \endentry
+    \entry{Urmson_2003_8792}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=6c62e25ed773481cb328491cfc95c29f}{%
+           family={Urmson},
+           familyi={U\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3f853a8266754228a123c433dba4d246}{%
+           family={Simmons},
+           familyi={S\bibinitperiod},
+           given={Reid},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{f2ef328b33e476088b94e7553dfc27dc}
+      \strng{fullhash}{1b2185d035169412612fef0546615c4d}
+      \strng{fullhashraw}{1b2185d035169412612fef0546615c4d}
+      \strng{bibnamehash}{1b2185d035169412612fef0546615c4d}
+      \strng{authorbibnamehash}{1b2185d035169412612fef0546615c4d}
+      \strng{authornamehash}{f2ef328b33e476088b94e7553dfc27dc}
+      \strng{authorfullhash}{1b2185d035169412612fef0546615c4d}
+      \strng{authorfullhashraw}{1b2185d035169412612fef0546615c4d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of (IROS) IEEE/RSJ International Conference on Intelligent Robots and Systems}
+      \field{month}{10}
+      \field{title}{Approaches for Heuristically Biasing RRT Growth}
+      \field{volume}{2}
+      \field{year}{2003}
+      \field{pages}{1178\bibrangedash 1183}
+      \range{pages}{6}
+      \keyw{Randomized Planning,RRT,path planning}
+    \endentry
+    \entry{LaValle_greedy}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=92b0cf37758e40d42334e7bfec86241a}{%
+           family={Kuffner},
+           familyi={K\bibinitperiod},
+           given={J.J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=325241b13fb6310d847924b577e55bab}{%
+           family={LaValle},
+           familyi={L\bibinitperiod},
+           given={S.M.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{98efbbc8292190cf87a759c015c82808}
+      \strng{fullhash}{9cf5a6f1dd34f002d8d2e70916e94b98}
+      \strng{fullhashraw}{9cf5a6f1dd34f002d8d2e70916e94b98}
+      \strng{bibnamehash}{9cf5a6f1dd34f002d8d2e70916e94b98}
+      \strng{authorbibnamehash}{9cf5a6f1dd34f002d8d2e70916e94b98}
+      \strng{authornamehash}{98efbbc8292190cf87a759c015c82808}
+      \strng{authorfullhash}{9cf5a6f1dd34f002d8d2e70916e94b98}
+      \strng{authorfullhashraw}{9cf5a6f1dd34f002d8d2e70916e94b98}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings 2000 ICRA. Millennium Conference. IEEE International Conference on Robotics and Automation. Symposia Proceedings (Cat. No.00CH37065)}
+      \field{title}{RRT-connect: An efficient approach to single-query path planning}
+      \field{volume}{2}
+      \field{year}{2000}
+      \field{pages}{995\bibrangedash 1001 vol.2}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/ROBOT.2000.844730
+      \endverb
+      \keyw{Path planning;Computer science;Space exploration;Algorithm design and analysis;Humans;Animation;Robotic assembly;Buildings;Tree graphs;Kinematics}
+    \endentry
+    \entry{Gammell-2014-7921}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=e9090baed46c065dcc2b013fe0d54ecb}{%
+           family={Gammell},
+           familyi={G\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=cb1a6e64b31ce80aa88005a357504a99}{%
+           family={Srinivasa},
+           familyi={S\bibinitperiod},
+           given={Siddhartha},
+           giveni={S\bibinitperiod}}}%
+        {{hash=469b6445b854bdf80a10c6908d057bf0}{%
+           family={Barfoot},
+           familyi={B\bibinitperiod},
+           given={Timothy},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a19dfd8d6bc5da5b91851eac6443f5c7}
+      \strng{fullhash}{38195b777dbceb6685592eda94cafd37}
+      \strng{fullhashraw}{38195b777dbceb6685592eda94cafd37}
+      \strng{bibnamehash}{38195b777dbceb6685592eda94cafd37}
+      \strng{authorbibnamehash}{38195b777dbceb6685592eda94cafd37}
+      \strng{authornamehash}{a19dfd8d6bc5da5b91851eac6443f5c7}
+      \strng{authorfullhash}{38195b777dbceb6685592eda94cafd37}
+      \strng{authorfullhashraw}{38195b777dbceb6685592eda94cafd37}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of (IROS) IEEE/RSJ International Conference on Intelligent Robots and Systems}
+      \field{month}{9}
+      \field{title}{Informed RRT*: Optimal Sampling-based Path Planning Focused via Direct Sampling of an Admissible Ellipsoidal Heuristic}
+      \field{year}{2014}
+      \field{pages}{2997\bibrangedash 3004}
+      \range{pages}{8}
+    \endentry
+    \entry{vtol_trajectory}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=f1c6bdd236c015235f774640f3cdc755}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=fbdc933a9dab0922d25568cb708bb6f0}{%
+           family={Devasia},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8e76c02b0f1a8f01ad74bec41b901bce}{%
+           family={Paden},
+           familyi={P\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{da36df5fe123c116273cf5766d1d36e9}
+      \strng{fullhash}{f6faedbf3c472381ba5ece9be3bd09e8}
+      \strng{fullhashraw}{f6faedbf3c472381ba5ece9be3bd09e8}
+      \strng{bibnamehash}{f6faedbf3c472381ba5ece9be3bd09e8}
+      \strng{authorbibnamehash}{f6faedbf3c472381ba5ece9be3bd09e8}
+      \strng{authornamehash}{da36df5fe123c116273cf5766d1d36e9}
+      \strng{authorfullhash}{f6faedbf3c472381ba5ece9be3bd09e8}
+      \strng{authorfullhashraw}{f6faedbf3c472381ba5ece9be3bd09e8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of 1994 33rd IEEE Conference on Decision and Control}
+      \field{title}{A different look at output tracking: control of a VTOL aircraft}
+      \field{volume}{3}
+      \field{year}{1994}
+      \field{pages}{2376\bibrangedash 2381 vol.3}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/CDC.1994.411460
+      \endverb
+      \keyw{Aerospace control;Trajectory;Control systems;Open loop systems;Aircraft propulsion;Control engineering;Control engineering computing;Mechanical engineering;State feedback;Signal generators}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

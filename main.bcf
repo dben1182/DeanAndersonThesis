@@ -2380,44 +2380,133 @@
     <bcf:datasource type="file" datatype="bibtex">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">sabour2023applications</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">aerial_shot</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">drones6050117</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">lapd_bell206_jetranger</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">lapd_bell206_jetranger</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">onyxstar_foxc8_xt_xender_360</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">onyxstar_foxc8_xt_xender_360</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">the_hexacopter</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">the_hexacopter</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">tnw_fastest_camera_drone_image</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">tnw_fastest_camera_drone_image</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">mq9_reaper_uav_cropped</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">mq9_reaper_uav_cropped</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">zipline_drone_launch</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">zipline_drone_launch</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">uav_book</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">uav_book</bcf:citekey>
-    <bcf:citekey order="17" intorder="2">vtol_book</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">Rehan_Akram_Shahzad_Shams_Ali_2022</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">evtolnews_archer_image</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">evtolnews_archer_image</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">beta_a250_evtol_prototype</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">beta_a250_evtol_prototype</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">mv22_mcas_miramar_2014</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">mv22_mcas_miramar_2014</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">zipline_p2_drone_aviationweek</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">zipline_p2_drone_aviationweek</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">uav_book</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">vtol_book</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">transition_video</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">px4_controller_diagrams</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">px4_controller_diagrams</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">gain_scheduling</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">lpv_controller</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">mpc_controller</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">incremental_nonlinear_dynamic_inversion</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">incremental_nonlinear_dynamic_inversion</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">duffBuildingOrthonormalBasis</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">duffBuildingOrthonormalBasis</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">orthogonal_projection_rg</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">orthogonal_projection_rg</bcf:citeke
+    <bcf:citekey order="10" intorder="1">sabour2023applications</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">aerial_shot</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">drones6050117</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">lapd_bell206_jetranger</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">lapd_bell206_jetranger</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">onyxstar_foxc8_xt_xender_360</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">onyxstar_foxc8_xt_xender_360</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">the_hexacopter</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">the_hexacopter</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">tnw_fastest_camera_drone_image</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">tnw_fastest_camera_drone_image</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">mq9_reaper_uav_cropped</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">mq9_reaper_uav_cropped</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">zipline_drone_launch</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">zipline_drone_launch</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="26" intorder="2">vtol_book</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">Rehan_Akram_Shahzad_Shams_Ali_2022</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">evtolnews_archer_image</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">evtolnews_archer_image</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">beta_a250_evtol_prototype</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">beta_a250_evtol_prototype</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">mv22_mcas_miramar_2014</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">mv22_mcas_miramar_2014</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">zipline_p2_drone_aviationweek</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">zipline_p2_drone_aviationweek</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">vtol_book</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">transition_video</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">px4_controller_diagrams</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">px4_controller_diagrams</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">gain_scheduling</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">lpv_controller</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">mpc_controller</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">ndi_firstPaper</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">incremental_nonlinear_dynamic_inversion</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">nasa_hover</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">nasa_hover_2</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">duffBuildingOrthonormalBasis</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">duffBuildingOrthonormalBasis</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">orthogonal_projection_rg</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">orthogonal_projection_rg</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">tiltQuadplane</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">lou_unified_energy_control_tilt_body</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">lou_unified_energy_control_tilt_body</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">lou_unified_energy_control_tilt_body</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">lou_unified_energy_control_tilt_body</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">lou_unified_energy_control_tilt_body</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">flightDynamicsPrinciples</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">pilotinstitute_phugoid</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">pilotinstitute_phugoid</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">cookLateralDirectionalDynamics</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">flightDynamicsPrinciples</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">flightDynamicsPrinciples</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">flightDynamicsPrinciples</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">beardRLS</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">beardRLS</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">IIRfilterImage</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">IIRfilterImage</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="77" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="79" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="81" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">david_bspline</bcf:citekey>
+    <bcf:citekey order="83" intorder="1">david_bspline</bcf:citekey>
+    <bcf:citekey order="84" intorder="1">Lavalle_rrt</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">Lavalle_rrt</bcf:citekey>
+    <bcf:citekey order="86" intorder="1">varricchioSamplingbasedAlgorithmsOptimal2014</bcf:citekey>
+    <bcf:citekey order="87" intorder="1">varricchioSamplingbasedAlgorithmsOptimal2014</bcf:citekey>
+    <bcf:citekey order="88" intorder="1">yangDubinsPathOrientedRapidly2022</bcf:citekey>
+    <bcf:citekey order="89" intorder="1">yangDubinsPathOrientedRapidly2022</bcf:citekey>
+    <bcf:citekey order="90" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="91" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="92" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="93" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="94" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="95" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="96" intorder="1">shanDynamicRRTPath2009</bcf:citekey>
+    <bcf:citekey order="97" intorder="1">shanDynamicRRTPath2009</bcf:citekey>
+    <bcf:citekey order="98" intorder="1">eshtehardianContinuousRRTbasedPath2023</bcf:citekey>
+    <bcf:citekey order="99" intorder="1">eshtehardianContinuousRRTbasedPath2023</bcf:citekey>
+    <bcf:citekey order="100" intorder="1">EWD:NumerMath59</bcf:citekey>
+    <bcf:citekey order="101" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="102" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="103" intorder="1">beard2025BSplines</bcf:citekey>
+    <bcf:citekey order="104" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="105" intorder="1">SUN2025103174</bcf:citekey>
+    <bcf:citekey order="106" intorder="1">osburn</bcf:citekey>
+    <bcf:citekey order="107" intorder="1">osburn</bcf:citekey>
+    <bcf:citekey order="108" intorder="1">LIAN</bcf:citekey>
+    <bcf:citekey order="109" intorder="1">david_bspline</bcf:citekey>
+    <bcf:citekey order="110" intorder="1">david_bspline</bcf:citekey>
+    <bcf:citekey order="111" intorder="1">laube2018deeplearningparametrizationbspline</bcf:citekey>
+    <bcf:citekey order="112" intorder="1">Urmson_2003_8792</bcf:citekey>
+    <bcf:citekey order="113" intorder="1">LaValle_greedy</bcf:citekey>
+    <bcf:citekey order="114" intorder="1">Gammell-2014-7921</bcf:citekey>
+    <bcf:citekey order="115" intorder="1">Gammell-2014-7921</bcf:citekey>
+    <bcf:citekey order="116" intorder="1">vtol_trajectory</bcf:citekey>
+  </bcf:section>
+  <!-- SORTING TEMPLATES -->
+  <bcf:sortingtemplate name="none">
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">citeorder</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="2">
+      <bcf:sortitem order="1">intciteorder</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sortingtemplate>
+  <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="none/global//global/global/global"
+                type="entry"
+                sortingtemplatename="none"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global"
+                namehashtemplatename="global">
+  </bcf:datalist>
+</bcf:controlfile>

@@ -93,19 +93,27 @@ Another optimizer then finds the actuator values and tiltrotor angles that will 
 Nonlinear dynamic inversion, is essentially feedback linearization for control systems.
 Feedback linearization cancels nonlinear dynamic terms in a system's dynamic equations of motion, which enables implementation of linear control laws for the system.
 This means that the controller automatically actuates opposite to the undesired, nonlinear term to cancel it out and make the system better behaved. 
+At each time step, the system is relinearized and an approximate state transition matrix is regenerated to be reinverted to drive the system to its desired state.
+One of the first papers on aircraft NDI \cite{ndi_firstPaper} improved control of the F-18 in sumulation in very large angles of attack,  which tends to have very nonlinear effects.
+They claim that using NDI allowed them to control the aircraft at angles of attack that would normally be outside the stability envelope for standard flight controllers.
 NDI control requires that the system model is accurate so that a zeroing input actually removes undesired dynamic terms.
-If this is not the case, NDI may cause the system to become unstable.
 Incremental nonlinear dynamic inversion (INDI) attempts to solve this problem using incremental sensor data to actively estimate the aircraft dynamics. 
 Doing so matches the controller to reality and reduces the probability of instability.
-As the 
 
-In \cite{incremental_nonlinear_dynamic_inversion}, \citeauthor{incremental_nonlinear_dynamic_inversion}. This current paper is model-dependent. That is, it requires an accurate model of the aircraft in order to accurately control it to a particular desired trajectory. 
+The large angles of attack during VTOL transition make INDI a particularly attractive solution as it can remove dynamic effects that would otherwise cause the craft to fail.
+In \cite{incremental_nonlinear_dynamic_inversion}, two cascaded INDI flight controllers are used to control a quadplane in simulation, although it was not tested during transition.
+An INDI controller is developed for VTOL hovering in \cite{nasa_hover}, and is continued for forward flight and transition in \cite{nasa_hover_2}.
 
-\subsection{Differentially Flat Controllers}
+\subsection{Motivation for 2D VTOL Model and Controller}
 
-\section{2-D VTOL Mathematical Model}
+The solutions to the VTOL problem presented in the preceding section are all important parts of the attempt to control a VTOL aircraft during its transition phase.
+In this paper, we present one more solution to the VTOL transition problem.
+A 2D simplification of a VTOL simulation is developed to focus solely on transition control without stabilitation of degrees of freedom for roll, yaw, and east position.
+This solution develops a differentially flat controller to make the quadplane track a B-Spline input trajectory.
 
-We begin by simplifying our standard 3 dimensional dynamic design down to a 2 dimensional model. This simplified things dramatically for us; our early 3-D attempts resulted in instability in the aircraft. We begin with the following detail of the dynamics and mechanics of the aircraft operation in 2D.
+\section{2D VTOL Mathematical Model}
+
+We begin by simplifying a standard 3 dimensional dynamic design down to a 2 dimensional model. This simplified things dramatically for us; our early 3-D attempts resulted in instability in the aircraft. We begin with the following detail of the dynamics and mechanics of the aircraft operation in 2D.
 
 
 \begin{figure}[htb]
@@ -654,7 +662,7 @@ This minimizes the force required to be output from the quadrotors. Now, if we d
     =
     \begin{bmatrix}
         F^b_{n,diff}\\
-        F^b_{d,diff}\\
+        F^b_{d,diff}
     \end{bmatrix}
 \end{align}
 
@@ -699,13 +707,13 @@ Given our model of the system, we desire to find a given moment. The pitch angle
 To derive this, we first understand the relationship between pitch moment $m$ and angular acceleration $\ddot{\theta}$, which is given as:
 
 \begin{align*}
-    \ddot{\theta} = \frac{1}{J_y} m
+    \ddot{\theta} = \frac{1}{J_y} M
 \end{align*}
 
 If there is a desired $\ddot{\theta}_{ref}$, then there is a corresponding desired $m_{des}$ given as
 
 \begin{align}
-    m_{des} = J_y \ddot{\theta_{ref}}
+    M_{des} = J_y \ddot{\theta_{ref}}
 \end{align}
 
 This assumes that there is no error or disturbance in the system and that this controller tracks the desired pitch perfectly. However, that is never the case, so we attach a proportional and derivative gain to this equation, which yields the following.
@@ -765,11 +773,11 @@ The only unknown in this equation is $\delta_e$, so we solve for it as:
 
 However, $\delta_e$ can only operate between values $[-\bar{\delta_e},\bar{\delta_e}]$, so this may become infeasible. Therefore, we create a saturation value based on the set bounds for $\delta_e$ and saturate the above equation to be:
 
-\begin{equation}
+\begin{align}
     \label{eq:saturateDeltaE}
-    \delta_e^\ast = \text{sat}_{\Delta_e}\left(\frac{M_{des} - M_0 - M_q q}{M_{\delta_e}}\right)\\
+    \delta_e^\ast = \text{sat}_{\Delta_e}\left(\frac{M_{des} - M_0 - M_q q}{M_{\delta_e}}\right) \\
     \Delta_e = [-\bar{\delta_e},\bar{\delta_e}]
-\end{equation}
+\end{align}
 
 With this $\delta_e^\ast$, we can now calculate the moment desired by rearranging Eq. \ref{eq:MomentsSum} as:
 

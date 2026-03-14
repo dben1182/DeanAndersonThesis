@@ -2353,4 +2353,71 @@
       </bcf:constraint>
     </bcf:constraints>
     <bcf:constraints>
-      <bcf:entrytype>unp
+      <bcf:entrytype>unpublished</bcf:entrytype>
+      <bcf:constraint type="mandatory">
+        <bcf:field>author</bcf:field>
+        <bcf:field>title</bcf:field>
+      </bcf:constraint>
+    </bcf:constraints>
+    <bcf:constraints>
+      <bcf:constraint type="data" datatype="isbn">
+        <bcf:field>isbn</bcf:field>
+      </bcf:constraint>
+      <bcf:constraint type="data" datatype="issn">
+        <bcf:field>issn</bcf:field>
+      </bcf:constraint>
+      <bcf:constraint type="data" datatype="ismn">
+        <bcf:field>ismn</bcf:field>
+      </bcf:constraint>
+      <bcf:constraint type="data" datatype="pattern" pattern="(?:sf|sm|sn|pf|pm|pn|pp)">
+        <bcf:field>gender</bcf:field>
+      </bcf:constraint>
+    </bcf:constraints>
+  </bcf:datamodel>
+  <!-- CITATION DATA -->
+  <!-- SECTION 0 -->
+  <bcf:bibdata section="0">
+    <bcf:datasource type="file" datatype="bibtex">references.bib</bcf:datasource>
+  </bcf:bibdata>
+  <bcf:section number="0">
+    <bcf:citekey order="1" intorder="1">sabour2023applications</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">aerial_shot</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">drones6050117</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">lapd_bell206_jetranger</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">lapd_bell206_jetranger</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">onyxstar_foxc8_xt_xender_360</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">onyxstar_foxc8_xt_xender_360</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">the_hexacopter</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">the_hexacopter</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">tnw_fastest_camera_drone_image</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">tnw_fastest_camera_drone_image</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">mq9_reaper_uav_cropped</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">mq9_reaper_uav_cropped</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">zipline_drone_launch</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">zipline_drone_launch</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="17" intorder="2">vtol_book</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">Rehan_Akram_Shahzad_Shams_Ali_2022</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">evtolnews_archer_image</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">evtolnews_archer_image</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">beta_a250_evtol_prototype</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">beta_a250_evtol_prototype</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">mv22_mcas_miramar_2014</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">mv22_mcas_miramar_2014</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">zipline_p2_drone_aviationweek</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">zipline_p2_drone_aviationweek</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">uav_book</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">vtol_book</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">transition_video</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">px4_controller_diagrams</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">px4_controller_diagrams</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">gain_scheduling</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">lpv_controller</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">mpc_controller</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">incremental_nonlinear_dynamic_inversion</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">incremental_nonlinear_dynamic_inversion</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">duffBuildingOrthonormalBasis</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">duffBuildingOrthonormalBasis</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">orthogonal_projection_rg</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">orthogonal_projection_rg</bcf:citeke

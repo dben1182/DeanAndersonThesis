@@ -349,6 +349,30 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT ./main.aux
 INPUT ./main.aux
 INPUT main.aux
+INPUT ./fancychapters/chap0.aux
+INPUT ./fancychapters/chap0.aux
+INPUT fancychapters/chap0.aux
+INPUT ./fancychapters/chap1.aux
+INPUT ./fancychapters/chap1.aux
+INPUT fancychapters/chap1.aux
+INPUT ./fancychapters/chap2.aux
+INPUT ./fancychapters/chap2.aux
+INPUT fancychapters/chap2.aux
+INPUT ./fancychapters/chap3.aux
+INPUT ./fancychapters/chap3.aux
+INPUT fancychapters/chap3.aux
+INPUT ./fancychapters/chap4.aux
+INPUT ./fancychapters/chap4.aux
+INPUT fancychapters/chap4.aux
+INPUT ./fancychapters/chap5.aux
+INPUT ./fancychapters/chap5.aux
+INPUT fancychapters/chap5.aux
+INPUT ./appenA.aux
+INPUT ./appenA.aux
+INPUT appenA.aux
+INPUT ./appenB.aux
+INPUT ./appenB.aux
+INPUT appenB.aux
 OUTPUT main.aux
 INPUT /usr/share/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/omlnpxmi.fd
@@ -376,10 +400,21 @@ INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texmf-dist/tex/latex/graphics/color.sty
-OUTPUT main.out
+INPUT ./main.out
+INPUT ./main.out
+INPUT main.out
+INPUT main.out
 OUTPUT main.pdf
+INPUT ./main.out
+INPUT ./main.out
+OUTPUT main.out
 INPUT /usr/share/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 OUTPUT main.bcf
+INPUT main.bbl
+INPUT ./main.bbl
+INPUT ./main.bbl
+INPUT ./main.bbl
+INPUT main.bbl
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ts1zpltlf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ts1zpltlf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ts1zpltlf.fd
@@ -416,59 +451,15 @@ INPUT ./acknowledgments.tex
 INPUT ./acknowledgments.tex
 INPUT ./acknowledgments.tex
 INPUT acknowledgments.tex
+INPUT ./main.toc
+INPUT ./main.toc
+INPUT main.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplth-Italic-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ecth-tlf.enc
-INPUT ./nomenclature.tex
-INPUT ./nomenclature.tex
-INPUT ./nomenclature.tex
-INPUT ./nomenclature.tex
-INPUT nomenclature.tex
-INPUT ./fancychapters/chap0.tex
-INPUT ./fancychapters/chap0.tex
-OUTPUT fancychapters/chap0.aux
-INPUT ./fancychapters/chap0.tex
-INPUT ./fancychapters/chap0.tex
-INPUT fancychapters/chap0.tex
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
-INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
-INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
-INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
-INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
-INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
-INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
-INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
-INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
-INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
-INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
-INPUT ./figs/chap0/The_Hexacopter.jpg
-INPUT ./figs/chap0/The_Hexacopter.jpg
-INPUT ./figs/chap0/The_Hexacopter.jpg
-INPUT ./figs/chap0/The_Hexacopter.jpg
-INPUT ./figs/chap0/The_Hexacopter.jpg
-INPUT ./figs/chap0/redbull.jpeg
-INPUT ./figs/chap0/redbull.jpeg
-INPUT ./figs/chap0/redbull.jpeg
-INPUT ./figs/chap0/redbull.jpeg
-INPUT ./figs/chap0/redbull.jpeg
-INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
-INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
-INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
-INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
-INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
-INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
-INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
-INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
-INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
-INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
-INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
-INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
-INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
-INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
-INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
+INPUT ./main.lof
+INPUT ./main.lof
+INPUT main.lof
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1minzpl.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1minzpl.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/ot1minzpl.fd
@@ -512,8 +503,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -521,6 +512,133 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT ./main.lot
+INPUT ./main.lot
+INPUT main.lot
+INPUT ./nomenclature.tex
+INPUT ./nomenclature.tex
+INPUT ./nomenclature.tex
+INPUT ./nomenclature.tex
+INPUT nomenclature.tex
+INPUT ./fancychapters/chap0.tex
+INPUT ./fancychapters/chap0.tex
+OUTPUT fancychapters/chap0.aux
+INPUT ./fancychapters/chap0.tex
+INPUT ./fancychapters/chap0.tex
+INPUT fancychapters/chap0.tex
+INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
+INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
+INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
+INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
+INPUT ./figs/chap0/LAPD_Bell_206_Jetranger.jpg
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
+INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
+INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
+INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
+INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
+INPUT ./figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg
+INPUT ./figs/chap0/The_Hexacopter.jpg
+INPUT ./figs/chap0/The_Hexacopter.jpg
+INPUT ./figs/chap0/The_Hexacopter.jpg
+INPUT ./figs/chap0/The_Hexacopter.jpg
+INPUT ./figs/chap0/The_Hexacopter.jpg
+INPUT ./figs/chap0/redbull.jpeg
+INPUT ./figs/chap0/redbull.jpeg
+INPUT ./figs/chap0/redbull.jpeg
+INPUT ./figs/chap0/redbull.jpeg
+INPUT ./figs/chap0/redbull.jpeg
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
+INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
+INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
+INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
+INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
+INPUT ./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg
+INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
+INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
+INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
+INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
+INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
+INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
+INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
+INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
+INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
+INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT ./figs/chap0/2048px-BETA_Technologies_A250_eVTOL_Prototype_Aircraft.jpg
@@ -538,42 +656,8 @@ INPUT ./figs/chap0/zipline_source_bill_carey.jpg
 INPUT ./figs/chap0/zipline_source_bill_carey.jpg
 INPUT ./figs/chap0/zipline_source_bill_carey.jpg
 INPUT ./figs/chap0/zipline_source_bill_carey.jpg
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Regular-T1-TLF.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Regular-T1-TLF.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Regular-T1-TLF--base.tfm
 INPUT ./fancychapters/chap1.tex
@@ -593,74 +677,38 @@ INPUT ./figs/chap1/Px4VTOLFlightPath.jpg
 INPUT ./figs/chap1/Px4VTOLFlightPath.jpg
 INPUT ./figs/chap1/Px4VTOLFlightPath.jpg
 INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Regular-T1-TLF.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Regular-T1-TLF.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Regular-T1-TLF--base.tfm
-INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc
-INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
 INPUT ./figs/quadplane_2D.pdf
 INPUT ./figs/quadplane_2D.pdf
 INPUT ./figs/quadplane_2D.pdf
 INPUT ./figs/quadplane_2D.pdf
 INPUT ./figs/quadplane_2D.pdf
-INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplexx.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newtx/ntxexx.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txexs.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txex-bar.tfm
-INPUT /usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplsym.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm
-INPUT ./figs/chap1/Orthogonal Projection.png
-INPUT ./figs/chap1/Orthogonal Projection.png
-INPUT ./figs/chap1/Orthogonal Projection.png
-INPUT ./figs/chap1/Orthogonal Projection.png
-INPUT ./figs/chap1/Orthogonal Projection.png
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT ./figs/chap1/Orthogonal Projection.png
+INPUT ./figs/chap1/Orthogonal Projection.png
+INPUT ./figs/chap1/Orthogonal Projection.png
+INPUT ./figs/chap1/Orthogonal Projection.png
+INPUT ./figs/chap1/Orthogonal Projection.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplsyc.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newtx/ntxsyc.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/txfonts/txsyc.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
@@ -698,63 +746,60 @@ INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
-INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/pxb-lms.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Angles.png
-INPUT ./figs/chap1/Takeoff/Angles.png
-INPUT ./figs/chap1/Takeoff/Angles.png
-INPUT ./figs/chap1/Takeoff/Angles.png
-INPUT ./figs/chap1/Takeoff/Angles.png
 INPUT ./figs/chap1/landing/ReferenceTrajectory.png
 INPUT ./figs/chap1/landing/ReferenceTrajectory.png
 INPUT ./figs/chap1/landing/ReferenceTrajectory.png
@@ -845,3 +890,461 @@ INPUT ./figs/chap1/StepError/Deltas2.png
 INPUT ./figs/chap1/StepError/Deltas2.png
 INPUT ./figs/chap1/StepError/Deltas2.png
 INPUT ./figs/chap1/StepError/Deltas2.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/StepError/angles.png
+INPUT ./figs/chap1/quadplane.jpg
+INPUT ./figs/chap1/quadplane.jpg
+INPUT ./figs/chap1/quadplane.jpg
+INPUT ./figs/chap1/quadplane.jpg
+INPUT ./figs/chap1/quadplane.jpg
+INPUT ./figs/chap1/tiltbodyDesign.png
+INPUT ./figs/chap1/tiltbodyDesign.png
+INPUT ./figs/chap1/tiltbodyDesign.png
+INPUT ./figs/chap1/tiltbodyDesign.png
+INPUT ./figs/chap1/tiltbodyDesign.png
+INPUT ./figs/chap1/tiltbodyManeuver.png
+INPUT ./figs/chap1/tiltbodyManeuver.png
+INPUT ./figs/chap1/tiltbodyManeuver.png
+INPUT ./figs/chap1/tiltbodyManeuver.png
+INPUT ./figs/chap1/tiltbodyManeuver.png
+INPUT ./fancychapters/chap2.tex
+INPUT ./fancychapters/chap2.tex
+OUTPUT fancychapters/chap2.aux
+INPUT ./fancychapters/chap2.tex
+INPUT ./fancychapters/chap2.tex
+INPUT fancychapters/chap2.tex
+INPUT ./figs/chap2/phughoid_mode_diagram.png
+INPUT ./figs/chap2/phughoid_mode_diagram.png
+INPUT ./figs/chap2/phughoid_mode_diagram.png
+INPUT ./figs/chap2/phughoid_mode_diagram.png
+INPUT ./figs/chap2/phughoid_mode_diagram.png
+INPUT ./figs/chap2/Dutch Roll Diagram.png
+INPUT ./figs/chap2/Dutch Roll Diagram.png
+INPUT ./figs/chap2/Dutch Roll Diagram.png
+INPUT ./figs/chap2/Dutch Roll Diagram.png
+INPUT ./figs/chap2/Dutch Roll Diagram.png
+INPUT ./figs/chap2/IIR-filter.png
+INPUT ./figs/chap2/IIR-filter.png
+INPUT ./figs/chap2/IIR-filter.png
+INPUT ./figs/chap2/IIR-filter.png
+INPUT ./figs/chap2/IIR-filter.png
+INPUT ./figs/chap2/Input Output Black Box.drawio.png
+INPUT ./figs/chap2/Input Output Black Box.drawio.png
+INPUT ./figs/chap2/Input Output Black Box.drawio.png
+INPUT ./figs/chap2/Input Output Black Box.drawio.png
+INPUT ./figs/chap2/Input Output Black Box.drawio.png
+INPUT ./figs/chap2/Phughoid Mode Control Input Plot 2.png
+INPUT ./figs/chap2/Phughoid Mode Control Input Plot 2.png
+INPUT ./figs/chap2/Phughoid Mode Control Input Plot 2.png
+INPUT ./figs/chap2/Phughoid Mode Control Input Plot 2.png
+INPUT ./figs/chap2/Phughoid Mode Control Input Plot 2.png
+INPUT ./figs/chap2/Dutch roll control Inputs Plot 2.png
+INPUT ./figs/chap2/Dutch roll control Inputs Plot 2.png
+INPUT ./figs/chap2/Dutch roll control Inputs Plot 2.png
+INPUT ./figs/chap2/Dutch roll control Inputs Plot 2.png
+INPUT ./figs/chap2/Dutch roll control Inputs Plot 2.png
+INPUT csvFiles/coefficients.csv
+INPUT ./figs/chap2/anaconda111.jpg
+INPUT ./figs/chap2/anaconda111.jpg
+INPUT ./figs/chap2/anaconda111.jpg
+INPUT ./figs/chap2/anaconda111.jpg
+INPUT ./figs/chap2/anaconda111.jpg
+INPUT ./fancychapters/chap3.tex
+INPUT ./fancychapters/chap3.tex
+OUTPUT fancychapters/chap3.aux
+INPUT ./fancychapters/chap3.tex
+INPUT ./fancychapters/chap3.tex
+INPUT fancychapters/chap3.tex
+INPUT ./figs/chap3/central_basis_unclamped.pdf
+INPUT ./figs/chap3/central_basis_unclamped.pdf
+INPUT ./figs/chap3/central_basis_unclamped.pdf
+INPUT ./figs/chap3/central_basis_unclamped.pdf
+INPUT ./figs/chap3/central_basis_unclamped.pdf
+INPUT ./figs/chap3/uniform_basis_functions.pdf
+INPUT ./figs/chap3/uniform_basis_functions.pdf
+INPUT ./figs/chap3/uniform_basis_functions.pdf
+INPUT ./figs/chap3/uniform_basis_functions.pdf
+INPUT ./figs/chap3/uniform_basis_functions.pdf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT ./figs/chap3/mainPlot.png
+INPUT ./figs/chap3/mainPlot.png
+INPUT ./figs/chap3/mainPlot.png
+INPUT ./figs/chap3/mainPlot.png
+INPUT ./figs/chap3/mainPlot.png
+INPUT ./fancychapters/chap4.tex
+INPUT ./fancychapters/chap4.tex
+OUTPUT fancychapters/chap4.aux
+INPUT ./fancychapters/chap4.tex
+INPUT ./fancychapters/chap4.tex
+INPUT fancychapters/chap4.tex
+INPUT ./figs/chap1/david_2x2.png
+INPUT ./figs/chap1/david_2x2.png
+INPUT ./figs/chap1/david_2x2.png
+INPUT ./figs/chap1/david_2x2.png
+INPUT ./figs/chap1/david_2x2.png
+INPUT ./figs/chap1/david_3x3.png
+INPUT ./figs/chap1/david_3x3.png
+INPUT ./figs/chap1/david_3x3.png
+INPUT ./figs/chap1/david_3x3.png
+INPUT ./figs/chap1/david_3x3.png
+INPUT ./figs/chap1/david_4x4.png
+INPUT ./figs/chap1/david_4x4.png
+INPUT ./figs/chap1/david_4x4.png
+INPUT ./figs/chap1/david_4x4.png
+INPUT ./figs/chap1/david_4x4.png
+INPUT ./figs/chap4/New Node Diagram.drawio.png
+INPUT ./figs/chap4/New Node Diagram.drawio.png
+INPUT ./figs/chap4/New Node Diagram.drawio.png
+INPUT ./figs/chap4/New Node Diagram.drawio.png
+INPUT ./figs/chap4/New Node Diagram.drawio.png
+INPUT ./figs/chap4/RRT Line Example.drawio.png
+INPUT ./figs/chap4/RRT Line Example.drawio.png
+INPUT ./figs/chap4/RRT Line Example.drawio.png
+INPUT ./figs/chap4/RRT Line Example.drawio.png
+INPUT ./figs/chap4/RRT Line Example.drawio.png
+INPUT ./figs/chap4/dubins rrt.png
+INPUT ./figs/chap4/dubins rrt.png
+INPUT ./figs/chap4/dubins rrt.png
+INPUT ./figs/chap4/dubins rrt.png
+INPUT ./figs/chap4/dubins rrt.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
+INPUT ./figs/chap4/Convex and Non-Convex Diagram.drawio.png
+INPUT ./figs/chap4/Convex and Non-Convex Diagram.drawio.png
+INPUT ./figs/chap4/Convex and Non-Convex Diagram.drawio.png
+INPUT ./figs/chap4/Convex and Non-Convex Diagram.drawio.png
+INPUT ./figs/chap4/Convex and Non-Convex Diagram.drawio.png
+INPUT ./figs/chap4/Half Plane.drawio.png
+INPUT ./figs/chap4/Half Plane.drawio.png
+INPUT ./figs/chap4/Half Plane.drawio.png
+INPUT ./figs/chap4/Half Plane.drawio.png
+INPUT ./figs/chap4/Half Plane.drawio.png
+INPUT ./figs/chap4/SFC Diagram Single.drawio.png
+INPUT ./figs/chap4/SFC Diagram Single.drawio.png
+INPUT ./figs/chap4/SFC Diagram Single.drawio.png
+INPUT ./figs/chap4/SFC Diagram Single.drawio.png
+INPUT ./figs/chap4/SFC Diagram Single.drawio.png
+INPUT ./figs/chap4/SFC Union.drawio (5)_edited.png
+INPUT ./figs/chap4/SFC Union.drawio (5)_edited.png
+INPUT ./figs/chap4/SFC Union.drawio (5)_edited.png
+INPUT ./figs/chap4/SFC Union.drawio (5)_edited.png
+INPUT ./figs/chap4/SFC Union.drawio (5)_edited.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus diagram (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus diagram (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus diagram (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus diagram (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/Annulus diagram (1).png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png
+INPUT ./figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png
+INPUT ./figs/chap4/Control Points Relationship.drawio.png
+INPUT ./figs/chap4/Control Points Relationship.drawio.png
+INPUT ./figs/chap4/Control Points Relationship.drawio.png
+INPUT ./figs/chap4/Control Points Relationship.drawio.png
+INPUT ./figs/chap4/Control Points Relationship.drawio.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT ./figs/chap4/Results/4x4/4x4_map.png
+INPUT ./figs/chap4/Results/4x4/4x4_map.png
+INPUT ./figs/chap4/Results/4x4/4x4_map.png
+INPUT ./figs/chap4/Results/4x4/4x4_map.png
+INPUT ./figs/chap4/Results/4x4/4x4_map.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_waypoints_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_2.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_zoom.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_zoom.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_zoom.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_zoom.png
+INPUT ./figs/chap4/Results/4x4/4x4_splines_zoom.png
+INPUT ./figs/chap4/Results/4x4/4x4_metrics.png
+INPUT ./figs/chap4/Results/4x4/4x4_metrics.png
+INPUT ./figs/chap4/Results/4x4/4x4_metrics.png
+INPUT ./figs/chap4/Results/4x4/4x4_metrics.png
+INPUT ./figs/chap4/Results/4x4/4x4_metrics.png
+INPUT ./figs/chap4/Results/6x6/map.png
+INPUT ./figs/chap4/Results/6x6/map.png
+INPUT ./figs/chap4/Results/6x6/map.png
+INPUT ./figs/chap4/Results/6x6/map.png
+INPUT ./figs/chap4/Results/6x6/map.png
+INPUT ./figs/chap4/Results/6x6/waypoints side.png
+INPUT ./figs/chap4/Results/6x6/waypoints side.png
+INPUT ./figs/chap4/Results/6x6/waypoints side.png
+INPUT ./figs/chap4/Results/6x6/waypoints side.png
+INPUT ./figs/chap4/Results/6x6/waypoints side.png
+INPUT ./figs/chap4/Results/6x6/waypoints top.png
+INPUT ./figs/chap4/Results/6x6/waypoints top.png
+INPUT ./figs/chap4/Results/6x6/waypoints top.png
+INPUT ./figs/chap4/Results/6x6/waypoints top.png
+INPUT ./figs/chap4/Results/6x6/waypoints top.png
+INPUT ./figs/chap4/Results/6x6/spline side.png
+INPUT ./figs/chap4/Results/6x6/spline side.png
+INPUT ./figs/chap4/Results/6x6/spline side.png
+INPUT ./figs/chap4/Results/6x6/spline side.png
+INPUT ./figs/chap4/Results/6x6/spline side.png
+INPUT ./figs/chap4/Results/6x6/spline top 2.png
+INPUT ./figs/chap4/Results/6x6/spline top 2.png
+INPUT ./figs/chap4/Results/6x6/spline top 2.png
+INPUT ./figs/chap4/Results/6x6/spline top 2.png
+INPUT ./figs/chap4/Results/6x6/spline top 2.png
+INPUT ./figs/chap4/Results/6x6/spline top zoom.png
+INPUT ./figs/chap4/Results/6x6/spline top zoom.png
+INPUT ./figs/chap4/Results/6x6/spline top zoom.png
+INPUT ./figs/chap4/Results/6x6/spline top zoom.png
+INPUT ./figs/chap4/Results/6x6/spline top zoom.png
+INPUT ./figs/chap4/Results/6x6/metrics.png
+INPUT ./figs/chap4/Results/6x6/metrics.png
+INPUT ./figs/chap4/Results/6x6/metrics.png
+INPUT ./figs/chap4/Results/6x6/metrics.png
+INPUT ./figs/chap4/Results/6x6/metrics.png
+INPUT ./figs/chap4/Prism Diagram.drawio (2).png
+INPUT ./figs/chap4/Prism Diagram.drawio (2).png
+INPUT ./figs/chap4/Prism Diagram.drawio (2).png
+INPUT ./figs/chap4/Prism Diagram.drawio (2).png
+INPUT ./figs/chap4/Prism Diagram.drawio (2).png
+INPUT ./figs/chap4/3D Safe Flight Corridor.drawio (1).png
+INPUT ./figs/chap4/3D Safe Flight Corridor.drawio (1).png
+INPUT ./figs/chap4/3D Safe Flight Corridor.drawio (1).png
+INPUT ./figs/chap4/3D Safe Flight Corridor.drawio (1).png
+INPUT ./figs/chap4/3D Safe Flight Corridor.drawio (1).png
+INPUT ./figs/chap4/Results/3D/map.png
+INPUT ./figs/chap4/Results/3D/map.png
+INPUT ./figs/chap4/Results/3D/map.png
+INPUT ./figs/chap4/Results/3D/map.png
+INPUT ./figs/chap4/Results/3D/map.png
+INPUT ./figs/chap4/Results/3D/waypoints_4.png
+INPUT ./figs/chap4/Results/3D/waypoints_4.png
+INPUT ./figs/chap4/Results/3D/waypoints_4.png
+INPUT ./figs/chap4/Results/3D/waypoints_4.png
+INPUT ./figs/chap4/Results/3D/waypoints_4.png
+INPUT ./figs/chap4/Results/3D/waypoints_2.png
+INPUT ./figs/chap4/Results/3D/waypoints_2.png
+INPUT ./figs/chap4/Results/3D/waypoints_2.png
+INPUT ./figs/chap4/Results/3D/waypoints_2.png
+INPUT ./figs/chap4/Results/3D/waypoints_2.png
+INPUT ./figs/chap4/Results/3D/splines_5.png
+INPUT ./figs/chap4/Results/3D/splines_5.png
+INPUT ./figs/chap4/Results/3D/splines_5.png
+INPUT ./figs/chap4/Results/3D/splines_5.png
+INPUT ./figs/chap4/Results/3D/splines_5.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png
+INPUT ./figs/chap4/Curvature.png
+INPUT ./figs/chap4/Curvature.png
+INPUT ./figs/chap4/Curvature.png
+INPUT ./figs/chap4/Curvature.png
+INPUT ./figs/chap4/Curvature.png
+INPUT ./figs/chap4/annulus/complete path expanded wall zoom.png
+INPUT ./figs/chap4/annulus/complete path expanded wall zoom.png
+INPUT ./figs/chap4/annulus/complete path expanded wall zoom.png
+INPUT ./figs/chap4/annulus/complete path expanded wall zoom.png
+INPUT ./figs/chap4/annulus/complete path expanded wall zoom.png
+INPUT ./fancychapters/chap5.tex
+INPUT ./fancychapters/chap5.tex
+OUTPUT fancychapters/chap5.aux
+INPUT ./fancychapters/chap5.tex
+INPUT ./fancychapters/chap5.tex
+INPUT fancychapters/chap5.tex
+INPUT ./figs/chap5/PossiblyGoodMap2.png
+INPUT ./figs/chap5/PossiblyGoodMap2.png
+INPUT ./figs/chap5/PossiblyGoodMap2.png
+INPUT ./figs/chap5/PossiblyGoodMap2.png
+INPUT ./figs/chap5/PossiblyGoodMap2.png
+INPUT ./figs/chap5/ActualPositionVelocity.png
+INPUT ./figs/chap5/ActualPositionVelocity.png
+INPUT ./figs/chap5/ActualPositionVelocity.png
+INPUT ./figs/chap5/ActualPositionVelocity.png
+INPUT ./figs/chap5/ActualPositionVelocity.png
+INPUT ./figs/chap5/PosVelError.png
+INPUT ./figs/chap5/PosVelError.png
+INPUT ./figs/chap5/PosVelError.png
+INPUT ./figs/chap5/PosVelError.png
+INPUT ./figs/chap5/PosVelError.png
+INPUT ./figs/chap5/Angles.png
+INPUT ./figs/chap5/Angles.png
+INPUT ./figs/chap5/Angles.png
+INPUT ./figs/chap5/Angles.png
+INPUT ./figs/chap5/Angles.png
+INPUT ./figs/chap5/Deltas.png
+INPUT ./figs/chap5/Deltas.png
+INPUT ./figs/chap5/Deltas.png
+INPUT ./figs/chap5/Deltas.png
+INPUT ./figs/chap5/Deltas.png
+INPUT ./figs/chap5/rosflightLogo.png
+INPUT ./figs/chap5/rosflightLogo.png
+INPUT ./figs/chap5/rosflightLogo.png
+INPUT ./figs/chap5/rosflightLogo.png
+INPUT ./figs/chap5/rosflightLogo.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-sc-t1.tfm
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Regular-T1-TLF.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Italic-T1-TLF.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Italic-T1-TLF.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Italic-T1-TLF--base.tfm
+INPUT ./appenA.tex
+INPUT ./appenA.tex
+OUTPUT appenA.aux
+INPUT ./appenA.tex
+INPUT ./appenA.tex
+INPUT appenA.tex
+INPUT ./appenB.tex
+INPUT ./appenB.tex
+OUTPUT appenB.aux
+INPUT ./appenB.tex
+INPUT ./appenB.tex
+INPUT appenB.tex
+OUTPUT main.toc
+OUTPUT main.lof
+OUTPUT main.lot
+INPUT main.aux
+INPUT ./fancychapters/chap0.aux
+INPUT ./fancychapters/chap0.aux
+INPUT fancychapters/chap0.aux
+INPUT ./fancychapters/chap1.aux
+INPUT ./fancychapters/chap1.aux
+INPUT fancychapters/chap1.aux
+INPUT ./fancychapters/chap2.aux
+INPUT ./fancychapters/chap2.aux
+INPUT fancychapters/chap2.aux
+INPUT ./fancychapters/chap3.aux
+INPUT ./fancychapters/chap3.aux
+INPUT fancychapters/chap3.aux
+INPUT ./fancychapters/chap4.aux
+INPUT ./fancychapters/chap4.aux
+INPUT fancychapters/chap4.aux
+INPUT ./fancychapters/chap5.aux
+INPUT ./fancychapters/chap5.aux
+INPUT fancychapters/chap5.aux
+INPUT ./appenA.aux
+INPUT ./appenA.aux
+INPUT appenA.aux
+INPUT ./appenB.aux
+INPUT ./appenB.aux
+INPUT appenB.aux
+INPUT ./main.out
+INPUT ./main.out
+INPUT main.run.xml
+OUTPUT main.run.xml
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXBMI.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXBMI_gnu.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/pxbsys.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb
