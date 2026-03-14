@@ -551,13 +551,13 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zplbexa.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT ./main.lot
 INPUT ./main.lot
 INPUT main.lot
@@ -746,6 +746,11 @@ INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
+INPUT ./figs/chap1/controllerOverview.jpg
+INPUT ./figs/chap1/controllerOverview.jpg
+INPUT ./figs/chap1/controllerOverview.jpg
+INPUT ./figs/chap1/controllerOverview.jpg
+INPUT ./figs/chap1/controllerOverview.jpg
 INPUT ./figs/chap1/Takeoff/startControlPoints.png
 INPUT ./figs/chap1/Takeoff/startControlPoints.png
 INPUT ./figs/chap1/Takeoff/startControlPoints.png
@@ -761,45 +766,45 @@ INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
 INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
 INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
 INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/posVelError.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/ForcesComparison.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Deltas.png
-INPUT ./figs/chap1/Takeoff/Angles.png
-INPUT ./figs/chap1/Takeoff/Angles.png
-INPUT ./figs/chap1/Takeoff/Angles.png
-INPUT ./figs/chap1/Takeoff/Angles.png
-INPUT ./figs/chap1/Takeoff/Angles.png
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/pxb-lms.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/Takeoff shape with control points.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/posVelError.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/ForcesComparison.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/TrajectorActualAndDesired.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Deltas.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
+INPUT ./figs/chap1/Takeoff/Angles.png
 INPUT ./figs/chap1/landing/ReferenceTrajectory.png
 INPUT ./figs/chap1/landing/ReferenceTrajectory.png
 INPUT ./figs/chap1/landing/ReferenceTrajectory.png
