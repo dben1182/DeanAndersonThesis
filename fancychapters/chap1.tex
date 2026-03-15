@@ -24,7 +24,7 @@ Although these autopilots include control for VTOL aircraft, these control laws 
 For example, the Px4 controller for VTOLs aircraft controls the aircraft as either a rotorcraft or an airplane.
 When taking off, the aircraft will fly to a set altitude in multicopter (rotorcraft) mode and then slowly start the forward motor, or slowly tilt the forward rotors forward, until sufficient airspeed for foward flight has been reached. 
 The reverse happens during landing, where the aircraft slowly slows down until multicopter control takes effect, and the aircraft can descend.
-These methods are shown in figure \ref{fig:Px4}, and a video of transitioning may be found at \href{https://www.youtube.com/watch?v=f81n0aXdvKc}{https://www.youtube.com/watch?v=f81n0aXdvKc} \cite{transition_video}.
+These methods are shown in Fig. \ref{fig:Px4}, and a video of transitioning may be found at \href{https://www.youtube.com/watch?v=f81n0aXdvKc}{https://www.youtube.com/watch?v=f81n0aXdvKc} \cite{transition_video}.
 
 \begin{figure}[htbp]
     \centering
@@ -303,7 +303,7 @@ And then to map from a 3D point that sits on the plane to its 2D equivalent:
     U^+ = (U^\top U)^{-1} U^\top\\
 \end{align}
 
-Note that $U^+$ is the left pseudoinverse of $U$ and will project a 3D vector onto the plane and obtain its 2D equivalent. In general, a 3D vector, will not lie on the plane, but will be projected onto the plane. That is to say, the component of the 3D vector that is orthogonal to the plane will be removed, and then the projected vector will be transformed from a 3D frame into a 2D frame. An example of plane projection is shown in Figure \ref{fig:orthogonal projection}.
+Note that $U^+$ is the left pseudoinverse of $U$ and will project a 3D vector onto the plane and obtain its 2D equivalent. In general, a 3D vector, will not lie on the plane, but will be projected onto the plane. That is to say, the component of the 3D vector that is orthogonal to the plane will be removed, and then the projected vector will be transformed from a 3D frame into a 2D frame. An example of plane projection is shown in Fig. \ref{fig:orthogonal projection}.
 
 \begin{figure}
     \centering
@@ -447,6 +447,20 @@ The following are the approximate total aerodynamic forces and moments experienc
     \end{bmatrix}
 \end{align}
 
+These equations are recombined as:
+
+\begin{align}
+    F^b_{a} = 
+    \begin{bmatrix}
+        -\cos(\alpha) & \sin(\alpha)\\
+        -\sin(\alpha) & -\cos(\alpha)
+    \end{bmatrix}
+    \begin{bmatrix}
+      \bs{F}_{drag}\\
+      \bs{F}_{lift}
+    \end{bmatrix}
+\end{align}
+
 \section{Differential Flatness}
 
 Differential Flatness is the property that for a system defined by:
@@ -469,6 +483,14 @@ Of particular note to us is the equation for $u(t)$ being able to not only repre
 
 In order for this system to be differentially flat, the state variables $\bs{p}_{b/i}^i$, $\bs{v}_{b/i}^i$, $\theta$, $q$ and the input variables $\bs{F}^b$ and $M$ must all be expressed in terms of the flat outputs $\bs{z}_p^i$ and $z_\theta$ and their derivatives. That is, we measure the current position $\bs{z}_p^i$ and pitch $z_\theta$ of our system.
 
+\begin{align}
+    \bs{z} =
+    \begin{bmatrix}
+        \bs{z}^i_p\\
+        z_{\theta}
+    \end{bmatrix}
+\end{align}
+
 The position states are directly expressed in the flat outputs as $\bs{p}_{b/i}^i = \bs{z}_p^i(t)$.  The velocity states are directly expressed in the derivative of the flat outputs as $\bs{v}_{d/i}^i = \dot{\bs{z}}^i_p(t)$. The pitch angle and pitch rate are directly expressed in terms of the flat output as $\theta(t)=z_\theta(t)$, and $q(t)=\dot{z}_\theta(t)$.  The forces in the body frame are given by
 \(
 \bs{F}^b = R_b^{i\top}(z_\theta)\left(m\ddot{\bs{z}}_p^i - mg\bs{e}_z^i\right),
@@ -488,8 +510,12 @@ M(\bs{z}, \dot{\bs{z}}, \ddot{\bs{z}}) &= J_y\ddot{z}_\theta.
 \end{align}
 \end{subequations}
 
-Becuse each 
-
+Now, all states and control inputs of our system can be found with a simple knowledge of the position $\bs{z}^i_p$ and pitch $z_{\theta}$. 
+At this point, we should clarify that real purpose of this exercise is to relate our reference output (where we want the aircraft to be) to a control input.
+Take for example the moment control, $M = J_y \ddot(z)_{\theta}$.
+This means that if the input trajectory to our system provides a reference pitch $\theta$ for all timesteps, we know what moment needs to be actuated on the system, by taking the second derivative of theta.
+This assumes that there is no error between the reference trajectory and the actual trajectory. 
+Later on, the force and moment vector equations will be modified to take into account error between the reference output $z_{ref}$ and the actual output $z$.
 
 \section{Pitch Free Trajectory Tracking}
 \label{sec:PitchFree}
@@ -517,6 +543,9 @@ Define the error variables
     \tilde{\bs{p}}^i &\doteq \bs{p}_{b/i}^i-\bs{z}_{p,ref}^i \\
     \tilde{\bs{v}}^i &\doteq \bs{v}_{b/i}^i-\dot{\bs{z}}_{p,ref}^i.
 \end{align*}
+
+These may be termed the differentially flat error variables. 
+In other words, it is the difference between what we want the output (state) to be, and what the ouptut (state) actually is.
 
 Differentiating and substituting equation \ref{eq:evtol_kinematics} gives:
 
@@ -576,7 +605,14 @@ Using LQR, design a linear control law
 \begin{equation}\label{eq:lqr}
     \tilde{\bs{u}}_F^i = -K \tilde{\bs{x}}^i.
 \end{equation}
-Combining Equations~\eqref{eq:inputs_feedback_linearization} and~\eqref{eq:lqr}, and solving for the desired inertial frame forces gives
+
+Rearranging Eq. \ref{eq:inputs_feedback_linearization} to solve for inertial force gives
+
+\begin{align}
+    \bs{F}^i = m \left[\ddot{\bs{z}}_{p}^i + \tilde{\bs{u}}_F^i - g \bs{e}_z^i\right]
+\end{align}
+
+Combining Eqs. ~\eqref{eq:inputs_feedback_linearization} and~\eqref{eq:lqr}, and solving for the desired inertial frame forces gives
 \begin{subequations}
 \label{eq:input_final}
 \begin{align}
@@ -615,18 +651,34 @@ For comparison, the average of the absolute value of the $\delta_e$ and $q$ term
 Now, the angle of attack is given as: $\alpha = \theta - \gamma$, where $\gamma$ is the flight path angle. That is, it is the flight path angle of the craft as it is currently traveling, which is given as:
 
 \begin{align}
-    \gamma = -\arctan\left(\frac{\dot{z}}{\dot{x}}\right)
+    \gamma = -\arctan\left(\frac{\dot{p_d}}{\dot{p_d}}\right)
 \end{align}
 
 And where the desired flight path angle from the input trajectory is given as:
 
 \begin{align}
-    \gamma_{des}(\dot{\bs{z}}_p) \doteq \tan^{-1}\left(\frac{-\dot{\bs{z}}_{z}}{\dot{\bs{z}}_{x}}\right)
+    \gamma_{des}(\dot{\bs{z}}_p) \doteq \tan^{-1}\left(\frac{-\dot{\bs{z}}_{d}}{\dot{\bs{z}}_{n}}\right)
+\end{align}
+
+
+If all wind is zero,
+
+\begin{align}
+    \alpha = \theta - \gamma
 \end{align}
 
 \section{Pitch Optimization}
 
-A desired pitch is now feasible to generate with the following equation:
+
+Solving for the desired propeller forces gives
+
+\begin{align}
+    \bs{F}_p^b = R_i^b(\theta)\bs{F}_{des}^i - \bs{F}_0^b(V_a, \alpha).
+\end{align}
+
+It is desirable to get as much of the net desired force as possible using the airframe and not the rotors.
+Doing so will minimize energy expenditure and allow the aircraft to fly in fixed-wing mode as long as possible.
+To achieve this, a desired pitch is now feasible to generate with the following equation:
 
 \begin{equation}
     \label{eq:desired_propeller_force}
@@ -692,7 +744,7 @@ The optimization function then becomes:
         &\text{minimize} \quad  \|F^b_{n,diff}\| + \|F^b_{d,diff}\|\\ 
 \end{align}
 
-An example of the 1-Norm is shown in Figure \ref{fig:one norm visual}, comparing the 2 and 1 norms of some vectors. For any two vectors with the same 2-norm magnitude, the vector which is more closely aligned to one of the axes will have the lower 1-norm magnitude.
+An example of the 1-Norm is shown in Fig. \ref{fig:one norm visual}, comparing the 2 and 1 norms of some vectors. For any two vectors with the same 2-norm magnitude, the vector which is more closely aligned to one of the axes will have the lower 1-norm magnitude.
 
 \begin{figure}
     \centering
@@ -721,13 +773,13 @@ To derive this, we first understand the relationship between pitch moment $m$ an
 If there is a desired $\ddot{\theta}_{ref}$, then there is a corresponding desired $m_{des}$ given as
 
 \begin{align}
-    M_{des} = J_y \ddot{\theta_{ref}}
+  M_{des} = J_y \ddot{\theta}_{ref}
 \end{align}
 
 This assumes that there is no error or disturbance in the system and that this controller tracks the desired pitch perfectly. However, that is never the case, so we attach a proportional and derivative gain to this equation, which yields the following.
 
 \begin{align}
-    m_{des} = J_y \left(\ddot{\theta}_{ref} + k_d\left(\dot{\theta}_{ref} - q \right) + k_p\left(\theta_{ref} - \theta \right) \right)
+    M_{des} = J_y \left(\ddot{\theta}_{ref} + k_d\left(\dot{\theta}_{ref} - q \right) + k_p\left(\theta_{ref} - \theta \right) \right)
 \end{align}
 
 The above relationship can be shown in a flowchart in Fig. \ref{fig:feedforwardThetaMoment}. Please note that this does not yet relate to actuation controls, but rather it relates between a desired pitch angle in a given moment of time to a desired moment to be accomplished by the state of the craft and by actuation, as shown in the next sections.
@@ -799,7 +851,7 @@ This is the desired moment that we want to be actuated by the vertical propeller
 
 Now with a desired vertical force, forward force, and pitch moment, we can calculate the desired thrust from each of the three rotors, which are: $T_t$, the forward propeller, $T_f$, the front vertical rotor, and $T_r$, the rear vertical rotor.
 
-You will refer to Figure \ref{fig:quadplane_2D} for the design of the quadplane. It is seen from this design that each of the three rotors generates forces directly in the body frame. The thrust vector for each rotor is given in the 3D body frame for front, rear, and forward thrusts respectively: 
+You will refer to Fig. \ref{fig:quadplane_2D} for the design of the quadplane. It is seen from this design that each of the three rotors generates forces directly in the body frame. The thrust vector for each rotor is given in the 3D body frame for front, rear, and forward thrusts respectively: 
 
 \begin{align}
     \bs{F}_f(\delta_f) = 
@@ -827,6 +879,16 @@ You will refer to Figure \ref{fig:quadplane_2D} for the design of the quadplane.
 \end{align}
 
 The two vertical rotors (front and rear) generate thrust in the negative down direction, while the forward rotor generates thrust in the positive north direction. This is rather convenient because the high level controller sets a desired force in the north (x) and down (z) direction, so there is no mixing matrix required. 
+
+The desired propeller force vector can be broken up as 
+
+\begin{align}
+    \bs{F}^b_{p,des} =
+    \begin{bmatrix}
+        \bs{F}^b_{p,des,x}\\
+        \bs{F}^b_{p,des,z}
+    \end{bmatrix}
+\end{align}
 
 Earlier we calculated $\bs{F}^b_{p,des,x}$ as the force desired in the positive $x$ direction of the aircraft. The only force that acts in the positive $x$ direction is the forward rotor, so the desired force in the $x$ direction becomes the desired thrust from the forward Propeller.
 
@@ -905,7 +967,7 @@ And then they must be each saturated to stay within the bounds of: $0 \leq \delt
 
 The controller described in the previous sections is somewhat complicated, and it may be difficult to follow. 
 Similar controllers in the literature are often called daisy chain or cascaded controllers.
-Figure \ref{fig:ControllerOverview} 
+Fig. \ref{fig:ControllerOverview} 
 details the several stages of the controller. The two inputs are the reference trajectory $p_{ref}(t)$ and the quadplane state $x$.
 
 The pitch free trajectory tracker finds the desired net force to be actuated on the aircraft $F_{des}^i$, after taking into account state error $\tilde{x}$, gravity $g e_z$, and reference acceleration $\ddot{p}_{ref}(t)$.
@@ -927,7 +989,7 @@ Rotor control allocation finds the control inputs that will generate the remaini
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{figs/chap1/controllerOverview.jpg}
+    \includegraphics[width=0.85\linewidth]{figs/chap1/controllerOverview.jpg}
     \caption{Overview of VTOL controller. Divided into five main sections. 1. Pitch free trajectory tracker, 2. Pitch optimization, 3. Moment control, 4. Elevator Control, 5. Rotor control allocation.}
     \label{fig:ControllerOverview}
 \end{figure}
@@ -1085,7 +1147,7 @@ Three precisely placed control points will satisfy each set of three conditions.
     \bs{C}_{M-d:M} = E (\hat{B}_M^2(M))^{-1}
 \end{align}
 
-This obtains three start and three end control points, as shown in figure 
+This obtains three start and three end control points, as shown in Fig. 
 
 \begin{figure}[htbp]
     \centering
@@ -1122,7 +1184,7 @@ This is done so that there is a relatively constant acceleration between start a
 
 \subsection{Takeoff}
 
-The first part of flight is takeoff. It was desired to find a way to take the aircraft into the air and begin its path before transition. To do this, an ad hoc trajectory was generated in the shape of a square root function $y=\sqrt{x}$. That is, the spatial shape of the trajectory is a sampled square root function, and shown in figure \ref{fig:TakeoffShape}.
+The first part of flight is takeoff. It was desired to find a way to take the aircraft into the air and begin its path before transition. To do this, an ad hoc trajectory was generated in the shape of a square root function $y=\sqrt{x}$. That is, the spatial shape of the trajectory is a sampled square root function, and shown in Fig. \ref{fig:TakeoffShape}.
 
 \begin{figure}[htbp]
     \centering
@@ -1194,7 +1256,7 @@ This flight path was loaded into the controller, and the following results were 
     \caption{Takeoff metrics and plots}
 \end{figure}
 
-From figure \ref{fig:TakeoffMetrics}, we may notice the control inputs and the transition from vertical hover to forward flight.
+From Fig. \ref{fig:TakeoffMetrics}, we may notice the control inputs and the transition from vertical hover to forward flight.
 
 \subsection{Transition}
 
@@ -1229,7 +1291,7 @@ In order for this aircraft controller to be a viable solution, the aircraft must
     \end{bmatrix}
 \end{align}
 
-This produces the trajectory in figure \ref{fig:LandingTrajectory}.
+This produces the trajectory in Fig. \ref{fig:LandingTrajectory}.
 
 \begin{figure}
     \centering
@@ -1238,7 +1300,7 @@ This produces the trajectory in figure \ref{fig:LandingTrajectory}.
     \label{fig:LandingTrajectory}
 \end{figure}
 
-In simulation, the aircraft is started with the same conditions as the trajectory, which is velocity of $25 \frac{m}{s}$ and altitude of $100 m$. A video of this manuever may be found at \href{https://youtu.be/w4bYAqHPQaI}{https://youtu.be/w4bYAqHPQaI}, and metrics for the controller are shown in figure
+In simulation, the aircraft is started with the same conditions as the trajectory, which is velocity of $25 \frac{m}{s}$ and altitude of $100 m$. A video of this manuever may be found at \href{https://youtu.be/w4bYAqHPQaI}{https://youtu.be/w4bYAqHPQaI}, and metrics for the controller are shown in Fig.
 
 
 \begin{figure}[htbp]
@@ -1293,7 +1355,7 @@ In this case, it is immediately obvious that the aircraft does not follow the de
 
 \subsection{Successive Ascent}
 
-Another test for the autopilot is with a series increasing slopes to test whether the aircraft can track those inputs. An example of this framework is shown in Figure \ref{fig:successiveAscent}. In this flight path, each section has a larger flight path angle $\gamma$ than the previous one. In this test, the sections go $0^{\circ}$, $10^{\circ}$, $20^{\circ}$, $30^{\circ}$ respectively, with the same north spacing of $400$ meters for each segment. 
+Another test for the autopilot is with a series increasing slopes to test whether the aircraft can track those inputs. An example of this framework is shown in Fig. \ref{fig:successiveAscent}. In this flight path, each section has a larger flight path angle $\gamma$ than the previous one. In this test, the sections go $0^{\circ}$, $10^{\circ}$, $20^{\circ}$, $30^{\circ}$ respectively, with the same north spacing of $400$ meters for each segment. 
 
 \begin{figure}
     \centering
@@ -1352,7 +1414,7 @@ In this case, the aircraft starts out level, with an initial north velocity of $
 
 In these successively steeper flight paths, the aircraft was successfully able to track the trajectory. Notice that as the angle gets progressively steeper, the vertical propellers have to do more work to keep the aircraft on trajectory.
 
-After analyzing the velocity comparisons shown in figure \ref{fig:SuccessiveVelComparison}, we notice the actual velocities approach the desired velocities, but don't quite get there until the end of each segment.
+After analyzing the velocity comparisons shown in Fig. \ref{fig:SuccessiveVelComparison}, we notice the actual velocities approach the desired velocities, but don't quite get there until the end of each segment.
 Looking closely at each, they look remarkably similar to an overshooting signal in a PID controller. This is an underdamped controller, for the velocity. We may experiment on this by modifying our LQR control law.  
 
 \begin{figure}
@@ -1366,7 +1428,7 @@ Looking closely at each, they look remarkably similar to an overshooting signal 
 
 The autopilot should also be subject to tests against error, to determine if the aircraft can converge to a trajectory when it does not start directly on the desired trajectory.
 For this reason, a test was constructed. The input trajectory was a constant forward trajectory with a constant forward velocity of $25 \frac{m}{s}$ at an altitude of 0. The aircraft started with an initial altitude of $-25$ meters, and an initial forward velocity of $25 \frac{m}{s}$.
-This is the equivalent of a step input reference to the system for altitude. The metrics for this experiment are shown in figure \ref{fig:StepMetrics}, and the video for this experiment is found at \href{https://youtu.be/AVDS21xf7JI}{https://youtu.be/AVDS21xf7JI}. 
+This is the equivalent of a step input reference to the system for altitude. The metrics for this experiment are shown in Fig. \ref{fig:StepMetrics}, and the video for this experiment is found at \href{https://youtu.be/AVDS21xf7JI}{https://youtu.be/AVDS21xf7JI}. 
 
 
 \begin{figure}[htbp]
@@ -1507,7 +1569,7 @@ For these reasons, the research team has invested heavily in 3D printing airfram
 In the event of a crash that partially destroys a section of the airplane, that section can be reprinted and replaced quickly and cheaply.
 By 3D printing aircraft, the research group is able to make custom modifications and additions to airframes, such as lidar mounts, weathervanes, and payloads.
 This is done using foaming filaments, such as HT-LW PLA and ASA Aero.
-Though 3D printing work extends to development of standard fixed-wing aircraft and quadrotor frames, the first fully functional 3D printed airframe has been a quadplane VTOL, as shown in figure \ref{fig:quadplane3DPrinted}.
+Though 3D printing work extends to development of standard fixed-wing aircraft and quadrotor frames, the first fully functional 3D printed airframe has been a quadplane VTOL, as shown in Fig. \ref{fig:quadplane3DPrinted}.
 
 \begin{figure}
     \centering
@@ -1525,12 +1587,12 @@ Four of five motors are not used for the majority of the flight, which means a r
 Some quadplanes use tilting mechanisms to utilize rotors as both vertical and forward thrusters, as described in \cite{tiltQuadplane}, though this adds complexity with the need for reliable motor tilting mechanisms.
 
 Another promising VTOL is the tilt body design, as described in \cite{lou_unified_energy_control_tilt_body}. 
-This aircraft has offset front and rear wings, with sets of propellers on both, as shown in figure \ref{fig:tiltbodyDesign}. 
+This aircraft has offset front and rear wings, with sets of propellers on both, as shown in Fig. \ref{fig:tiltbodyDesign}. 
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figs/chap1/tiltbodyDesign.png}
-    \caption{Tiltbody design and configuration. Reproduced from \cite{lou_unified_energy_control_tilt_body} figure 3.}
+    \caption{Tiltbody design and configuration. Reproduced from \cite{lou_unified_energy_control_tilt_body} Fig. 3.}
     \label{fig:tiltbodyDesign}
 \end{figure}
 
@@ -1541,7 +1603,7 @@ A diagram of these maneuvers is shown in \ref{fig:tiltbodyControl}.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figs/chap1/tiltbodyManeuver.png}
-    \caption{Tiltbody control map. Reproduced from \cite{lou_unified_energy_control_tilt_body} figure 2.}
+    \caption{Tiltbody control map. Reproduced from \cite{lou_unified_energy_control_tilt_body} Fig. 2.}
     \label{fig:tiltbodyControl}
 \end{figure}
 

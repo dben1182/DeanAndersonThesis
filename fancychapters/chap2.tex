@@ -62,7 +62,7 @@ While the VTOL model in chapter \ref{ch:VTOL} only included longitudinal, or ver
 
 \subsection{Phughoid Mode}
 
-One common aerodynamic mode is called the phughoid mode. This effect is a vertical oscillation of the aircraft, as depicted in Figure \ref{fig:phughoid_diagram}. When the aircraft's phughoid mode has been excited, the aircraft will pitch up, ascend slightly, lose airspeed, and then pitch down, gain airspeed, and descend slightly before repeating the process. In other words, the phughoid mode couples north velocity $\dot{n}$ with pitch $\theta$, and down position $d$. According to chapter 6 in \cite{flightDynamicsPrinciples}, this mode is relatively slow, and lightly damped, so it takes some time return to normal. When the aircraft goes through this, it will experience large signal changes in angle of attack $\alpha$, pitch angular rate $q$, pitch angular acceleration $\dot{q}$, north acceleration $\ddot{n}$, and down acceleration $\ddot{d}$. This mode is typically induced by quick impulses on the elevator. Excitation of this mode is useful as it may produce large signals from internal sensors for estimate of coefficients of aerodynamics. 
+One common aerodynamic mode is called the phughoid mode. This effect is a vertical oscillation of the aircraft, as depicted in Fig. \ref{fig:phughoid_diagram}. When the aircraft's phughoid mode has been excited, the aircraft will pitch up, ascend slightly, lose airspeed, and then pitch down, gain airspeed, and descend slightly before repeating the process. In other words, the phughoid mode couples north velocity $\dot{n}$ with pitch $\theta$, and down position $d$. According to chapter 6 in \cite{flightDynamicsPrinciples}, this mode is relatively slow, and lightly damped, so it takes some time return to normal. When the aircraft goes through this, it will experience large signal changes in angle of attack $\alpha$, pitch angular rate $q$, pitch angular acceleration $\dot{q}$, north acceleration $\ddot{n}$, and down acceleration $\ddot{d}$. This mode is typically induced by quick impulses on the elevator. Excitation of this mode is useful as it may produce large signals from internal sensors for estimate of coefficients of aerodynamics. 
 
 
 \begin{figure}
@@ -82,7 +82,7 @@ Another common aerodynamic mode is called dutch roll, which is a coupling of bot
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{figs/chap2/Dutch Roll Diagram.png}
-    \caption{Dutch roll oscillation of an aircraft. Reproduced from Figure 7.5 in Flight Dynamics \cite{flightDynamicsPrinciples}}
+    \caption{Dutch roll oscillation of an aircraft. Reproduced from Fig. 7.5 in Flight Dynamics \cite{flightDynamicsPrinciples}}
     \label{fig:dutchRollDiagram}
 \end{figure}
 
@@ -108,7 +108,7 @@ The equation for an Infinite Impulse response (IIR) system, with $n$ poles and $
     \label{fig:IIR}
 \end{figure}
 
-In the case of an LMS filter, the $a_i$ and $b_i$ coefficients are unknown, while the input $x_n$ and output $y_n$ signals are known. The goal is to estimate these scaling coefficients $a_i$ and $b_i$ using data from input and output. In other words, the LMS filter estimates the coefficients of an IIR filter, or a system that is approximated as an IIR filter, as shown in figure \ref{fig:LMSEstimatingIIR}.
+In the case of an LMS filter, the $a_i$ and $b_i$ coefficients are unknown, while the input $x_n$ and output $y_n$ signals are known. The goal is to estimate these scaling coefficients $a_i$ and $b_i$ using data from input and output. In other words, the LMS filter estimates the coefficients of an IIR filter, or a system that is approximated as an IIR filter, as shown in Fig. \ref{fig:LMSEstimatingIIR}.
 
 \begin{figure}
     \centering
@@ -430,7 +430,7 @@ Mavsim is a Python flight simulator package that was developed for testing fligh
 
 An LMS filter specific to this aircraft model was written. When the aircraft is flying during a simulation, the applicable flight data, as specified in the above sections, is passed into the LMS filter and run recursively.
 
-The control input signal for elevator $\delta_e$ control is shown in figure \ref{fig:phughoidControlInput} and the control input signals for aileron $\delta_a$ and rudder $\delta_r$ are shown in figure \ref{fig:dutchRollControlInput}. It turns out that the best control input for the elevator we could find was a chirp signal, which is a sine wave of steadily increasing frequency. This corresponded well to the aircraft's phughoid mode oscillation. 
+The control input signal for elevator $\delta_e$ control is shown in Fig. \ref{fig:phughoidControlInput} and the control input signals for aileron $\delta_a$ and rudder $\delta_r$ are shown in Fig. \ref{fig:dutchRollControlInput}. It turns out that the best control input for the elevator we could find was a chirp signal, which is a sine wave of steadily increasing frequency. This corresponded well to the aircraft's phughoid mode oscillation. 
 
 When the elevator maneuver is completed, the dutch roll is performed, For the dutch roll mode, both rudder and aileron control input were used. Each impulse lasts $0.2$ seconds total, where the control $\delta_a$ or $\delta_r$ is $0.3$ for $0.1$ seconds and $-0.3$ for $0.1$ seconds. That is, each impulse has an equal positive and then negative component. The signals are two-sided because a one-sided control in the aileron signal causes the aircraft to roll around, which is unstable for flight. Each maneuver is repeated six times for each control surface, with a delay of $2.0$ seconds between impulses. The entire maneuver lasts approximately $25.0$ seconds.
 

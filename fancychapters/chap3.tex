@@ -28,7 +28,7 @@ b^d(t) &= \left(\frac{t}{d}\right) b^{d-1}(t) + \left(\frac{(d+1)-t}{d}\right) b
 	\label{eq:uniform_central_basis_d}  
 \end{align}
 
-The basis functions with uniform spacing of $1$ are shown in Figure \ref{fig:central_basis_functions}. If the knot point spacing is $\alpha$, simply replace $t$ with $\frac{t}{\alpha}$, which will scale the basis functions accordingly in the time domain. Uniform B-Splines are particularly useful, because their basis function remains the same for all copies. If all basis functions are the same for a particular B-Spline implementation, it is possible to store that function numerically in a lookup table, for ultra fast implementation. Since they are all the same we will rewrite the symbol for basis functions as: $b^d(t) = \hat{b}_m^d(t, \bs{k})$. 
+The basis functions with uniform spacing of $1$ are shown in Fig. \ref{fig:central_basis_functions}. If the knot point spacing is $\alpha$, simply replace $t$ with $\frac{t}{\alpha}$, which will scale the basis functions accordingly in the time domain. Uniform B-Splines are particularly useful, because their basis function remains the same for all copies. If all basis functions are the same for a particular B-Spline implementation, it is possible to store that function numerically in a lookup table, for ultra fast implementation. Since they are all the same we will rewrite the symbol for basis functions as: $b^d(t) = \hat{b}_m^d(t, \bs{k})$. 
 
 \begin{figure}[htb]
   \centering
@@ -56,7 +56,7 @@ This basis function is zero outside of the interval $[0,2]$, and similar rules a
     \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m b^d(t-m+d), \quad t\in[0,M]
 \end{align}
 
-Each term in this sum is a control point $\bs{c}_m$ times a time shifted basis function $b^d(t-m+d)$, where $m$ iterates from $0$ to $M+d-1$. Each control point modifies a time shifted and overlapped copy of the exact same basis function. A figure of overlapped copies of the same basis functions are shown in Figure \ref{fig:uniform_basis_functions}.
+Each term in this sum is a control point $\bs{c}_m$ times a time shifted basis function $b^d(t-m+d)$, where $m$ iterates from $0$ to $M+d-1$. Each control point modifies a time shifted and overlapped copy of the exact same basis function. A figure of overlapped copies of the same basis functions are shown in Fig. \ref{fig:uniform_basis_functions}.
 
 \begin{figure}[htb]
   \includegraphics[width=\linewidth]{figs/chap3/uniform_basis_functions.pdf}
@@ -64,7 +64,7 @@ Each term in this sum is a control point $\bs{c}_m$ times a time shifted basis f
   \label{fig:uniform_basis_functions}  
 \end{figure}
 
-This means that each control point is assigned to one basis function copy, and scales it accordingly. The size of each time-shifted basis function is finite and only covers a small section of the whole B-Spline. Therefore, modification of one control point only affects local area around that B-Spline, and not its entirety. This is one of the great advantages of B-Splines, that modifications may be made in one area without affecting another if it is sufficiently far away. This principle is illustrated in Figure \ref{fig:BasisFunctionsConnection}. 
+This means that each control point is assigned to one basis function copy, and scales it accordingly. The size of each time-shifted basis function is finite and only covers a small section of the whole B-Spline. Therefore, modification of one control point only affects local area around that B-Spline, and not its entirety. This is one of the great advantages of B-Splines, that modifications may be made in one area without affecting another if it is sufficiently far away. This principle is illustrated in Fig. \ref{fig:BasisFunctionsConnection}. 
 
 
 This example uses $d=1$ and $M=9$, which is to say there are $9$ intervals of interest the B-Spline is defined over. The knot vector is given, with uniform spacing of $1$ as: 
