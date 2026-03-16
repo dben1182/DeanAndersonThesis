@@ -1005,6 +1005,16 @@ INPUT ./figs/chap3/mainPlot.png
 INPUT ./figs/chap3/mainPlot.png
 INPUT ./figs/chap3/mainPlot.png
 INPUT ./figs/chap3/mainPlot.png
+INPUT ./figs/chap3/2DPlot.png
+INPUT ./figs/chap3/2DPlot.png
+INPUT ./figs/chap3/2DPlot.png
+INPUT ./figs/chap3/2DPlot.png
+INPUT ./figs/chap3/2DPlot.png
+INPUT ./figs/chap3/3DPlot.png
+INPUT ./figs/chap3/3DPlot.png
+INPUT ./figs/chap3/3DPlot.png
+INPUT ./figs/chap3/3DPlot.png
+INPUT ./figs/chap3/3DPlot.png
 INPUT ./fancychapters/chap4.tex
 INPUT ./fancychapters/chap4.tex
 OUTPUT fancychapters/chap4.aux

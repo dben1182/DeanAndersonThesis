@@ -1348,6 +1348,53 @@
       \field{title}{Diagram of an IIR Filter}
       \field{year}{2005}
     \endentry
+    \entry{weatherVane}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4255c977aad82fba15543445700241a9}{%
+           family={Martos},
+           familyi={M\bibinitperiod},
+           given={Borja},
+           giveni={B\bibinitperiod}}}%
+        {{hash=62702d8c7aa6359b5aa412b435878acb}{%
+           family={Rogers},
+           familyi={R\bibinitperiod},
+           given={David\bibnamedelima F.},
+           giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca4c602c67120f0586194d8622037af4}
+      \strng{fullhash}{60c4b4f9b351dc28762e32e084e759da}
+      \strng{fullhashraw}{60c4b4f9b351dc28762e32e084e759da}
+      \strng{bibnamehash}{60c4b4f9b351dc28762e32e084e759da}
+      \strng{authorbibnamehash}{60c4b4f9b351dc28762e32e084e759da}
+      \strng{authornamehash}{ca4c602c67120f0586194d8622037af4}
+      \strng{authorfullhash}{60c4b4f9b351dc28762e32e084e759da}
+      \strng{authorfullhashraw}{60c4b4f9b351dc28762e32e084e759da}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Aircraft}
+      \field{number}{2}
+      \field{title}{Low-Cost Accurate Angle-of-Attack System}
+      \field{volume}{55}
+      \field{year}{2018}
+      \field{pages}{660\bibrangedash 665}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.2514/1.C034417
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.2514/1.C034417
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.2514/1.C034417
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.2514/1.C034417
+      \endverb
+    \endentry
     \entry{beard2025BSplines}{unpublished}{}{}
       \name{author}{1}{}{%
         {{hash=31202dc567c14cdad27077b94672f7ea}{%
@@ -1643,8 +1690,8 @@
       \strng{authornamehash}{4f4a99fc5d23ba23537765e802fca0fa}
       \strng{authorfullhash}{98cefeaee95951b47614332441e70749}
       \strng{authorfullhashraw}{98cefeaee95951b47614332441e70749}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -1881,8 +1928,8 @@
       \strng{authornamehash}{3763791b13a731534aecf120ab4c6ce6}
       \strng{authorfullhash}{1c414fae2bd751fd43e92718016a15ac}
       \strng{authorfullhashraw}{1c414fae2bd751fd43e92718016a15ac}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}

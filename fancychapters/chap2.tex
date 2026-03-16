@@ -266,17 +266,45 @@ Similarly,
 
 With these tools, we can rewrite the least squares solution as
 
-\begin{align}
+\begin{align*}
     \bs{x}_N = (A_N^\top A_N) A_N^{\top} \bs{y}_N\\
     = P_N \bs{z}_N\\
-    = \left(P_{N-1} - \frac{P_{N-1}\bs{a}_N \bs{a}_N^\top P_{N-1}}{1 + \bs{a}^{\top}P_{N-1} \bs{a}_N} \right) \left(\bs{z}_{N-1} \bs{a}_N y[N]\right)
-\end{align}
+    = \left(P_{N-1} - \frac{P_{N-1}\bs{a}_N \bs{a}_N^\top P_{N-1}}{1 + \bs{a}^{\top}P_{N-1} \bs{a}_N} \right) \left(\bs{z}_{N-1} + \bs{a}_N y[N]\right)\\
+    = P_{N-1}z_{N-1} - \frac{P_{N-1}\bs{a}_N \bs{a}_N^\top P_{N-1}}{1 + \bs{a}^{\top}P_{N-1} \bs{a}_N} \bs{z}_{N-1} +
+        \quad \left(P_{N-1} - \frac{P_{N-1}\bs{a}_N \bs{a}_N^\top P_{N-1}}{1 + \bs{a}^{\top}P_{N-1} \bs{a}_N}\right) \bs{a}_N y[N]\\
+    = \bs{x}_{N-1} - \left(\frac{P_{N-1} \bs{a}_N}{1 + \bs{a}_N^\top P_{N-1} \bs{a}_N}\right) \bs{a}_N^\top P_{N-1} \bs{z}_{N-1} +
+        \quad \left(P_{N-1} - \frac{P_{N-1}\bs{a}_N \bs{a}_N^\top P_{N-1}}{1 + \bs{a}^{\top}P_{N-1} \bs{a}_N}\right) \bs{a}_N y[N]
+\end{align*}
 
-Define that Kalman gain as:
+If we define the Kalman gain as
 
 \begin{align}
   \bs{k}_N = \frac{P_{N-1} \bs{a}_N}{1 + \bs{a}_N^\top P_{N-1} \bs{a}_N}
 \end{align}
+
+then the previous equation can be simplified as
+
+\begin{align}
+    \bs{x}_N = \bs{x}_{N-1} - \bs{k}_N \bs{a}_N^\top P_{N-1} \bs{z}_{N-1} + \bs{k}_N y[N]\\
+    = \bs{x}_{N-1} - \bs{k}_N \left(y[N] - \bs{a}_N^\top P_{N-1} \bs{z}_{N-1}\right)\\
+    = \bs{x}_{N-1} - \bs{k}_N \left(y[N] - \bs{a}_N^\top \bs{x}_{N-1}\right)
+\end{align}.
+
+So this update equation for the new estimate $\bs{x}_N$ then becomes
+
+\begin{align}
+  \bs{x}_N = \bs{x}_{N-1} + \bs{k}_N \left(y[N] - \bs{a}_N^\top \bs{x}_{N-1}\right)
+\end{align}
+
+where
+
+\begin{align}
+    \bs{k}_N = \frac{P_{N-1} \bs{a}_N}{1 + \bs{a}_N^\top P_{N-1} \bs{a}_N}\\
+    P_N = P_{N-1} - \bs{k}_N \bs{a}_N^\top P_{N-1}
+\end{align}.
+
+This system is equivalent to a stationary Kalman filter where $\bs{k}_N$ represents the Kalman gain, $P_N$ represents the covariance matrix, and $\bs{x}_N$ represents the current state.
+A stationary Kalman filter is a Kalman filter with stationary dynamics. In the case of this system, the coefficients of aerodynamics are assumed to be unchanging, so there is no propagation of dynamics.
 
 
 \section{Coefficient Equations for Fixed Wing Aircraft}
@@ -285,15 +313,20 @@ Define that Kalman gain as:
 
 The equations for each set of coefficients are given in the following sections. All of the original equations are found in Small Unmanned Aircraft: Theory and Practice \cite{uav_book}. The equations for Lift, Drag and y forces are given in 4.3, 4.4, and 4.14 in \cite{uav_book} respectively. The equations for moments about the x, y, and z axes are given in 4.15, 4.5, and 4.16 respectively. For example, the equation for forces in the y direction is given as:
 
-\begin{align}
-    f_y = \frac{1}{2} \rho V_a^2 S \left[ C_{Y_0} + C_{Y_\beta} \beta + C_{Y_p} \frac{b}{2 V_a} p + C_{Y_r} \frac{b}{2 V_a} r + C_{Y_{\delta_a}} \delta_a + C_{Y_{\delta_r}} \delta_r\right]
-\end{align}
+\begin{align*}
+    f_y = \frac{1}{2} \rho V_a^2 S \left[ C_{Y_0} + C_{Y_\beta} \beta + C_{Y_p} \frac{b}{2 V_a} p + C_{Y_r} \frac{b}{2 V_a} r + C_{Y_{\delta_a}} \delta_a + C_{Y_{\delta_r}} \delta_r\right]\\
+    f_{lift} = \frac{1}{2} \rho V_a^2 S \left[C_{L_0} + C_{L_\alpha} \alpha + C_{L_q} \frac{c}{2 V_a} q + C_{L_{\delta_e}} \delta_e \right]\\
+    f_{drag} = \frac{1}{2} \rho V_a^2 S \left[C_{D_0} + C_{D_\alpha} \alpha + C_{D_q} \frac{c}{2 V_a} q + C_{D_{\delta_e}} \delta_e \right]\\
+    l = \frac{1}{2} \rho V_a^2 S c \left[ C_{l_0} + C_{l_\beta} \beta + C_{l_p} \frac{b}{2 V_a} p + C_{l_r} \frac{b}{2 V_a} r + C_{l_{\delta_a}} \delta_a + C_{l_{\delta_r}} \delta_r\right]\\
+    m = \frac{1}{2} \rho V_a^2 S \left[C_{m_0} + C_{m_\alpha} \alpha + C_{m_q} \frac{c}{2 V_a} q + C_{m_{\delta_e}} \delta_e \right]\\
+    n = \frac{1}{2} \rho V_a^2 S c \left[C_{n_0} + C_{n_\beta} \beta + C_{n_p} \frac{b}{2 V_a} p + C_{n_r} \frac{b}{2 V_a} r + C_{n_{\delta_a}} \delta_a + C_{n_{\delta_r}} \delta_r\right]
+\end{align*}
 
 Similar equations exist for the two other forces and three other moments. These equations are for a standard Fixed-Wing aircraft, as found in the Mavsim simulation environment.
 
 \subsection{Y Coefficients}
 
-\begin{align}
+\begin{align*}
     a_n = \frac{1}{2m} \rho V_a^2 S
     \begin{bmatrix}
         1 & \beta & \frac{b}{2V_a}p & \frac{b}{2V_a}r & \delta_a & \delta_r
@@ -302,11 +335,11 @@ Similar equations exist for the two other forces and three other moments. These 
     \begin{bmatrix}
         \ddot{y}
     \end{bmatrix}
-\end{align}
+\end{align*}
 
 \subsection{Lift and Drag Coefficients}
 
-\begin{align}
+\begin{align*}
     a_n = \frac{1}{2m} \rho V_a^2 S
     \begin{bmatrix}
         s_{\alpha} & -c_{\alpha}\\
@@ -326,13 +359,13 @@ Similar equations exist for the two other forces and three other moments. These 
         \frac{T(\delta_t, V_a)}{m}\\
         0\\
     \end{bmatrix}
-\end{align}
+\end{align*}
 
 Note that the signal $y_n$ for lift and drag must subtract thrust generated by the forward rotor.
 
 \subsection{l Estimator}
 
-\begin{align}
+\begin{align*}
     a_n = \frac{1}{2} \rho V_a^2 S b
     \begin{bmatrix}
         1 & \beta & \frac{b}{2V_a} p & \frac{b}{2V_a}r & \delta_a & \delta_r
@@ -341,11 +374,11 @@ Note that the signal $y_n$ for lift and drag must subtract thrust generated by t
     \begin{bmatrix}
         J_x \dot{p} - J_y q r + J_z q r - J_{xz} \dot{r} - J_{xz} p q
     \end{bmatrix}
-\end{align}
+\end{align*}
 
 \subsection{m Estimator}
 
-\begin{align}
+\begin{align*}
     a_n = \frac{1}{2} \rho V_a^2 S c
     \begin{bmatrix}
         1 & \alpha & \frac{c}{2 V_a} q & \delta_e
@@ -354,11 +387,11 @@ Note that the signal $y_n$ for lift and drag must subtract thrust generated by t
     \begin{bmatrix}
         J_y \dot{q} + J_x p r + J_{xz} p^2 - J_z p r - J_{xz} r^2
     \end{bmatrix}
-\end{align}
+\end{align*}
 
 \subsection{n Estimator}
 
-\begin{align}
+\begin{align*}
     a_n = \frac{1}{2} \rho V_a S b
     \begin{bmatrix}
         1 & \beta & \frac{b}{2V_a} p & \frac{b}{2V_a} r & \delta_a & \delta_r
@@ -367,7 +400,7 @@ Note that the signal $y_n$ for lift and drag must subtract thrust generated by t
     \begin{bmatrix}
         -J_x p q + J_y p q + J_z \dot{r} - J_{xz} \dot{p} + J_{xz} q r
     \end{bmatrix}
-\end{align}
+\end{align*}
 
 \subsection{A Note on Gravity}
 
@@ -482,7 +515,7 @@ These open loop control signals cause the aircraft to deviate from the original 
 
 \subsection{Coefficient Comparison Table}
 
-The following table contains all of the actual coefficients of aerodynamics compared to the coefficients calculated using the LMS filter, from the previous section. The error and error percentage are also given for each aerodynamic coefficient. 
+Table \ref{tb:coefficients} contains all of the actual coefficients of aerodynamics compared to the coefficients calculated using the LMS filter, from the previous section. The error and error percentage are also given for each aerodynamic coefficient. 
 
 \begin{table}[ht]
 \centering
@@ -497,6 +530,7 @@ The following table contains all of the actual coefficients of aerodynamics comp
     ]{csvFiles/coefficients.csv}{1=\one,2=\two,3=\three,4=\four,5=\five,6=\six}
     {\two & \three & \four & \five & \six}
 \end{tabular}
+\label{tb:coefficients}
 \end{table}
 
 %The table with all of this information can be found at: https://docs.google.com/spreadsheets/d/1DW3H2LaMANrdXDkPXQFCwfoodEIRIJS1OVjl9R6R920/edit?usp=sharing
@@ -509,12 +543,14 @@ In August of 2025, we worked with the Rosflight team to obtain actual flight dat
 
 
 
-\section{Limitations}
+\section{Future Work}
 
-This work is only a crude beginning. There are several important limitations for the implementation. 
 
 \subsection{Noise}
-The most obvious limitation for this sort of signal processing endeavor, as with all signal processing endeavors, is always noise. Noise is a pervasive parasite which was not assumed in these simulations.
+The most obvious limitation for this sort of signal processing endeavor, as with all signal processing endeavors, is always noise. 
+Noise is a pervasive parasite which was not assumed in these simulations.
+This simulation did not include noise in the signal, so many of the estimated coefficients may not be so well estimated in the end.
+In the future, in order to overcome large signal noise, even larger input maneuvers may need to be input to the system.
 
 \subsection{Nonlinear Modelling}
 
@@ -552,16 +588,28 @@ Having this information will help with development and better tuning the autopil
 Plenty of flight data has been gathered from autopilot test flights for Rosflight.
 This flight data includes airspeed, accelerometer, gyroscope, and other related sensor and estimate data.
 Originally, we had intended to use this flight data and implement it in the algorithm described previously.
-However, it quickly became apparent that the estimates for angle of attack $\alpha$, and sideslip angle $\beta$ are inaccurate.
-Accurate estimates of 
+However, it quickly became apparent that the estimates for angle of attack $\alpha$, and sideslip angle $\beta$ are inaccurate, and would not yield proper results.
+Accurate estimates for $\alpha$ and $\beta$ traditionally require a multi-axis airspeed sensor, which are extremely expensive pieces of equipment at present.
+One alterative to a multi-axis airspeed sensor is the use of weather vanes, as described in \cite{weatherVane}.
+These devices are relatively simple, and are even used extensiely on actual large airplanes.
+Such implementation may enable future estimation for the Rosflight project.
 
 \section{Conclusion}
 
-During an aircraft's flight, it is subject to 
+During an airplane's flight, it may be subject to numerous aerodynamic effects including angle of attack $\alpha$, sideslip angle $\beta$, and angular rates $p, q, r$.
+The combination of all aerodynamic and thrust forces and moments create a large collection of sensor data, including accelerometer, gyroscope, and airspeed.
+The aircraft already has a simplified aerodynamic model which is assumed to be an accurate representation of reality, although the specific parameter coefficients are unknown.
+These aerodynamic coefficients may then be found using existing flight data.
+
+A recursive LMS filter was developed which updates the estimate for each coefficient of aerodynamics after each data sample has been received.
+Larger maneuvers that excite the main aircraft aerodynamic modes are created using large impules on elevator $\delta_e$, aileron $\delta_a$, and rudder $\delta_r$.
+These large maneuvers create large signals for each LMS filter to accurately estimate the aircraft's coefficients of aerodynamics.
+This algorithm was implemented in simulation for a 3D fixed-wing aircraft with 30 coefficients of aerodynamics corresponding to lift, drag, and east forces, as well as roll, pitch, and yaw.
 
 While this preliminary work demonstrates the potential of an RLS algorithm for calculating coefficients of aerodynamics, there are actually many other implementations that already exist.
 That is to say, there already exist several other open source code repositories that perform system identification on aircraft. 
 While this implementation focuses solely on coefficients these other tools contain additional tools, including transfer function estimation, full state space modelling, and frequency response estimation.
 One such tool was developed at ETH Zurich, and is available at \href{https://github.com/ethz-asl/data-driven-dynamics}{ETH Zurich Repo}.
 
-In the future, this 
+In the future, the VTOL project will require implementation of these system identification techniques to produce an accurate estimate of the aircraft.
+Calibration flights must be flown first to create an estimate of the system for large angles of attack, and then use that estimation afterwards in the autopilot.

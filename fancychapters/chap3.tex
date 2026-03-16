@@ -592,15 +592,139 @@ If a user's mixing vector $\bs{\rho}$ is known beforehand and does not change, t
 
 \section{Results}
 
-For an example of comparison between lookup table 
+We begin with a spline generated using parameters
+
+\begin{align}
+    d = 3\\
+    M = 15\\
+    \rho = \left[1.0, 1.0, 1.0\right]
+\end{align}
+
+and a set of 2D conditions as
+
+\begin{align}
+    p(0) =
+    \begin{bmatrix}
+        0.0\\
+        0.0
+    \end{bmatrix}
+    \quad
+    \frac{d}{dt}p(0) =
+    \begin{bmatrix}
+        25.0\\
+        0.0
+    \end{bmatrix}
+    \quad
+    \frac{d^2}{dt^2}p(0) =
+    \begin{bmatrix}
+        0.0\\
+        -10.0
+    \end{bmatrix}\\
+    p(15) =
+    \begin{bmatrix}
+        200.0\\
+        -100.0
+    \end{bmatrix}
+    \quad
+    \frac{d}{dt}p(15) =
+    \begin{bmatrix}
+        -2.0\\
+        -15.0
+    \end{bmatrix}
+    \quad
+    \frac{d^2}{dt^2}p(15) =
+    \begin{bmatrix}
+        4.0\\
+        0.0
+    \end{bmatrix}
+\end{align}.
+
+This was run through a minimum snap trajectory generator, which yielded the plot in Fig. \ref{fig:minimumSnap2D}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{figs/chap3/2DPlot.png}
+    \caption{2D plot of minimum snap trajectory with control points, using initial and final conditions.}
+    \label{fig:minimumSnap2D}
+\end{figure}
+
+The same set of parameters for $\rho$, $d$, and $M$ with the conditions of 
 
 
-\subsection{Future Work}
+\begin{align}
+    p(0) =
+    \begin{bmatrix}
+        0.0\\
+        0.0\\
+        -100.0
+    \end{bmatrix}
+    \quad
+    \frac{d}{dt}p(0) =
+    \begin{bmatrix}
+        25.0\\
+        0.0\\
+        0.0
+    \end{bmatrix}
+    \quad
+    \frac{d^2}{dt^2}p(0) =
+    \begin{bmatrix}
+        0.0\\
+        0.0\\
+        0.0
+    \end{bmatrix}\\
+    p(15) =
+    \begin{bmatrix}
+        199.68\\
+        223.4\\
+        -100.0
+    \end{bmatrix}
+    \quad
+    \frac{d}{dt}p(15) =
+    \begin{bmatrix}
+        16.64\\
+        18.65\\
+        0.0
+    \end{bmatrix}
+    \quad
+    \frac{d^2}{dt^2}p(15) =
+    \begin{bmatrix}
+        0.0\\
+        0.0\\
+        0.0
+    \end{bmatrix}
+\end{align}.
 
-The lookup table method described in this section is implemented in an public repository as \href{https://github.com/byu-magicc/eVTOL_BSplines}{eVTOL\_BSplines}. It was implemented in Python, without any C or C++ wrappers; creating such wrappers in the future may further increase computational speed. 
+These conditions yielded the 3D B-Spline in Fig. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{figs/chap3/3DPlot.png}
+    \caption{3D plot of minimum snap trajectory with control points, using initial and final conditions.}
+    \label{fig:minimumSnap3D}
+\end{figure}
+
+
+
+\subsection{Conclusion}
+
+The lookup table method described in this section is implemented in an public repository as \href{https://github.com/byu-magicc/eVTOL_BSplines}{eVTOL\_BSplines}. 
+It was implemented in Python, without any C++ or Rust wrappers; creating such wrappers in the future may further increase computational speed. 
 
 One future improvement may include additional lookup tables for $Q_M^d(\bs{\rho})$ for common values of $\bs{\rho}$. 
+Recall that $\rho$ sets the relative importance of position, velocity, and acceleration for the B-Spline ouput.
+Although there are an infinite number of possible $\rho$ vectors, several common ones may be stored as their own lookup tables, including
 
-It would also be useful to have 
+\begin{align}
+    \rho_0 = \left[1,1,1\right],
+    \rho_1 = \left[1,0,0\right]\\
+    \rho_2 = \left[0,1,0\right]\\
+    \rho_3 = \left[0,0,1\right]\\
+\end{align}
 
-It is worth noting that minimum snap trajectories were not used in the other sections of this paper. They were originally intended for the takeoff and landing trajectories for the eVTOL section, but additional constraints limited their usefulness. 
+among many other possibilities.
+
+It is worth noting that minimum snap trajectories were not used in the other sections of this paper. 
+They were originally intended for the takeoff and landing trajectories for the eVTOL section, but additional constraints limited their use. 
+Using only start and end position, velocity, and acceleration conditions, it is not possible to create an entirely smooth trajectory for the VTOL.
+However, it may be possible to use minimum snap trajectories to stitch together larger trajectories from smaller groups of conditions.
+A future area of research would be optimizing sets of intermediate conditions, interpolated with minimum snap trajectories, to develop more complex UAV trajectories.
