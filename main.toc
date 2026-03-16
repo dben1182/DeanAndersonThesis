@@ -124,13 +124,13 @@
 \contentsline {section}{\numberline {5.9}Conclusion}{101}{section.5.9}%
 \contentsline {chapter}{\chapternumberline {6}Conclusion}{102}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Safe Flight Corridor Path Following}{102}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Controller Failure}{102}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.1}Controller Failure}{103}{subsection.6.1.1}%
 \contentsline {section}{\numberline {6.2}Conclusion}{103}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Contributions Summary}{103}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}Future Work}{103}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Rosflight Integration}{103}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.2.1}Contributions}{103}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Future Work}{104}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Rosflight Integration}{104}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}RViz and Unreal Simulation}{104}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Real-Time RRT}{104}{subsection.6.3.3}%
-\contentsline {chapter}{References}{105}{section*.80}%
-\contentsline {chapter}{Appendices}{110}{chapter*.81}%
-\contentsline {section}{\numberline {.1}Code Repositories and User Information}{111}{section.Alph0.1}%
+\contentsline {subsection}{\numberline {6.3.3}Real-Time RRT}{105}{subsection.6.3.3}%
+\contentsline {chapter}{References}{106}{section*.81}%
+\contentsline {chapter}{Appendices}{111}{chapter*.82}%
+\contentsline {section}{\numberline {.1}Code Repositories and User Information}{112}{section.Alph0.1}%
