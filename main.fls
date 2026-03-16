@@ -557,7 +557,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT ./main.lot
 INPUT ./main.lot
 INPUT main.lot
@@ -606,6 +605,7 @@ INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
 INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
 INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
 INPUT ./figs/chap0/4096px-Zipline_Drone_Launch.jpg
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
 INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
 INPUT ./figs/chap0/Archer_Midnight_top_view.jpg
@@ -1031,6 +1031,11 @@ INPUT ./figs/chap4/New Node Diagram.drawio.png
 INPUT ./figs/chap4/New Node Diagram.drawio.png
 INPUT ./figs/chap4/New Node Diagram.drawio.png
 INPUT ./figs/chap4/New Node Diagram.drawio.png
+INPUT ./figs/chap4/RRT_SFC_Geometry.drawio.png
+INPUT ./figs/chap4/RRT_SFC_Geometry.drawio.png
+INPUT ./figs/chap4/RRT_SFC_Geometry.drawio.png
+INPUT ./figs/chap4/RRT_SFC_Geometry.drawio.png
+INPUT ./figs/chap4/RRT_SFC_Geometry.drawio.png
 INPUT ./figs/chap4/RRT Line Example.drawio.png
 INPUT ./figs/chap4/RRT Line Example.drawio.png
 INPUT ./figs/chap4/RRT Line Example.drawio.png
@@ -1041,7 +1046,6 @@ INPUT ./figs/chap4/dubins rrt.png
 INPUT ./figs/chap4/dubins rrt.png
 INPUT ./figs/chap4/dubins rrt.png
 INPUT ./figs/chap4/dubins rrt.png
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT ./figs/chap4/Convex and Non-Convex Diagram.drawio.png
 INPUT ./figs/chap4/Convex and Non-Convex Diagram.drawio.png
 INPUT ./figs/chap4/Convex and Non-Convex Diagram.drawio.png

@@ -5,12 +5,17 @@ In the preceding chapter, a model-dependent, differentially flat controller was 
 
 Recall from chapter \ref{ch:VTOL} in Equations \ref{eq:totalAerodynamicForcesMoments} for aerodynamic Forces and Moments. These equations are an approximation of the true forces and moments experienced by this aircraft. These equations are utilized by the controller to produce certain desired forces and moments on the aircraft. For example, recall section \ref{sec:momentControl} in chapter \ref{ch:VTOL}, where elevator moment control was discussed. For a given $M_{des}$ input, this section found the best possible $\delta_e$ in an attempt to match that desired moment to reality. 
 
-If the aerodynamic coefficients for pitch moment ($C_{M_0},C_{M_\alpha},C_{M_q},C_{M_{\delta_e}}$) are not accurate, an incorrect $\delta_e$ may be calculated. If this control input has an error that is too large, then the aircraft may become unstable, which is especially true during the transition phase.
+If the aerodynamic coefficients for pitch moment ($C_{M_0},C_{M_\alpha},C_{M_q},C_{M_{\delta_e}}$) are not accurate, an incorrect $\delta_e$ may be calculated. 
+If this control input has an error that is too large, then the aircraft may become unstable, which is especially true during the transition phase.
 
-One may also ask how these aerodynamic coefficients are to be calculated to begin with. Without an estimate 
+One may ask how these aerodynamic coefficients are to be calculated to begin with. 
+One method would be to use aerodynamic modelling using CAD modelling and aerodynamic software. 
+As our lab continues development of 3D printed aircraft, this solution is probably the best way forward as the 3D CAD model is readily available.
+Another would be wind tunnel experimentation and data collection. This is only feasible for relatively small airframes that can fit inside of the available wind tunnels.
+Finally, flight data can be processed and analyzed to create an estimate for the aerodynamic coefficients.
+This final option is possible if a general aerodynamic model of the aircraft exists and is accurate, and only the specific numbers for aerodynamic coefficients must be estimated.
 
-\subsection{Accuracy test}
-
+In this section, we develop a method of estimating coefficients of aerodynamics gathered from flight data using a recursive least squares (RLS) algorithm.
 
 \section{Aerodynamic Coefficients}
 
@@ -75,9 +80,8 @@ One common aerodynamic mode is called the phughoid mode. This effect is a vertic
 
 \subsection{Dutch Roll Mode}
 
-\cite{cookLateralDirectionalDynamics}, 
-
-Another common aerodynamic mode is called dutch roll, which is a coupling of both yaw and pitching moments. That is, the aircraft oscillates between yawing sharply, rolling sharply as yaw returns to zero, and then repeating in the other directions, according to chapter 7 of \cite{flightDynamicsPrinciples}. This means that after an aircraft has rolled to the left and it returns upright, the aircraft will yaw to the right, which will cause the aircraft to roll to the right, which will repeat the process. Just as excitation of the phughoid mode created large longitudinal signals, dutch roll creates large lateral signals. For example, the the two roll moments $l$ and $n$ cause large signals for $p$, $r$, $\dot{p}$, and $\dot{r}$. Large yaw $\psi$ maneuvers will also create large signals for east acceleration $\ddot{e}$ and sideslip angle $\beta$. Intentional excitation of this mode is generally accomplished by rudder impulses, though this may also be enhanced with delayed aileron impulses.
+Another common aerodynamic mode is called dutch roll, which is a coupling of both yaw and pitching moments, as described in \cite{cookLateralDirectionalDynamics}. 
+That is, the aircraft oscillates between yawing sharply, rolling sharply as yaw returns to zero, and then repeating in the other directions, according to chapter 7 of \cite{flightDynamicsPrinciples}. This means that after an aircraft has rolled to the left and it returns upright, the aircraft will yaw to the right, which will cause the aircraft to roll to the right, which will repeat the process. Just as excitation of the phughoid mode created large longitudinal signals, dutch roll creates large lateral signals. For example, the the two roll moments $l$ and $n$ cause large signals for $p$, $r$, $\dot{p}$, and $\dot{r}$. Large yaw $\psi$ maneuvers will also create large signals for east acceleration $\ddot{e}$ and sideslip angle $\beta$. Intentional excitation of this mode is generally accomplished by rudder impulses, though this may also be enhanced with delayed aileron impulses.
 
 \begin{figure}
     \centering
@@ -249,6 +253,30 @@ Now, the matrix inversion Lemma provides a shortcut as:
 \end{align}
 
 Which simplifies the inverse to the inverse of a 1x1 matrix, which is significantly more computationally efficient and stable than an (n+m)x(n+m) matrix inverse.
+
+
+Similarly,
+
+\begin{align}
+  \bs{z}_N = A_N^{\top} \bs{y}_N\\
+  =\Sigma_{i=1}^N \bs{a}_i y[i]\\
+  =\left(\Sigma_{i=1}^{N-1} \bs{a}_i y[i] + \bs{a}_N y[N] \right)\\
+= \bs{z}_{N-1} + \bs{a}_N y[N]\\
+\end{align}
+
+With these tools, we can rewrite the least squares solution as
+
+\begin{align}
+    \bs{x}_N = (A_N^\top A_N) A_N^{\top} \bs{y}_N\\
+    = P_N \bs{z}_N\\
+    = \left(P_{N-1} - \frac{P_{N-1}\bs{a}_N \bs{a}_N^\top P_{N-1}}{1 + \bs{a}^{\top}P_{N-1} \bs{a}_N} \right) \left(\bs{z}_{N-1} \bs{a}_N y[N]\right)
+\end{align}
+
+Define that Kalman gain as:
+
+\begin{align}
+  \bs{k}_N = \frac{P_{N-1} \bs{a}_N}{1 + \bs{a}_N^\top P_{N-1} \bs{a}_N}
+\end{align}
 
 
 \section{Coefficient Equations for Fixed Wing Aircraft}
@@ -426,7 +454,7 @@ Phughoid mode is induced by impulses of elevator control input, which excites th
 
 \section{MAVSIM Results}
 
-Mavsim is a Python flight simulator package that was developed for testing flight dynamics and control. The main simulation in Mavsim is an airplane with the same aerodynamic equations of motion as described in section \ref{sec:equationsOfMotion}. That is, it is a standard airplane with 30 coefficients of aerodynamics, with 12 longitudinal coefficients and 18 lateral coefficients. jj
+Mavsim is a Python flight simulator package that was developed for testing flight dynamics and control. The main simulation in Mavsim is an airplane with the same aerodynamic equations of motion as described in section \ref{sec:equationsOfMotion}. That is, it is a standard airplane with 30 coefficients of aerodynamics, with 12 longitudinal coefficients and 18 lateral coefficients.
 
 An LMS filter specific to this aircraft model was written. When the aircraft is flying during a simulation, the applicable flight data, as specified in the above sections, is passed into the LMS filter and run recursively.
 
@@ -478,12 +506,6 @@ The following table contains all of the actual coefficients of aerodynamics comp
 
 In August of 2025, we worked with the Rosflight team to obtain actual flight data from one of their flights. This was performed on an Anaconda Airframe as shown in Fig. \ref{fig:anaconda}. 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{figs/chap2/anaconda111.jpg}
-    \caption{Ready Made RC - Anaconda Airframe}
-    \label{fig:anaconda}
-\end{figure}
 
 
 
@@ -494,13 +516,11 @@ This work is only a crude beginning. There are several important limitations for
 \subsection{Noise}
 The most obvious limitation for this sort of signal processing endeavor, as with all signal processing endeavors, is always noise. Noise is a pervasive parasite which was not assumed in these simulations.
 
-\subsection{Nonlinearities}
+\subsection{Nonlinear Modelling}
 
 One of the challenges with a simplified model of the flight controller is that while the aircraft's coefficients of aerodynamics stay approximately constant within a small angle of attack, they are actually functions of the state, and are not entirely linear. 
 
 Perhaps the most important coefficients for the VTOL project are those associated with pitch, such as $C_{L \alpha}$ and $C_{D \alpha}$. They are really functions of $\alpha$ as $C_L(\alpha)$ and $C_D(\alpha)$. The amount of lift depends on the localized angle of attack. 
-
-If the aircraft is flying in trim conditions
 
 \subsection{Design}
 
@@ -512,18 +532,36 @@ For hardware implementation, safety mechanisms in code will also need to be impl
 
 \subsection{Calibration}
 
-It may also be necessary for a differentially  flat autopilot to work for the aircraft to fly some initial flights in standard fixed-wing flight and perform the maneuvers discussed above, in order to have a good estimation of the coefficients of aerodynamics beforehand. Without this calibration step, the differentially flat controller may make grave errors with calculations, and thereby increase the chance of failure dramatically.
+It may also be necessary for a differentially flat autopilot to work for the aircraft to fly some initial flights in standard fixed-wing flight and perform the maneuvers discussed above, in order to have a good estimation of the coefficients of aerodynamics beforehand. Without this calibration step, the differentially flat controller may make grave errors with calculations, and thereby increase the chance of failure dramatically.
 
-\section{Other Implementations}
-
-It turns out this work has already been done by other 
-
-\subsection{Signal Processing}
-
-A huge problem to solve is the noise problem. Noise is pervasive in all systems including Unmanned Aerial Systems. Noise exists in the form of electronic sensor noise from the Autopilot's Inertial Measurement unit, airspeed sensors. These noise signals were not modeled in the sensor 
-
-The solution is going to be the application of signal processing techniques to obtain an estimate of the onboard noise and to  perform the optimal cancellation techniques for it. 
+\subsection{Hardware Implementation}
 
 
-We did not pursue this further because we know that it is limited. A limitation to our work here is that 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figs/chap2/anaconda111.jpg}
+    \caption{Ready Made RC - Anaconda Airframe}
+    \label{fig:anaconda}
+\end{figure}
 
+Another airframe we want to develop a better model for is called the anaconda airframe, as shown in Fig. \ref{fig:anaconda}. 
+This airframe is the primary platform for the development of Rosplane for the Rosflight autopilot stack. 
+There is no current model of this airframe and it is desirable for the development of this autopilot to know those coefficients. 
+Having this information will help with development and better tuning the autopilots.
+
+Plenty of flight data has been gathered from autopilot test flights for Rosflight.
+This flight data includes airspeed, accelerometer, gyroscope, and other related sensor and estimate data.
+Originally, we had intended to use this flight data and implement it in the algorithm described previously.
+However, it quickly became apparent that the estimates for angle of attack $\alpha$, and sideslip angle $\beta$ are inaccurate.
+Accurate estimates of 
+
+\section{Conclusion}
+
+During an aircraft's flight, it is subject to 
+
+While this preliminary work demonstrates the potential of an RLS algorithm for calculating coefficients of aerodynamics, there are actually many other implementations that already exist.
+That is to say, there already exist several other open source code repositories that perform system identification on aircraft. 
+While this implementation focuses solely on coefficients these other tools contain additional tools, including transfer function estimation, full state space modelling, and frequency response estimation.
+One such tool was developed at ETH Zurich, and is available at \href{https://github.com/ethz-asl/data-driven-dynamics}{ETH Zurich Repo}.
+
+In the future, this 

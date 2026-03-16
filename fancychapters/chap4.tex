@@ -3,7 +3,7 @@
 
 In subsection \ref{sec:vtol path planning}, several B-Spline paths were created for the quadplane eVTOL to follow. These paths were relatively simple because it was assumed that no obstacles were present in the environment. Obstacles are present in many cases, and this assumption becomes invalidated. An example of this is an urban environment with obstacles including buildings, wires, poles, and people. The 2D eVTOL controller developed in section \ref{ch:VTOL} requires a B-Spline input to function. These constraints make it necessary to develop an algorithm that generates a B-Spline trajectory while simultaneously avoiding obstacles.
 
-Much literature exists on obstacle-avoiding path generation algorithms. In \cite{david_bspline}, \citeauthor{david_bspline} developed much of the work that is foundational to this paper; specifically, chapter 4 focuses on trajectory generation algorithms with obstacle avoidance and boundary constraints in both 2D and 3D. One problem addressed in the paper is path generation with obstacle avoidance for circular obstacles. The algorithm optimizes the path to minimize distance without intersecting circular or spherical obstacles in the 2D and 3D cases respectively.
+Much literature exists on obstacle-avoiding path generation algorithms. In \cite{david_bspline}, much of the work that is foundational to this paper was developed; specifically, chapter 4 focuses on trajectory generation algorithms with obstacle avoidance and boundary constraints in both 2D and 3D. One problem addressed in the paper is path generation with obstacle avoidance for circular obstacles. The algorithm optimizes the path to minimize distance without intersecting circular or spherical obstacles in the 2D and 3D cases respectively.
 
 
 \begin{figure}[htbp]
@@ -21,21 +21,28 @@ Much literature exists on obstacle-avoiding path generation algorithms. In \cite
     \label{fig:davidObstacleComparison}
 \end{figure}
 
-The paper also uses safe flight corridors as constraints for the trajectory. In this paper, safe flight corridors are rectangles or rectangular prisms, which the flight path must completely remain inside. There are several  However, the algorithms presented in this paper do not search for 
+The paper also uses safe flight corridors as constraints for the trajectory. Safe flight corridors are rectangles or rectangular prisms, which the flight path must completely remain inside. There are several  However, the algorithms presented in this paper do not search for 
 
 A B-Spline trajectory generation algorithm is developed in this section that plans safe paths for aircraft to follow through obstacle fields. A variant of the RRT algorithm is developed to place overlapping rectangular safe flight corridors through the field. Within these overlapping safe flight corridors, a flight path is generated using B-Splines. These B-Splines are created by adjusting control points so that the path always remains within the boundaries.
 
 
 \section{Rapidly Exploring Random Trees (RRT)}
 
-Rapidly Exploring Random Trees (RRT) is an algorithm that finds a path between two points through an obstacle field. The algorithm was first introduced by \citeauthor{Lavalle_rrt} in \cite{Lavalle_rrt} in 1999. The RRT algorithm generates a tree of nodes connected by lines, none of which intersect any obstacles. The algorithm begins with the starting point as the first node. New nodes are added to the tree by randomly generating a position inside of the field. A line is drawn from that randomized position to the closest node on the existing tree, which is the starting point for the algorithm's first iteration. At a given point along that line, at distance $d$ away from the nearest node, a new candidate node is made. If the candidate node, and the line connecting to its parent node, does not intersect any obstacle, it is added to the tree as a new branch; if there is an intersection, the candidate node is discarded and the process is repeated with another randomized node. This process of randomly generating nodes and adding them to the existing tree is shown in Fig. \ref{fig:new node diagram}. This process is repeated until a valid path is found from the starting node to a specified finish node; an example diagram of a tree with a valid path is shown in Fig. \ref{fig:straight line RRT}.
+Rapidly Exploring Random Trees (RRT) is an algorithm that finds a path between two points through an obstacle field. The algorithm was first introduced in \cite{Lavalle_rrt} in 1999. The RRT algorithm generates a tree of nodes connected by lines, none of which intersect any obstacles. The algorithm begins with the starting point as the first node. New nodes are added to the tree by randomly generating a position inside of the field. A line is drawn from that randomized position to the closest node on the existing tree, which is the starting point for the algorithm's first iteration. At a given point along that line, at distance $d$ away from the nearest node, a new candidate node is made. If the candidate node, and the line connecting to its parent node, does not intersect any obstacle, it is added to the tree as a new branch; if there is an intersection, the candidate node is discarded and the process is repeated with another randomized node. This process of randomly generating nodes and adding them to the existing tree is shown in Fig. \ref{fig:new node diagram}. This process is repeated until a valid path is found from the starting node to a specified finish node; an example diagram of a tree with a valid path is shown in Fig. \ref{fig:straight line RRT}.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.95\linewidth]{figs/chap4/New Node Diagram.drawio.png}
-    \caption{Point to point RRT expansion process. Two configurations are shown. A random point $Rand$ is selected in the configuration space, and line is drawn between $Rand$ and the nearest existing node $N_i$. A new candidate node $N_k$ is placed a distance $d$ from $N_i$. If the line from $N_i$ to $N_k$ is not obstructed, it is added. Otherwise, it is discarded, as in the Invalid Case.}
+    \caption{Point to point RRT expansion process. Two configurations are shown. A random point $Rand$ is selected in the configuration space, a line is drawn between $Rand$ and the nearest existing node $N_i$. A new candidate node $N_k$ is placed a distance $d$ from $N_i$. If the line from $N_i$ to $N_k$ is not obstructed, it is added. Otherwise, it is discarded, as in the Invalid Case.}
     \label{fig:new node diagram}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth]{figs/chap4/RRT_SFC_Geometry.drawio.png}
+    \caption{Example of generating first safe flight corridor. Environment is a 2x2 grid of buildings}
+    \label{fig:SFC_start}
 \end{figure}
 
 \begin{figure}
@@ -45,20 +52,20 @@ Rapidly Exploring Random Trees (RRT) is an algorithm that finds a path between t
     \label{fig:straight line RRT}
 \end{figure}
 
-As shown in Fig. \ref{fig:straight line RRT}, the original algorithm generates a series of connected straight lines, which in this figure is the orange path. While this path may be suitable as the actual trajectory for a slow moving craft like a multi-copter, or a non-holonomic robot, it is not conducive for the trajectory of a fixed-wing aircraft, which has a minimum turning radius and needs to follow a smooth trajectory. This straight-line algorithm needs to be modified to a smooth path for any sort of direct trajectory generation. 
+As shown in Fig. \ref{fig:straight line RRT}, the original algorithm generates a series of connected straight lines, which is the orange path in this figure. While this path may be suitable as the actual trajectory for a slow-moving craft like a multi-copter, or a non-holonomic robot, it is not conducive for the trajectory of a fixed-wing aircraft, which has a minimum turning radius and needs to follow a smooth trajectory. This straight-line algorithm needs to be modified to a smooth path for any sort of direct trajectory generation. 
 
-RRT* is a common variation of the RRT algorithm which was introduced by \citeauthor{varricchioSamplingbasedAlgorithmsOptimal2014} \cite{varricchioSamplingbasedAlgorithmsOptimal2014}. With traditional RRT, there is no effort to reconnect nodes of the tree to increase efficiency. With RRT*, after a new node has been added, it searches among other nodes within a radius for the parent that has the minimum distance. With the additional node, the algorithm also searches for other nodes in the region that can have a shorter distance if the new node becomes the parent node. While this algorithm eventually converges to an optimal path, it does so under great computational burden due to rewiring after each sample. 
+RRT* is a common variation of the RRT algorithm which was introduced by \cite{varricchioSamplingbasedAlgorithmsOptimal2014}. With traditional RRT, there is no effort to reconnect nodes of the tree to increase efficiency. With RRT*, after a new node has been added, it searches among other nodes within a radius for the parent that has the minimum distance. With the additional node, the algorithm also searches for other nodes in the region that can have a shorter distance if the new node becomes the parent node. While this algorithm eventually converges to an optimal path, it does so under great computational burden due to rewiring after each sample. 
 
-A common variation of RRT is to have it generate Dubins paths instead of straight lines. For example, \citeauthor{yangDubinsPathOrientedRapidly2022} in \cite{yangDubinsPathOrientedRapidly2022} present a method of Dubins path generion using RRT. The actual algorithm may be found on page 252 of \cite{uav_book} by \citeauthor{uav_book}. A trajectory of conglomerated Dubins paths is particularly suited for fixed-wing aircraft to fly. And example tree and path are shown in Fig. \ref{fig:dubinsRRT}. Unfortunately, no optimization occurs in this algorithm. There is also a discontinuity of acceleration at the transition between straight-line and radial flight. We desire to create a trajectory using degree 3 B-Splines with optimized distance and continuity of position, velocity, and acceleration.
+A common variation of RRT is to have it generate Dubins paths instead of straight lines. For example, in \cite{yangDubinsPathOrientedRapidly2022} present a method of Dubins path generion using RRT. The actual algorithm may be found on page 252 of \cite{uav_book}. A trajectory of conglomerated Dubins paths is particularly suited for fixed-wing aircraft to fly. An example tree and path are shown in Fig. \ref{fig:dubinsRRT}. Unfortunately, no optimization occurs in this algorithm. There is also a discontinuity of acceleration at the transition between straight-line and radial flight. We desire to create a trajectory using degree 3 B-Splines with optimized distance and continuity of position, velocity, and acceleration.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.95\linewidth]{figs/chap4/dubins rrt.png}
-    \caption{RRT algorithm integrating Dubins path into planning. From \citeauthor{uav_book} \cite{uav_book} Fig. 12.12, pg. 255}
+    \caption{RRT algorithm integrating Dubins path into planning. From \cite{uav_book} Fig. 12.12, pg. 255}
     \label{fig:dubinsRRT}
 \end{figure}
 
-Many algorithms exist which combine RRT with B-Spline generation. For example, \citeauthor{shanDynamicRRTPath2009} \cite{shanDynamicRRTPath2009} present an RRT algorithm intended for a non holonomic robot. The algorithm generates a standard connected straight-line paths and uses points sampled from that path as control points for the final B-Spline path. However, this algorithm does not guarantee that the B-Spline does not intersect obstacles in the environment. A similar algorithm is presented by \citeauthor{eshtehardianContinuousRRTbasedPath2023} in \cite{eshtehardianContinuousRRTbasedPath2023} which uses RRT* as the primary search algorithm, and uses the sampled nodes as control points for the B-Spline path. 
+Many algorithms exist which combine RRT with B-Spline generation. For example, \cite{shanDynamicRRTPath2009} present an RRT algorithm intended for a non holonomic robot. The algorithm generates standard straight-line paths and uses points sampled from that path as control points for the final B-Spline path. However, this algorithm does not guarantee that the B-Spline does not intersect obstacles in the environment. A similar algorithm is presented in \cite{eshtehardianContinuousRRTbasedPath2023} which uses RRT* as the primary search algorithm, and uses the sampled nodes as control points for the B-Spline path. 
 
 
 \subsection{Safe Flight Corridors}
@@ -120,7 +127,7 @@ An example of a rectangular Safe Flight Corridor is shown in Fig. \ref{fig:singl
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figs/chap4/SFC Diagram Single.drawio.png}
-    \caption{Geometry of Rectangular flight corridor, with four normal vectors and vertex points respectively. }
+    \caption{Geometry of rectangular flight corridor, with four normal vectors and vertex points respectively.}
     \label{fig:single SFC}
 \end{figure}
 
@@ -128,12 +135,12 @@ An example of a rectangular Safe Flight Corridor is shown in Fig. \ref{fig:singl
 
 \subsection{Enclosure within Safe Flight Corridors}
 
-Although each SFC is a convex set, the union of two or more SFCs is, in general, a non-convex set, as shown in Fig. \ref{fig:non-convex union}. The union is a non-convex set, because several sets of points exist for which the joining line exits and re-enters the space. For this reason, control points are constrained to either one SFC or the intersection 
+Although each SFC is a convex set, the union of two or more SFCs is, in general, a non-convex set, as shown in Fig. \ref{fig:non-convex union}. The union is a non-convex set, because several sets of points exist for which the joining line exits and re-enters the space. For this reason, control points are constrained to either one SFC or the intersection of both SFCs. 
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{figs/chap4/SFC Union.drawio (5)_edited.png}
-    \caption{Non-Convex Union of two Safe Flight Corridors}
+    \caption{Non-convex union of two safe flight corridors}
     \label{fig:non-convex union}
 \end{figure}
 
@@ -186,7 +193,7 @@ Vehicle dynamic constraints impose limitations on the tree algorithm. Fixed-wing
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png}
-    \caption{Turn rate constraint for Safe Flight Corridor intersection. Demonstrates the maximum turning angle between two SFCS using a superimposed circular flight path of the minimum allowable turning radius. If $\chi$ was any greater, the minimum turning radius would not be able to fit inside of the two safe flight corridors, and the aircraft's minimum turning radius would be violated.}
+    \caption{Turn rate constraint for Safe Flight Corridor intersection. This demonstrates the maximum turning angle between two SFCS using a superimposed circular flight path of the minimum allowable turning radius. If $\chi$ was any greater, the minimum turning radius would not be able to fit inside of the two safe flight corridors, and the aircraft's minimum turning radius would be violated.}
     \label{fig:angular boundary conditions}
 \end{figure}
 
@@ -213,7 +220,7 @@ During the RRT phase of the algorithm, the actual angle between $SFC_{i-1}$ and 
 
 \subsection{Turn Constraints Enforcement}
 
-In order to enforce this minimum turn radius constraint, or at least to minimize its violation, constraints must be enforced upon the control points in the intersection vicinity. While a circle or section of a circle is convex, the area between two concentric circles is not. This shape shape, also known as an annulus is shown in Fig. \ref{fig:annulus concentric circle}.
+In order to enforce this minimum turn radius constraint, or at least to minimize its violation, constraints must be enforced upon the control points in the intersection vicinity. While a circle or section of a circle is convex, the area between two concentric circles is not. This shape, also known as an annulus is shown in Fig. \ref{fig:annulus concentric circle}.
 
 \begin{figure}
     \centering
@@ -222,7 +229,11 @@ In order to enforce this minimum turn radius constraint, or at least to minimize
     \label{fig:annulus concentric circle}
 \end{figure}
 
-Fortunately, constraints may be made on the control points by approximating the annulus. By sampling the points along the minimum turning radius, along with an outer radius, an approximation can be made for the inner turning radius problem to thus provide a convex hull for the control points. One control point will be constrained to a single Annulus approximation section, as shown in figure \ref{fig:annulus sampled diagram}. These sections will be termed annulus segments. 
+Fortunately, constraints may be made on the control points by approximating the annulus. 
+By sampling the points along the minimum turning radius, along with an outer radius, an approximation can be made for the inner turning radius. 
+This provides a convex hull for the control points. 
+One control point will be constrained to a single annulus approximation section, as shown in figure \ref{fig:annulus sampled diagram}. 
+These sections will be termed annulus segments. 
 
 \begin{figure}
     \centering
@@ -232,7 +243,7 @@ Fortunately, constraints may be made on the control points by approximating the 
 \end{figure}
 
 
-As with safe flight corridors, control points may be constrained within annulus segments using the matrix form $Ax \leq b$. These equations are given as follows.
+As with safe flight corridors, control points may be constrained within annulus segments using the matrix form $Ax \leq b$. These equations are given as
 
 
 
@@ -240,21 +251,21 @@ As with safe flight corridors, control points may be constrained within annulus 
 
 \section{Path Smoothing}
 
-The initially generated path produces suboptimal results for an SFC path; the segments are short and take a random path, as there is not an RRT* smoothing operation for reasons of computational efficiency. An example of  To solve this problem, we implemented a variation of Dijkstra's algorithm to smooth an initial path.
+The initially generated path produces suboptimal results for an SFC path; the segments are short and take a random path, as there is not an RRT* smoothing operation for reasons of computational efficiency. To solve this problem, we implemented a variation of Dijkstra's algorithm to smooth an initial path.
 
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png}
-         \caption{Complete set of nodes for RRT algorithm on a $2 \times 2$ obstacle field. The intermediate nodes are shown in orange and the original path is shown in green connecting them sequentially. The other plausible paths between existing nodes are shown in yellow. These alternative paths will be explored using dijkstra's algorithm.}
+         \caption{Complete set of nodes for RRT algorithm on a $2 \times 2$ obstacle field. The intermediate nodes are shown in orange and the original path is shown in green connecting them sequentially. The other plausible paths between existing nodes are shown in yellow. These alternative paths will be explored using Dijkstra's algorithm.}
          \label{fig:blank 3D obstacle field}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png}
-         \caption{Displays the same node network, but with Dijkstra's algorithm outputting smoothed path in blue}
+         \caption{This displays the same node network, but with Dijkstra's algorithm outputting smoothed path in blue}
          \label{fig:3D Waypoints Not Smooth}
      \end{subfigure}
 
@@ -270,7 +281,7 @@ Dijkstra's algorithm finds the shortest path between two connected nodes over a 
 
 We desire to optimize the performance of the B-Spline by finding the best possible curve given the safe flight corridor constraints. The first step is to find a cost or penalty associated with a particular configuration of control points. There needs to be a mathematical relationship between a particular configuration of the control points and some sort of cost so that adjusting the position of the control points minimizes the cost. The simplest metric is to minimize the length of the B-Spline for the shortest possible path from start to finish. 
 
-Fortunately, there is a direct mathematical relationship between the placement of the control points and the maximum length, velocity, and acceleration of the spline. The objective functions for maximum position, velocity, and acceleration are given in \textit{\citetitle{beard2025BSplines}} by \citeauthor{beard2025BSplines} \cite{beard2025BSplines} in sections 2.2, 2.3, and 2.4 respectively. 
+Fortunately, there is a direct mathematical relationship between the placement of the control points and the maximum length, velocity, and acceleration of the spline. The objective functions for maximum position, velocity, and acceleration are given in \textit{\citetitle{beard2025BSplines}} \cite{beard2025BSplines} in sections 2.2, 2.3, and 2.4 respectively. 
 
 \subsection{Minimum Distance}
 
@@ -558,7 +569,7 @@ Naturally, we desire to not only have 2D paths, but to extend this algorithm to 
 
 \subsection{3D Object Definitions}
 
-Each 3D safe flight corridors and obstacle is defined exactly the same as the 2D case using $Ax < b$, but with an added dimension. An example of a rectangular prism is shown in Fig. \ref{fig:rectangularPrism}.
+Each 3D safe flight corridor and obstacle is defined exactly the same as the 2D case using $Ax < b$, but with an added dimension. An example of a rectangular prism is shown in Fig. \ref{fig:rectangularPrism}.
 
 \begin{figure}
     \centering
@@ -654,7 +665,7 @@ An experiment was run on a 3D equivalent of the previous 2D experiments. A $4 \t
 
 \section{2D Shapes Within a 3D Environment}
 
-A problem we faced in implementing this algorithm was how to generalize a a 2D path in a 3D environment and generalize it to work with other algorithms. 
+A problem faced in implementing this algorithm was generalizing a 2D path in a 3D environment and generalize it to work with other algorithms. 
 
 We assume that all obstacles are 3D convex polyhedra; this allows the boundaries of an obstacle to take the form of $Ax < b$. If it is desired to create a generalized 2D algorithm in a 3D environment, a plane may be specified, and any obstacles intersecting that plane are projected onto it as 2D using the newfound equality constraint, represented as:
 
@@ -698,7 +709,7 @@ The methods of obtaining an orthonormal basis $Q$ from a normal vector $\hat{n}$
 
 \section{Future Work}
 
-Several areas of this algorithm stand to be improved in the future. Future research in this area must draw upon other related works. For example, \cite{SUN2025103174} describes a similar algorithm that generates adaptive safe flight corridors that morph into the empty area between obstacles, while maintaining minimum turning radius constraints. Also, \citeauthor{osburn} describes in \cite{osburn} a method of generating time varying Bezier splines through a time-varying obstacle field using convex safe regions. TODO add matt's paper he talked to me about.
+Several areas of this algorithm stand to be improved in the future. Future research in this area must draw upon other related works. For example, \cite{SUN2025103174} describes a similar algorithm that generates adaptive safe flight corridors that morph into the empty area between obstacles, while maintaining minimum turning radius constraints. Also, in \cite{osburn} a method of generating time varying Bezier splines through a time-varying obstacle field using convex safe regions. TODO add matt's paper he talked to me about.
 
 Some of the current limitations and possible solutions are presented.
 
@@ -716,7 +727,7 @@ One can imagine a scenario where the algorithm paints itself into a corner. The 
     \label{fig:DijkstraScenario}
 \end{figure}
 
-The problem with Dijkstra's algorithm is that it will select segment $S_4$ to connect $b_0$ and $b_2$ and bypass $b_1$, where we assume that adding $S_4$ does not violate angular constraints with the previous line segment not shown in this diagram for simplicity. Now that the algorithm is at $b_2$, it has to choose between $S_2$ and $S_5$. Unfortunately, both choices violate the minimum turn constraint with $90$ and $116$ respectively, causing the algorithm to fail. This is illustrated in Fig. \ref{fig:DijkstraDilemma}.
+The problem with Dijkstra's algorithm is that it will select segment $S_4$ to connect $b_0$ and $b_2$ and bypass $b_1$, where we assume that adding $S_4$ does not violate angular constraints with the previous line segment not shown in this diagram for simplicity. Now that the algorithm is at $b_2$, it has to choose between $S_2$ and $S_5$. Unfortunately, both choices violate the minimum turn constraint with $90^{\circ}$ and $116^{\circ}$ respectively, causing the algorithm to fail. This is illustrated in Fig. \ref{fig:DijkstraDilemma}.
 
 \begin{figure}
     \centering
@@ -725,11 +736,11 @@ The problem with Dijkstra's algorithm is that it will select segment $S_4$ to co
     \label{fig:DijkstraDilemma}
 \end{figure}
 
-Solving this problem is beyond the scope of this thesis, but it does pose an interesting problem for future research. The best solution I have found is LIAN, and its derivatives; LIAN is derived from the term "Limited Angle", so it is a limited angle path algorithm. LIAN was introduced in 2015 in \cite{LIAN} as a variant of $A^*$. LIAN works by storing two copies of each node and working backwards if the angle constraint is ever violated. In this paper, they found success in their trails, with some setups achieving success rates in the high $90$s. Another paper was published in 2018 on eLIAM or enhanced LIAM that solved an angle-constrained problem 20\% more often than standard LIAM. Implementation of LIAM, or some other algorithm, will generate a more robust framework for a better algorithm.
+Solving this problem is beyond the scope of this thesis, but it does pose an interesting problem for future research. The best solution I have found is LIAN, and its derivatives; LIAN is derived from the term "Limited Angle", so it is a limited angle path algorithm. LIAN was introduced in 2015 in \cite{LIAN} as a variant of $A^*$. LIAN works by storing two copies of each node and working backward if the angle constraint is ever violated. In this paper, they found success in their trials, with some setups achieving success rates in the high $90$s. Another paper was published in 2018 on eLIAM or enhanced LIAM that solved an angle-constrained problem 20\% more often than standard LIAM. Implementation of LIAM, or some other algorithm, will generate a more robust framework for a better algorithm.
 
 \subsection{Turn Constraints}
 
-It is demonstrated in section \ref{sec:Turn Constraints} how to find the maximum angle between two SFCs given a minimum turning radius constraint. In the previous section, we discussed the necessity for an SFC smoothing algorithm that maintains angular conditions. However, a resulting B-Spline within the  does not automatically conform to the minimum turning radius constraint. Even with segmented annulus constraints along each SFC intersection, there is no guarantee that the control points will remain along the inside turning radius. There exist many edge cases that violate the minimum turning radius. 
+It is demonstrated in section \ref{sec:Turn Constraints} how to find the maximum angle between two SFCs given a minimum turning radius constraint. In the previous section, we discussed the necessity for an SFC smoothing algorithm that maintains angular conditions. However, a resulting B-Spline within that does not automatically conform to the minimum turning radius constraint. Even with segmented annulus constraints along each SFC intersection, there is no guarantee that the control points will remain along the inside turning radius. There exist many edge cases that violate the minimum turning radius. 
 
 Curvature measures how sharply a function turns. That is, the tighter the turn on a particular curve, the higher the curvature. It is defined as $\frac{1}{R}$, where $R$ is the radius of the circle tangential to the curve. This is shown in figure \ref{fig:curvature}. 
 
@@ -756,7 +767,7 @@ This paper has assumed that all obstacle fields are static and predetermined. Th
 
 In both of these cases, we want a fast algorithm that can quickly rerun the RRT algorithm based on newly acquired information. Unfortunately, the present algorithm is too slow for such use. For example, during a test on the $6\times6$ grid, the RRT generation segment took $38.58$ seconds, and the cumulative time to generate the three control point paths was $7.27$ seconds, which is obviously way too slow. Real time implementation will require the total algorithm run time to be ideally less than one second.
 
-Several possible solutions exist which may help reduce computation time. First, this entire algorithm is written in Python; rewriting many of the computationally intensive functions in a faster language such as C or Rust may help significantly. Currently, the algorithm checks every obstacle in the field for intersection; an obstacle reduction algorithm may be written that only checks for obstacles in the direct vicinity of the SFC, which may decrease the computation time. The RRT algorithm is currently entirely random, with no biasing towards the end goal. Biased RRT sampling, which was introduced in \cite{Urmson_2003_8792}, and the greedy RRT algorithm, introduced in \cite{LaValle_greedy}, may help this as well. A relatively new paper by \citeauthor{Gammell-2014-7921} \cite{Gammell-2014-7921} introduces an informed RRT algorithm that maintains the same convergence probability of the original algorithm, while also significantly reducing computational time. 
+Several possible solutions exist which may help reduce computation time. First, this entire algorithm is written in Python; rewriting many of the computationally intensive functions in a faster language such as C or Rust may help significantly. Currently, the algorithm checks every obstacle in the field for intersection; an obstacle reduction algorithm may be written that only checks for obstacles in the direct vicinity of the SFC, which may decrease the computation time. The RRT algorithm is currently entirely random, with no biasing towards the end goal. Biased RRT sampling, which was introduced in \cite{Urmson_2003_8792}, and the greedy RRT algorithm, introduced in \cite{LaValle_greedy}, may help this as well. A relatively new paper \cite{Gammell-2014-7921} introduces an informed RRT algorithm that maintains the same convergence probability of the original algorithm, while also significantly reducing computational time. 
 
 None of the above suggestions have been implemented yet. Hopefully one may lay the foundation for a more robust implementation.
 

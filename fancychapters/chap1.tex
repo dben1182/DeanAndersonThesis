@@ -111,7 +111,7 @@ In this paper, we present one more solution to the VTOL transition problem.
 A 2D simplification of a VTOL simulation is developed to focus solely on transition control without stabilitation of degrees of freedom for roll, yaw, and east position.
 This solution develops a differentially flat controller to make the quadplane track a B-Spline input trajectory.
 
-\section{2D VTOL Mathematical Model}
+\section{2D VTOL Dynamic Model}
 
 We begin by simplifying a standard 3 dimensional dynamic design down to a 2 dimensional model. This simplified things dramatically for us; our early 3-D attempts resulted in instability in the aircraft. We begin with the following detail of the dynamics and mechanics of the aircraft operation in 2D.
 
@@ -1484,20 +1484,11 @@ This is the equivalent of a step input reference to the system for altitude. The
     \caption{Step metrics and plots.}
 \end{figure}
 
-From figure \ref{fig:StepMetrics}, we see that although the aircraft does converge to the main trajectory almost immediately, the aircraft continues to oscillate between north position and north velocity errors as it attempts to converge. This could probably be solved with better tuning.
+From Fig. \ref{fig:StepMetrics}, we see that although the aircraft does converge to the main trajectory almost immediately, the aircraft continues to oscillate between north position and north velocity errors as it attempts to converge. This could probably be solved with better tuning.
 
 \section{Current Issues and Future Work}
 
 It goes without saying that this autopilot is only partially completed. It must be significantly before this autopilot can be successfully implemented in hardware for an actual VTOL transition. The following are some considerations for challenges which must be overcome for a complete solution.
-
-\subsection{Energy Consumption Metric}
-
-To further minimize energy consumption, it is desirable for our aircraft to prioritize the use of the elevator control surface. In this paper, we are able to accomplish that. However, we do not directly prioritize use of the forward propeller. Using the forward propeller means that there is a higher forward velocity, which means that the aircraft is getting to its destination faster than it would otherwise with a VTOL aircraft, which means it would consume less energy transitioning. 
-
-Unfortunately, our current flow would have to be expanded significantly to make it work. The pitch controller would have to take into account a desire to be oriented closer to trim and level flight; that would be one of the goals to achieve when ascending.
-
-\subsection{Oscillations}
-
 
 \subsection{Landing and Negative North Forces}
 
@@ -1535,9 +1526,8 @@ This constrains the achievable thrust to be a positive value. If the desired for
     \delta_t = sat(\delta_{t,unsat}), \quad \delta_t = 0
 \end{align}
 
-\subsubsection{North Forces Example}
+For example, 
 
-An example of when this effect takes place during the aircraft landing, as described in subsection H
 
 
 \subsection{Safety Mechanisms}
