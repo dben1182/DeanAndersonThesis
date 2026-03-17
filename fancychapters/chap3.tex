@@ -1,11 +1,18 @@
 \chapter{B-Spline Computation and Generation}
 \label{ch:BSplines}
 
-B-Splines are becoming increasingly important in the field of robotics. This work has discussed the application of B-Splines for a trajectory tracking controller for an eVTOL aircraft. B-Splines are  B-Splines have several advantages over other function representations. B-Splines maintain locality, where each control point only controls a finite section of the output, instead of the entire output. 
+B-Splines are becoming increasingly important in the field of robotics. This work has discussed the application of B-Splines for a trajectory tracking controller for an eVTOL aircraft. 
+B-Splines are piecewise polynomial functions with smooth transition between each piecewise segment.
+The degree of smoothness depends on the degree of B-Spline involved.
+B-Splines have several advantages over other function representations. 
+B-Splines maintain locality, where each control point only controls a finite section of the output, instead of the entire output. 
 
-As the number of applications for B-Splines increases, the computational burden for the generation of B-Splines also increases. While they have a relatively low computational burden for a single application, many of the new applications of B-Spline generation may include real time computation, updating, and optimization. (Insert example). 
+As the number of applications for B-Splines increases, the computational burden for the generation of B-Splines also increases. 
+While they have a relatively low computational burden for a single application, many of the new applications of B-Spline generation may include real time computation, updating, and optimization.
 
-Uniform B-Splines  To prevent needless repetition of what already exists in the 2025 paper, the majority of the derivations must be referenced only. 
+Uniform B-Splines are B-Splines where all basis functions are only time shifted versions of each other.
+This is in opposition to clamped B-Splines which use modified basis functions at end points so the B-Spline will be guaranteed to start or stop at a particular point.
+To prevent needless repetition of what already exists in the 2025 paper, the majority of the derivations must be referenced only. 
 
 \section{B-Spline Background}
 
@@ -15,9 +22,11 @@ B-Splines can be constructed using the following formula:
     \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m \hat{b}_m^d(t, \bs{k}),
 \end{align}
 
-Where $\hat{b}_m^d(t, \bs{k})$ are the time shifted basis functions of degree $d$, given the knot sequence $\bs{k}$. The knot sequence $\bs{k}$ scales the time spacing of the basis function, which means that adjusting the knot sequence adjusts the standard basis function, which can be helpful for edge cases in robotics. The control points $\bs{c}_m$, scale the basis functions to stitch together the final spline. The dimension of the control point $\bs{c}_m$ determines the dimension of the B-Spline, where a 1 Dimensional $\bs{c}_m$ will create a 1 Dimensional B-Spline, and so forth.
+Where $\hat{b}_m^d(t, \bs{k})$ are the time shifted basis functions of degree $d$, given the knot sequence $\bs{k}$. The knot sequence $\bs{k}$ scales the time spacing of the basis function, which means that adjusting the knot sequence adjusts the standard basis function, which can be helpful for edge cases in robotics. The control points $\bs{c}_m$, scale the basis functions to stitch together the final spline. The dimension of the control point $\bs{c}_m$ determines the dimension of the B-Spline, where a 1D $\bs{c}_m$ will create a 1D B-Spline, and so forth.
 
-This paper uses only uniform B-Splines. In a uniform B-Spline, the knot points are all uniformly spaced apart. If the knot points are all uniformly spaced apart with a spacing of $1$, the basis functions will be defined recursively using the following equations:
+This paper uses only uniform B-Splines. 
+In a uniform B-Spline, the knot points are all uniformly spaced apart. 
+If the knot points are all uniformly spaced apart with a spacing of $1$, the basis functions will be defined recursively using the following equations:
 
 \begin{align}
 b^0(t) &= \begin{cases} 1 & \text{~if~} 0 \leq t \leq 1 \\ 

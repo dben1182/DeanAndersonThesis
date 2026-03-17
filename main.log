@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  16 MAR 2026 20:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  17 MAR 2026 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1775,7 +1775,7 @@ LaTeX Font Info:    Font shape `T1/opensans-TLF/m/it' will be
 (Font)              scaled to size 23.63593pt on input line 104.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 104.
-<figures/college_logo.png, id=256, 1795.70876pt x 221.82875pt>
+<figures/college_logo.png, id=260, 1795.70876pt x 221.82875pt>
 File: figures/college_logo.png Graphic file (type png)
 <use figures/college_logo.png>
 Package pdftex.def Info: figures/college_logo.png  used on input line 104.
@@ -1876,50 +1876,50 @@ No file main.nls.
 
 (./fancychapters/chap0.tex
 Chapter 1.
-<figs/chap0/LAPD_Bell_206_Jetranger.jpg, id=667, 589.7232pt x 393.1488pt>
+<figs/chap0/LAPD_Bell_206_Jetranger.jpg, id=673, 589.7232pt x 393.1488pt>
 File: figs/chap0/LAPD_Bell_206_Jetranger.jpg Graphic file (type jpg)
 <use figs/chap0/LAPD_Bell_206_Jetranger.jpg>
 Package pdftex.def Info: figs/chap0/LAPD_Bell_206_Jetranger.jpg  used on input 
-line 11.
+line 15.
 (pdftex.def)             Requested size: 164.63853pt x 109.75696pt.
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 12.
+(Font)              scaled to size 10.0pt on input line 16.
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 9.0pt on input line 12.
+(Font)              scaled to size 9.0pt on input line 16.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 12.
-<figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg, id=670, 602.25pt x 464.73625pt>
+(Font)              scaled to size 9.0pt on input line 16.
+<figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg, id=676, 602.25pt x 464.73625pt>
 File: figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg Graphic file (type jpg)
 <use figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg>
 Package pdftex.def Info: figs/chap0/Onyxstar_Fox-C8_XT_xender_360.jpg  used on 
-input line 18.
+input line 22.
 (pdftex.def)             Requested size: 164.63853pt x 127.04764pt.
-<figs/chap0/The_Hexacopter.jpg, id=673, 1830.84pt x 1312.905pt>
+<figs/chap0/The_Hexacopter.jpg, id=679, 1830.84pt x 1312.905pt>
 File: figs/chap0/The_Hexacopter.jpg Graphic file (type jpg)
 <use figs/chap0/The_Hexacopter.jpg>
-Package pdftex.def Info: figs/chap0/The_Hexacopter.jpg  used on input line 28.
+Package pdftex.def Info: figs/chap0/The_Hexacopter.jpg  used on input line 32.
 (pdftex.def)             Requested size: 164.63853pt x 118.05618pt.
-<figs/chap0/redbull.jpeg, id=676, 1284.8pt x 722.7pt>
+<figs/chap0/redbull.jpeg, id=682, 1284.8pt x 722.7pt>
 File: figs/chap0/redbull.jpeg Graphic file (type jpg)
 <use figs/chap0/redbull.jpeg>
-Package pdftex.def Info: figs/chap0/redbull.jpeg  used on input line 35.
+Package pdftex.def Info: figs/chap0/redbull.jpeg  used on input line 39.
 (pdftex.def)             Requested size: 164.63853pt x 92.60893pt.
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 40.
-<figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg, id=682, 727.9998pt x 478.4274pt>
+(Font)              scaled to size 10.95pt on input line 44.
+<figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg, id=688, 727.9998pt x 478.4274pt>
 File: figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg Graphic file (type jpg)
 <use figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg>
 Package pdftex.def Info: figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg  used on inpu
-t line 50.
+t line 54.
 (pdftex.def)             Requested size: 164.63853pt x 108.19633pt.
-<figs/chap0/4096px-Zipline_Drone_Launch.jpg, id=685, 4111.36pt x 2831.57875pt>
+<figs/chap0/4096px-Zipline_Drone_Launch.jpg, id=691, 4111.36pt x 2831.57875pt>
 File: figs/chap0/4096px-Zipline_Drone_Launch.jpg Graphic file (type jpg)
 <use figs/chap0/4096px-Zipline_Drone_Launch.jpg>
 Package pdftex.def Info: figs/chap0/4096px-Zipline_Drone_Launch.jpg  used on in
-put line 57.
+put line 61.
 (pdftex.def)             Requested size: 164.63853pt x 113.37347pt.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 66.
+(Font)              scaled to size 10.95pt on input line 70.
 [1
 
 
@@ -1930,51 +1930,51 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
 T_xender_360.jpg> <./figs/chap0/The_Hexacopter.jpg> <./figs/chap0/redbull.jpeg>
  <./figs/chap0/MQ-9_Reaper_UAV_(cropped).jpg> <./figs/chap0/4096px-Zipline_Dron
 e_Launch.jpg>]
-<figs/chap0/Archer_Midnight_top_view.jpg, id=711, 2007.5pt x 1337.99875pt>
+<figs/chap0/Archer_Midnight_top_view.jpg, id=717, 2007.5pt x 1337.99875pt>
 File: figs/chap0/Archer_Midnight_top_view.jpg Graphic file (type jpg)
 <use figs/chap0/Archer_Midnight_top_view.jpg>
 Package pdftex.def Info: figs/chap0/Archer_Midnight_top_view.jpg  used on input
- line 74.
+ line 78.
 (pdftex.def)             Requested size: 164.63853pt x 109.7166pt.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 9.0pt on input line 75.
+(Font)              scaled to size 9.0pt on input line 79.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 7.3pt on input line 75.
+(Font)              scaled to size 7.3pt on input line 79.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 5.5pt on input line 75.
-<figs/chap0/2048px-BETA_Technologies_A250_eVTOL_Prototype_Aircraft.jpg, id=716,
+(Font)              scaled to size 5.5pt on input line 79.
+<figs/chap0/2048px-BETA_Technologies_A250_eVTOL_Prototype_Aircraft.jpg, id=722,
  2055.68pt x 1074.0125pt>
 File: figs/chap0/2048px-BETA_Technologies_A250_eVTOL_Prototype_Aircraft.jpg Gra
 phic file (type jpg)
 <use figs/chap0/2048px-BETA_Technologies_A250_eVTOL_Prototype_Aircraft.jpg>
 Package pdftex.def Info: figs/chap0/2048px-BETA_Technologies_A250_eVTOL_Prototy
-pe_Aircraft.jpg  used on input line 81.
+pe_Aircraft.jpg  used on input line 85.
 (pdftex.def)             Requested size: 164.63853pt x 86.00468pt.
-<figs/chap0/MV-22_mcas_Miramar_2014.jpeg, id=719, 2159.06625pt x 1419.3025pt>
+<figs/chap0/MV-22_mcas_Miramar_2014.jpeg, id=725, 2159.06625pt x 1419.3025pt>
 File: figs/chap0/MV-22_mcas_Miramar_2014.jpeg Graphic file (type jpg)
 <use figs/chap0/MV-22_mcas_Miramar_2014.jpeg>
 Package pdftex.def Info: figs/chap0/MV-22_mcas_Miramar_2014.jpeg  used on input
- line 91.
+ line 95.
 (pdftex.def)             Requested size: 164.63853pt x 108.21895pt.
 
-Underfull \hbox (badness 2884) in paragraph at lines 92--92
+Underfull \hbox (badness 2884) in paragraph at lines 96--96
 [][]\T1/zpltlf/b/n/9 (+20) (c)[][] []|\T1/zpltlf/m/n/9 (+20) U.S. Ma-rine Corps
  MV[]22B Os-
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 92--92
+Underfull \hbox (badness 1057) in paragraph at lines 96--96
 \T1/zpltlf/m/n/9 (+20) Air Sta-tion Mi-ra-mar, Cal-i-for-nia, dur-
  []
 
-<figs/chap0/zipline_source_bill_carey.jpg, id=722, 803.0pt x 553.06625pt>
+<figs/chap0/zipline_source_bill_carey.jpg, id=728, 803.0pt x 553.06625pt>
 File: figs/chap0/zipline_source_bill_carey.jpg Graphic file (type jpg)
 <use figs/chap0/zipline_source_bill_carey.jpg>
 Package pdftex.def Info: figs/chap0/zipline_source_bill_carey.jpg  used on inpu
-t line 98.
+t line 102.
 (pdftex.def)             Requested size: 164.63853pt x 113.3962pt.
 
-Underfull \hbox (badness 1694) in paragraph at lines 99--99
+Underfull \hbox (badness 1694) in paragraph at lines 103--103
 [][]\T1/zpltlf/b/n/9 (+20) (d)[][] []|\T1/zpltlf/m/n/9 (+20) Zi-pline second[]g
 eneration P2 au-
  []
@@ -1983,9 +1983,9 @@ eneration P2 au-
 chnologies_A250_eVTOL_Prototype_Aircraft.jpg> <./figs/chap0/MV-22_mcas_Miramar_
 2014.jpeg> <./figs/chap0/zipline_source_bill_carey.jpg>]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 135.
+(Font)              scaled to size 12.0pt on input line 139.
 LaTeX Font Info:    Font shape `T1/opensans-TLF/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 135.
+(Font)              scaled to size 11.39996pt on input line 139.
 ) [5]
 \openout2 = `fancychapters/chap1.aux'.
 
@@ -1993,7 +1993,7 @@ LaTeX Font Info:    Font shape `T1/opensans-TLF/m/n' will be
 (./fancychapters/chap1.tex
 Chapter 2.
 
-Package caption Warning: \label without proper reference on input line 44.
+Package caption Warning: \label without proper reference on input line 46.
 See the caption package documentation for explanation.
 
 
@@ -2005,332 +2005,340 @@ LaTeX Warning: Reference `fig:Px4' on page 6 undefined on input line 27.
 
 
 ]
-<figs/chap1/Px4VTOL.png, id=763, 813.0375pt x 374.39874pt>
+<figs/chap1/Px4VTOL.png, id=769, 813.0375pt x 374.39874pt>
 File: figs/chap1/Px4VTOL.png Graphic file (type png)
 <use figs/chap1/Px4VTOL.png>
 Package pdftex.def Info: figs/chap1/Px4VTOL.png  used on input line 33.
 (pdftex.def)             Requested size: 164.63853pt x 75.81532pt.
-<figs/chap1/Px4VTOLFlightPath.jpg, id=766, 2022.55624pt x 1816.7875pt>
+<figs/chap1/Px4VTOLFlightPath.jpg, id=772, 2022.55624pt x 1816.7875pt>
 File: figs/chap1/Px4VTOLFlightPath.jpg Graphic file (type jpg)
 <use figs/chap1/Px4VTOLFlightPath.jpg>
 Package pdftex.def Info: figs/chap1/Px4VTOLFlightPath.jpg  used on input line 4
-0.
+2.
 (pdftex.def)             Requested size: 164.63853pt x 147.86867pt.
 LaTeX Font Info:    Font shape `T1/opensans-TLF/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 65.
+(Font)              scaled to size 10.40245pt on input line 67.
  [7 <./figs/chap1/Px4VTOL.png> <./figs/chap1/Px4VTOLFlightPath.jpg>]
 [8]
-<figs/quadplane_2D.pdf, id=798, 859.29025pt x 176.5797pt>
+<figs/quadplane_2D.pdf, id=804, 859.29025pt x 176.5797pt>
 File: figs/quadplane_2D.pdf Graphic file (type pdf)
 <use figs/quadplane_2D.pdf>
-Package pdftex.def Info: figs/quadplane_2D.pdf  used on input line 122.
+Package pdftex.def Info: figs/quadplane_2D.pdf  used on input line 124.
 (pdftex.def)             Requested size: 257.25pt x 52.86383pt.
  [9 <./figs/quadplane_2D.pdf>] [10] [11]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 253.
+put line 262.
  [12]
-<figs/chap1/Orthogonal Projection.png, id=874, 276.03125pt x 172.31041pt>
+<figs/chap1/Orthogonal Projection.png, id=880, 276.03125pt x 172.31041pt>
 File: figs/chap1/Orthogonal Projection.png Graphic file (type png)
 <use figs/chap1/Orthogonal Projection.png>
 Package pdftex.def Info: figs/chap1/Orthogonal Projection.png  used on input li
-ne 311.
+ne 320.
 (pdftex.def)             Requested size: 171.5pt x 107.0627pt.
  [13 <./figs/chap1/Orthogonal Projection.png>]
 LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 9.0pt on input line 361.
+(Font)              scaled to size 9.0pt on input line 370.
 LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 7.3pt on input line 361.
+(Font)              scaled to size 7.3pt on input line 370.
 LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 5.5pt on input line 361.
+(Font)              scaled to size 5.5pt on input line 370.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 362.
+(Font)              scaled to size 7.3pt on input line 371.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 362.
+(Font)              scaled to size 5.5pt on input line 371.
  [14] [15] [16] [17] [18]
-<figs/chap1/elevator and q force omission.png, id=952, 574.5465pt x 226.2051pt>
+<figs/chap1/elevator and q force omission.png, id=959, 574.5465pt x 226.2051pt>
 
 File: figs/chap1/elevator and q force omission.png Graphic file (type png)
 <use figs/chap1/elevator and q force omission.png>
 Package pdftex.def Info: figs/chap1/elevator and q force omission.png  used on 
-input line 641.
+input line 655.
 (pdftex.def)             Requested size: 257.25pt x 101.28395pt.
  [19 <./figs/chap1/elevator and q force omission.png>]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 694.
+(Font)              scaled to size 8.0pt on input line 708.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 694.
+(Font)              scaled to size 6.1pt on input line 708.
  [20]
-<figs/chap1/1 Norm Visualization.drawio.png, id=974, 1545.775pt x 1003.75pt>
+<figs/chap1/1 Norm Visualization.drawio.png, id=981, 1545.775pt x 1003.75pt>
 File: figs/chap1/1 Norm Visualization.drawio.png Graphic file (type png)
 <use figs/chap1/1 Norm Visualization.drawio.png>
 Package pdftex.def Info: figs/chap1/1 Norm Visualization.drawio.png  used on in
-put line 752.
+put line 767.
 (pdftex.def)             Requested size: 171.5pt x 111.36243pt.
  [21]
-<figs/chap1/Moment Control Flowchart.drawio.png, id=989, 2589.675pt x 1485.55pt
+<figs/chap1/Moment Control Flowchart.drawio.png, id=996, 2589.675pt x 1485.55pt
 >
 File: figs/chap1/Moment Control Flowchart.drawio.png Graphic file (type png)
 <use figs/chap1/Moment Control Flowchart.drawio.png>
 Package pdftex.def Info: figs/chap1/Moment Control Flowchart.drawio.png  used o
-n input line 790.
+n input line 805.
 (pdftex.def)             Requested size: 257.25pt x 147.56631pt.
  [22 <./figs/chap1/1 Norm Visualization.drawio.png>]
 [23 <./figs/chap1/Moment Control Flowchart.drawio.png>] [24] [25]
-<figs/chap1/controllerOverview.jpg, id=1044, 7939.6625pt x 9395.1pt>
+<figs/chap1/controllerOverview.jpg, id=1051, 7939.6625pt x 9395.1pt>
 File: figs/chap1/controllerOverview.jpg Graphic file (type jpg)
 <use figs/chap1/controllerOverview.jpg>
 Package pdftex.def Info: figs/chap1/controllerOverview.jpg  used on input line 
-993.
+1008.
 (pdftex.def)             Requested size: 291.5521pt x 344.91814pt.
  [26] [27 <./figs/chap1/controllerOverview.jpg>] [28]
 
-Package caption Warning: \label without proper reference on input line 1091.
+Package caption Warning: \label without proper reference on input line 1105.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `tb:vtolCoefficients' on page 29 undefined on input li
-ne 1089.
+ne 1103.
 
 [29]
-<figs/chap1/Takeoff/startControlPoints.png, id=1094, 462.528pt x 346.896pt>
+<figs/chap1/Takeoff/startControlPoints.png, id=1101, 462.528pt x 346.896pt>
 File: figs/chap1/Takeoff/startControlPoints.png Graphic file (type png)
 <use figs/chap1/Takeoff/startControlPoints.png>
 Package pdftex.def Info: figs/chap1/Takeoff/startControlPoints.png  used on inp
-ut line 1157.
+ut line 1171.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/Takeoff/endControlPoints.png, id=1095, 462.528pt x 346.896pt>
+<figs/chap1/Takeoff/endControlPoints.png, id=1102, 462.528pt x 346.896pt>
 File: figs/chap1/Takeoff/endControlPoints.png Graphic file (type png)
 <use figs/chap1/Takeoff/endControlPoints.png>
 Package pdftex.def Info: figs/chap1/Takeoff/endControlPoints.png  used on input
- line 1164.
+ line 1178.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/Takeoff/startEndControlPoints_2.png, id=1096, 682.2288pt x 257.2812
+<figs/chap1/Takeoff/startEndControlPoints_2.png, id=1103, 682.2288pt x 257.2812
 pt>
 File: figs/chap1/Takeoff/startEndControlPoints_2.png Graphic file (type png)
 <use figs/chap1/Takeoff/startEndControlPoints_2.png>
 Package pdftex.def Info: figs/chap1/Takeoff/startEndControlPoints_2.png  used o
-n input line 1171.
+n input line 1185.
 (pdftex.def)             Requested size: 343.0pt x 129.35085pt.
  [30{/usr/share/texmf-dist/fonts/enc/dvips/newpx/pxb-lms.enc}]
-<figs/chap1/Takeoff/Takeoff shape without control points.png, id=1107, 658.3797
+<figs/chap1/Takeoff/Takeoff shape without control points.png, id=1114, 658.3797
 pt x 172.7253pt>
 File: figs/chap1/Takeoff/Takeoff shape without control points.png Graphic file 
 (type png)
 <use figs/chap1/Takeoff/Takeoff shape without control points.png>
 Package pdftex.def Info: figs/chap1/Takeoff/Takeoff shape without control point
-s.png  used on input line 1194.
+s.png  used on input line 1208.
 (pdftex.def)             Requested size: 343.0pt x 89.9837pt.
-<figs/chap1/Takeoff/Takeoff shape with control points.png, id=1108, 653.3208pt 
+<figs/chap1/Takeoff/Takeoff shape with control points.png, id=1115, 653.3208pt 
 x 159.7167pt>
 File: figs/chap1/Takeoff/Takeoff shape with control points.png Graphic file (ty
 pe png)
 <use figs/chap1/Takeoff/Takeoff shape with control points.png>
 Package pdftex.def Info: figs/chap1/Takeoff/Takeoff shape with control points.p
-ng  used on input line 1202.
+ng  used on input line 1216.
 (pdftex.def)             Requested size: 343.0pt x 83.85252pt.
 
 
-Package caption Warning: \label without proper reference on input line 1256.
+Package caption Warning: \label without proper reference on input line 1270.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:TakeoffMetrics' on page 31 undefined on input lin
-e 1212.
+e 1226.
 
-<figs/chap1/Takeoff/posVelError.png, id=1113, 462.528pt x 346.896pt>
+<figs/chap1/Takeoff/posVelError.png, id=1120, 462.528pt x 346.896pt>
 File: figs/chap1/Takeoff/posVelError.png Graphic file (type png)
 <use figs/chap1/Takeoff/posVelError.png>
 Package pdftex.def Info: figs/chap1/Takeoff/posVelError.png  used on input line
- 1218.
+ 1232.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/Takeoff/ForcesComparison.png, id=1114, 462.528pt x 409.7709pt>
+<figs/chap1/Takeoff/ForcesComparison.png, id=1121, 462.528pt x 409.7709pt>
 File: figs/chap1/Takeoff/ForcesComparison.png Graphic file (type png)
 <use figs/chap1/Takeoff/ForcesComparison.png>
 Package pdftex.def Info: figs/chap1/Takeoff/ForcesComparison.png  used on input
- line 1225.
+ line 1239.
 (pdftex.def)             Requested size: 164.63853pt x 145.86047pt.
-<figs/chap1/Takeoff/TrajectorActualAndDesired.png, id=1115, 700.2963pt x 207.41
+<figs/chap1/Takeoff/TrajectorActualAndDesired.png, id=1122, 700.2963pt x 207.41
 49pt>
 File: figs/chap1/Takeoff/TrajectorActualAndDesired.png Graphic file (type png)
 <use figs/chap1/Takeoff/TrajectorActualAndDesired.png>
 Package pdftex.def Info: figs/chap1/Takeoff/TrajectorActualAndDesired.png  used
- on input line 1235.
+ on input line 1249.
 (pdftex.def)             Requested size: 343.0pt x 101.58987pt.
-<figs/chap1/Takeoff/Deltas.png, id=1116, 462.528pt x 346.896pt>
+<figs/chap1/Takeoff/Deltas.png, id=1123, 462.528pt x 346.896pt>
 File: figs/chap1/Takeoff/Deltas.png Graphic file (type png)
 <use figs/chap1/Takeoff/Deltas.png>
-Package pdftex.def Info: figs/chap1/Takeoff/Deltas.png  used on input line 1245
+Package pdftex.def Info: figs/chap1/Takeoff/Deltas.png  used on input line 1259
 .
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/Takeoff/Angles.png, id=1117, 462.528pt x 346.896pt>
+<figs/chap1/Takeoff/Angles.png, id=1124, 462.528pt x 346.896pt>
 File: figs/chap1/Takeoff/Angles.png Graphic file (type png)
 <use figs/chap1/Takeoff/Angles.png>
-Package pdftex.def Info: figs/chap1/Takeoff/Angles.png  used on input line 1252
+Package pdftex.def Info: figs/chap1/Takeoff/Angles.png  used on input line 1266
 .
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
 
-Package caption Warning: \label without proper reference on input line 1256.
+Package caption Warning: \label without proper reference on input line 1270.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:TakeoffMetrics' on page 31 undefined on input lin
-e 1260.
+e 1274.
 
 [31 <./figs/chap1/Takeoff/startControlPoints.png> <./figs/chap1/Takeoff/endCont
 rolPoints.png> <./figs/chap1/Takeoff/startEndControlPoints_2.png>]
-<figs/chap1/landing/ReferenceTrajectory.png, id=1130, 669.2202pt x 310.761pt>
+<figs/chap1/landing/ReferenceTrajectory.png, id=1137, 669.2202pt x 310.761pt>
 File: figs/chap1/landing/ReferenceTrajectory.png Graphic file (type png)
 <use figs/chap1/landing/ReferenceTrajectory.png>
 Package pdftex.def Info: figs/chap1/landing/ReferenceTrajectory.png  used on in
-put line 1299.
+put line 1313.
 (pdftex.def)             Requested size: 240.09895pt x 111.49452pt.
  [32 <./figs/chap1/Takeoff/Takeoff shape without control points.png> <./figs/ch
 ap1/Takeoff/Takeoff shape with control points.png>] [33 <./figs/chap1/Takeoff/p
 osVelError.png> <./figs/chap1/Takeoff/ForcesComparison.png> <./figs/chap1/Takeo
 ff/TrajectorActualAndDesired.png> <./figs/chap1/Takeoff/Deltas.png> <./figs/cha
 p1/Takeoff/Angles.png>]
-<figs/chap1/landing/PosVelErrors.png, id=1152, 462.528pt x 346.896pt>
+
+Package caption Warning: \label without proper reference on input line 1363.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:LandingMetrics' on page 34 undefined on input lin
+e 1318.
+
+<figs/chap1/landing/PosVelErrors.png, id=1160, 462.528pt x 346.896pt>
 File: figs/chap1/landing/PosVelErrors.png Graphic file (type png)
 <use figs/chap1/landing/PosVelErrors.png>
 Package pdftex.def Info: figs/chap1/landing/PosVelErrors.png  used on input lin
-e 1311.
+e 1325.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/landing/ForcesComparisons.png, id=1153, 462.528pt x 346.896pt>
+<figs/chap1/landing/ForcesComparisons.png, id=1161, 462.528pt x 346.896pt>
 File: figs/chap1/landing/ForcesComparisons.png Graphic file (type png)
 <use figs/chap1/landing/ForcesComparisons.png>
 Package pdftex.def Info: figs/chap1/landing/ForcesComparisons.png  used on inpu
-t line 1318.
+t line 1332.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/landing/DesiredActualTrajectory.png, id=1154, 462.528pt x 346.896pt
+<figs/chap1/landing/DesiredActualTrajectory.png, id=1162, 462.528pt x 346.896pt
 >
 File: figs/chap1/landing/DesiredActualTrajectory.png Graphic file (type png)
 <use figs/chap1/landing/DesiredActualTrajectory.png>
 Package pdftex.def Info: figs/chap1/landing/DesiredActualTrajectory.png  used o
-n input line 1328.
+n input line 1342.
 (pdftex.def)             Requested size: 343.0pt x 257.26009pt.
-<figs/chap1/landing/Deltas.png, id=1155, 462.528pt x 346.896pt>
+<figs/chap1/landing/Deltas.png, id=1163, 462.528pt x 346.896pt>
 File: figs/chap1/landing/Deltas.png Graphic file (type png)
 <use figs/chap1/landing/Deltas.png>
-Package pdftex.def Info: figs/chap1/landing/Deltas.png  used on input line 1338
+Package pdftex.def Info: figs/chap1/landing/Deltas.png  used on input line 1352
 .
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/landing/Angles.png, id=1156, 462.528pt x 346.896pt>
+<figs/chap1/landing/Angles.png, id=1164, 462.528pt x 346.896pt>
 File: figs/chap1/landing/Angles.png Graphic file (type png)
 <use figs/chap1/landing/Angles.png>
-Package pdftex.def Info: figs/chap1/landing/Angles.png  used on input line 1345
+Package pdftex.def Info: figs/chap1/landing/Angles.png  used on input line 1359
 .
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
 
+LaTeX Warning: Float too large for page by 10.87204pt on input line 1365.
 
-LaTeX Warning: Float too large for page by 10.87204pt on input line 1351.
-
-<figs/chap1/successiveAscent/Successive Ascent.drawio.png, id=1158, 3232.075pt 
+<figs/chap1/successiveAscent/Successive Ascent.drawio.png, id=1166, 3232.075pt 
 x 1184.425pt>
 File: figs/chap1/successiveAscent/Successive Ascent.drawio.png Graphic file (ty
 pe png)
 <use figs/chap1/successiveAscent/Successive Ascent.drawio.png>
 Package pdftex.def Info: figs/chap1/successiveAscent/Successive Ascent.drawio.p
-ng  used on input line 1363.
+ng  used on input line 1375.
 (pdftex.def)             Requested size: 240.09895pt x 87.9786pt.
-<figs/chap1/successiveAscent/PosVelErrors.png, id=1160, 462.528pt x 346.896pt>
+<figs/chap1/successiveAscent/PosVelErrors.png, id=1168, 462.528pt x 346.896pt>
 File: figs/chap1/successiveAscent/PosVelErrors.png Graphic file (type png)
 <use figs/chap1/successiveAscent/PosVelErrors.png>
 Package pdftex.def Info: figs/chap1/successiveAscent/PosVelErrors.png  used on 
-input line 1374.
+input line 1386.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/successiveAscent/forceComparisons.png, id=1161, 462.528pt x 346.896
+<figs/chap1/successiveAscent/forceComparisons.png, id=1169, 462.528pt x 346.896
 pt>
 File: figs/chap1/successiveAscent/forceComparisons.png Graphic file (type png)
 <use figs/chap1/successiveAscent/forceComparisons.png>
 Package pdftex.def Info: figs/chap1/successiveAscent/forceComparisons.png  used
- on input line 1381.
+ on input line 1393.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/successiveAscent/TrajectoryComparisons.png, id=1162, 462.528pt x 34
+<figs/chap1/successiveAscent/TrajectoryComparisons.png, id=1170, 462.528pt x 34
 6.896pt>
 File: figs/chap1/successiveAscent/TrajectoryComparisons.png Graphic file (type 
 png)
 <use figs/chap1/successiveAscent/TrajectoryComparisons.png>
 Package pdftex.def Info: figs/chap1/successiveAscent/TrajectoryComparisons.png 
- used on input line 1391.
+ used on input line 1403.
 (pdftex.def)             Requested size: 343.0pt x 257.26009pt.
-<figs/chap1/successiveAscent/Deltas.png, id=1163, 419.8887pt x 294.1389pt>
+<figs/chap1/successiveAscent/Deltas.png, id=1171, 419.8887pt x 294.1389pt>
 File: figs/chap1/successiveAscent/Deltas.png Graphic file (type png)
 <use figs/chap1/successiveAscent/Deltas.png>
 Package pdftex.def Info: figs/chap1/successiveAscent/Deltas.png  used on input 
-line 1401.
+line 1413.
 (pdftex.def)             Requested size: 164.63853pt x 115.33307pt.
-<figs/chap1/successiveAscent/angles.png, id=1164, 462.528pt x 346.896pt>
+<figs/chap1/successiveAscent/angles.png, id=1172, 462.528pt x 346.896pt>
 File: figs/chap1/successiveAscent/angles.png Graphic file (type png)
 <use figs/chap1/successiveAscent/angles.png>
 Package pdftex.def Info: figs/chap1/successiveAscent/angles.png  used on input 
-line 1408.
+line 1420.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
 
-LaTeX Warning: Float too large for page by 10.87204pt on input line 1414.
+LaTeX Warning: Float too large for page by 10.87204pt on input line 1426.
 
-<figs/chap1/successiveAscent/VelocitiesComparisons.png, id=1166, 462.528pt x 34
+[34 <./figs/chap1/landing/ReferenceTrajectory.png>] [35 <./figs/chap1/landing/P
+osVelErrors.png> <./figs/chap1/landing/ForcesComparisons.png> <./figs/chap1/lan
+ding/DesiredActualTrajectory.png> <./figs/chap1/landing/Deltas.png> <./figs/cha
+p1/landing/Angles.png>]
+<figs/chap1/successiveAscent/VelocitiesComparisons.png, id=1190, 462.528pt x 34
 6.896pt>
 File: figs/chap1/successiveAscent/VelocitiesComparisons.png Graphic file (type 
 png)
 <use figs/chap1/successiveAscent/VelocitiesComparisons.png>
 Package pdftex.def Info: figs/chap1/successiveAscent/VelocitiesComparisons.png 
- used on input line 1423.
+ used on input line 1435.
 (pdftex.def)             Requested size: 343.0pt x 257.26009pt.
-[34 <./figs/chap1/landing/ReferenceTrajectory.png>] [35 <./figs/chap1/landing/P
-osVelErrors.png> <./figs/chap1/landing/ForcesComparisons.png> <./figs/chap1/lan
-ding/DesiredActualTrajectory.png> <./figs/chap1/landing/Deltas.png> <./figs/cha
-p1/landing/Angles.png>]
 
-Package caption Warning: \label without proper reference on input line 1484.
+
+Package caption Warning: \label without proper reference on input line 1496.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:StepMetrics' on page 36 undefined on input line 1
-432.
+444.
 
-<figs/chap1/StepError/PosVelErrors.png, id=1185, 497.9403pt x 346.896pt>
+<figs/chap1/StepError/PosVelErrors.png, id=1193, 497.9403pt x 346.896pt>
 File: figs/chap1/StepError/PosVelErrors.png Graphic file (type png)
 <use figs/chap1/StepError/PosVelErrors.png>
 Package pdftex.def Info: figs/chap1/StepError/PosVelErrors.png  used on input l
-ine 1439.
+ine 1451.
 (pdftex.def)             Requested size: 164.63853pt x 114.69304pt.
-<figs/chap1/StepError/forcesComparison.png, id=1186, 462.528pt x 346.896pt>
+<figs/chap1/StepError/forcesComparison.png, id=1194, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/forcesComparison.png Graphic file (type png)
 <use figs/chap1/StepError/forcesComparison.png>
 Package pdftex.def Info: figs/chap1/StepError/forcesComparison.png  used on inp
-ut line 1446.
+ut line 1458.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/StepError/PosComparisons.png, id=1187, 462.528pt x 346.896pt>
+<figs/chap1/StepError/PosComparisons.png, id=1195, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/PosComparisons.png Graphic file (type png)
 <use figs/chap1/StepError/PosComparisons.png>
 Package pdftex.def Info: figs/chap1/StepError/PosComparisons.png  used on input
- line 1456.
+ line 1468.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/StepError/VelComparisons.png, id=1188, 462.528pt x 346.896pt>
+<figs/chap1/StepError/VelComparisons.png, id=1196, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/VelComparisons.png Graphic file (type png)
 <use figs/chap1/StepError/VelComparisons.png>
 Package pdftex.def Info: figs/chap1/StepError/VelComparisons.png  used on input
- line 1463.
+ line 1475.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/StepError/Deltas2.png, id=1189, 462.528pt x 346.896pt>
+<figs/chap1/StepError/Deltas2.png, id=1197, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/Deltas2.png Graphic file (type png)
 <use figs/chap1/StepError/Deltas2.png>
 Package pdftex.def Info: figs/chap1/StepError/Deltas2.png  used on input line 1
-473.
+485.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/StepError/angles.png, id=1190, 462.528pt x 346.896pt>
+<figs/chap1/StepError/angles.png, id=1198, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/angles.png Graphic file (type png)
 <use figs/chap1/StepError/angles.png>
 Package pdftex.def Info: figs/chap1/StepError/angles.png  used on input line 14
-80.
+92.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
 
-Package caption Warning: \label without proper reference on input line 1484.
+Package caption Warning: \label without proper reference on input line 1496.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:StepMetrics' on page 36 undefined on input line 1
-488.
+500.
 
 [36 <./figs/chap1/successiveAscent/Successive Ascent.drawio.png>] [37 <./figs/c
 hap1/successiveAscent/PosVelErrors.png> <./figs/chap1/successiveAscent/forceCom
@@ -2340,26 +2348,26 @@ parisons.png> <./figs/chap1/successiveAscent/TrajectoryComparisons.png> <./figs
 1/StepError/PosVelErrors.png> <./figs/chap1/StepError/forcesComparison.png> <./
 figs/chap1/StepError/PosComparisons.png> <./figs/chap1/StepError/VelComparisons
 .png> <./figs/chap1/StepError/Deltas2.png> <./figs/chap1/StepError/angles.png>]
-<figs/chap1/quadplane.jpg, id=1233, 963.6pt x 722.7pt>
+[40]
+<figs/chap1/quadplane.jpg, id=1248, 963.6pt x 722.7pt>
 File: figs/chap1/quadplane.jpg Graphic file (type jpg)
 <use figs/chap1/quadplane.jpg>
-Package pdftex.def Info: figs/chap1/quadplane.jpg  used on input line 1567.
+Package pdftex.def Info: figs/chap1/quadplane.jpg  used on input line 1583.
 (pdftex.def)             Requested size: 343.0pt x 257.24951pt.
-[40]
-<figs/chap1/tiltbodyDesign.png, id=1244, 1352.05125pt x 414.54875pt>
+<figs/chap1/tiltbodyDesign.png, id=1252, 1352.05125pt x 414.54875pt>
 File: figs/chap1/tiltbodyDesign.png Graphic file (type png)
 <use figs/chap1/tiltbodyDesign.png>
-Package pdftex.def Info: figs/chap1/tiltbodyDesign.png  used on input line 1585
+Package pdftex.def Info: figs/chap1/tiltbodyDesign.png  used on input line 1601
 .
 (pdftex.def)             Requested size: 343.0pt x 105.16138pt.
-<figs/chap1/tiltbodyManeuver.png, id=1248, 1015.795pt x 499.8675pt>
+<figs/chap1/tiltbodyManeuver.png, id=1256, 1015.795pt x 499.8675pt>
 File: figs/chap1/tiltbodyManeuver.png Graphic file (type png)
 <use figs/chap1/tiltbodyManeuver.png>
-Package pdftex.def Info: figs/chap1/tiltbodyManeuver.png  used on input line 15
-96.
+Package pdftex.def Info: figs/chap1/tiltbodyManeuver.png  used on input line 16
+12.
 (pdftex.def)             Requested size: 343.0pt x 168.7857pt.
- [41 <./figs/chap1/quadplane.jpg> <./figs/chap1/tiltbodyDesign.png>]
-[42 <./figs/chap1/tiltbodyManeuver.png>]) [43]
+ [41 <./figs/chap1/quadplane.jpg>] [42 <./figs/chap1/tiltbodyDesign.png> <./fig
+s/chap1/tiltbodyManeuver.png>]) [43]
 \openout2 = `fancychapters/chap2.aux'.
 
  (./fancychapters/chap2.tex
@@ -2392,26 +2400,26 @@ LaTeX Warning: Reference `tb:lateralCoefficients' on page 44 undefined on input
 
 
 ]
-<figs/chap2/phughoid_mode_diagram.png, id=1283, 1134.2375pt x 625.33624pt>
+<figs/chap2/phughoid_mode_diagram.png, id=1291, 1134.2375pt x 625.33624pt>
 File: figs/chap2/phughoid_mode_diagram.png Graphic file (type png)
 <use figs/chap2/phughoid_mode_diagram.png>
 Package pdftex.def Info: figs/chap2/phughoid_mode_diagram.png  used on input li
 ne 75.
 (pdftex.def)             Requested size: 171.5pt x 94.55019pt.
  [45 <./figs/chap2/phughoid_mode_diagram.png>]
-<figs/chap2/Dutch Roll Diagram.png, id=1295, 888.31876pt x 1040.88875pt>
+<figs/chap2/Dutch Roll Diagram.png, id=1303, 888.31876pt x 1040.88875pt>
 File: figs/chap2/Dutch Roll Diagram.png Graphic file (type png)
 <use figs/chap2/Dutch Roll Diagram.png>
 Package pdftex.def Info: figs/chap2/Dutch Roll Diagram.png  used on input line 
 88.
 (pdftex.def)             Requested size: 240.09895pt x 281.3296pt.
  [46 <./figs/chap2/Dutch Roll Diagram.png>]
-<figs/chap2/IIR-filter.png, id=1308, 623.50589pt x 514.39235pt>
+<figs/chap2/IIR-filter.png, id=1316, 623.50589pt x 514.39235pt>
 File: figs/chap2/IIR-filter.png Graphic file (type png)
 <use figs/chap2/IIR-filter.png>
 Package pdftex.def Info: figs/chap2/IIR-filter.png  used on input line 110.
 (pdftex.def)             Requested size: 171.5pt x 141.4858pt.
-<figs/chap2/Input Output Black Box.drawio.png, id=1312, 2855.66875pt x 1781.656
+<figs/chap2/Input Output Black Box.drawio.png, id=1320, 2855.66875pt x 1781.656
 25pt>
 File: figs/chap2/Input Output Black Box.drawio.png Graphic file (type png)
 <use figs/chap2/Input Output Black Box.drawio.png>
@@ -2425,7 +2433,7 @@ Overfull \hbox (40.09843pt too wide) detected at line 277
  []
 
 [49] [50] [51] [52] [53]
-<figs/chap2/Phughoid Mode Control Input Plot 2.png, id=1390, 1523.4516pt x 346.
+<figs/chap2/Phughoid Mode Control Input Plot 2.png, id=1398, 1523.4516pt x 346.
 896pt>
 File: figs/chap2/Phughoid Mode Control Input Plot 2.png Graphic file (type png)
 
@@ -2433,7 +2441,7 @@ File: figs/chap2/Phughoid Mode Control Input Plot 2.png Graphic file (type png)
 Package pdftex.def Info: figs/chap2/Phughoid Mode Control Input Plot 2.png  use
 d on input line 502.
 (pdftex.def)             Requested size: 343.0pt x 78.10115pt.
-<figs/chap2/Dutch roll control Inputs Plot 2.png, id=1391, 1183.7826pt x 346.89
+<figs/chap2/Dutch roll control Inputs Plot 2.png, id=1399, 1183.7826pt x 346.89
 6pt>
 File: figs/chap2/Dutch roll control Inputs Plot 2.png Graphic file (type png)
 <use figs/chap2/Dutch roll control Inputs Plot 2.png>
@@ -2447,7 +2455,7 @@ Overfull \hbox (40.5082pt too wide) in paragraph at lines 524--534
 
 [54 <./figs/chap2/Phughoid Mode Control Input Plot 2.png> <./figs/chap2/Dutch r
 oll control Inputs Plot 2.png>] [55]
-<figs/chap2/anaconda111.jpg, id=1411, 1084.05pt x 687.56876pt>
+<figs/chap2/anaconda111.jpg, id=1419, 1084.05pt x 687.56876pt>
 File: figs/chap2/anaconda111.jpg Graphic file (type jpg)
 <use figs/chap2/anaconda111.jpg>
 Package pdftex.def Info: figs/chap2/anaconda111.jpg  used on input line 578.
@@ -2464,33 +2472,33 @@ Chapter 4.
 
 
 ]
-<figs/chap3/central_basis_unclamped.pdf, id=1438, 471.68219pt x 414.58888pt>
+<figs/chap3/central_basis_unclamped.pdf, id=1446, 471.68219pt x 414.58888pt>
 File: figs/chap3/central_basis_unclamped.pdf Graphic file (type pdf)
 <use figs/chap3/central_basis_unclamped.pdf>
 Package pdftex.def Info: figs/chap3/central_basis_unclamped.pdf  used on input 
 line 35.
 (pdftex.def)             Requested size: 274.40105pt x 241.19554pt.
  [60 <./figs/chap3/central_basis_unclamped.pdf>]
-<figs/chap3/uniform_basis_functions.pdf, id=1454, 521.0667pt x 412.4208pt>
+<figs/chap3/uniform_basis_functions.pdf, id=1462, 521.0667pt x 412.4208pt>
 File: figs/chap3/uniform_basis_functions.pdf Graphic file (type pdf)
 <use figs/chap3/uniform_basis_functions.pdf>
 Package pdftex.def Info: figs/chap3/uniform_basis_functions.pdf  used on input 
 line 62.
 (pdftex.def)             Requested size: 343.0pt x 271.48116pt.
  [61 <./figs/chap3/uniform_basis_functions.pdf>]
-<figs/chap3/mainPlot.png, id=1488, 1434.5595pt x 710.4141pt>
+<figs/chap3/mainPlot.png, id=1496, 1434.5595pt x 710.4141pt>
 File: figs/chap3/mainPlot.png Graphic file (type png)
 <use figs/chap3/mainPlot.png>
 Package pdftex.def Info: figs/chap3/mainPlot.png  used on input line 96.
 (pdftex.def)             Requested size: 343.0pt x 169.85246pt.
  [62 <./figs/chap3/mainPlot.png>] [63] [64] [65] [66]
 [67] [68] [69] [70]
-<figs/chap3/2DPlot.png, id=1588, 836.1639pt x 545.6385pt>
+<figs/chap3/2DPlot.png, id=1596, 836.1639pt x 545.6385pt>
 File: figs/chap3/2DPlot.png Graphic file (type png)
 <use figs/chap3/2DPlot.png>
 Package pdftex.def Info: figs/chap3/2DPlot.png  used on input line 647.
 (pdftex.def)             Requested size: 343.0pt x 223.82146pt.
-<figs/chap3/3DPlot.png, id=1590, 967.6953pt x 656.9343pt>
+<figs/chap3/3DPlot.png, id=1598, 967.6953pt x 656.9343pt>
 File: figs/chap3/3DPlot.png Graphic file (type png)
 <use figs/chap3/3DPlot.png>
 Package pdftex.def Info: figs/chap3/3DPlot.png  used on input line 703.
@@ -2500,17 +2508,17 @@ Package pdftex.def Info: figs/chap3/3DPlot.png  used on input line 703.
 
  (./fancychapters/chap4.tex
 Chapter 5.
-<figs/chap1/david_2x2.png, id=1614, 461.725pt x 424.58624pt>
+<figs/chap1/david_2x2.png, id=1622, 461.725pt x 424.58624pt>
 File: figs/chap1/david_2x2.png Graphic file (type png)
 <use figs/chap1/david_2x2.png>
 Package pdftex.def Info: figs/chap1/david_2x2.png  used on input line 12.
 (pdftex.def)             Requested size: 164.63853pt x 151.39323pt.
-<figs/chap1/david_3x3.png, id=1615, 404.51125pt x 420.57124pt>
+<figs/chap1/david_3x3.png, id=1623, 404.51125pt x 420.57124pt>
 File: figs/chap1/david_3x3.png Graphic file (type png)
 <use figs/chap1/david_3x3.png>
 Package pdftex.def Info: figs/chap1/david_3x3.png  used on input line 14.
 (pdftex.def)             Requested size: 164.63853pt x 171.17752pt.
-<figs/chap1/david_4x4.png, id=1616, 697.60625pt x 1077.02374pt>
+<figs/chap1/david_4x4.png, id=1624, 697.60625pt x 1077.02374pt>
 File: figs/chap1/david_4x4.png Graphic file (type png)
 <use figs/chap1/david_4x4.png>
 Package pdftex.def Info: figs/chap1/david_4x4.png  used on input line 18.
@@ -2521,19 +2529,19 @@ Package pdftex.def Info: figs/chap1/david_4x4.png  used on input line 18.
 
 
 ]
-<figs/chap4/New Node Diagram.drawio.png, id=1627, 3819.26875pt x 2238.3625pt>
+<figs/chap4/New Node Diagram.drawio.png, id=1635, 3819.26875pt x 2238.3625pt>
 File: figs/chap4/New Node Diagram.drawio.png Graphic file (type png)
 <use figs/chap4/New Node Diagram.drawio.png>
 Package pdftex.def Info: figs/chap4/New Node Diagram.drawio.png  used on input 
 line 36.
 (pdftex.def)             Requested size: 325.84895pt x 190.95847pt.
-<figs/chap4/RRT_SFC_Geometry.drawio.png, id=1628, 3011.25pt x 3011.25pt>
+<figs/chap4/RRT_SFC_Geometry.drawio.png, id=1636, 3011.25pt x 3011.25pt>
 File: figs/chap4/RRT_SFC_Geometry.drawio.png Graphic file (type png)
 <use figs/chap4/RRT_SFC_Geometry.drawio.png>
 Package pdftex.def Info: figs/chap4/RRT_SFC_Geometry.drawio.png  used on input 
 line 43.
 (pdftex.def)             Requested size: 325.84895pt x 325.81667pt.
-<figs/chap4/RRT Line Example.drawio.png, id=1629, 3352.525pt x 3422.7875pt>
+<figs/chap4/RRT Line Example.drawio.png, id=1637, 3352.525pt x 3422.7875pt>
 File: figs/chap4/RRT Line Example.drawio.png Graphic file (type png)
 <use figs/chap4/RRT Line Example.drawio.png>
 Package pdftex.def Info: figs/chap4/RRT Line Example.drawio.png  used on input 
@@ -2542,13 +2550,13 @@ line 50.
  [74 <./figs/chap1/david_2x2.png> <./figs/chap1/david_3x3.png> <./figs/chap1/da
 vid_4x4.png>] [75 <./figs/chap4/New Node Diagram.drawio.png> <./figs/chap4/RRT_
 SFC_Geometry.drawio.png>]
-<figs/chap4/dubins rrt.png, id=1648, 1567.8575pt x 553.06625pt>
+<figs/chap4/dubins rrt.png, id=1656, 1567.8575pt x 553.06625pt>
 File: figs/chap4/dubins rrt.png Graphic file (type png)
 <use figs/chap4/dubins rrt.png>
 Package pdftex.def Info: figs/chap4/dubins rrt.png  used on input line 63.
 (pdftex.def)             Requested size: 325.84895pt x 114.94054pt.
  [76 <./figs/chap4/RRT Line Example.drawio.png>]
-<figs/chap4/Convex and Non-Convex Diagram.drawio.png, id=1663, 3728.93124pt x 2
+<figs/chap4/Convex and Non-Convex Diagram.drawio.png, id=1671, 3728.93124pt x 2
 183.15625pt>
 File: figs/chap4/Convex and Non-Convex Diagram.drawio.png Graphic file (type pn
 g)
@@ -2559,19 +2567,19 @@ sed on input line 82.
 
 [77 <./figs/chap4/dubins rrt.png> <./figs/chap4/Convex and Non-Convex Diagram.d
 rawio.png>]
-<figs/chap4/Half Plane.drawio.png, id=1673, 4838.075pt x 1831.84375pt>
+<figs/chap4/Half Plane.drawio.png, id=1681, 4838.075pt x 1831.84375pt>
 File: figs/chap4/Half Plane.drawio.png Graphic file (type png)
 <use figs/chap4/Half Plane.drawio.png>
 Package pdftex.def Info: figs/chap4/Half Plane.drawio.png  used on input line 9
 1.
 (pdftex.def)             Requested size: 343.0pt x 129.86336pt.
-<figs/chap4/SFC Diagram Single.drawio.png, id=1675, 2403.98125pt x 1806.75pt>
+<figs/chap4/SFC Diagram Single.drawio.png, id=1683, 2403.98125pt x 1806.75pt>
 File: figs/chap4/SFC Diagram Single.drawio.png Graphic file (type png)
 <use figs/chap4/SFC Diagram Single.drawio.png>
 Package pdftex.def Info: figs/chap4/SFC Diagram Single.drawio.png  used on inpu
 t line 129.
 (pdftex.def)             Requested size: 171.5pt x 128.8839pt.
-<figs/chap4/SFC Union.drawio (5)_edited.png, id=1677, 4105.3375pt x 2293.56876p
+<figs/chap4/SFC Union.drawio (5)_edited.png, id=1685, 4105.3375pt x 2293.56876p
 t>
 File: figs/chap4/SFC Union.drawio (5)_edited.png Graphic file (type png)
 <use figs/chap4/SFC Union.drawio (5)_edited.png>
@@ -2580,372 +2588,376 @@ put line 142.
 (pdftex.def)             Requested size: 343.0pt x 191.60855pt.
  [78 <./figs/chap4/Half Plane.drawio.png>] [79 <./figs/chap4/SFC Diagram Single
 .drawio.png> <./figs/chap4/SFC Union.drawio (5)_edited.png>]
-<figs/chap4/Minimum Turing Radius.drawio.png, id=1698, 1324.95pt x 1174.3875pt>
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.204     \While
+                {Path not found}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.205         \State
+                     Random sample within space
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.206         \State
+                     Find nearest existing end node
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.207         \State
+                     Draw line between sample and nearest node
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.209         \If
+                 {length $> \ell$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.210             \State
+                         Candidate node $\ell$ away on line
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.211         \Else
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.212             \State
+                         Candidate node at new node
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.213         \EndIf
+                    
+<figs/chap4/RRT Example Tree.jpg, id=1705, 2870.725pt x 2961.0625pt>
+File: figs/chap4/RRT Example Tree.jpg Graphic file (type jpg)
+<use figs/chap4/RRT Example Tree.jpg>
+Package pdftex.def Info: figs/chap4/RRT Example Tree.jpg  used on input line 24
+4.
+(pdftex.def)             Requested size: 171.5pt x 176.88799pt.
+<figs/chap4/Minimum Turing Radius.drawio.png, id=1708, 1324.95pt x 1174.3875pt>
 
 File: figs/chap4/Minimum Turing Radius.drawio.png Graphic file (type png)
 <use figs/chap4/Minimum Turing Radius.drawio.png>
 Package pdftex.def Info: figs/chap4/Minimum Turing Radius.drawio.png  used on i
-nput line 188.
+nput line 261.
 (pdftex.def)             Requested size: 171.5pt x 151.99478pt.
 <figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png, id=1
-699, 2710.125pt x 1863.96375pt>
+709, 2710.125pt x 1863.96375pt>
 File: figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png 
 Graphic file (type png)
 <use figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png>
 Package pdftex.def Info: figs/chap4/Turn Rate Constraints/SFC Angular Boundary 
-Conditions (1).png  used on input line 195.
+Conditions (1).png  used on input line 268.
 (pdftex.def)             Requested size: 171.5pt x 117.94797pt.
-
-[80 <./figs/chap4/Minimum Turing Radius.drawio.png>]
-<figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg, id=1709, 357.
+ [80] [81 <./figs/chap4/RRT Example Tree.jpg>] [82 <./figs/chap4/Minimum Turing
+ Radius.drawio.png> <./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Co
+nditions (1).png>]
+<figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg, id=1749, 357.
 2547pt x 140.6856pt>
 File: figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg Graphic f
 ile (type jpg)
 <use figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg>
 Package pdftex.def Info: figs/chap4/Turn Rate Constraints/Annulus Concentric Ci
-rcles.jpg  used on input line 227.
+rcles.jpg  used on input line 300.
 (pdftex.def)             Requested size: 171.5pt x 67.53474pt.
- [81 <./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).pn
-g>]
-<figs/chap4/Turn Rate Constraints/Annulus diagram (1).png, id=1718, 2497.33pt x
+<figs/chap4/Turn Rate Constraints/Annulus diagram (1).png, id=1751, 2497.33pt x
  2344.76pt>
 File: figs/chap4/Turn Rate Constraints/Annulus diagram (1).png Graphic file (ty
 pe png)
 <use figs/chap4/Turn Rate Constraints/Annulus diagram (1).png>
 Package pdftex.def Info: figs/chap4/Turn Rate Constraints/Annulus diagram (1).p
-ng  used on input line 240.
+ng  used on input line 313.
 (pdftex.def)             Requested size: 171.5pt x 161.0015pt.
-<figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png, id=1719, 2263.45625p
+<figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png, id=1752, 2263.45625p
 t x 2047.65pt>
 File: figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png Graphic file (ty
 pe png)
 <use figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png>
 Package pdftex.def Info: figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.p
-ng  used on input line 260.
+ng  used on input line 333.
 (pdftex.def)             Requested size: 154.34895pt x 139.63203pt.
-<figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png, id=1720, 2263.45625pt x 2
+<figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png, id=1753, 2263.45625pt x 2
 047.65pt>
 File: figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png Graphic file (type pn
 g)
 <use figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png>
 Package pdftex.def Info: figs/chap4/Smoothing/Dijkstra's Smoothed.drawio.png  u
-sed on input line 267.
+sed on input line 340.
 (pdftex.def)             Requested size: 154.34895pt x 139.63203pt.
- [82 <./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg> <./fig
-s/chap4/Turn Rate Constraints/Annulus diagram (1).png>]
-<figs/chap4/Control Points Relationship.drawio.png, id=1729, 2805.48125pt x 349
+ [83 <./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg>] [84 <
+./figs/chap4/Turn Rate Constraints/Annulus diagram (1).png> <./figs/chap4/Smoot
+hing/Dijkstra's Possibilities.drawio.png> <./figs/chap4/Smoothing/Dijkstra's Sm
+oothed.drawio.png>]
+<figs/chap4/Control Points Relationship.drawio.png, id=1770, 2805.48125pt x 349
 3.05pt>
 File: figs/chap4/Control Points Relationship.drawio.png Graphic file (type png)
 
 <use figs/chap4/Control Points Relationship.drawio.png>
 Package pdftex.def Info: figs/chap4/Control Points Relationship.drawio.png  use
-d on input line 299.
+d on input line 374.
 (pdftex.def)             Requested size: 171.5pt x 213.51813pt.
- [83 <./figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png> <./figs/chap4
-/Smoothing/Dijkstra's Smoothed.drawio.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
-[84 <./figs/chap4/Control Points Relationship.drawio.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+[85]
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
  []
 
-[85] [86]
+[86 <./figs/chap4/Control Points Relationship.drawio.png>] [87] [88]
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 12.0pt on input line 423.
+(Font)              scaled to size 12.0pt on input line 498.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 8.8pt on input line 423.
+(Font)              scaled to size 8.8pt on input line 498.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 6.6pt on input line 423.
+(Font)              scaled to size 6.6pt on input line 498.
 LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 12.0pt on input line 423.
+(Font)              scaled to size 12.0pt on input line 498.
 LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 8.8pt on input line 423.
+(Font)              scaled to size 8.8pt on input line 498.
 LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 6.6pt on input line 423.
- [87]
-<figs/chap4/Results/4x4/4x4_map.png, id=1791, 329.5512pt x 225.4824pt>
+(Font)              scaled to size 6.6pt on input line 498.
+<figs/chap4/Results/4x4/4x4_map.png, id=1825, 329.5512pt x 225.4824pt>
 File: figs/chap4/Results/4x4/4x4_map.png Graphic file (type png)
 <use figs/chap4/Results/4x4/4x4_map.png>
 Package pdftex.def Info: figs/chap4/Results/4x4/4x4_map.png  used on input line
- 433.
+ 508.
 (pdftex.def)             Requested size: 222.9479pt x 152.54153pt.
-<figs/chap4/Results/4x4/4x4_waypoints.png, id=1792, 477.7047pt x 372.9132pt>
+<figs/chap4/Results/4x4/4x4_waypoints.png, id=1826, 477.7047pt x 372.9132pt>
 File: figs/chap4/Results/4x4/4x4_waypoints.png Graphic file (type png)
 <use figs/chap4/Results/4x4/4x4_waypoints.png>
 Package pdftex.def Info: figs/chap4/Results/4x4/4x4_waypoints.png  used on inpu
-t line 442.
+t line 517.
 (pdftex.def)             Requested size: 171.5pt x 133.87878pt.
-<figs/chap4/Results/4x4/4x4_waypoints_2.png, id=1793, 388.0899pt x 398.9304pt>
+<figs/chap4/Results/4x4/4x4_waypoints_2.png, id=1827, 388.0899pt x 398.9304pt>
 File: figs/chap4/Results/4x4/4x4_waypoints_2.png Graphic file (type png)
 <use figs/chap4/Results/4x4/4x4_waypoints_2.png>
 Package pdftex.def Info: figs/chap4/Results/4x4/4x4_waypoints_2.png  used on in
-put line 449.
+put line 524.
 (pdftex.def)             Requested size: 171.5pt x 176.29082pt.
-<figs/chap4/Results/4x4/4x4_splines_2.png, id=1794, 498.663pt x 344.0052pt>
+<figs/chap4/Results/4x4/4x4_splines_2.png, id=1828, 498.663pt x 344.0052pt>
 File: figs/chap4/Results/4x4/4x4_splines_2.png Graphic file (type png)
 <use figs/chap4/Results/4x4/4x4_splines_2.png>
 Package pdftex.def Info: figs/chap4/Results/4x4/4x4_splines_2.png  used on inpu
-t line 462.
+t line 537.
 (pdftex.def)             Requested size: 171.5pt x 118.30923pt.
-<figs/chap4/Results/4x4/4x4_splines.png, id=1795, 383.031pt x 416.9979pt>
+<figs/chap4/Results/4x4/4x4_splines.png, id=1829, 383.031pt x 416.9979pt>
 File: figs/chap4/Results/4x4/4x4_splines.png Graphic file (type png)
 <use figs/chap4/Results/4x4/4x4_splines.png>
 Package pdftex.def Info: figs/chap4/Results/4x4/4x4_splines.png  used on input 
-line 469.
+line 544.
 (pdftex.def)             Requested size: 171.5pt x 186.71198pt.
-<figs/chap4/Results/4x4/4x4_splines_zoom.png, id=1796, 456.0237pt x 437.2335pt>
+<figs/chap4/Results/4x4/4x4_splines_zoom.png, id=1830, 456.0237pt x 437.2335pt>
 
 File: figs/chap4/Results/4x4/4x4_splines_zoom.png Graphic file (type png)
 <use figs/chap4/Results/4x4/4x4_splines_zoom.png>
 Package pdftex.def Info: figs/chap4/Results/4x4/4x4_splines_zoom.png  used on i
-nput line 481.
+nput line 556.
 (pdftex.def)             Requested size: 308.6979pt x 295.98718pt.
-<figs/chap4/Results/4x4/4x4_metrics.png, id=1797, 580.3281pt x 366.4089pt>
+<figs/chap4/Results/4x4/4x4_metrics.png, id=1831, 580.3281pt x 366.4089pt>
 File: figs/chap4/Results/4x4/4x4_metrics.png Graphic file (type png)
 <use figs/chap4/Results/4x4/4x4_metrics.png>
 Package pdftex.def Info: figs/chap4/Results/4x4/4x4_metrics.png  used on input 
-line 488.
+line 563.
 (pdftex.def)             Requested size: 308.6979pt x 194.90584pt.
-<figs/chap4/Results/6x6/map.png, id=1798, 317.988pt x 247.8861pt>
+ [89]
+[90 <./figs/chap4/Results/4x4/4x4_map.png> <./figs/chap4/Results/4x4/4x4_waypoi
+nts.png> <./figs/chap4/Results/4x4/4x4_waypoints_2.png>]
+<figs/chap4/Results/6x6/map.png, id=1845, 317.988pt x 247.8861pt>
 File: figs/chap4/Results/6x6/map.png Graphic file (type png)
 <use figs/chap4/Results/6x6/map.png>
-Package pdftex.def Info: figs/chap4/Results/6x6/map.png  used on input line 500
+Package pdftex.def Info: figs/chap4/Results/6x6/map.png  used on input line 575
 .
 (pdftex.def)             Requested size: 222.9479pt x 173.79897pt.
-<figs/chap4/Results/6x6/waypoints side.png, id=1799, 310.0383pt x 216.0873pt>
+<figs/chap4/Results/6x6/waypoints side.png, id=1846, 310.0383pt x 216.0873pt>
 File: figs/chap4/Results/6x6/waypoints side.png Graphic file (type png)
 <use figs/chap4/Results/6x6/waypoints side.png>
 Package pdftex.def Info: figs/chap4/Results/6x6/waypoints side.png  used on inp
-ut line 509.
+ut line 584.
 (pdftex.def)             Requested size: 154.34895pt x 107.57846pt.
-<figs/chap4/Results/6x6/waypoints top.png, id=1800, 281.1303pt x 316.5426pt>
+<figs/chap4/Results/6x6/waypoints top.png, id=1847, 281.1303pt x 316.5426pt>
 File: figs/chap4/Results/6x6/waypoints top.png Graphic file (type png)
 <use figs/chap4/Results/6x6/waypoints top.png>
 Package pdftex.def Info: figs/chap4/Results/6x6/waypoints top.png  used on inpu
-t line 516.
+t line 591.
 (pdftex.def)             Requested size: 154.34895pt x 173.78984pt.
-<figs/chap4/Results/6x6/spline side.png, id=1801, 375.0813pt x 242.8272pt>
+<figs/chap4/Results/6x6/spline side.png, id=1848, 375.0813pt x 242.8272pt>
 File: figs/chap4/Results/6x6/spline side.png Graphic file (type png)
 <use figs/chap4/Results/6x6/spline side.png>
 Package pdftex.def Info: figs/chap4/Results/6x6/spline side.png  used on input 
-line 529.
+line 604.
 (pdftex.def)             Requested size: 154.34895pt x 99.9229pt.
-<figs/chap4/Results/6x6/spline top 2.png, id=1802, 406.8801pt x 377.9721pt>
+<figs/chap4/Results/6x6/spline top 2.png, id=1849, 406.8801pt x 377.9721pt>
 File: figs/chap4/Results/6x6/spline top 2.png Graphic file (type png)
 <use figs/chap4/Results/6x6/spline top 2.png>
 Package pdftex.def Info: figs/chap4/Results/6x6/spline top 2.png  used on input
- line 536.
+ line 611.
 (pdftex.def)             Requested size: 154.34895pt x 143.38289pt.
-<figs/chap4/Results/6x6/spline top zoom.png, id=1803, 428.5611pt x 398.9304pt>
+<figs/chap4/Results/6x6/spline top zoom.png, id=1850, 428.5611pt x 398.9304pt>
 File: figs/chap4/Results/6x6/spline top zoom.png Graphic file (type png)
 <use figs/chap4/Results/6x6/spline top zoom.png>
 Package pdftex.def Info: figs/chap4/Results/6x6/spline top zoom.png  used on in
-put line 548.
+put line 623.
 (pdftex.def)             Requested size: 308.6979pt x 287.36967pt.
-<figs/chap4/Results/6x6/metrics.png, id=1804, 391.7034pt x 309.3156pt>
+<figs/chap4/Results/6x6/metrics.png, id=1851, 391.7034pt x 309.3156pt>
 File: figs/chap4/Results/6x6/metrics.png Graphic file (type png)
 <use figs/chap4/Results/6x6/metrics.png>
 Package pdftex.def Info: figs/chap4/Results/6x6/metrics.png  used on input line
- 555.
+ 630.
 (pdftex.def)             Requested size: 308.6979pt x 243.77611pt.
- [88 <./figs/chap4/Results/4x4/4x4_map.png>]
-<figs/chap4/Prism Diagram.drawio (2).png, id=1814, 2519.4125pt x 1816.7875pt>
+ [91 <./figs/chap4/Results/4x4/4x4_splines_2.png> <./figs/chap4/Results/4x4/4x4
+_splines.png>] [92 <./figs/chap4/Results/4x4/4x4_splines_zoom.png> <./figs/chap
+4/Results/4x4/4x4_metrics.png>]
+<figs/chap4/Prism Diagram.drawio (2).png, id=1867, 2519.4125pt x 1816.7875pt>
 File: figs/chap4/Prism Diagram.drawio (2).png Graphic file (type png)
 <use figs/chap4/Prism Diagram.drawio (2).png>
 Package pdftex.def Info: figs/chap4/Prism Diagram.drawio (2).png  used on input
- line 576.
+ line 651.
 (pdftex.def)             Requested size: 171.5pt x 123.66743pt.
-<figs/chap4/3D Safe Flight Corridor.drawio (1).png, id=1816, 1826.825pt x 1134.
+ [93 <./figs/chap4/Results/6x6/map.png> <./figs/chap4/Results/6x6/waypoints sid
+e.png> <./figs/chap4/Results/6x6/waypoints top.png>] [94 <./figs/chap4/Results/
+6x6/spline side.png> <./figs/chap4/Results/6x6/spline top 2.png> <./figs/chap4/
+Results/6x6/spline top zoom.png>]
+<figs/chap4/3D Safe Flight Corridor.drawio (1).png, id=1884, 1826.825pt x 1134.
 2375pt>
 File: figs/chap4/3D Safe Flight Corridor.drawio (1).png Graphic file (type png)
 
 <use figs/chap4/3D Safe Flight Corridor.drawio (1).png>
 Package pdftex.def Info: figs/chap4/3D Safe Flight Corridor.drawio (1).png  use
-d on input line 611.
+d on input line 686.
 (pdftex.def)             Requested size: 171.5pt x 106.47296pt.
- [89 <./figs/chap4/Results/4x4/4x4_waypoints.png> <./figs/chap4/Results/4x4/4x4
-_waypoints_2.png>]
-<figs/chap4/Results/3D/map.png, id=1826, 423.5022pt x 394.5942pt>
+ [95 <./figs/chap4/Results/6x6/metrics.png> <./figs/chap4/Prism Diagram.drawio 
+(2).png>]
+<figs/chap4/Results/3D/map.png, id=1895, 423.5022pt x 394.5942pt>
 File: figs/chap4/Results/3D/map.png Graphic file (type png)
 <use figs/chap4/Results/3D/map.png>
-Package pdftex.def Info: figs/chap4/Results/3D/map.png  used on input line 629.
+Package pdftex.def Info: figs/chap4/Results/3D/map.png  used on input line 704.
 
 (pdftex.def)             Requested size: 164.63853pt x 153.39738pt.
-<figs/chap4/Results/3D/waypoints_4.png, id=1827, 351.9549pt x 412.6617pt>
+<figs/chap4/Results/3D/waypoints_4.png, id=1896, 351.9549pt x 412.6617pt>
 File: figs/chap4/Results/3D/waypoints_4.png Graphic file (type png)
 <use figs/chap4/Results/3D/waypoints_4.png>
 Package pdftex.def Info: figs/chap4/Results/3D/waypoints_4.png  used on input l
-ine 636.
+ine 711.
 (pdftex.def)             Requested size: 164.63853pt x 193.0317pt.
-<figs/chap4/Results/3D/waypoints_2.png, id=1828, 457.4691pt x 362.0727pt>
+<figs/chap4/Results/3D/waypoints_2.png, id=1897, 457.4691pt x 362.0727pt>
 File: figs/chap4/Results/3D/waypoints_2.png Graphic file (type png)
 <use figs/chap4/Results/3D/waypoints_2.png>
 Package pdftex.def Info: figs/chap4/Results/3D/waypoints_2.png  used on input l
-ine 646.
+ine 721.
 (pdftex.def)             Requested size: 164.63853pt x 130.30739pt.
-<figs/chap4/Results/3D/splines_5.png, id=1829, 344.0052pt x 337.5009pt>
+<figs/chap4/Results/3D/splines_5.png, id=1898, 344.0052pt x 337.5009pt>
 File: figs/chap4/Results/3D/splines_5.png Graphic file (type png)
 <use figs/chap4/Results/3D/splines_5.png>
 Package pdftex.def Info: figs/chap4/Results/3D/splines_5.png  used on input lin
-e 653.
+e 728.
 (pdftex.def)             Requested size: 164.63853pt x 161.5248pt.
-
-[90 <./figs/chap4/Results/4x4/4x4_splines_2.png> <./figs/chap4/Results/4x4/4x4_
-splines.png>] [91 <./figs/chap4/Results/4x4/4x4_splines_zoom.png> <./figs/chap4
-/Results/4x4/4x4_metrics.png>] [92 <./figs/chap4/Results/6x6/map.png> <./figs/c
-hap4/Results/6x6/waypoints side.png> <./figs/chap4/Results/6x6/waypoints top.pn
-g>] [93 <./figs/chap4/Results/6x6/spline side.png> <./figs/chap4/Results/6x6/sp
-line top 2.png> <./figs/chap4/Results/6x6/spline top zoom.png>] [94 <./figs/cha
-p4/Results/6x6/metrics.png> <./figs/chap4/Prism Diagram.drawio (2).png> <./figs
-/chap4/3D Safe Flight Corridor.drawio (1).png>] [95 <./figs/chap4/Results/3D/ma
-p.png> <./figs/chap4/Results/3D/waypoints_4.png> <./figs/chap4/Results/3D/waypo
-ints_2.png> <./figs/chap4/Results/3D/splines_5.png>] [96]
-<figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png, id=1888, 3362.
+ [96 <./figs/chap4/3D Safe Flight Corridor.drawio (1).png>] [97 <./figs/chap4/R
+esults/3D/map.png> <./figs/chap4/Results/3D/waypoints_4.png> <./figs/chap4/Resu
+lts/3D/waypoints_2.png> <./figs/chap4/Results/3D/splines_5.png>]
+<figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png, id=1923, 3362.
 5625pt x 2464.20625pt>
 File: figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png Graphic fi
 le (type png)
 <use figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png>
 Package pdftex.def Info: figs/chap4/Turn Rate Constraints/Dijkstras Scenario.dr
-awio.png  used on input line 724.
+awio.png  used on input line 799.
 (pdftex.def)             Requested size: 274.40105pt x 201.08861pt.
-<figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png, id=1890, 3312.37
+ [98]
+<figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png, id=1932, 3312.37
 5pt x 2464.20625pt>
 File: figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png Graphic file
  (type png)
 <use figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png>
 Package pdftex.def Info: figs/chap4/Turn Rate Constraints/Dijstras Dilemma.draw
-io.png  used on input line 733.
+io.png  used on input line 808.
 (pdftex.def)             Requested size: 274.40105pt x 204.13426pt.
- [97 <./figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png>]
-<figs/chap4/Curvature.png, id=1903, 499.8675pt x 361.35pt>
+ [99 <./figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png> <./figs
+/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png>]
+<figs/chap4/Curvature.png, id=1942, 499.8675pt x 361.35pt>
 File: figs/chap4/Curvature.png Graphic file (type png)
 <use figs/chap4/Curvature.png>
-Package pdftex.def Info: figs/chap4/Curvature.png  used on input line 748.
+Package pdftex.def Info: figs/chap4/Curvature.png  used on input line 823.
 (pdftex.def)             Requested size: 171.5pt x 123.97665pt.
- [98 <./figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png>] [99 <./f
-igs/chap4/Curvature.png>]
-<figs/chap4/annulus/complete path expanded wall zoom.png, id=1925, 428.60126pt 
+ [100 <./figs/chap4/Curvature.png>] [101]
+<figs/chap4/annulus/complete path expanded wall zoom.png, id=1968, 428.60126pt 
 x 291.0875pt>
 File: figs/chap4/annulus/complete path expanded wall zoom.png Graphic file (typ
 e png)
 <use figs/chap4/annulus/complete path expanded wall zoom.png>
 Package pdftex.def Info: figs/chap4/annulus/complete path expanded wall zoom.pn
-g  used on input line 783.
+g  used on input line 858.
 (pdftex.def)             Requested size: 171.5pt x 116.4729pt.
-
-[100 <./figs/chap4/annulus/complete path expanded wall zoom.png>]) [101]
+) [102 <./figs/chap4/annulus/complete path expanded wall zoom.png>]
 \openout2 = `fancychapters/chap5.aux'.
 
-
-(./fancychapters/chap5.tex
+ (./fancychapters/chap5.tex
 Chapter 6.
-<figs/chap5/PossiblyGoodMap2.png, id=1942, 479.1501pt x 284.7438pt>
+<figs/chap5/PossiblyGoodMap2.png, id=1977, 479.1501pt x 284.7438pt>
 File: figs/chap5/PossiblyGoodMap2.png Graphic file (type png)
 <use figs/chap5/PossiblyGoodMap2.png>
 Package pdftex.def Info: figs/chap5/PossiblyGoodMap2.png  used on input line 18
 .
 (pdftex.def)             Requested size: 325.84895pt x 193.64929pt.
-<figs/chap5/ActualPositionVelocity.png, id=1946, 462.528pt x 346.896pt>
+<figs/chap5/ActualPositionVelocity.png, id=1981, 462.528pt x 346.896pt>
 File: figs/chap5/ActualPositionVelocity.png Graphic file (type png)
 <use figs/chap5/ActualPositionVelocity.png>
 Package pdftex.def Info: figs/chap5/ActualPositionVelocity.png  used on input l
 ine 30.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap5/PosVelError.png, id=1947, 462.528pt x 346.896pt>
+<figs/chap5/PosVelError.png, id=1982, 462.528pt x 346.896pt>
 File: figs/chap5/PosVelError.png Graphic file (type png)
 <use figs/chap5/PosVelError.png>
 Package pdftex.def Info: figs/chap5/PosVelError.png  used on input line 37.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap5/Angles.png, id=1948, 462.528pt x 346.896pt>
+<figs/chap5/Angles.png, id=1983, 462.528pt x 346.896pt>
 File: figs/chap5/Angles.png Graphic file (type png)
 <use figs/chap5/Angles.png>
 Package pdftex.def Info: figs/chap5/Angles.png  used on input line 47.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap5/Deltas.png, id=1949, 462.528pt x 346.896pt>
+<figs/chap5/Deltas.png, id=1984, 462.528pt x 346.896pt>
 File: figs/chap5/Deltas.png Graphic file (type png)
 <use figs/chap5/Deltas.png>
 Package pdftex.def Info: figs/chap5/Deltas.png  used on input line 54.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-[102
+[103
 
 
 
 
  <./figs/chap5/PossiblyGoodMap2.png>]
-<figs/chap5/BadTrajectory/Bad Path.png, id=1958, 340.8735pt x 185.9748pt>
+<figs/chap5/BadTrajectory/Bad Path.png, id=1994, 340.8735pt x 185.9748pt>
 File: figs/chap5/BadTrajectory/Bad Path.png Graphic file (type png)
 <use figs/chap5/BadTrajectory/Bad Path.png>
 Package pdftex.def Info: figs/chap5/BadTrajectory/Bad Path.png  used on input l
 ine 75.
 (pdftex.def)             Requested size: 325.84895pt x 177.79028pt.
- [103 <./figs/chap5/ActualPositionVelocity.png> <./figs/chap5/PosVelError.png> 
-<./figs/chap5/Angles.png> <./figs/chap5/Deltas.png>] [104 <./figs/chap5/BadTraj
-ectory/Bad Path.png>] [105] [106]
-<figs/chap5/rosflightLogo.png, id=1998, 803.0pt x 803.0pt>
+ [104 <./figs/chap5/ActualPositionVelocity.png> <./figs/chap5/PosVelError.png> 
+<./figs/chap5/Angles.png> <./figs/chap5/Deltas.png>] [105 <./figs/chap5/BadTraj
+ectory/Bad Path.png>] [106] [107]
+<figs/chap5/rosflightLogo.png, id=2034, 803.0pt x 803.0pt>
 File: figs/chap5/rosflightLogo.png Graphic file (type png)
 <use figs/chap5/rosflightLogo.png>
 Package pdftex.def Info: figs/chap5/rosflightLogo.png  used on input line 191.
 (pdftex.def)             Requested size: 102.90105pt x 102.89882pt.
 )
-[107 <./figs/chap5/rosflightLogo.png>]
-Package marginnote Info: Margin note 120.1 is on absolute page 120 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.2 is on absolute page 120 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.3 is on absolute page 120 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.4 is on absolute page 120 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 158.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/zpltlf/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package marginnote Info: Margin note 120.5 is on absolute page 120 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.6 is on absolute page 120 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.7 is on absolute page 120 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.8 is on absolute page 120 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.9 is on absolute page 121 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
- [108
-
-
-
-{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
+[108 <./figs/chap5/rosflightLogo.png>]
 Package marginnote Info: Margin note 121.1 is on absolute page 121 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
@@ -2966,6 +2978,11 @@ e 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
+(Font)              scaled to size 10.95pt on input line 158.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/zpltlf/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
 Package marginnote Info: Margin note 121.5 is on absolute page 121 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
@@ -2986,27 +3003,16 @@ e 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 121.9 is on absolute page 121 on input lin
+Package marginnote Info: Margin note 121.9 is on absolute page 122 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 121.10 is on absolute page 121 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 121.11 is on absolute page 121 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 121.12 is on absolute page 122 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
- [109]
+ [109
+
+
+
+{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
 Package marginnote Info: Margin note 122.1 is on absolute page 122 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
@@ -3062,19 +3068,12 @@ ne 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-
-Overfull \hbox (277.8395pt too wide) in paragraph at lines 158--158
-[]|[]\T1/zpltlf/m/n/10.95 (-20) Cook, M. V., \T1/zpltlf/m/it/10.95 (-20) Latera
-l-Directional Dy-nam-ics\T1/zpltlf/m/n/10.95 (-20) , https://www.sciencedirect.
-com/science/chapter/monograph/pii/B9780080982427000079 
- []
-
 Package marginnote Info: Margin note 122.12 is on absolute page 123 on input li
 ne 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-[110]
+ [110]
 Package marginnote Info: Margin note 123.1 is on absolute page 123 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
@@ -3130,23 +3129,14 @@ ne 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 123.12 is on absolute page 123 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 123.13 is on absolute page 123 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
 
-Overfull \hbox (0.15308pt too wide) in paragraph at lines 158--158
-[]|[]\T1/zpltlf/m/n/10.95 (-20) Yakovlev, K. S., Baskin, E., and Hramoin, I., [
-][]^^P  Grid-based angle-constrained
+Overfull \hbox (277.8395pt too wide) in paragraph at lines 158--158
+[]|[]\T1/zpltlf/m/n/10.95 (-20) Cook, M. V., \T1/zpltlf/m/it/10.95 (-20) Latera
+l-Directional Dy-nam-ics\T1/zpltlf/m/n/10.95 (-20) , https://www.sciencedirect.
+com/science/chapter/monograph/pii/B9780080982427000079 
  []
 
-Package marginnote Info: Margin note 123.14 is on absolute page 124 on input li
+Package marginnote Info: Margin note 123.12 is on absolute page 124 on input li
 ne 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
@@ -3177,19 +3167,96 @@ e 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
- [112]
+Package marginnote Info: Margin note 124.6 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.7 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.8 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.9 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.10 is on absolute page 124 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.11 is on absolute page 124 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.12 is on absolute page 124 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.13 is on absolute page 124 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+
+Overfull \hbox (0.15308pt too wide) in paragraph at lines 158--158
+[]|[]\T1/zpltlf/m/n/10.95 (-20) Yakovlev, K. S., Baskin, E., and Hramoin, I., [
+][]^^P  Grid-based angle-constrained
+ []
+
+Package marginnote Info: Margin note 124.14 is on absolute page 125 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+[112]
+Package marginnote Info: Margin note 125.1 is on absolute page 125 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 125.2 is on absolute page 125 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 125.3 is on absolute page 125 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 125.4 is on absolute page 125 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 125.5 is on absolute page 125 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+ [113]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 20.74pt on input line 165.
 LaTeX Font Info:    Font shape `T1/opensans-TLF/m/n' will be
 (Font)              scaled to size 19.70294pt on input line 165.
 LaTeX Font Info:    Font shape `T1/opensans-TLF/m/it' will be
 (Font)              scaled to size 19.70294pt on input line 165.
- [113
+ [114
 
 ]
 \openout2 = `appenA.aux'.
 
- (./appenA.tex) [114
+ (./appenA.tex) [115
 
 ]
 \openout2 = `appenB.aux'.
@@ -3221,17 +3288,17 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4A0D11A872C25C96681F49873ABF3745;10341.
+(rerunfilecheck)             Checksum: D8291C6688B57546B16339030ACA4132;10518.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39829 strings out of 469515
- 734008 string characters out of 5470807
- 1687367 words of memory out of 5000000
- 66811 multiletter control sequences out of 15000+600000
- 782531 words of font info for 432 fonts, out of 8000000 for 9000
+ 39887 strings out of 469515
+ 734997 string characters out of 5470807
+ 1687461 words of memory out of 5000000
+ 66845 multiletter control sequences out of 15000+600000
+ 782646 words of font info for 433 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  125i,19n,121p,1484b,3290s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXBMI.pfb></usr/share/texm
@@ -3247,10 +3314,10 @@ are/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/font
 s/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/
 zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/t
 exmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on main.pdf (126 pages, 20275117 bytes).
+Output written on main.pdf (127 pages, 20818325 bytes).
 PDF statistics:
- 2484 PDF objects out of 2487 (max. 8388607)
- 2063 compressed objects within 21 object streams
- 675 named destinations out of 1000 (max. 500000)
- 75801 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 2526 PDF objects out of 2984 (max. 8388607)
+ 2102 compressed objects within 22 object streams
+ 697 named destinations out of 1000 (max. 500000)
+ 75814 words of extra memory for PDF output out of 89155 (max. 10000000)
 

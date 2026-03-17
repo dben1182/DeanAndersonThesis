@@ -147,7 +147,25 @@ Although each SFC is a convex set, the union of two or more SFCs is, in general,
 
 A major issue with the head-to-tail overlapping method of safe flight corridors is that while each rectangle or rectangular prism is itself a convex hull, and each intersection is also a convex hull, the area or volume of more than one is clearly non-convex in the general case. Although each control point may be constrained to an SFC, the convex hull of the control points is not necessarily within an SFC. This happens when one or more of a sequential set of $d+1$ control points is not in the same SFC as the others. The B-Spline $b(t)$ may cut corners under these conditions.
 
-Fortunately, there is a solution. If $d$ control points are constrained to the intersection of $SFC_1$ and $SFC_2$, then each sequential convex hull of control points is within at least one $SFC$. This is shown in Thm. \ref{thm:overlapping_SFCs}.
+Fortunately, there is a solution. If $d$ control points are constrained to the intersection of $SFC_1$ and $SFC_2$, then each sequential convex hull of control points is within at least one $SFC$. 
+For two safe flight corridors with matrices $A_1$ and $A_2$ and vectors $b_1$ and $b_2$, the matrix constraints for the intersection area becomes
+
+\begin{align}
+  A_{int} =
+    \begin{bmatrix}
+      A_1\\
+      A_2\\
+    \end{bmatrix}\\
+  b_{int} =
+  \begin{bmatrix}
+    b_1\\
+    b_2\\
+  \end{bmatrix}\\
+  A_{int} p < b_{int}
+\end{align}
+
+
+This is shown in Thm. \ref{thm:overlapping_SFCs}.
 
 \begin{theorem}\label{thm:overlapping_SFCs}
     A set $\mathcal{S}$ is said to be convex iff for every $x_1$ and $x_2$ in $\mathcal{S}$, and every $t \in \left[0,1\right]$, the point $x_3 = tx_1 + (1-t)x_2$ is also in the set $S$. Therefore, the intersection of $\mathcal{S}_1$ and $\mathcal{S}_2$ is also a convex set as: $\mathcal{S}_3 = \mathcal{S}_1 \cap \mathcal{S}_2$.
@@ -175,19 +193,74 @@ Fortunately, there is a solution. If $d$ control points are constrained to the i
 
 Given these conditions, a B-Spline, $b(t)$ will remain within the set $SFC_i \space \cup \space SFC_{i+1}$ iff $d$ sequential control points $\left\{C_j,C_{j+1}, ..., C_{j+d}\right\}$ are constrained to the intersection region $\mathcal{P}_i$ for the transition from $SFC_i$ to $SFC_{i+1}$.
 
+\section{RRT Implementation}
 
+The actual implementation of RRT with safe flight corridors is almost identical to the original straight-line rrt implementation.
+This algorithm is given as
+
+\begin{algorithm}
+    \caption{SFC RRT}
+    \begin{algorithmic}[1]
+    \While{Path not found}
+        \State Random sample within space
+        \State Find nearest existing end node
+        \State Draw line between sample and nearest node
+
+        \If{length $> \ell$}
+            \State Candidate node $\ell$ away on line
+        \Else
+            \State Candidate node at new node
+        \EndIf
+
+        \State Create candidate SFC with nearest node and candidate node
+
+        \If{Candidate node intersects any obstacle}
+            \State Return and start over
+        \Else
+            \State Add candidate node to tree
+
+            \If{Candidate node close to end}
+                \State Create SFC with candidate node and end point
+
+                \If{End candidate intersects}
+                    \State Break
+                \Else
+                    \State Return path found
+                \EndIf
+
+            \EndIf
+
+        \EndIf
+
+    \EndWhile
+    \end{algorithmic}
+\end{algorithm}.
+
+
+An example of a resultant tree is shown in Fig. \ref{fig:rrt tree example}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figs/chap4/RRT Example Tree.jpg}
+    \caption{Example of possible RRT tree}
+    \label{fig:rrt tree example}
+\end{figure}
 
 \section{Turn Constraints}
 \label{sec:Turn Constraints}
 
-
-Vehicle dynamic constraints impose limitations on the tree algorithm. Fixed-wing aircraft have a minimum turning radius, which is influenced by vehicle airspeed, thrust, and airframe design; aircraft cannot physically turn with a smaller radius under such conditions. As mentioned before, this fact is exploited for the formation of  Fixed wing aircraft may not perform trajectories that have a tighter turn radius than a particular value. For the Safe Flight Corridor tree, this imposes certain limitations on the possible geometries that can accommodate a particular minimum turning radius. This is depicted in figure \ref{fig:angular boundary conditions}.
+Vehicle dynamic constraints impose limitations on the tree algorithm. 
+Fixed-wing aircraft have a minimum turning radius, which is influenced by vehicle airspeed, thrust, and airframe design; aircraft cannot physically turn with a smaller radius under such conditions. 
+As mentioned before, this fact is exploited for the formation of Dubins Paths, which use only straight lines and circles of that minimum turning radius to get a very efficient and short path. 
+Fixed wing aircraft may not perform trajectories that have a tighter turn radius than a particular value, shown in Fig. \ref{fig:MinTurnRadius} .
+For the Safe Flight Corridor tree, this imposes certain limitations on the possible geometries that can accommodate a particular minimum turning radius. 
+This is depicted in figure \ref{fig:angular boundary conditions}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figs/chap4/Minimum Turing Radius.drawio.png}
     \caption{Aircraft flying section of Dubins Path with straight lines, and connected with arcs of minimum turning radius. Anything with sharper curvature, and the aircraft will be unable to perform the turn.}
-    \label{fig:placeholder}
+    \label{fig:MinTurnRadius}
 \end{figure}
 
 \begin{figure}
@@ -273,7 +346,9 @@ The initially generated path produces suboptimal results for an SFC path; the se
     \label{fig:3D Path}
 \end{figure}
 
-Dijkstra's algorithm finds the shortest path between two connected nodes over a field of connected nodes, with an associated cost or distance for each connection. An explanation for the actual algorithm is found in the original paper by Edsger Dijkstra from 1959 in \cite{EWD:NumerMath59}. 
+Dijkstra's algorithm finds the shortest path between two connected nodes over a field of connected nodes, with an associated cost or distance for each connection. 
+An explanation for the actual algorithm is found in the original paper by Edsger Dijkstra from 1959 in \cite{EWD:NumerMath59}. 
+The method of using Dijkstra's algorithm may be seen in Fig. \ref{fig:3D Path}.
 
 
 
