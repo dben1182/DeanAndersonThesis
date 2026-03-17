@@ -1609,7 +1609,11 @@ In this paper and in our simulations, we assumed that the relationship between $
 \subsection{Computation}
 
 At present, this controller stack is not ready for real-time hardware implementation due to the intensive computational burden. 
-In this simulation environment, the TODO figure out specific time metrics for everything. 
+For example, when testing the autopilot for the takeoff controller, we obtained the following averages for each component of the controller.
+The pitch-free trajectory tracker took $13.3 \space \mu s$, the pitch optimizer took $11.78 \space m s$, the moment controller took $15.9 \space \mu s$, and the elevator and thrust controllers took $145.0 \space \mu s$. 
+This means an average time of $11.95 \space \mu s$ per update. For an autopilot operating at $100 Hz$, this is unreasonable, because computation alone is greater than the spacing between samples.
+Obviously the most expensive component is pitch optization, which in this case is a non-convex optimization.
+If this autopilot should gain more traction, it would be necessary to significantly reduce the computational burden of the pitch optimization algorithm.
 
 \section{Conclusion}
 

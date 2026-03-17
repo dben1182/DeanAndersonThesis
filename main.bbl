@@ -2061,48 +2061,97 @@
       \field{pages}{2997\bibrangedash 3004}
       \range{pages}{8}
     \endentry
-    \entry{vtol_trajectory}{inproceedings}{}{}
-      \name{author}{3}{}{%
-        {{hash=f1c6bdd236c015235f774640f3cdc755}{%
-           family={Martin},
-           familyi={M\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=fbdc933a9dab0922d25568cb708bb6f0}{%
-           family={Devasia},
-           familyi={D\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=8e76c02b0f1a8f01ad74bec41b901bce}{%
-           family={Paden},
-           familyi={P\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
+    \entry{lavretskyRobustAdaptiveControl2024}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=75ea032f5d3bce2ed7fc8ece84d35825}{%
+           family={Lavretsky},
+           familyi={L\bibinitperiod},
+           given={Eugene},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a10a2f3721fc690d9711afb8bf2e72b4}{%
+           family={Wise},
+           familyi={W\bibinitperiod},
+           given={Kevin\bibnamedelima A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
-      \strng{namehash}{da36df5fe123c116273cf5766d1d36e9}
-      \strng{fullhash}{f6faedbf3c472381ba5ece9be3bd09e8}
-      \strng{fullhashraw}{f6faedbf3c472381ba5ece9be3bd09e8}
-      \strng{bibnamehash}{f6faedbf3c472381ba5ece9be3bd09e8}
-      \strng{authorbibnamehash}{f6faedbf3c472381ba5ece9be3bd09e8}
-      \strng{authornamehash}{da36df5fe123c116273cf5766d1d36e9}
-      \strng{authorfullhash}{f6faedbf3c472381ba5ece9be3bd09e8}
-      \strng{authorfullhashraw}{f6faedbf3c472381ba5ece9be3bd09e8}
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{996db41229b781474420b66dbd42c10e}
+      \strng{fullhash}{62810691f101030d9ea6c4a5931469b1}
+      \strng{fullhashraw}{62810691f101030d9ea6c4a5931469b1}
+      \strng{bibnamehash}{62810691f101030d9ea6c4a5931469b1}
+      \strng{authorbibnamehash}{62810691f101030d9ea6c4a5931469b1}
+      \strng{authornamehash}{996db41229b781474420b66dbd42c10e}
+      \strng{authorfullhash}{62810691f101030d9ea6c4a5931469b1}
+      \strng{authorfullhashraw}{62810691f101030d9ea6c4a5931469b1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{isbn}{978-3-031-38313-7 978-3-031-38314-4}
+      \field{langid}{english}
+      \field{series}{Advanced {{Textbooks}} in {{Control}} and {{Signal Processing}}}
+      \field{shorttitle}{Robust and {{Adaptive Control}}}
+      \field{title}{Robust and {{Adaptive Control}}: {{With Aerospace Applications}}}
+      \field{urlday}{4}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-3-031-38314-4
+      \endverb
+      \verb{file}
+      \verb /home/benjamin/Zotero/storage/TK2XSBAW/Lavretsky and Wise - 2024 - Robust and Adaptive Control With Aerospace Applications.pdf
+      \endverb
+    \endentry
+    \entry{galliker2021datadriven}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=ecc683811f3aee6d26c32ad3b60267bd}{%
+           family={Galliker},
+           familyi={G\bibinitperiod},
+           given={Manuel\bibnamedelima Yves},
+           giveni={M\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {ETH Zurich, Autonomous Systems Lab}%
+      }
+      \strng{namehash}{ecc683811f3aee6d26c32ad3b60267bd}
+      \strng{fullhash}{ecc683811f3aee6d26c32ad3b60267bd}
+      \strng{fullhashraw}{ecc683811f3aee6d26c32ad3b60267bd}
+      \strng{bibnamehash}{ecc683811f3aee6d26c32ad3b60267bd}
+      \strng{authorbibnamehash}{ecc683811f3aee6d26c32ad3b60267bd}
+      \strng{authornamehash}{ecc683811f3aee6d26c32ad3b60267bd}
+      \strng{authorfullhash}{ecc683811f3aee6d26c32ad3b60267bd}
+      \strng{authorfullhashraw}{ecc683811f3aee6d26c32ad3b60267bd}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of 1994 33rd IEEE Conference on Decision and Control}
-      \field{title}{A different look at output tracking: control of a VTOL aircraft}
-      \field{volume}{3}
-      \field{year}{1994}
-      \field{pages}{2376\bibrangedash 2381 vol.3}
-      \range{pages}{-1}
+      \field{day}{24}
+      \field{month}{6}
+      \field{note}{Supervised by Nicholas Lawrance, Thomas Stastny, Jaeyoung Lim, and Markus Achtelik}
+      \field{title}{Data-Driven Dynamics Modelling Using Flight Logs}
+      \field{type}{Semester Thesis}
+      \field{year}{2021}
+      \field{dateera}{ce}
       \verb{doi}
-      \verb 10.1109/CDC.1994.411460
+      \verb 10.3929/ethz-b-000507495
       \endverb
-      \keyw{Aerospace control;Trajectory;Control systems;Open loop systems;Aircraft propulsion;Control engineering;Control engineering computing;Mechanical engineering;State feedback;Signal generators}
+      \verb{urlraw}
+      \verb https://doi.org/10.3929/ethz-b-000507495
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3929/ethz-b-000507495
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

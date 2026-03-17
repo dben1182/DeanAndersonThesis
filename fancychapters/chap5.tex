@@ -79,6 +79,10 @@ Again, this demonstrates the need for a modification to the control allocation s
 
 \section{Conclusion}
 
+
+
+
+
 \subsection{Contributions}
 
 This paper has discussed several contributions to general robotics research, with a particular emphasis on VTOL transition control.
@@ -103,42 +107,101 @@ The results from this thesis include the following key results:
       The aircraft is subjected to specific maneuvers that excite phughoid and dutch roll modes, which produce large sensors signals to identify each coefficient.
       These manuevers and LMS filters were implemented in a fixed-wing simulation and proved the potential of aircraft coefficient estimation.
       Future implementations will be used to calibrate VTOL autopilots to have more accurate control.
-    \item B-Splines form the basis of robotic trajectory planning. 
+    \item B-Splines form a basis of robotic trajectory planning. 
+      They are extremely useful due to their simplicity, their simple differentiation, and their ability to be parameterized by control points.
+      Uniform B-Splines are trajectories created by B-Splines that have no modification to any of the basis functions, including the initial and final points.
       The ability to efficiently generate and update B-Splines trajectories in real time is crucial for many robotic applications.
-      B-Splines can be represented in 
+      B-Splines and their control points can be represented in matrix form, which provides a compact notation that is easily stored and manipulated by a computer.
+      This section develops the matrix math necessary to store sampled B-Splines segments in look-up tables for rapid access.
+      A library is developed with these look-up tables and minimum-snap trajectories may then be easily generated in real time.
+    \item Path planning around obstacles is an important area of research for UAV path planning.
+      Rapidly exploring random trees (RRT) is a popular algorithm for path generation through obstacle fields.
+      This section develops a variation of the RRT algorithm that generates obstacle-free areas, known as safe flight corridors (SFC), instead of straight lines.
+      These rectangular SFCs are placed overlapping in a continuous path from starting to ending points of a trajectory.
+      When a complete path SFCs is found, the control points are constrained within an SFC and then optimized to find an optimal path through the SFC path from start to finish.
+      This algorithm is demonstrated on a variety of maps in both 2D and 3D.
+      Finally, one such 2D path is demonstrated on the 2D VTOL controller described earlier.
 \end{itemize}
 
 
 
 \section{Future Work}
 
-The autopilot framework is still in its infancy. There is much exciting work left to do for 
+In the conclusions for each of the preceeding chapters, the future work was already discussed for the respective subject.
+Here, we reiterate some of the most important ideas for future work on each subject.
 
-\subsection{Rosflight Integration}
+\subsection{Autopilot}
 
-Once a 3D controller is successfully developed in simulation for a quadplane, or another VTOL aircraft, the trajectory-following algorithm may be implemented in hardware. The BYU Magicc Lab is heavily investing time and resources into the development of open source autopilots developed on the ROS2 framework. These autopilot stacks are collectively known as Rosflight \ref{fig:RosflightLogo}. 
+This autopilot framework is still in its infancy.
+Much work must be done before this is ever implemented in hardware on a real quadplane.
+First, the negative thrust problem must be solved, probably using quadcopter braking methods.
+The next step for this algorithm will be to extend from 2D to 3D, which will include proving whether a 3D quadplane is a differentially flat system.
+Unfortunately, this autopilot framework is not robust enough for implementation on a quadplane. 
+There are too many unknown and nonideal factors that seperate hardware from simulation, especially with the very large angles of attack inherent to transition.
+The paper on model predictive control for tiltrotors \cite{mpc_controller} has actually solved many of these problems.
+Their implementation is remarkably similar to ours, including optimization for control outputs, model inversion, and roll, pitch, and yaw controllers.
+This paper should be studied carefully, compared with this one, and combined to prevent redundant research.
+In addition, the uncertainty of the aircraft model during transition requires more robust nonlinear control.
+Such nonlinear control for aircraft is discussed in \cite{lavretskyRobustAdaptiveControl2024}; the principles in this book should be studied and implemented for the possibility of future success.
+There are also several drawbacks to using the standard quadplane design, including the inefficient use of the lift motors.
+It may be wise to begin researching tilt-body design and control \cite{lou_unified_energy_control_tilt_body} due to their efficient use of motors and greater control authority during transition.
+
+\subsection{Aerodynamic Coefficient Estimation}
+
+Aerodynamic coefficient estimation requires many advances and better integration for a complete solution.
+Although the LMS filter may be sufficient for simulation, it fails at modelling more advanced linear and nonlinear aerodynamic relationships.
+Fortunately, many of these problems have already been resolved in other publications and code repositories. 
+For example, \cite{galliker2021datadriven} describes more robust aerodynamic estimation framework, with a working repository \href{https://github.com/ethz-asl/data-driven-dynamics}{data-driven-dynamics}. 
+\href{https://github.com/xuhao1/pyAircraftIden}{PyAircraftIden} is another valuable python library that can perform this estimation much better than our LMS filter does.
+Future implementation for estimation should focus on implementing the existing estimation algorithms in real time to assist the VTOL autopilot.
+
+\subsection{B-Spline Libraries}
+B-Splines are becoming more important for the UAV trajectory planning.
+It has been difficult for the control points for a trajectory to be optimized in real time, especially on an onboard computer during a UAV mission.
+With the development of these lookup tables, it is possible for this to change.
+However, the current lookup table implementation is only for minimum-snap trajectories.
+While these are useful, there are many other parameterizations, such as higher order derivatives, that have not yet been implemented.
+Additionally, this work has all been done in Python, which is an interpreted language.
+Rewriting these libraries in C++ or Rust may further improve efficiency.
+
+\subsection{SFC RRT}
+
+The safe flight corridor RRT algorithm has been developed for path planning through obstacle fields.
+However, it has assumed that such obstacle fields were static, unchanging environments, which is not always the case.
+We want to make real-time implementation and updating a possibility for for this algorithm, which is not currently possible because of how slow it currently is.
+The algorithm currently runs unconstrained, without any guarantees of convergence or optimal performance.
+To overcome this, several existing RRT papers should be reapplied to this application.
+For example, \cite{SUN2025103174} develops a more sophisticated method of planning SFCs that morph to encompass most of the available space in the obstacle field.
+Their algorithm also incorporates turn constraints directly in.
+However, they do not incorporate the same type of B-Spline optimization, which could be an interesting area of future research.
+The paper on informed RRT* \cite{Gammell-2014-7921} is currently only applied to straight-line sampling.
+Reimplementation of this with SFCs would be a phenominal improvement on the current implementation.
+The implementation for this code was all done in Python. It may run significantly faster if it is implemented in C++ or Rust.
+
+\subsection{Software Integration}
+
+When hardware integration for the autopilot is being implemented, the best course of action would be integration with the current software stack.
+The BYU Magicc Lab is heavily investing time and resources into the development of open source autopilots developed on the ROS2 framework. 
+These autopilot stacks are collectively known as Rosflight \ref{fig:RosflightLogo}. 
+Rosflight is developed specifically for developers to easily insert their own code without sifting through massive repositories.
+When a better VTOL autopilot is developed, it should be done using Rosflight.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.3\linewidth]{figs/chap5/rosflightLogo.png}
-    \caption{ROSflight project illustration from the MAGICC Lab website. Image from Brigham Young University, 2026.}
+    \caption{ROSflight project logo from the MAGICC Lab website. Image from Brigham Young University, 2026.}
     \label{fig:RosflightLogo}
 \end{figure}
 
-The best future for a hardware implementation of the differentially flat trajectory tracking controller is the development of a this as part of the larger Rosflight project. 
 
-Rosflight also needs B-Splines.
-
-\subsection{RViz and Unreal Simulation}
-
-It goes without saying that our current simulation package is rather primitive. We have been using OpenGL in python for the simulation graphics for this aircraft. The graphics are rather grainy and unsophisticated. If this algorithm is integrated into Rosflight, updating these graphics would be greatly appreciated. 
-
-\subsection{Real-Time RRT}
-
-A primary assumption of the algorithm explained in Section \ref{ch:rrt_flight_corridors} is that the obstacle field is static, or that it does not change with time. This is useful for 
+The OpenGL simulation environment we have been using in Python is rather primitive. 
+The graphics are rather grainy and unsophisticated and data plots take forever to run.
+If this algorithm is integrated into Rosflight, updating these graphics would make a big difference. 
+RViz is a visualization software developed specifically for ROS.
+Creating the new simulation in RViz would be a great improvement on the current implementation.
 
 
-\cite{vtol_trajectory} 
+
 
 
 

@@ -127,10 +127,12 @@
 \contentsline {subsection}{\numberline {6.1.1}Controller Failure}{103}{subsection.6.1.1}%
 \contentsline {section}{\numberline {6.2}Conclusion}{103}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Contributions}{103}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}Future Work}{104}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Rosflight Integration}{104}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}RViz and Unreal Simulation}{104}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Real-Time RRT}{105}{subsection.6.3.3}%
-\contentsline {chapter}{References}{106}{section*.81}%
-\contentsline {chapter}{Appendices}{111}{chapter*.82}%
-\contentsline {section}{\numberline {.1}Code Repositories and User Information}{112}{section.Alph0.1}%
+\contentsline {section}{\numberline {6.3}Future Work}{105}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Autopilot}{105}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Aerodynamic Coefficient Estimation}{106}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}B-Spline Libraries}{106}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}SFC RRT}{106}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Software Integration}{107}{subsection.6.3.5}%
+\contentsline {chapter}{References}{108}{section*.81}%
+\contentsline {chapter}{Appendices}{113}{chapter*.82}%
+\contentsline {section}{\numberline {.1}Code Repositories and User Information}{114}{section.Alph0.1}%

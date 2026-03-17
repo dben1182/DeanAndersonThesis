@@ -2476,7 +2476,12 @@
     <bcf:citekey order="101" intorder="1">Urmson_2003_8792</bcf:citekey>
     <bcf:citekey order="102" intorder="1">LaValle_greedy</bcf:citekey>
     <bcf:citekey order="103" intorder="1">Gammell-2014-7921</bcf:citekey>
-    <bcf:citekey order="104" intorder="1">vtol_trajectory</bcf:citekey>
+    <bcf:citekey order="104" intorder="1">mpc_controller</bcf:citekey>
+    <bcf:citekey order="105" intorder="1">lavretskyRobustAdaptiveControl2024</bcf:citekey>
+    <bcf:citekey order="106" intorder="1">lou_unified_energy_control_tilt_body</bcf:citekey>
+    <bcf:citekey order="107" intorder="1">galliker2021datadriven</bcf:citekey>
+    <bcf:citekey order="108" intorder="1">SUN2025103174</bcf:citekey>
+    <bcf:citekey order="109" intorder="1">Gammell-2014-7921</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

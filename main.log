@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  16 MAR 2026 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  16 MAR 2026 20:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2809,7 +2809,7 @@ File: figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png Graphic fi
 le (type png)
 <use figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png>
 Package pdftex.def Info: figs/chap4/Turn Rate Constraints/Dijkstras Scenario.dr
-awio.png  used on input line 725.
+awio.png  used on input line 724.
 (pdftex.def)             Requested size: 274.40105pt x 201.08861pt.
 <figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png, id=1890, 3312.37
 5pt x 2464.20625pt>
@@ -2817,13 +2817,13 @@ File: figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png Graphic file
  (type png)
 <use figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png>
 Package pdftex.def Info: figs/chap4/Turn Rate Constraints/Dijstras Dilemma.draw
-io.png  used on input line 734.
+io.png  used on input line 733.
 (pdftex.def)             Requested size: 274.40105pt x 204.13426pt.
  [97 <./figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png>]
 <figs/chap4/Curvature.png, id=1903, 499.8675pt x 361.35pt>
 File: figs/chap4/Curvature.png Graphic file (type png)
 <use figs/chap4/Curvature.png>
-Package pdftex.def Info: figs/chap4/Curvature.png  used on input line 749.
+Package pdftex.def Info: figs/chap4/Curvature.png  used on input line 748.
 (pdftex.def)             Requested size: 171.5pt x 123.97665pt.
  [98 <./figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png>] [99 <./f
 igs/chap4/Curvature.png>]
@@ -2833,7 +2833,7 @@ File: figs/chap4/annulus/complete path expanded wall zoom.png Graphic file (typ
 e png)
 <use figs/chap4/annulus/complete path expanded wall zoom.png>
 Package pdftex.def Info: figs/chap4/annulus/complete path expanded wall zoom.pn
-g  used on input line 784.
+g  used on input line 783.
 (pdftex.def)             Requested size: 171.5pt x 116.4729pt.
 
 [100 <./figs/chap4/annulus/complete path expanded wall zoom.png>]) [101]
@@ -2842,12 +2842,12 @@ g  used on input line 784.
 
 (./fancychapters/chap5.tex
 Chapter 6.
-<figs/chap5/PossiblyGoodMap2.png, id=1942, 1110.0672pt x 545.6385pt>
+<figs/chap5/PossiblyGoodMap2.png, id=1942, 479.1501pt x 284.7438pt>
 File: figs/chap5/PossiblyGoodMap2.png Graphic file (type png)
 <use figs/chap5/PossiblyGoodMap2.png>
 Package pdftex.def Info: figs/chap5/PossiblyGoodMap2.png  used on input line 18
 .
-(pdftex.def)             Requested size: 325.84895pt x 160.16269pt.
+(pdftex.def)             Requested size: 325.84895pt x 193.64929pt.
 <figs/chap5/ActualPositionVelocity.png, id=1946, 462.528pt x 346.896pt>
 File: figs/chap5/ActualPositionVelocity.png Graphic file (type png)
 <use figs/chap5/ActualPositionVelocity.png>
@@ -2875,137 +2875,22 @@ Package pdftex.def Info: figs/chap5/Deltas.png  used on input line 54.
 
 
  <./figs/chap5/PossiblyGoodMap2.png>]
-<figs/chap5/BadTrajectory/Bad Path.png, id=1959, 462.528pt x 346.896pt>
+<figs/chap5/BadTrajectory/Bad Path.png, id=1958, 340.8735pt x 185.9748pt>
 File: figs/chap5/BadTrajectory/Bad Path.png Graphic file (type png)
 <use figs/chap5/BadTrajectory/Bad Path.png>
 Package pdftex.def Info: figs/chap5/BadTrajectory/Bad Path.png  used on input l
 ine 75.
-(pdftex.def)             Requested size: 325.84895pt x 244.39761pt.
+(pdftex.def)             Requested size: 325.84895pt x 177.79028pt.
  [103 <./figs/chap5/ActualPositionVelocity.png> <./figs/chap5/PosVelError.png> 
-<./figs/chap5/Angles.png> <./figs/chap5/Deltas.png>]
-<figs/chap5/rosflightLogo.png, id=1971, 803.0pt x 803.0pt>
+<./figs/chap5/Angles.png> <./figs/chap5/Deltas.png>] [104 <./figs/chap5/BadTraj
+ectory/Bad Path.png>] [105] [106]
+<figs/chap5/rosflightLogo.png, id=1998, 803.0pt x 803.0pt>
 File: figs/chap5/rosflightLogo.png Graphic file (type png)
 <use figs/chap5/rosflightLogo.png>
-Package pdftex.def Info: figs/chap5/rosflightLogo.png  used on input line 105.
+Package pdftex.def Info: figs/chap5/rosflightLogo.png  used on input line 191.
 (pdftex.def)             Requested size: 102.90105pt x 102.89882pt.
- [104 <./figs/chap5/BadTrajectory/Bad Path.png>]) [105 <./figs/chap5/rosflightL
-ogo.png>]
-Package marginnote Info: Margin note 118.1 is on absolute page 118 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 118.2 is on absolute page 118 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 118.3 is on absolute page 118 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 118.4 is on absolute page 118 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 158.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/zpltlf/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package marginnote Info: Margin note 118.5 is on absolute page 118 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 118.6 is on absolute page 118 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 118.7 is on absolute page 118 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 118.8 is on absolute page 118 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 118.9 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
- [106
-
-
-
-{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
-Package marginnote Info: Margin note 119.1 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.2 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.3 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.4 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.5 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.6 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.7 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.8 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.9 is on absolute page 119 on input lin
-e 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.10 is on absolute page 119 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.11 is on absolute page 119 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 119.12 is on absolute page 120 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
- [107]
+)
+[107 <./figs/chap5/rosflightLogo.png>]
 Package marginnote Info: Margin note 120.1 is on absolute page 120 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
@@ -3026,6 +2911,11 @@ e 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
+(Font)              scaled to size 10.95pt on input line 158.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/zpltlf/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
 Package marginnote Info: Margin note 120.5 is on absolute page 120 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
@@ -3046,34 +2936,16 @@ e 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.9 is on absolute page 120 on input lin
+Package marginnote Info: Margin note 120.9 is on absolute page 121 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.10 is on absolute page 120 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 120.11 is on absolute page 120 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+ [108
 
-Overfull \hbox (277.8395pt too wide) in paragraph at lines 158--158
-[]|[]\T1/zpltlf/m/n/10.95 (-20) Cook, M. V., \T1/zpltlf/m/it/10.95 (-20) Latera
-l-Directional Dy-nam-ics\T1/zpltlf/m/n/10.95 (-20) , https://www.sciencedirect.
-com/science/chapter/monograph/pii/B9780080982427000079 
- []
 
-Package marginnote Info: Margin note 120.12 is on absolute page 121 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-[108]
+
+{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
 Package marginnote Info: Margin note 121.1 is on absolute page 121 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
@@ -3129,28 +3001,12 @@ ne 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 121.12 is on absolute page 121 on input li
+Package marginnote Info: Margin note 121.12 is on absolute page 122 on input li
 ne 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-Package marginnote Info: Margin note 121.13 is on absolute page 121 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-
-Overfull \hbox (0.15308pt too wide) in paragraph at lines 158--158
-[]|[]\T1/zpltlf/m/n/10.95 (-20) Yakovlev, K. S., Baskin, E., and Hramoin, I., [
-][]^^P  Grid-based angle-constrained
- []
-
-Package marginnote Info: Margin note 121.14 is on absolute page 122 on input li
-ne 158.
-Package marginnote Info: right page because not two side mode on input line 158
-.
-Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
-[109]
+ [109]
 Package marginnote Info: Margin note 122.1 is on absolute page 122 on input lin
 e 158.
 Package marginnote Info: right page because not two side mode on input line 158
@@ -3171,19 +3027,169 @@ e 158.
 Package marginnote Info: right page because not two side mode on input line 158
 .
 Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
- [110]
+Package marginnote Info: Margin note 122.5 is on absolute page 122 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 122.6 is on absolute page 122 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 122.7 is on absolute page 122 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 122.8 is on absolute page 122 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 122.9 is on absolute page 122 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 122.10 is on absolute page 122 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 122.11 is on absolute page 122 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+
+Overfull \hbox (277.8395pt too wide) in paragraph at lines 158--158
+[]|[]\T1/zpltlf/m/n/10.95 (-20) Cook, M. V., \T1/zpltlf/m/it/10.95 (-20) Latera
+l-Directional Dy-nam-ics\T1/zpltlf/m/n/10.95 (-20) , https://www.sciencedirect.
+com/science/chapter/monograph/pii/B9780080982427000079 
+ []
+
+Package marginnote Info: Margin note 122.12 is on absolute page 123 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+[110]
+Package marginnote Info: Margin note 123.1 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.2 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.3 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.4 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.5 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.6 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.7 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.8 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.9 is on absolute page 123 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.10 is on absolute page 123 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.11 is on absolute page 123 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.12 is on absolute page 123 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 123.13 is on absolute page 123 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+
+Overfull \hbox (0.15308pt too wide) in paragraph at lines 158--158
+[]|[]\T1/zpltlf/m/n/10.95 (-20) Yakovlev, K. S., Baskin, E., and Hramoin, I., [
+][]^^P  Grid-based angle-constrained
+ []
+
+Package marginnote Info: Margin note 123.14 is on absolute page 124 on input li
+ne 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+[111]
+Package marginnote Info: Margin note 124.1 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.2 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.3 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.4 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+Package marginnote Info: Margin note 124.5 is on absolute page 124 on input lin
+e 158.
+Package marginnote Info: right page because not two side mode on input line 158
+.
+Package marginnote Info: xpos seems to be 72.26999pt on input line 158.
+ [112]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 20.74pt on input line 165.
 LaTeX Font Info:    Font shape `T1/opensans-TLF/m/n' will be
 (Font)              scaled to size 19.70294pt on input line 165.
 LaTeX Font Info:    Font shape `T1/opensans-TLF/m/it' will be
 (Font)              scaled to size 19.70294pt on input line 165.
- [111
+ [113
 
 ]
 \openout2 = `appenA.aux'.
 
- (./appenA.tex) [112
+ (./appenA.tex) [114
 
 ]
 \openout2 = `appenB.aux'.
@@ -3221,11 +3227,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39825 strings out of 469515
- 733912 string characters out of 5470807
- 1687209 words of memory out of 5000000
- 66806 multiletter control sequences out of 15000+600000
- 782840 words of font info for 435 fonts, out of 8000000 for 9000
+ 39829 strings out of 469515
+ 734008 string characters out of 5470807
+ 1687367 words of memory out of 5000000
+ 66811 multiletter control sequences out of 15000+600000
+ 782531 words of font info for 432 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  125i,19n,121p,1484b,3290s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXBMI.pfb></usr/share/texm
@@ -3241,10 +3247,10 @@ are/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/font
 s/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/
 zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/t
 exmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on main.pdf (124 pages, 20280881 bytes).
+Output written on main.pdf (126 pages, 20275117 bytes).
 PDF statistics:
- 2459 PDF objects out of 2487 (max. 8388607)
- 2040 compressed objects within 21 object streams
- 670 named destinations out of 1000 (max. 500000)
+ 2484 PDF objects out of 2487 (max. 8388607)
+ 2063 compressed objects within 21 object streams
+ 675 named destinations out of 1000 (max. 500000)
  75801 words of extra memory for PDF output out of 89155 (max. 10000000)
 
