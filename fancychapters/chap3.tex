@@ -10,7 +10,7 @@ B-Splines maintain locality, where each control point only controls a finite sec
 As the number of applications for B-Splines increases, the computational burden for the generation of B-Splines also increases. 
 While they have a relatively low computational burden for a single application, many of the new applications of B-Spline generation may include real time computation, updating, and optimization.
 
-Uniform B-Splines are B-Splines where all basis functions are only time shifted versions of each other.
+Uniform B-Splines are B-Splines where all basis functions are only time-shifted versions of each other.
 This is in opposition to clamped B-Splines which use modified basis functions at end points so the B-Spline will be guaranteed to start or stop at a particular point.
 To prevent needless repetition of what already exists in the 2025 paper, the majority of the derivations must be referenced only. 
 
@@ -22,7 +22,7 @@ B-Splines can be constructed using the following formula:
     \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m \hat{b}_m^d(t, \bs{k}),
 \end{align}
 
-Where $\hat{b}_m^d(t, \bs{k})$ are the time shifted basis functions of degree $d$, given the knot sequence $\bs{k}$. The knot sequence $\bs{k}$ scales the time spacing of the basis function, which means that adjusting the knot sequence adjusts the standard basis function, which can be helpful for edge cases in robotics. The control points $\bs{c}_m$, scale the basis functions to stitch together the final spline. The dimension of the control point $\bs{c}_m$ determines the dimension of the B-Spline, where a 1D $\bs{c}_m$ will create a 1D B-Spline, and so forth.
+Where $\hat{b}_m^d(t, \bs{k})$ are the time-shifted basis functions of degree $d$, given the knot sequence $\bs{k}$. The knot sequence $\bs{k}$ scales the time spacing of the basis function, which means that adjusting the knot sequence adjusts the standard basis function, which can be helpful for edge cases in robotics. The control points $\bs{c}_m$, scale the basis functions to stitch together the final spline. The dimension of the control point $\bs{c}_m$ determines the dimension of the B-Spline, where a 1D $\bs{c}_m$ will create a 1D B-Spline, and so forth.
 
 This paper uses only uniform B-Splines. 
 In a uniform B-Spline, the knot points are all uniformly spaced apart. 
@@ -65,7 +65,7 @@ This basis function is zero outside of the interval $[0,2]$, and similar rules a
     \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m b^d(t-m+d), \quad t\in[0,M]
 \end{align}
 
-Each term in this sum is a control point $\bs{c}_m$ times a time shifted basis function $b^d(t-m+d)$, where $m$ iterates from $0$ to $M+d-1$. Each control point modifies a time shifted and overlapped copy of the exact same basis function. A figure of overlapped copies of the same basis functions are shown in Fig. \ref{fig:uniform_basis_functions}.
+Each term in this sum is a control point $\bs{c}_m$ times a time-shifted basis function $b^d(t-m+d)$, where $m$ iterates from $0$ to $M+d-1$. Each control point modifies a time-shifted and overlapped copy of the exact same basis function. A figure of overlapped copies of the same basis functions are shown in Fig. \ref{fig:uniform_basis_functions}.
 
 \begin{figure}[htb]
   \includegraphics[width=\linewidth]{figs/chap3/uniform_basis_functions.pdf}
@@ -73,7 +73,7 @@ Each term in this sum is a control point $\bs{c}_m$ times a time shifted basis f
   \label{fig:uniform_basis_functions}  
 \end{figure}
 
-This means that each control point is assigned to one basis function copy, and scales it accordingly. The size of each time-shifted basis function is finite and only covers a small section of the whole B-Spline. Therefore, modification of one control point only affects local area around that B-Spline, and not its entirety. This is one of the great advantages of B-Splines, that modifications may be made in one area without affecting another if it is sufficiently far away. This principle is illustrated in Fig. \ref{fig:BasisFunctionsConnection}. 
+This means that each control point is assigned to one basis function copy, and scales it accordingly. The size of each time-shifted basis function is finite and only covers a small section of the whole B-Spline. Therefore, modification of one control point only affects the local area around that B-Spline, and not its entirety. This is one of the great advantages of B-Splines, that modifications may be made in one area without affecting another if it is sufficiently far away. This principle is illustrated in Fig. \ref{fig:BasisFunctionsConnection}. 
 
 
 This example uses $d=1$ and $M=9$, which is to say there are $9$ intervals of interest the B-Spline is defined over. The knot vector is given, with uniform spacing of $1$ as: 
@@ -103,7 +103,7 @@ The only difference is that for $\bs{C}_1$, the value at index $5$ is $1.5$, whi
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{figs/chap3/mainPlot.png}
-    \caption{Degree 1 B-Spline Formation. Top left is a series of time shifted degree 1 B-Spline basis functions overlapping. Bottom left is the sum of all basis functions from the above. Top middle plots the control points in red, with the correspondingly scaled and time shifted basis functions. Bottom middle is the sum of all basis functions. Right plots are identical to middle plots, except with the index $5$ control point changed from $1.5$ to $2$.}
+    \caption{Degree 1 B-Spline Formation. Top left is a series of time-shifted degree 1 B-Spline basis functions overlapping. Bottom left is the sum of all basis functions from the above. Top middle plots the control points in red, with the correspondingly scaled and time-shifted basis functions. Bottom middle is the sum of all basis functions. Right plots are identical to middle plots, except with the index $5$ control point changed from $1.5$ to $2$.}
     \label{fig:BasisFunctionsConnection}
 \end{figure}
 
@@ -153,7 +153,7 @@ This form simply stacks each shifted basis function into a vector. For any given
 
 \section{Derivatives of Uniform B-Splines}
 
-It is shown in Lemma 1.13 in \citeauthor{beard2025BSplines} \cite{beard2025BSplines} that the derivative of a B-Spline is given as:
+It is shown in Lemma 1.13 in \cite{beard2025BSplines} that the derivative of a B-Spline is given as:
 
 \begin{align}
     \frac{db^d}{dt}(t) = b^{d-1}(t) - b^{d-1}(t-1).
@@ -172,7 +172,7 @@ Representing this in matrix form simply requires subtraction between components 
     \end{bmatrix},
 \end{align}
 
-As an example, if $M=4$ and $d=1$, the derivative basis vector is:
+As an example, if $M=4$ and $d=1$, the derivative basis vector is
 
 \begin{align}
     \bs{b}^0_4(t) =
@@ -184,7 +184,7 @@ As an example, if $M=4$ and $d=1$, the derivative basis vector is:
     \end{bmatrix}
 \end{align}
 
-and the derivative matrix is:
+and the derivative matrix is
 
 \begin{align}
     D_M^d =
@@ -195,9 +195,9 @@ and the derivative matrix is:
         0 & 0 & 1 & -1\\
         0 & 0 & 0 & 1\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-The resulting vector $D_4^1 \bs{b}^0_4(t)$ then becomes:
+The resulting vector $D_4^1 \bs{b}^0_4(t)$ then becomes
 
 \begin{align}
     D_4^1 \bs{b}^0_4(t) = 
@@ -208,9 +208,9 @@ The resulting vector $D_4^1 \bs{b}^0_4(t)$ then becomes:
         b^0(t-2) - b^0(t-3)\\
         b^0(t-3)\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-The proof for this property is given after Lemma 1.14 in \citeauthor{beard2025BSplines} \cite{beard2025BSplines}.
+The proof for this property is given after Lemma 1.14 in \cite{beard2025BSplines}.
 
 \section{Endpoint Constraints}
 
@@ -294,8 +294,7 @@ If we then evaluate this vector for knot points in the interval of interest: $\b
     \end{bmatrix}
 \end{align}
 
-Notice that the nonzero values simply shift down the vector. We call these nonzero
-
+Notice that the nonzero values simply shift down the vector. 
 The same effect occurs with the derivative vectors from $D_M^d b_M^{d-1}(t)$. For the same example, if $t=0$:
 
 \begin{align}
@@ -348,7 +347,9 @@ The matrix $B_4^2(0)$ then becomes:
     \end{bmatrix}
 \end{align}
 
-It turns out that the top, nonzero section will simply shift down for each subsequent shift in $t$. We denote the nonzero section to be $\hat{B}_4^2$, which is time invariant. This simplifies the control point relationship to be:
+It turns out that the top, nonzero section will simply shift down for each subsequent shift in $t$. 
+We denote the nonzero section to be $\hat{B}_4^2$, which is time invariant. 
+This simplifies the control point relationship to be:
 
 \begin{align}
     \begin{bmatrix}
@@ -400,7 +401,8 @@ This process can be implemented for both initial and final conditions as
  				\end{bmatrix},
  \]
 
- Then we may find the start and end control points given the start and end conditions $\bs{S}$ and $\bs{E}$. This work work at any point, as long as the conditions at that point are known. 
+Then we may find the start and end control points given the start and end conditions $\bs{S}$ and $\bs{E}$. 
+This will work at any point, as long as the conditions at that point are known. 
 
 \begin{align}
     \bs{C}_{1:d} = \bs{S} \left(\hat{B}_M^d(0)\right)^{-1}\\
@@ -410,7 +412,11 @@ This process can be implemented for both initial and final conditions as
 
 \section{Minimum Snap Trajectory}
 
-The above formula enables us to generate initial and final control points for the B-Spline, but it says nothing about the control points in between. While there are countless options for placement of the control points between start and finish, one particularly useful method is a minimum snap trajectory. Snap is the third derivative of position, after velocity and acceleration. A minimum snap trajectory finds the trajectory with the lowest integral of snap, given the initial conditions $\bs{S}$ and $\bs{E}$. This is given as:
+The above formula enables us to generate initial and final control points for the B-Spline, but it says nothing about the control points in between. 
+While there are countless options for placement of the control points between start and finish, one particularly useful method is a minimum snap trajectory. 
+Snap is the third derivative of position, after velocity and acceleration. 
+A minimum snap trajectory finds the trajectory with the lowest integral of snap, given the initial conditions $\bs{S}$ and $\bs{E}$. 
+This is given as
 
  \begin{equation}
  	\label{eq:min_integral_of_norm}
@@ -420,11 +426,11 @@ The above formula enables us to generate initial and final control points for th
  	\end{aligned}
  \end{equation}
 
- Where $W_M^{d}(\bs{\rho})$ is a mixing matrix that will be defined later.
+where $W_M^{d}(\bs{\rho})$ is a mixing matrix that will be defined later.
 
 \section{Integral objective}
 
-The following section summarizes the derivation for minimum snap control points. While this section highlights the most important equations, the full derivation is found in \citeauthor{beard2025BSplines} \cite{beard2025BSplines}.
+The following section summarizes the derivation for minimum snap control points. While this section highlights the most important equations, the full derivation is found in \cite{beard2025BSplines}.
 
 The objective for creating control points that minimize the integral of an $\ell^{th}$ derivative, which in our case is $3^{rd}$ derivative, is given in section $2.6$ of \cite{beard2025BSplines} as:
 
@@ -461,7 +467,8 @@ Then we may define:
 
 This matrix essentially creates an objective function by relating the control points $\bs{C}$ to the specified derivative we want to minimize over the entire path. From this, a solution may be derived.
 
-A lengthy derivation follows in section 2.6 in \cite{beard2025BSplines}, which will not be repeated here. It turns out that there is an analytical solution to this problem. First, if we take the singular value decomposition of two $B$ matrices as:
+A lengthy derivation follows in section 2.6 in \cite{beard2025BSplines}, which will not be repeated here, but there is an analytical solution.
+First, the singular value decomposition of two $B$ matrices is given as
 
 \begin{align}
     B^d_{M,SE} = 
@@ -476,10 +483,9 @@ A lengthy derivation follows in section 2.6 in \cite{beard2025BSplines}, which w
         \bs{0} 
     \end{bmatrix} 
     V^\top,
-\end{align}
+\end{align}.
 
-
-Then the analytical solution to the control points $\bs{C}^*$ for a minimum snap trajectory are given as:
+Then the analytical solution to the control points $\bs{C}^*$ for a minimum snap trajectory is given as
 
 \begin{align}
     \bs{C}^\ast = 
@@ -489,14 +495,16 @@ Then the analytical solution to the control points $\bs{C}^*$ for a minimum snap
     Q_M^{d}(\bs{\rho})
 \end{align}
 
-Where
+where
 \begin{align}
      Q_M^{d}(\bs{\rho}) = V \Sigma^{-1} U_1^\top \left( I - W_M^{d}(\bs{\rho}) U_2 (U_2^\top W_M^{d}(\bs{\rho}) U_2 )^{-1} U_2^\top \right)
-\end{align}
+\end{align}.
 
 \section{Contributions}
 
-The unique contribution presented in this section is an efficient method of generating and storing look up tables to generate $Q_M^{d}(\bs{\rho})$ as efficiently as possible. Notice that $Q_M^{d}(\bs{\rho})$ is a function of $M$ and $d$, and with a sufficiently large enumeration of values for $M$ and $d$, it becomes possible to have a matrix lookup for each value. While the user defined scaling vector $\rho$ makes it impossible to store $Q_M^d(\bs{\rho})$ directly, it is possible to store the components matrices of $Q_M^d(\bs{\rho})$ as look-up tables to dramatically reduce computation time. 
+The unique contribution presented in this section is an efficient method of generating and storing look-up tables to generate $Q_M^{d}(\bs{\rho})$ as efficiently as possible. 
+Notice that $Q_M^{d}(\bs{\rho})$ is a function of $M$ and $d$, and with a sufficiently large enumeration of values for $M$ and $d$, it becomes possible to have a matrix lookup for each value. 
+While the user-defined scaling vector $\rho$ makes it impossible to store $Q_M^d(\bs{\rho})$ directly, it is possible to store the components matrices of $Q_M^d(\bs{\rho})$ as look-up tables to dramatically reduce computation time. 
 
 In this lookup table, we generated tables for degrees $0$ to $5$ inclusive, and number of intervals of interest $M$ up to $M=100$.
 
@@ -534,7 +542,8 @@ For degrees $0$ to $5$ and all valid $M$ up to $M=100$, a $B^d_{M,SE}$ is genera
     V^{d,\top}_M
 \end{align}
 
-These components are saved into their own corresponding lookup tables, with a key of $d$ and $M$ for each component. Notice that the first three components of $Q_M^d(\rho)$ are $V \Sigma^{-1} U_1^\top$, which is the left pseudoinverse of $B^d_{M,SE}$, which is also stored in a lookup table for even faster computation. This is represented as $(B^d_{M,SE})^+ = V \Sigma^{-1} U_1^\top$ When finding a particular $Q_M^d(\rho)$, $(B^d_{M,SE})^+$ and $U_2$ are read from memory.
+These components are saved into their own corresponding lookup tables, with a key of $d$ and $M$ for each component. Notice that the first three components of $Q_M^d(\rho)$ are $V \Sigma^{-1} U_1^\top$, which is the left pseudoinverse of $B^d_{M,SE}$, which is also stored in a lookup table for even faster computation. 
+This is represented as $(B^d_{M,SE})^+ = V \Sigma^{-1} U_1^\top$ when finding a particular $Q_M^d(\rho)$, $(B^d_{M,SE})^+$ and $U_2$ are read from memory.
 
 \subsubsection{Y Z Lookup Tables}
 
@@ -544,7 +553,8 @@ The problematic portion of this formula is the part related to the inverse:
     W_M^{d}(\bs{\rho}) U_2 (U_2^\top W_M^{d}(\bs{\rho}) U_2 )^{-1} U_2^\top
 \end{align}
 
-This involves a lot of matrix multiplication, and a matrix inverse, which we desire to minimize as much as possible. The precompute as much of this as possible, we defined some terms as:
+This involves a lot of matrix multiplication, and a matrix inverse, which we desire to minimize as much as possible. 
+To precompute as much of this as possible, we defined some terms as:
 
 \begin{align}
     Y^d_M(\bs{\rho}) = W_M^{d}(\bs{\rho}) U^d_{2,M}
@@ -567,27 +577,28 @@ Which may be substituted
     Z^d_M(\bs{\rho}) = (U^{d}_{2,M})^\top \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell} U^d_{2,M} = \sum_{\ell=0}^L \rho^\ell (U^{d}_{2,M})^\top  W_M^{d,\ell} U^d_{2,M}
 \end{align}
 
-If we make the following definitions:
+If we make define
 
 \begin{align}
     Y^{d,l}_M = W_M^{d,\ell} U^d_{2,M}\\
     Z^{d,l}_M = (U^{d}_{2,M})^\top  W_M^{d,\ell} U^d_{2,M}
-\end{align}
+\end{align},
 
-The original equations simplify to:
+the original equations simplify to
 
 \begin{align}
     Y^d_M(\bs{\rho}) = \sum_{\ell=0}^L \rho^\ell Y^{d,l}_M\\
     Z^d_M(\bs{\rho}) = \sum_{\ell=0}^L \rho^\ell Z^{d,l}_M
-\end{align}
+\end{align}.
 
-Lookup tables are created over all applicable values for $d$, $l$, and $M$ for $Y^{d,l}_M$ and $Z^{d,l}_M$. In the generator program, finding $Q_M^{d}(\bs{\rho})$ turns into the following equation:
+Lookup tables are created over all applicable values for $d$, $l$, and $M$ for $Y^{d,l}_M$ and $Z^{d,l}_M$. 
+In the generator program, finding $Q_M^{d}(\bs{\rho})$ turns into
 
 \begin{align}
     Q_M^{d}(\bs{\rho}) = (B^d_{M,SE})^+ \left(I - \sum_{\ell=0}^L \rho^\ell Y^{d,l}_M \left(\sum_{\ell=0}^L \rho^\ell Z^{d,l}_M\right)^{-1} U_2^\top \right)
-\end{align}
+\end{align},
 
-And the equation for finding the remaining control points remains:
+and the equation for finding the remaining control points remains
 
 \begin{align}
     \bs{C}^\ast = 
@@ -595,9 +606,9 @@ And the equation for finding the remaining control points remains:
         \bs{S} & \bs{E} 
     \end{bmatrix}
     Q_M^{d}(\bs{\rho})
-\end{align}
+\end{align}.
 
-If a user's mixing vector $\bs{\rho}$ is known beforehand and does not change, the entire $Q_M^{d}(\bs{\rho})$ matrix can be computed once, which would further reduce computation time. 
+If a user's mixing vector $\bs{\rho}$ is known beforehand, the entire $Q_M^{d}(\bs{\rho})$ matrix can be computed once, which would further reduce computation time. 
 
 \section{Results}
 
@@ -716,8 +727,8 @@ Using the lookup table library, the total control point generation time was $1.1
 
 \subsection{Conclusion}
 
-The lookup table method described in this section is implemented in an public repository as \href{https://github.com/byu-magicc/eVTOL_BSplines}{eVTOL\_BSplines}. 
-It was implemented in Python, without any C++ or Rust wrappers; creating such wrappers in the future may further increase computational speed. 
+The lookup table method described in this section is implemented in \href{https://github.com/byu-magicc/eVTOL_BSplines}{eVTOL\_BSplines}. 
+This repository was implemented in Python without any C++ or Rust wrappers; creating such wrappers in the future may further increase computational speed. 
 
 One future improvement may include additional lookup tables for $Q_M^d(\bs{\rho})$ for common values of $\bs{\rho}$. 
 Recall that $\rho$ sets the relative importance of position, velocity, and acceleration for the B-Spline ouput.

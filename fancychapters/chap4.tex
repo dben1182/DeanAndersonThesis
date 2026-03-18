@@ -1,9 +1,12 @@
 \chapter{RRT Flight Corridors}
 \label{ch:rrt_flight_corridors}
 
-In subsection \ref{sec:vtol path planning}, several B-Spline paths were created for the quadplane eVTOL to follow. These paths were relatively simple because it was assumed that no obstacles were present in the environment. Obstacles are present in many cases, and this assumption becomes invalidated. An example of this is an urban environment with obstacles including buildings, wires, poles, and people. The 2D eVTOL controller developed in section \ref{ch:VTOL} requires a B-Spline input to function. These constraints make it necessary to develop an algorithm that generates a B-Spline trajectory while simultaneously avoiding obstacles.
+In subsection \ref{sec:vtol path planning}, several B-Spline paths were created for the quadplane eVTOL to follow. These paths were relatively simple because it was assumed that no obstacles were present in the environment. Obstacles are present in many cases, and this assumption becomes invalidated. An example of this is an urban environment with obstacles including buildings, wires, poles, vehicles, and people. 
+The 2D eVTOL controller developed in section \ref{ch:VTOL} requires a B-Spline input to function. 
+These constraints make it necessary to develop an algorithm that generates a B-Spline trajectory while simultaneously avoiding obstacles.
 
-Much literature exists on obstacle-avoiding path generation algorithms. In \cite{david_bspline}, much of the work that is foundational to this paper was developed; specifically, chapter 4 focuses on trajectory generation algorithms with obstacle avoidance and boundary constraints in both 2D and 3D. One problem addressed in the paper is path generation with obstacle avoidance for circular obstacles. The algorithm optimizes the path to minimize distance without intersecting circular or spherical obstacles in the 2D and 3D cases respectively.
+A great deal of literature exists on obstacle-avoiding path generation algorithms. 
+In \cite{david_bspline}, much of the work that is foundational to this paper was developed; specifically, chapter 4 focuses on trajectory generation algorithms with obstacle avoidance and boundary constraints in both 2D and 3D. One problem addressed in the paper is path generation with obstacle avoidance for circular obstacles. The algorithm optimizes the path to minimize distance without intersecting circular or spherical obstacles in the 2D and 3D cases respectively.
 
 
 \begin{figure}[htbp]
@@ -106,7 +109,7 @@ This equation can be generalized to the form $Ap < b$ where:
     \end{bmatrix}
 \end{align}
 
-A polygon can be represented as a conglomeration of multiple half-planes, where each edge has its own vextors as $\hat{n}_i$ and $\vec{r}_i$. For a convex polygon with $N$ sides, these can be combined into a generalized equation as:
+A polygon can be represented as a conglomeration of multiple half-planes, where each edge has its own vectors as $\hat{n}_i$ and $\vec{r}_i$. For a convex polygon with $N$ sides, these can be combined into a generalized equation as:
 
 \begin{align}
     A =
@@ -191,7 +194,7 @@ This is shown in Thm. \ref{thm:overlapping_SFCs}.
     \end{align}
 \end{theorem}
 
-Given these conditions, a B-Spline, $b(t)$ will remain within the set $SFC_i \space \cup \space SFC_{i+1}$ iff $d$ sequential control points $\left\{C_j,C_{j+1}, ..., C_{j+d}\right\}$ are constrained to the intersection region $\mathcal{P}_i$ for the transition from $SFC_i$ to $SFC_{i+1}$.
+Given these conditions, a B-Spline, $b(t)$ will remain within the set $SFC_i \space \cup \space SFC_{i+1}$ if $d$ sequential control points $\left\{C_j,C_{j+1}, ..., C_{j+d}\right\}$ are constrained to the intersection region $\mathcal{P}_i$ for the transition from $SFC_i$ to $SFC_{i+1}$.
 
 \section{RRT Implementation}
 
@@ -241,10 +244,52 @@ An example of a resultant tree is shown in Fig. \ref{fig:rrt tree example}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figs/chap4/RRT Example Tree.jpg}
-    \caption{Example of possible RRT tree}
+    \includegraphics[width=0.9\linewidth]{figs/chap4/RRT Example Tree.jpg}
+    \caption{Example of RRT tree.}
     \label{fig:rrt tree example}
 \end{figure}
+
+
+\subsection{Obstacle Intersection}
+
+During the RRT algorithm, it is necessary to determine whether a candidate Safe Flight Corridor intersects an obstacle.
+There must be a method to determin if any part of an SFC overlaps with any part of an obstacle.
+This is accomplished using linear constraints, as depicted in Fig. \ref{fig:obstacleIntersection}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figs/chap4/RRT Example Tree.jpg}
+    \caption{SFC and obstacle intersections. On the left there is no intersection, and on the right there is an intersection.}
+    \label{fig:obstacleIntersection}
+\end{figure}
+
+Each obstacle and each SFC is represented using its own linear constraint matrices. 
+The obstacle has constraints $A_{obs}$ and $b_{obs}$, and the SFC has constraints $A_{sfc}$ and $b_{sfc}$. 
+If there is an intersection, that means there is a feasible region such that both linear inequality constraints are met.
+This is accomplished by concatenating both matrices as
+
+\begin{align}
+    A_{int} =
+    \begin{bmatrix}
+        A_{obs}\\
+        A_{SFC}
+    \end{bmatrix}
+    \qquad
+    b_{int} =
+    \begin{bmatrix}
+        b_{obs}\\
+        b_{SFC}\\
+    \end{bmatrix}
+\end{align}
+
+
+This linear inequality is determined to be feasible or not using Scipy linprog function.
+
+
+\texttt{result = linprog(dummyVariable, Aub=Aint, bub=bint, bounds=tempBounds, method='highs')}
+
+
+\texttt{intersectionOccurredTemp = result.success}
 
 \section{Turn Constraints}
 \label{sec:Turn Constraints}
@@ -252,7 +297,7 @@ An example of a resultant tree is shown in Fig. \ref{fig:rrt tree example}.
 Vehicle dynamic constraints impose limitations on the tree algorithm. 
 Fixed-wing aircraft have a minimum turning radius, which is influenced by vehicle airspeed, thrust, and airframe design; aircraft cannot physically turn with a smaller radius under such conditions. 
 As mentioned before, this fact is exploited for the formation of Dubins Paths, which use only straight lines and circles of that minimum turning radius to get a very efficient and short path. 
-Fixed wing aircraft may not perform trajectories that have a tighter turn radius than a particular value, shown in Fig. \ref{fig:MinTurnRadius} .
+Fixed-wing aircraft may not perform trajectories that have a tighter turn radius than a particular value, shown in Fig. \ref{fig:MinTurnRadius} .
 For the Safe Flight Corridor tree, this imposes certain limitations on the possible geometries that can accommodate a particular minimum turning radius. 
 This is depicted in figure \ref{fig:angular boundary conditions}.
 
@@ -293,7 +338,9 @@ During the RRT phase of the algorithm, the actual angle between $SFC_{i-1}$ and 
 
 \subsection{Turn Constraints Enforcement}
 
-In order to enforce this minimum turn radius constraint, or at least to minimize its violation, constraints must be enforced upon the control points in the intersection vicinity. While a circle or section of a circle is convex, the area between two concentric circles is not. This shape, also known as an annulus is shown in Fig. \ref{fig:annulus concentric circle}.
+In order to enforce this minimum turn radius constraint, or at least to minimize its violation, constraints must be enforced upon the control points in the intersection vicinity. 
+While a circle or section of a circle is convex, the area between two concentric circles is not. 
+This shape, also known as an annulus is shown in Fig. \ref{fig:annulus concentric circle}.
 
 \begin{figure}
     \centering
@@ -316,11 +363,7 @@ These sections will be termed annulus segments.
 \end{figure}
 
 
-As with safe flight corridors, control points may be constrained within annulus segments using the matrix form $Ax \leq b$. These equations are given as
-
-
-
-
+As with safe flight corridors, control points may be constrained within annulus segments using the matrix form $Ax \leq b$.
 
 \section{Path Smoothing}
 
@@ -445,7 +488,7 @@ The minimum acceleration optimization function then becomes
 
 Minimization of Distance and Acceleration are particularly useful to us. The former method connects start to end in the most direct way, given the Safe Flight Corridor constraints. The latter connects start to end while minimizing accelerations, which is particularly useful for an airplane that has minimum turning radius constraints. In this case, the most gradual turn may be the most effective.
 
-CVXPY is a python package containing optimization capabilities allowing the user to optimize some objective function subject to specified linear constraints. In this paper, we elected the solver CLARABEL  The vector of control point components is something that can be modified. The way it works is that a CVXPY variable is defined with shape: $(N_{cntPts}, N_{dimensions})$, so there are $N_{cntPts} \times N_{dimensions}$ degrees of freedom or variables which the optimizer can modify. CLARABEL requires linear convex constraints, which are applied to each portion of the main control point variable.
+CVXPY is a Python package containing optimization capabilities allowing the user to optimize some objective function subject to specified linear constraints. In this paper, we elected the solver CLARABEL  The vector of control point components is something that can be modified. The way it works is that a CVXPY variable is defined with shape: $(N_{cntPts}, N_{dimensions})$, so there are $N_{cntPts} \times N_{dimensions}$ degrees of freedom or variables which the optimizer can modify. CLARABEL requires linear convex constraints, which are applied to each portion of the main control point variable.
 
 \subsection{A Note on 2D slices of 3D obstacles}
 
@@ -493,7 +536,7 @@ The new $A_{2D}$ and $b_{2D}$ matrices need only be calculated once for each obs
 
 \section{2D Results}
 
-There are an infinite number of possible implementations for this algorithm. There are unlimited number of robotic vehicles that can use the algorithm. A trajectory generated by this algorithm could represent the trajectory of a robot arm moving objects without hitting other objects. It may also represent the path of a robot through a warehouse. Any application is possible, if the obstacles or unsafe regions may be represented by a convex linear system of equations. Because the preliminary objective of this paper was fixed-wing UAV control, the algorithm was developed with the urban mobility problem in mind. The implementation and results that follow were created for fixed-wing UAVs traveling through a simulated urban environment. They were developed as a seperate branch in the software package called Mavsim, which is written in the python programming language; Mavsim is the  software package used with the book Small Unmanned Aircraft \cite{uav_book}. The obstacle fields presented here are $4 \times 4$ or $5 \times 5$ grids of skyscrapers, with relatively large spaces between buildings. The aircraft flies at a constant altitude, which creates a working plane that the aircraft must stay on at all times. This plane intersects all of the skyscrapers, and slices their 3-D obstacle shape into a 2D Obstacle, which is represented as a linear system of equations as $Ax<b$.
+There are an infinite number of possible implementations for this algorithm. There are unlimited number of robotic vehicles that can use the algorithm. A trajectory generated by this algorithm could represent the trajectory of a robot arm moving objects without hitting other objects. It may also represent the path of a robot through a warehouse. Any application is possible, if the obstacles or unsafe regions may be represented by a convex linear system of equations. Because the preliminary objective of this paper was fixed-wing UAV control, the algorithm was developed with the urban mobility problem in mind. The implementation and results that follow were created for fixed-wing UAVs traveling through a simulated urban environment. They were developed as a seperate branch in the software package called Mavsim, which is written in the Python programming language; Mavsim is the  software package used with the book Small Unmanned Aircraft \cite{uav_book}. The obstacle fields presented here are $4 \times 4$ or $5 \times 5$ grids of skyscrapers, with relatively large spaces between buildings. The aircraft flies at a constant altitude, which creates a working plane that the aircraft must stay on at all times. This plane intersects all of the skyscrapers, and slices their 3-D obstacle shape into a 2D Obstacle, which is represented as a linear system of equations as $Ax<b$.
 
 \subsection{$4 \times 4$ grid}
 
@@ -791,7 +834,11 @@ Some of the current limitations and possible solutions are presented.
 
 One limitation is Dijkstra's Algorithm. The algorithm generates a minimum distance path given a set of initial guesses, called the unsmoothed waypoints, and generates the shortest distance path from start to finish. However, there is no guarantee on a shortest distance path that satisfies angular constraints, or the angle between two safe flight corridors. 
 
-One can imagine a scenario where the algorithm paints itself into a corner. The shortest found path may find an optimal path up to a node, where none of the new segments violate the turn constraint. The addition of a new segment may yet violate the turn constraint with all possible forward node connections; thus, the algorithm can be broken. This is illustrated in Fig. \ref{fig:DijkstraScenario}. In diagram, a setup of $5$ waypoints is shown with $4$ segments connecting those $5$ nodes. In the primary algorithm, nodes were only added to the tree if they satisfied the turning constraint. In this case, each segment angle must be greater than $120$. The algorithm also finds that there are $2$ other segments that satisfy the intersection constraint, but not necessarily the angular constraint. 
+One can imagine a scenario where the algorithm paints itself into a corner. The shortest found path may find an optimal path up to a node, where none of the new segments violate the turn constraint. The addition of a new segment may yet violate the turn constraint with all possible forward node connections; thus, the algorithm can be broken. This is illustrated in Fig. \ref{fig:DijkstraScenario}. 
+In this diagram, a setup of $5$ waypoints is shown with $4$ segments connecting those $5$ nodes. 
+In the primary algorithm, nodes were only added to the tree if they satisfied the turning constraint. 
+In this case, each segment angle must be greater than $120^{\circ}$. 
+The algorithm also finds that there are $2$ other segments that satisfy the intersection constraint, but not necessarily the angular constraint. 
 
 
 \begin{figure}
@@ -801,20 +848,26 @@ One can imagine a scenario where the algorithm paints itself into a corner. The 
     \label{fig:DijkstraScenario}
 \end{figure}
 
-The problem with Dijkstra's algorithm is that it will select segment $S_4$ to connect $b_0$ and $b_2$ and bypass $b_1$, where we assume that adding $S_4$ does not violate angular constraints with the previous line segment not shown in this diagram for simplicity. Now that the algorithm is at $b_2$, it has to choose between $S_2$ and $S_5$. Unfortunately, both choices violate the minimum turn constraint with $90^{\circ}$ and $116^{\circ}$ respectively, causing the algorithm to fail. This is illustrated in Fig. \ref{fig:DijkstraDilemma}.
+The problem with Dijkstra's algorithm is that it will select segment $S_4$ to connect $b_0$ and $b_2$ and bypass $b_1$, where we assume that adding $S_4$ does not violate angular constraints with the previous line segment not shown in this diagram for simplicity. Now that the algorithm is at $b_2$, it has to choose between $S_2$ and $S_5$. Unfortunately, both choices violate the minimum turn constraint with $90^{\circ}$ and $116^{\circ}$, respectively, which causing the algorithm to fail. This is illustrated in Fig. \ref{fig:DijkstraDilemma}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figs/chap4/Turn Rate Constraints/Dijstras Dilemma.drawio.png}
-    \caption{Dilemma of dijkstra's algorithm with angular constraint at $b_2$}
+    \caption{Dilemma of Dijkstra's algorithm with angular constraint at $b_2$}
     \label{fig:DijkstraDilemma}
 \end{figure}
 
-Solving this problem is beyond the scope of this thesis, but it does pose an interesting problem for future research. The best solution I have found is LIAN, and its derivatives; LIAN is derived from the term "Limited Angle", so it is a limited angle path algorithm. LIAN was introduced in 2015 in \cite{LIAN} as a variant of $A^*$. LIAN works by storing two copies of each node and working backward if the angle constraint is ever violated. In this paper, they found success in their trials, with some setups achieving success rates in the high $90$s. Another paper was published in 2018 on eLIAM or enhanced LIAM that solved an angle-constrained problem 20\% more often than standard LIAM. Implementation of LIAM, or some other algorithm, will generate a more robust framework for a better algorithm.
+Solving this problem is beyond the scope of this thesis, but it does pose an interesting problem for future research. 
+The best solution we have found is LIAN, and its derivatives; LIAN is derived from the term "Limited Angle", so it is a limited angle path algorithm. 
+LIAN was introduced in 2015 in \cite{LIAN} as a variant of $A^*$. 
+LIAN works by storing two copies of each node and working backward if the angle constraint is ever violated. 
+In this paper, they achieved success rates in the high $90$ percentages. 
+Another paper was published in 2018 on eLIAM or enhanced LIAM that solved an angle-constrained problem 20\% more often than standard LIAM. 
+Implementation of LIAM, or some other algorithm, will generate a more robust framework for a better algorithm.
 
 \subsection{Turn Constraints}
 
-It is demonstrated in section \ref{sec:Turn Constraints} how to find the maximum angle between two SFCs given a minimum turning radius constraint. In the previous section, we discussed the necessity for an SFC smoothing algorithm that maintains angular conditions. However, a resulting B-Spline within that does not automatically conform to the minimum turning radius constraint. Even with segmented annulus constraints along each SFC intersection, there is no guarantee that the control points will remain along the inside turning radius. There exist many edge cases that violate the minimum turning radius. 
+It is demonstrated in section \ref{sec:Turn Constraints} how to find the maximum angle between two SFCs given a minimum turning radius constraint. In the previous section, we discussed the necessity for an SFC smoothing algorithm that maintains angular conditions. However, a resulting B-Spline within the annulus does not automatically conform to the minimum turning radius constraint. Even with segmented annulus constraints along each SFC intersection. There is no guarantee that the control points will remain along the inside turning radius. There exist many edge cases that violate the minimum turning radius. 
 
 Curvature measures how sharply a function turns. That is, the tighter the turn on a particular curve, the higher the curvature. It is defined as $\frac{1}{R}$, where $R$ is the radius of the circle tangential to the curve. This is shown in figure \ref{fig:curvature}. 
 
@@ -825,11 +878,11 @@ Curvature measures how sharply a function turns. That is, the tighter the turn o
     \label{fig:curvature}
 \end{figure}
 
-The definition for curvature of a B-Spline $C(t)$ is:
+The definition for curvature of a B-Spline $C(t)$ is
 
 \begin{align}
     C(t) = \frac{|| \dot{b}(t) \times \ddot{b}(t)||}{||\dot{b}(t)||^3}
-\end{align}
+\end{align}.
 
 Notice that this formula does not directly involve the control points, but only includes the actual B-Spline equation. This makes it difficult to directly minimize curvature of a B-Spline generated within a safe flight corridor.
 
