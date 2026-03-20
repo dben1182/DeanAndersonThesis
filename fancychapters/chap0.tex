@@ -1,6 +1,9 @@
 \chapter{Introduction}
 
-Unmanned Aerial Vehicles (UAVs) have seen an explosion of use in the last few decades in both civilian and defense spaces. UAVs take advantage of the vast airspace available over land, sea, and city to avoid the traffic inherent to civilization \cite{sabour2023applications}. UAVs can reach remote locations in minutes what would otherwise take hours or days for humans and automobiles to reach, such as remote or mountainous areas with poor roads. Small UAVs are performing many tasks that used to require large and expensive manned helicopters and airplanes, such as creating aerial shots in film \cite{aerial_shot} or surveying construction sites \cite{drones6050117}. As demand for this technology continues to increase, so will demand for better autopilots and controllers.
+Unmanned Aerial Vehicles (UAVs) have seen an explosion of use in the last few decades in both civilian and defense spaces. 
+UAVs take advantage of the vast airspace available over land, sea, and city to avoid the traffic inherent to civilization \cite{sabour2023applications}. UAVs can reach remote locations in minutes what would otherwise take hours or days for humans and automobiles to reach, such as remote or mountainous areas with poor roads. 
+Small UAVs are performing many tasks that used to require large and expensive manned helicopters and airplanes, such as creating aerial shots in film \cite{aerial_shot} or surveying construction sites \cite{drones6050117}. 
+Demand for better autopilots and controllers will continue to grow as the number of desired applications for UAVs increases.
 
 Airplanes are aircraft that generate lift using an airframe and forward airspeed. 
 That is, they rely on moving quickly and using an airfoil to generate lift, and a propeller or jet engine to generate thrust.
@@ -67,9 +70,17 @@ However, airplanes are much more efficient at traveling long distances at high s
     \label{fig:FixedWings}
 \end{figure}
 
-Today, aircraft are rarely flown manually by a direct remote control pilot. While manual control is fun for recreational purposes, it is hardly accurate or stable enough for many of the missions performed by UAVs. Most aircraft are now flown autonomously using autopilot stacks on the onboard computers. Many open source autopilots exist today, including Px4, Ardupilot, and Rosflight. Two books on writing an autopilot stack for airplane and rotorcraft UAVs were written and heavily influenced the research in this paper \cite{uav_book, vtol_book}.
+Today, aircraft are rarely flown manually by a direct remote control pilot. 
+While manual control is fun for recreational purposes, it is hardly accurate or stable enough for many of the missions performed by UAVs. 
+Most aircraft are now flown autonomously using autopilot stacks on the onboard computers. 
+Many open source autopilots exist today, including Px4, Ardupilot, and Rosflight. 
+Two books on writing an autopilot stack for airplane and rotorcraft UAVs were written and heavily influenced the research in this paper \cite{uav_book, vtol_book}.
 
-The primary interest of this research has been to study control for a specific classification of UAV called a VTOL (vertical takeoff and landing) aircraft. A VTOL is defined as an airplane that can take off and land vertically \cite{Rehan_Akram_Shahzad_Shams_Ali_2022}. That is, they are rotorcraft and airplane hybrids, with airfoils to generate lift and vertical rotors to take off and land vertically. Such hybridization of design allows VTOLs to take advantage of the takeoff and landing capabilities of pure rotorcraft, while also having an airfoil to travel long distances quickly and efficiently. Much research and development is already underway for applications in both civilian and defense spaces. Some examples of existing VTOL craft are shown in Fig. \ref{fig:eVTOLExamples}. 
+The primary interest of this research has been to study control for a specific classification of UAV called a VTOL (vertical takeoff and landing) aircraft. 
+A VTOL is defined as an airplane that can take off and land vertically \cite{Rehan_Akram_Shahzad_Shams_Ali_2022}. That is, they are rotorcraft and airplane hybrids, with airfoils to generate lift and vertical rotors to take off and land vertically. 
+Such hybridization of design allows VTOLs to take advantage of the takeoff and landing capabilities of pure rotorcraft, while also having an airfoil to travel long distances quickly and efficiently. 
+Much research and development is already underway for applications in both civilian and defense spaces. 
+Some examples of existing VTOL craft are shown in Fig. \ref{fig:eVTOLExamples}. 
 
 \begin{figure}[htbp]
     \centering

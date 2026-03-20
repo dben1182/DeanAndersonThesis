@@ -489,9 +489,13 @@ The state $x(t)$ and control inputs $u(t)$ can be reconstructed from the output 
 
 In addition to this, the components of the output $z$ must not be differentially related over time. This means that the components of $z$ are not coupled together into a differential equation, for differential flatness to hold.
 
-Of particular note to us is the equation for $u(t)$ being able to not only represent the states, but the control inputs as functions of the state. For any given state of the system, with a reference input, we can specify a control input. A trajectory that specifies the reference position, velocity, and acceleration for the craft can be directly related to a desired actuator output $\delta$ for each of the actuators. If that desired actuator output remains within the physical parameters of the actuators, then the system will be able to converge to the reference. This quadplane model is differentially flat, which can be demonstrated as follows:
+Of particular note to us is the equation for $u(t)$ being able to not only represent the states, but the control inputs as functions of the state. 
+For any given state of the system, with a reference input, we can specify a control input. 
+A trajectory that specifies the reference position, velocity, and acceleration for the craft can be directly related to a desired actuator output $\delta$ for each of the actuators. 
+If that desired actuator output remains within the physical parameters of the actuators, then the actual system state can converge to the reference state. 
 
-In order for this system to be differentially flat, the state variables $\bs{p}_{b/i}^i$, $\bs{v}_{b/i}^i$, $\theta$, $q$ and the input variables $\bs{F}^b$ and $M$ must all be expressed in terms of the flat outputs $\bs{z}_p^i$ and $z_\theta$ and their derivatives. That is, we measure the current position $\bs{z}_p^i$ and pitch $z_\theta$ of our system.
+In order for this system to be differentially flat, the state variables $\bs{p}_{b/i}^i$, $\bs{v}_{b/i}^i$, $\theta$, $q$ and the input variables $\bs{F}^b$ and $M$ must all be expressed in terms of the flat outputs $\bs{z}_p^i$ and $z_\theta$ and their derivatives. 
+That is, we measure the current position $\bs{z}_p^i$ and pitch $z_\theta$ of our system.
 
 \begin{align}
     \bs{z} =
@@ -525,7 +529,7 @@ At this point, we should clarify that real purpose of this exercise is to relate
 Take for example the moment control, $M = J_y \ddot(z)_{\theta}$.
 This means that if the input trajectory to our system provides a reference pitch $\theta$ for all timesteps, we know what moment needs to be actuated on the system, by taking the second derivative of theta.
 This assumes that there is no error between the reference trajectory and the actual trajectory. 
-Later on, the force and moment vector equations will be modified to take into account error between the reference output $z_{ref}$ and the actual output $z$.
+The forces and moment vector equations are modified to take into account error between the reference output $z_{ref}$ and the actual output $z$.
 
 \section{Pitch Free Trajectory Tracking}
 \label{sec:PitchFree}
@@ -657,26 +661,28 @@ To prove that this is the case, the autopilot was tested with the aircraft flyin
     \label{fig:q_delta_e_omission}
 \end{figure}
 
-For comparison, the average of the absolute value of the $\delta_e$ and $q$ terms are $4.0$ and $0.34$ newtons respectively, while the average for the $F_0$ term is $112$ newtons. While this is no proof, it shows a pattern of what is significant for the controller. Therefore, those terms will be omitted from the above equation, which reduces down to:
+For comparison, the average of the absolute value of the $\delta_e$ and $q$ terms are $4.0$ and $0.34$ newtons respectively, while the average for the $F_0$ term is $112$ newtons. While this is no proof, it shows a pattern of what is significant for the controller. 
+Therefore, those terms are omitted from the above equation, which reduces down to
 
 \begin{align}
     R_i^b(\theta)\bs{F}_{des}^i = \bs{F}_0^b(V_a, \alpha) + \bs{F}_p^b.
-\end{align}
+\end{align}.
 
-Now, the angle of attack is given as: $\alpha = \theta - \gamma$, where $\gamma$ is the flight path angle. That is, it is the flight path angle of the craft as it is currently traveling, which is given as:
+Now, the angle of attack is given as: $\alpha = \theta - \gamma$, where $\gamma$ is the flight path angle. 
+That is, it is the flight path angle of the craft as it is currently traveling, which is given as
 
 \begin{align}
     \gamma = -\arctan\left(\frac{\dot{p_d}}{\dot{p_d}}\right)
-\end{align}
+\end{align}.
 
-And where the desired flight path angle from the input trajectory is given as:
+And where the desired flight path angle from the input trajectory is given as
 
 \begin{align}
     \gamma_{des}(\dot{\bs{z}}_p) \doteq \tan^{-1}\left(\frac{-\dot{\bs{z}}_{d}}{\dot{\bs{z}}_{n}}\right)
-\end{align}
+\end{align}.
 
 
-If all wind is zero,
+If all wind is zero, then
 
 \begin{align}
     \alpha = \theta - \gamma
@@ -692,15 +698,19 @@ Solving for the desired propeller forces gives
 \end{align}
 
 It is desirable to get as much of the net desired force as possible using the airframe and not the rotors.
-Doing so will minimize energy expenditure and allow the aircraft to fly in fixed-wing mode as long as possible.
-To achieve this, a desired pitch is now feasible to generate with the following equation:
+Doing so minimizes energy expenditure and allows the aircraft to fly in fixed-wing mode as long as possible.
+To achieve this, a desired pitch is now generated as 
 
 \begin{equation}
     \label{eq:desired_propeller_force}
     \bs{F}_{p,des}^b(\theta, \dot{\bs{z}}_p, \bs{F}^i_{des}) = R_i^b(\theta)\bs{F}_{des}^i - \bs{F}_0^b\left(\norm{\dot{\bs{z}}_p}, \theta-\gamma_{des}(\dot{\bs{z}}_p)\right).
-\end{equation}
+\end{equation}.
 
-Using the equation from above, we already know the desired forces in the inertial frame, and we know the current forces on the aircraft due to its state, so we are attempting to find the forces on the aircraft that are needed due to the propellers, as well as the angle $\theta$ at which to be actuating those propellers. The optimization problem then becomes:
+The desired forces to be acted on the aircraft in the inertial frame are already known, as are the current aerodyanmic forces acting on it, based on the state.
+This equation finds the residual forces that must be actuated on the aircraft based on the current state and state error.
+However, $\theta$ is not a fixed variable that is directly derived from the trajectory.
+The pitch of the aircraft may be altered to maximize aerodynamic lift, and minimize needed rotor lift, given the current state of the aircraft.
+The residual force equation is optimized with respect to $\theta$ to minimize the residual force needed from the rotors as
 
 \begin{equation}
 \label{eq:pitch_optimization}
@@ -712,7 +722,7 @@ Using the equation from above, we already know the desired forces in the inertia
     && \theta_{\min} \leq \theta \leq \theta_{\max} \\
      &&& |\theta - \theta_{\text{prev}} | \leq \Delta t q_{\max}
 \end{aligned}
-\end{equation}
+\end{equation}.
 
 
 \subsection{A Note on 1-Norm Minimization}
