@@ -939,6 +939,11 @@ INPUT ./figs/chap1/tiltbodyManeuver.png
 INPUT ./figs/chap1/tiltbodyManeuver.png
 INPUT ./figs/chap1/tiltbodyManeuver.png
 INPUT ./figs/chap1/tiltbodyManeuver.png
+INPUT ./figs/chap1/Tandem Wing Design (Initial Render).jpg
+INPUT ./figs/chap1/Tandem Wing Design (Initial Render).jpg
+INPUT ./figs/chap1/Tandem Wing Design (Initial Render).jpg
+INPUT ./figs/chap1/Tandem Wing Design (Initial Render).jpg
+INPUT ./figs/chap1/Tandem Wing Design (Initial Render).jpg
 INPUT ./fancychapters/chap2.tex
 INPUT ./fancychapters/chap2.tex
 OUTPUT fancychapters/chap2.aux

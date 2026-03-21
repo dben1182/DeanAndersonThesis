@@ -1,25 +1,34 @@
 \chapter{System Identification}
 \label{ch:ch2}
 
-In the preceding chapter, a model-dependent, differentially flat controller was introduced for the control of an eVTOL aircraft. In order for that controller to work outside of simulation in hardware, the aerodynamic model of the aircraft needs to be very accurate. That is, the mathematical aircraft model must closely approximate the physical aircraft. If this is not the case, the autopilot will internally calculate forces and moments which do not accurately correspond to the actual forces and moments on the aircraft. 
+In the preceding chapter, a model-dependent, differentially flat controller was introduced for the control of an eVTOL aircraft. 
+In order for that controller to work outside of simulation in hardware, the aerodynamic model of the aircraft must be very accurate. 
+That is, the mathematical aircraft model must closely approximate the physical aircraft. 
+If this is not the case, the autopilot will internally calculate forces and moments which do not accurately correspond to the actual forces and moments on the aircraft. 
 
-Recall from chapter \ref{ch:VTOL} in Equations \ref{eq:totalAerodynamicForcesMoments} for aerodynamic Forces and Moments. These equations are an approximation of the true forces and moments experienced by this aircraft. These equations are utilized by the controller to produce certain desired forces and moments on the aircraft. For example, recall section \ref{sec:momentControl} in chapter \ref{ch:VTOL}, where elevator moment control was discussed. For a given $M_{des}$ input, this section found the best possible $\delta_e$ in an attempt to match that desired moment to reality. 
-
+Recall from chapter \ref{ch:VTOL} Equations \ref{eq:totalAerodynamicForcesMoments} for aerodynamic Forces and Moments. 
+These equations are an approximation of the true forces and moments experienced by the aircraft. 
+These equations are utilized by the controller to produce certain desired forces and moments on the aircraft. 
+For example, recall section \ref{sec:momentControl} in chapter \ref{ch:VTOL}, where elevator moment control was discussed. 
+For a given $M_{des}$ input, this section found the best possible $\delta_e$ in an attempt to match that desired moment to reality. 
 If the aerodynamic coefficients for pitch moment ($C_{M_0},C_{M_\alpha},C_{M_q},C_{M_{\delta_e}}$) are not accurate, an incorrect $\delta_e$ may be calculated. 
 If this control input has an error that is too large, then the aircraft may become unstable, which is especially true during the transition phase.
 
-One may ask how these aerodynamic coefficients are to be calculated to begin with. 
-One method would be to use aerodynamic modelling using CAD modelling and aerodynamic software. 
-As our lab continues development of 3D printed aircraft, this solution is probably the best way forward as the 3D CAD model is readily available.
-Another would be wind tunnel experimentation and data collection. This is only feasible for relatively small airframes that can fit inside of the available wind tunnels.
-Finally, flight data can be processed and analyzed to create an estimate for the aerodynamic coefficients.
-This final option is possible if a general aerodynamic model of the aircraft exists and is accurate, and only the specific numbers for aerodynamic coefficients must be estimated.
+One method to calculate these aerodynamic coefficients is aerodynamic modelling using CAD modelling and aerodynamic software. 
+Because of the development of 3D printed aircraft, this solution is becoming more feasible.
+Before the development of 3D printed aircraft, the 3D CAD models of the aircraft were not available which made software analysis difficult.
+Another method is wind tunnel experimentation and data collection. 
+This is only feasible for relatively small airframes that can fit inside of the wind tunnels available at BYU.
+The last option is for flight data to be processed and analyzed to generate an estimate for the aerodynamic coefficients.
+This final option is possible if a general aerodynamic model of the aircraft exists, but only the specific values of the aerodynamic coefficients must be estimated.
 
-In this section, we develop a method of estimating coefficients of aerodynamics gathered from flight data using a recursive least squares (RLS) algorithm.
+In this section, a method is developed for estimating coefficients of aerodynamics gathered from flight data using a recursive least squares (RLS) algorithm.
 
 \section{Aerodynamic Coefficients}
 
-While the VTOL model in chapter \ref{ch:VTOL} only included longitudinal, or vertical, coefficients of aerodynamics in table \ref{tb:longitudinalCoefficients}, all autopilots will be benefited by a better model of the aircraft, including standard airplane models. For this reason, we also estimate the lateral coefficients of aerodynamics, shown in table \ref{tb:lateralCoefficients}.
+The VTOL model in chapter \ref{ch:VTOL} only included longitudinal coefficients of aerodynamics in table \ref{tb:longitudinalCoefficients}.
+However, all autopilots are benefited by a more accurate aircraft model, including standard airplane models. 
+For this reason, the lateral coefficients of aerodynamics, shown in table \ref{tb:lateralCoefficients}, are also included in this estimator.
 
 
 \begin{table}
@@ -65,9 +74,19 @@ While the VTOL model in chapter \ref{ch:VTOL} only included longitudinal, or ver
 
 \section{Aerodynamic Modes}
 
+The modes of a system are operational states or characateristic states of a dynamic system.
+Some of the aerodynamic modes of the aircraft are described below.
+
 \subsection{Phughoid Mode}
 
-One common aerodynamic mode is called the phughoid mode. This effect is a vertical oscillation of the aircraft, as depicted in Fig. \ref{fig:phughoid_diagram}. When the aircraft's phughoid mode has been excited, the aircraft will pitch up, ascend slightly, lose airspeed, and then pitch down, gain airspeed, and descend slightly before repeating the process. In other words, the phughoid mode couples north velocity $\dot{n}$ with pitch $\theta$, and down position $d$. According to chapter 6 in \cite{flightDynamicsPrinciples}, this mode is relatively slow, and lightly damped, so it takes some time return to normal. When the aircraft goes through this, it will experience large signal changes in angle of attack $\alpha$, pitch angular rate $q$, pitch angular acceleration $\dot{q}$, north acceleration $\ddot{n}$, and down acceleration $\ddot{d}$. This mode is typically induced by quick impulses on the elevator. Excitation of this mode is useful as it may produce large signals from internal sensors for estimate of coefficients of aerodynamics. 
+One common aerodynamic mode is called the phughoid mode. 
+This effect is a vertical oscillation of the aircraft, as depicted in Fig. \ref{fig:phughoid_diagram}. 
+When the aircraft's phughoid mode has been excited, the aircraft will pitch up, ascend slightly, lose airspeed, and then pitch down, gain airspeed, and descend slightly before repeating the process. 
+In other words, the phughoid mode couples north velocity $\dot{n}$ with pitch $\theta$, and down position $d$. 
+According to chapter 6 in \cite{flightDynamicsPrinciples}, this mode is relatively slow, and lightly damped, so it takes some time return to normal. 
+When the aircraft goes through this, it will experience large signal changes in angle of attack $\alpha$, pitch angular rate $q$, pitch angular acceleration $\dot{q}$, north acceleration $\ddot{n}$, and down acceleration $\ddot{d}$. 
+This mode is typically induced by quick impulses on the elevator. 
+Excitation of this mode is useful as it may produce large signals from internal sensors for estimate of coefficients of aerodynamics. 
 
 
 \begin{figure}
