@@ -527,29 +527,30 @@ The unique contribution presented in this section is an efficient method of gene
 Notice that $Q_M^{d}(\bs{\rho})$ is a function of $M$ and $d$, and with a sufficiently large enumeration of values for $M$ and $d$, it becomes possible to have a matrix lookup for each value. 
 While the user-defined scaling vector $\rho$ makes it impossible to store $Q_M^d(\bs{\rho})$ directly, it is possible to store the components matrices of $Q_M^d(\bs{\rho})$ as look-up tables to dramatically reduce computation time. 
 
-In this lookup table, we generated tables for degrees $0$ to $5$ inclusive, and number of intervals of interest $M$ up to $M=100$.
+Lookup tables were generated for splines of degrees $d$ from $0$ to $5$ inclusive, and number of intervals of interest $M$ up to $M=100$.
 
 \subsubsection{B Matrices}
 
-Recall that the definition for the matrix used in the singular value decomposition is:
+Recall that the definition for the matrix used in the singular value decomposition is
 
 \begin{align}
     B^d_{M,SE} =
     \begin{bmatrix} 
         B_M^d(0) & B_M^d(M) 
     \end{bmatrix}
-\end{align}
+\end{align},
 
-Where $B_M^d(t)$ is:
+where $B_M^d(t)$ is
 
 \begin{align}
 B_M^d(t) \doteq 
     \begin{bmatrix} 
         \bs{b}^d_M(t) & D_M^d \bs{b}^{d-1}_M(t) & \dots & D_M^d D_M^{d-1}\dots D_M^{d-\ell+1} \bs{b}^{d-\ell}_M(t)
  	\end{bmatrix},
-\end{align}
+\end{align}.
 
-For degrees $0$ to $5$ and all valid $M$ up to $M=100$, a $B^d_{M,SE}$ is generated and its singular value decomposition is found. Each component is unique to a particular $M$ and $d$ as:
+For degrees $0$ to $5$ and all valid $M$ up to $M=100$, a $B^d_{M,SE}$ is generated and its singular value decomposition is found. 
+Each component is unique to a particular $M$ and $d$ as
 
 \begin{align}
     B^d_{M,SE} =
@@ -561,44 +562,47 @@ For degrees $0$ to $5$ and all valid $M$ up to $M=100$, a $B^d_{M,SE}$ is genera
         \bs{0} 
     \end{bmatrix} 
     V^{d,\top}_M
-\end{align}
+\end{align}.
 
-These components are saved into their own corresponding lookup tables, with a key of $d$ and $M$ for each component. Notice that the first three components of $Q_M^d(\rho)$ are $V \Sigma^{-1} U_1^\top$, which is the left pseudoinverse of $B^d_{M,SE}$, which is also stored in a lookup table for even faster computation. 
+These components are saved into their own corresponding lookup tables, with a key of $d$ and $M$ for each component. 
+Notice that the first three components of $Q_M^d(\rho)$ are $V \Sigma^{-1} U_1^\top$, which is the left pseudoinverse of $B^d_{M,SE}$, which is also stored in a lookup table for even faster computation. 
 This is represented as $(B^d_{M,SE})^+ = V \Sigma^{-1} U_1^\top$ when finding a particular $Q_M^d(\rho)$, $(B^d_{M,SE})^+$ and $U_2$ are read from memory.
 
 \subsubsection{Y Z Lookup Tables}
 
-The problematic portion of this formula is the part related to the inverse:
+The problematic portion of this formula is the part related to the matrix inverse
 
 \begin{align}
     W_M^{d}(\bs{\rho}) U_2 (U_2^\top W_M^{d}(\bs{\rho}) U_2 )^{-1} U_2^\top
-\end{align}
+\end{align}.
 
-This involves a lot of matrix multiplication, and a matrix inverse, which we desire to minimize as much as possible. 
-To precompute as much of this as possible, we defined some terms as:
+This involves a lot of matrix multiplication, and a matrix inverse, which must be minimized as much as possible. 
+To precompute as much of this as possible, some terms are defined as
 
 \begin{align}
     Y^d_M(\bs{\rho}) = W_M^{d}(\bs{\rho}) U^d_{2,M}
 \end{align}
 
+and
+
 \begin{align}
     Z^d_M(\bs{\rho}) = (U^{d}_{2,M})^\top W_M^{d}(\bs{\rho}) U^d_{2,M}
-\end{align}
+\end{align}.
 
-Recall the definition for $W_M^{d}(\bs{\rho})$:
+The definition for $W_M^{d}(\bs{\rho})$ is
 
 \begin{align}
-    W_M^{d}(\bs{\rho}) \defeq \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell}.
-\end{align}
+    W_M^{d}(\bs{\rho}) \defeq \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell}
+\end{align}.
 
-Which may be substituted
+Which may be substituted as
 
 \begin{align}
     Y^d_M(\bs{\rho}) = \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell} U^d_{2,M}\\
     Z^d_M(\bs{\rho}) = (U^{d}_{2,M})^\top \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell} U^d_{2,M} = \sum_{\ell=0}^L \rho^\ell (U^{d}_{2,M})^\top  W_M^{d,\ell} U^d_{2,M}
-\end{align}
+\end{align}.
 
-If we make define
+Given
 
 \begin{align}
     Y^{d,l}_M = W_M^{d,\ell} U^d_{2,M}\\
@@ -613,13 +617,13 @@ the original equations simplify to
 \end{align}.
 
 Lookup tables are created over all applicable values for $d$, $l$, and $M$ for $Y^{d,l}_M$ and $Z^{d,l}_M$. 
-In the generator program, finding $Q_M^{d}(\bs{\rho})$ turns into
+In the generator program, the definition of $Q_M^{d}(\bs{\rho})$ becomes
 
 \begin{align}
     Q_M^{d}(\bs{\rho}) = (B^d_{M,SE})^+ \left(I - \sum_{\ell=0}^L \rho^\ell Y^{d,l}_M \left(\sum_{\ell=0}^L \rho^\ell Z^{d,l}_M\right)^{-1} U_2^\top \right)
-\end{align},
+\end{align}.
 
-and the equation for finding the remaining control points remains
+The equation for finding the remaining control points becomes
 
 \begin{align}
     \bs{C}^\ast = 
@@ -633,13 +637,13 @@ If a user's mixing vector $\bs{\rho}$ is known beforehand, the entire $Q_M^{d}(\
 
 \section{Results}
 
-We begin with a spline generated using parameters
+A spline was generated using the parameters
 
 \begin{align}
     d = 3\\
     M = 15\\
     \rho = \left[1.0, 1.0, 1.0\right]
-\end{align}
+\end{align},
 
 and a set of 2D conditions as
 

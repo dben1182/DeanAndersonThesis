@@ -1,12 +1,18 @@
 \chapter{RRT Flight Corridors}
 \label{ch:rrt_flight_corridors}
 
-In subsection \ref{sec:vtol path planning}, several B-Spline paths were created for the quadplane eVTOL to follow. These paths were relatively simple because it was assumed that no obstacles were present in the environment. Obstacles are present in many cases, and this assumption becomes invalidated. An example of this is an urban environment with obstacles including buildings, wires, poles, vehicles, and people. 
+In subsection \ref{sec:vtol path planning}, several B-Spline paths were created for the quadplane eVTOL to follow. 
+These paths were relatively simple because it was assumed that no obstacles were present in the environment. 
+Obstacles are present in many cases, and this assumption becomes invalidated. 
+An example of this is an urban environment with obstacles including buildings, wires, poles, vehicles, and people. 
 The 2D eVTOL controller developed in section \ref{ch:VTOL} requires a B-Spline input to function. 
 These constraints make it necessary to develop an algorithm that generates a B-Spline trajectory while simultaneously avoiding obstacles.
 
 A great deal of literature exists on obstacle-avoiding path generation algorithms. 
-In \cite{david_bspline}, much of the work that is foundational to this paper was developed; specifically, chapter 4 focuses on trajectory generation algorithms with obstacle avoidance and boundary constraints in both 2D and 3D. One problem addressed in the paper is path generation with obstacle avoidance for circular obstacles. The algorithm optimizes the path to minimize distance without intersecting circular or spherical obstacles in the 2D and 3D cases respectively.
+In \cite{david_bspline}, much of the work that is foundational to this paper was developed.
+Chapter 4 of that paper focuses on trajectory generation algorithms with obstacle avoidance and boundary constraints in both 2D and 3D. 
+One problem addressed in the paper is path generation with obstacle avoidance for circular obstacles. 
+The algorithm optimizes the path to minimize distance without intersecting circular or spherical obstacles in the 2D and 3D cases respectively.
 
 
 \begin{figure}[htbp]
@@ -24,20 +30,40 @@ In \cite{david_bspline}, much of the work that is foundational to this paper was
     \label{fig:davidObstacleComparison}
 \end{figure}
 
-The paper also uses safe flight corridors as constraints for the trajectory. Safe flight corridors are rectangles or rectangular prisms, which the flight path must completely remain inside. There are several  However, the algorithms presented in this paper do not search for 
+The paper also uses safe flight corridors as constraints for the trajectory. 
+Safe flight corridors are rectangles or rectangular prisms, which the flight path must completely remain inside. 
+However, the algorithms presented in that paper do not search through obstacles paths.
+Instead, they begin with an initial guess and optimize around obstacles and within safe flight corridors using that guess.
 
-A B-Spline trajectory generation algorithm is developed in this section that plans safe paths for aircraft to follow through obstacle fields. A variant of the RRT algorithm is developed to place overlapping rectangular safe flight corridors through the field. Within these overlapping safe flight corridors, a flight path is generated using B-Splines. These B-Splines are created by adjusting control points so that the path always remains within the boundaries.
-
+A B-Spline trajectory generation algorithm is developed in this section that plans safe paths for aircraft to follow through obstacle fields. 
+A variant of the RRT algorithm is developed to place overlapping rectangular safe flight corridors through the field. 
+Within these overlapping safe flight corridors, a flight path is generated using B-Splines. 
+These B-Splines are created by adjusting control points so that the path always remains within the boundaries.
 
 \section{Rapidly Exploring Random Trees (RRT)}
 
-Rapidly Exploring Random Trees (RRT) is an algorithm that finds a path between two points through an obstacle field. The algorithm was first introduced in \cite{Lavalle_rrt} in 1999. The RRT algorithm generates a tree of nodes connected by lines, none of which intersect any obstacles. The algorithm begins with the starting point as the first node. New nodes are added to the tree by randomly generating a position inside of the field. A line is drawn from that randomized position to the closest node on the existing tree, which is the starting point for the algorithm's first iteration. At a given point along that line, at distance $d$ away from the nearest node, a new candidate node is made. If the candidate node, and the line connecting to its parent node, does not intersect any obstacle, it is added to the tree as a new branch; if there is an intersection, the candidate node is discarded and the process is repeated with another randomized node. This process of randomly generating nodes and adding them to the existing tree is shown in Fig. \ref{fig:new node diagram}. This process is repeated until a valid path is found from the starting node to a specified finish node; an example diagram of a tree with a valid path is shown in Fig. \ref{fig:straight line RRT}.
+Rapidly Exploring Random Trees (RRT) is an algorithm that finds a path between two points through an obstacle field. 
+The algorithm was first introduced in \cite{Lavalle_rrt} in 1999. 
+The RRT algorithm generates a tree of nodes connected by lines, where none of the lines or nodes intersect obstacles.
+The algorithm begins with the starting point as the first node. 
+New nodes are added to the tree by randomly generating a position within the field. 
+A line is drawn from that randomized position to the closest node on the existing tree, which is the starting point for the algorithm's first iteration. 
+At a given point along that line, at distance $d$ away from the nearest node, a new candidate node is made. 
+If the candidate node, and the line connecting to its parent node, does not intersect any obstacle, it is added to the tree as a new branch
+However, if there is an intersection, the candidate node is discarded and the process is repeated with another randomized node. 
+This process of randomly generating nodes and adding them to the existing tree is shown in Fig. \ref{fig:new node diagram}. 
+This process is repeated until a valid path is found from the starting node to a specified finish node.
+An example diagram of a tree with a valid path is shown in Fig. \ref{fig:straight line RRT}.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.95\linewidth]{figs/chap4/New Node Diagram.drawio.png}
-    \caption{Point to point RRT expansion process. Two configurations are shown. A random point $Rand$ is selected in the configuration space, a line is drawn between $Rand$ and the nearest existing node $N_i$. A new candidate node $N_k$ is placed a distance $d$ from $N_i$. If the line from $N_i$ to $N_k$ is not obstructed, it is added. Otherwise, it is discarded, as in the Invalid Case.}
+    \caption{Point to point RRT expansion process. Two configurations are shown. 
+            A random point $Rand$ is selected in the configuration space, a line is drawn between $Rand$ and the nearest existing node $N_i$. 
+            A new candidate node $N_k$ is placed a distance $d$ from $N_i$. 
+            If the line from $N_i$ to $N_k$ is not obstructed, it is added. 
+            Otherwise, it is discarded, as in the invalid case.}
     \label{fig:new node diagram}
 \end{figure}
 
@@ -55,11 +81,24 @@ Rapidly Exploring Random Trees (RRT) is an algorithm that finds a path between t
     \label{fig:straight line RRT}
 \end{figure}
 
-As shown in Fig. \ref{fig:straight line RRT}, the original algorithm generates a series of connected straight lines, which is the orange path in this figure. While this path may be suitable as the actual trajectory for a slow-moving craft like a multi-copter, or a non-holonomic robot, it is not conducive for the trajectory of a fixed-wing aircraft, which has a minimum turning radius and needs to follow a smooth trajectory. This straight-line algorithm needs to be modified to a smooth path for any sort of direct trajectory generation. 
+As shown in Fig. \ref{fig:straight line RRT}, the original algorithm generates a series of connected straight lines, which is the orange path in this figure. 
+While this path may be suitable as the actual trajectory for a slow-moving craft like a multi-copter, or a non-holonomic robot, it is not conducive for the trajectory of a fixed-wing aircraft, which has a minimum turning radius and needs to follow a smooth trajectory. 
+This straight-line algorithm needs to be modified to a smooth path for any sort of direct trajectory generation. 
 
-RRT* is a common variation of the RRT algorithm which was introduced by \cite{varricchioSamplingbasedAlgorithmsOptimal2014}. With traditional RRT, there is no effort to reconnect nodes of the tree to increase efficiency. With RRT*, after a new node has been added, it searches among other nodes within a radius for the parent that has the minimum distance. With the additional node, the algorithm also searches for other nodes in the region that can have a shorter distance if the new node becomes the parent node. While this algorithm eventually converges to an optimal path, it does so under great computational burden due to rewiring after each sample. 
+RRT* is a common variation of the RRT algorithm which was introduced by \cite{varricchioSamplingbasedAlgorithmsOptimal2014}. 
+With traditional RRT, there is no effort to reconnect nodes of the tree to increase efficiency. 
+With RRT*, after a new node has been added, it searches among other nodes within a radius for the parent that has the minimum distance. 
+With the additional node, the algorithm also searches for other nodes in the region that can have a shorter distance if the new node becomes the parent node. 
+While this algorithm eventually converges to an optimal path, it does so under great computational burden due to rewiring after each sample. 
 
-A common variation of RRT is to have it generate Dubins paths instead of straight lines. For example, in \cite{yangDubinsPathOrientedRapidly2022} present a method of Dubins path generion using RRT. The actual algorithm may be found on page 252 of \cite{uav_book}. A trajectory of conglomerated Dubins paths is particularly suited for fixed-wing aircraft to fly. An example tree and path are shown in Fig. \ref{fig:dubinsRRT}. Unfortunately, no optimization occurs in this algorithm. There is also a discontinuity of acceleration at the transition between straight-line and radial flight. We desire to create a trajectory using degree 3 B-Splines with optimized distance and continuity of position, velocity, and acceleration.
+A common variation of RRT is to have it generate Dubins paths instead of straight lines. 
+For example, in \cite{yangDubinsPathOrientedRapidly2022} present a method of Dubins path generion using RRT. 
+The actual algorithm may be found on page 252 of \cite{uav_book}. 
+A trajectory of conglomerated Dubins paths is particularly suited for fixed-wing aircraft to fly. 
+An example tree and path are shown in Fig. \ref{fig:dubinsRRT}. 
+Unfortunately, no optimization occurs in this algorithm. 
+There is also a discontinuity of acceleration at the transition between straight-line and radial flight. 
+We desire to create a trajectory using degree 3 B-Splines with optimized distance and continuity of position, velocity, and acceleration.
 
 \begin{figure}
     \centering
@@ -68,17 +107,26 @@ A common variation of RRT is to have it generate Dubins paths instead of straigh
     \label{fig:dubinsRRT}
 \end{figure}
 
-Many algorithms exist which combine RRT with B-Spline generation. For example, \cite{shanDynamicRRTPath2009} present an RRT algorithm intended for a non holonomic robot. The algorithm generates standard straight-line paths and uses points sampled from that path as control points for the final B-Spline path. However, this algorithm does not guarantee that the B-Spline does not intersect obstacles in the environment. A similar algorithm is presented in \cite{eshtehardianContinuousRRTbasedPath2023} which uses RRT* as the primary search algorithm, and uses the sampled nodes as control points for the B-Spline path. 
+Many algorithms exist that combine RRT with B-Spline generation. 
+For example, \cite{shanDynamicRRTPath2009} presents an RRT algorithm intended for a non holonomic robot. 
+The algorithm generates standard straight-line paths and uses points sampled from that path as control points for the final B-Spline path. 
+However, this algorithm does not guarantee that the B-Spline does not intersect obstacles in the environment. 
+A similar algorithm is presented in \cite{eshtehardianContinuousRRTbasedPath2023} which uses RRT* as the primary search algorithm, and uses the sampled nodes as control points for the B-Spline path. 
 
 
 \subsection{Safe Flight Corridors}
 
-Safe Flight Corridors are a defined space, which are known to be a safe area for a vehicle to travel inside. A corridor is determined to be safe if there is no obstacle or portion of an obstacle within some defined space. In this section, we assume that the obstacles are static so that a path will remain safe for all time after calculation. If a specified corridor or series of corridors remains completely free of obstacles and the aircraft stays within that corridor or series of corridors for its flight period, no collisions will result during that time.
+Safe Flight Corridors are a defined space, which are known to be a safe area for a vehicle to travel inside. 
+A corridor is determined to be safe if there is no obstacle or portion of an obstacle within some defined space. 
+In this section, we assume that the obstacles are static so that a path will remain safe for all time after calculation. 
+If a specified corridor or series of corridors remains completely free of obstacles and the aircraft stays within that corridor or series of corridors for its flight period, no collisions will result during that time.
 
 
 \subsection{Convexity}
 
-Convexity is the property that, for a given function or shape, the line segment between two given points lies above or within that function or shape. This is depicted in figure \ref{fig:Convex and Non-Convex Comparison} with two different shapes. The left shape contains a reflex angle which precludes the shape from being convex. 
+Convexity is the property that, for a given function or shape, the line segment between two given points lies above or within that function or shape. 
+This is depicted in figure \ref{fig:Convex and Non-Convex Comparison} with two different shapes. 
+The left shape contains an internal or reflex angle which precludes the shape from being convex. 
 
 \begin{figure}
     \centering
@@ -87,7 +135,11 @@ Convexity is the property that, for a given function or shape, the line segment 
     \label{fig:Convex and Non-Convex Comparison}
 \end{figure}
 
-Convex polygons are desirable because they can be represented by a linear inequality of the form $Ax \leq b$. In other words, a point can be determined to be either inside or outside a polygon using a simple linear inequality. The first step to understanding linear inequality constraints comes from half-plane switching criteria, as shown in Fig. \ref{fig:half plane}. Given a point $\vec{r}$ on a bisecting line, and a vector normal to that line $\hat{n}$, a point $p$ is on the same half-plane as $\hat{n}$ if $\hat{n}^\top \vec{p} > \hat{n}^\top \vec{r}$; it is on the opposite side if the opposite condition is true.
+Convex polygons are desirable because they can be represented by a linear inequality of the form $Ax \leq b$. 
+In other words, a point can be determined to be either inside or outside a polygon using a simple linear inequality. 
+The first step to understanding linear inequality constraints comes from half-plane switching criteria, as shown in Fig. \ref{fig:half plane}. 
+Given a point $\vec{r}$ on a bisecting line, and a vector normal to that line $\hat{n}$, a point $p$ is on the same half-plane as $\hat{n}$ if $\hat{n}^\top \vec{p} > \hat{n}^\top \vec{r}$.
+The point is on the opposite side if the opposite condition is true.
 
 \begin{figure}
     \centering
@@ -96,7 +148,7 @@ Convex polygons are desirable because they can be represented by a linear inequa
     \label{fig:half plane}
 \end{figure}
 
-This equation can be generalized to the form $Ap < b$ where:
+This equation can be generalized to the form $Ap < b$ where
 
 \begin{align}
     A = 
@@ -107,9 +159,10 @@ This equation can be generalized to the form $Ap < b$ where:
     \begin{bmatrix}
         \hat{n}^\top \vec{r}\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-A polygon can be represented as a conglomeration of multiple half-planes, where each edge has its own vectors as $\hat{n}_i$ and $\vec{r}_i$. For a convex polygon with $N$ sides, these can be combined into a generalized equation as:
+A polygon can be represented as a conglomeration of multiple half-planes, where each edge has its own vectors as $\hat{n}_i$ and $\vec{r}_i$. 
+For a convex polygon with $N$ sides, these can be combined into a generalized equation as
 
 \begin{align}
     A =
@@ -123,9 +176,10 @@ A polygon can be represented as a conglomeration of multiple half-planes, where 
         \hdots & 
         \hat{n}_{N-1}^\top \vec{r}_{N-1}
     \end{bmatrix}^\top
-\end{align}
+\end{align}.
 
-An example of a rectangular Safe Flight Corridor is shown in Fig. \ref{fig:single SFC} with normal vectors and a sampled point from each of its four sides. For each side $j$ on $SFC_i$ the point $v_{i,j}$ and the normal vector $\hat{n}_{i,j}$ are extracted and input as $\vec{r}_j$ and $\hat{n}_j$ respectively. 
+An example of a rectangular Safe Flight Corridor is shown in Fig. \ref{fig:single SFC} with normal vectors and a sampled point from each of its four sides. 
+For each side $j$ on $SFC_i$ the point $v_{i,j}$ and the normal vector $\hat{n}_{i,j}$ are extracted and input as $\vec{r}_j$ and $\hat{n}_j$ respectively. 
 
 \begin{figure}
     \centering
@@ -134,11 +188,11 @@ An example of a rectangular Safe Flight Corridor is shown in Fig. \ref{fig:singl
     \label{fig:single SFC}
 \end{figure}
 
-
-
 \subsection{Enclosure within Safe Flight Corridors}
 
-Although each SFC is a convex set, the union of two or more SFCs is, in general, a non-convex set, as shown in Fig. \ref{fig:non-convex union}. The union is a non-convex set, because several sets of points exist for which the joining line exits and re-enters the space. For this reason, control points are constrained to either one SFC or the intersection of both SFCs. 
+Although each SFC is a convex set, the union of two or more SFCs is, in general, a non-convex set, as shown in Fig. \ref{fig:non-convex union}. 
+The union is a non-convex set, because several sets of points exist for which the joining line exits and re-enters the space. 
+For this reason, control points are constrained to either one SFC or the intersection of both SFCs. 
 
 \begin{figure}
     \centering
@@ -148,9 +202,13 @@ Although each SFC is a convex set, the union of two or more SFCs is, in general,
 \end{figure}
 
 
-A major issue with the head-to-tail overlapping method of safe flight corridors is that while each rectangle or rectangular prism is itself a convex hull, and each intersection is also a convex hull, the area or volume of more than one is clearly non-convex in the general case. Although each control point may be constrained to an SFC, the convex hull of the control points is not necessarily within an SFC. This happens when one or more of a sequential set of $d+1$ control points is not in the same SFC as the others. The B-Spline $b(t)$ may cut corners under these conditions.
+A major issue with the head-to-tail overlapping method of safe flight corridors is that while each rectangle or rectangular prism is itself a convex hull, and each intersection is also a convex hull, the area or volume of more than one is clearly non-convex in the general case. 
+Although each control point may be constrained to an SFC, the convex hull of the control points is not necessarily within an SFC. 
+This happens when one or more of a sequential set of $d+1$ control points is not in the same SFC as the others. 
+The B-Spline $b(t)$ may cut corners under these conditions.
 
-Fortunately, there is a solution. If $d$ control points are constrained to the intersection of $SFC_1$ and $SFC_2$, then each sequential convex hull of control points is within at least one $SFC$. 
+Fortunately, there is a solution. 
+If $d$ control points are constrained to the intersection of $SFC_1$ and $SFC_2$, then each sequential convex hull of control points is within at least one $SFC$. 
 For two safe flight corridors with matrices $A_1$ and $A_2$ and vectors $b_1$ and $b_2$, the matrix constraints for the intersection area becomes
 
 \begin{align}
@@ -165,13 +223,14 @@ For two safe flight corridors with matrices $A_1$ and $A_2$ and vectors $b_1$ an
     b_2\\
   \end{bmatrix}\\
   A_{int} p < b_{int}
-\end{align}
+\end{align}.
 
 
 This is shown in Thm. \ref{thm:overlapping_SFCs}.
 
 \begin{theorem}\label{thm:overlapping_SFCs}
-    A set $\mathcal{S}$ is said to be convex iff for every $x_1$ and $x_2$ in $\mathcal{S}$, and every $t \in \left[0,1\right]$, the point $x_3 = tx_1 + (1-t)x_2$ is also in the set $S$. Therefore, the intersection of $\mathcal{S}_1$ and $\mathcal{S}_2$ is also a convex set as: $\mathcal{S}_3 = \mathcal{S}_1 \cap \mathcal{S}_2$.
+    A set $\mathcal{S}$ is said to be convex iff for every $x_1$ and $x_2$ in $\mathcal{S}$, and every $t \in \left[0,1\right]$, the point $x_3 = tx_1 + (1-t)x_2$ is also in the set $S$. 
+    Therefore, the intersection of $\mathcal{S}_1$ and $\mathcal{S}_2$ is also a convex set as: $\mathcal{S}_3 = \mathcal{S}_1 \cap \mathcal{S}_2$.
     
     Given two Safe Flight Corridors $SFC_i$ and $SFC_{i+1}$, existing in dimension $dim$, are defined by the linear inequalities:
     \begin{align}
@@ -230,11 +289,8 @@ This algorithm is given as
                 \Else
                     \State Return path found
                 \EndIf
-
             \EndIf
-
         \EndIf
-
     \EndWhile
     \end{algorithmic}
 \end{algorithm}.
@@ -253,13 +309,13 @@ An example of a resultant tree is shown in Fig. \ref{fig:rrt tree example}.
 \subsection{Obstacle Intersection}
 
 During the RRT algorithm, it is necessary to determine whether a candidate Safe Flight Corridor intersects an obstacle.
-There must be a method to determin if any part of an SFC overlaps with any part of an obstacle.
+There must be a method to determine if any part of an SFC overlaps with any part of an obstacle.
 This is accomplished using linear constraints, as depicted in Fig. \ref{fig:obstacleIntersection}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{figs/chap4/RRT Example Tree.jpg}
-    \caption{SFC and obstacle intersections. On the left there is no intersection, and on the right there is an intersection.}
+    \caption{SFC and obstacle intersections. On the left side, there is no intersection. On the right side there is an intersection.}
     \label{fig:obstacleIntersection}
 \end{figure}
 
@@ -280,14 +336,11 @@ This is accomplished by concatenating both matrices as
         b_{obs}\\
         b_{SFC}\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-
-This linear inequality is determined to be feasible or not using Scipy linprog function.
-
+This linear inequality is determined to be feasible or not using the Scipy linprog function.
 
 \texttt{result = linprog(dummyVariable, Aub=Aint, bub=bint, bounds=tempBounds, method='highs')}
-
 
 \texttt{intersectionOccurredTemp = result.success}
 
@@ -295,8 +348,9 @@ This linear inequality is determined to be feasible or not using Scipy linprog f
 \label{sec:Turn Constraints}
 
 Vehicle dynamic constraints impose limitations on the tree algorithm. 
-Fixed-wing aircraft have a minimum turning radius, which is influenced by vehicle airspeed, thrust, and airframe design; aircraft cannot physically turn with a smaller radius under such conditions. 
-As mentioned before, this fact is exploited for the formation of Dubins Paths, which use only straight lines and circles of that minimum turning radius to get a very efficient and short path. 
+Fixed-wing aircraft have a minimum turning radius, which is influenced by vehicle airspeed, thrust, and airframe design. 
+Aircraft cannot physically turn with a smaller radius under such conditions. 
+This fact is exploited for the formation of Dubins paths, which use only straight lines and circles of that minimum turning radius to get a very efficient and short path. 
 Fixed-wing aircraft may not perform trajectories that have a tighter turn radius than a particular value, shown in Fig. \ref{fig:MinTurnRadius} .
 For the Safe Flight Corridor tree, this imposes certain limitations on the possible geometries that can accommodate a particular minimum turning radius. 
 This is depicted in figure \ref{fig:angular boundary conditions}.
@@ -316,29 +370,34 @@ This is depicted in figure \ref{fig:angular boundary conditions}.
 \end{figure}
 
 
-For a given minimum turning Radius $R_{min}$, the SFC boundary condition exists when the arc touches the inner corner of the SFC and the circle is tangent to the two outer walls. Under these conditions, the distance from the center point of the turn to the inner corner is $R_{min}$. The distance from the same center point is also $R_{min}$. But because the arc is tangent to the outer wall, the radius line is perpendicular to the inner and outer wall on both sides. Therefore, the distance from the center to the inner wall is $R_{min} - \mathcal{W}$, where $\mathcal{W}$ is the SFC width.
+For a given minimum turning Radius $R_{min}$, the SFC boundary condition exists when the arc touches the inner corner of the SFC and the circle is tangent to the two outer walls. 
+Under these conditions, the distance from the center point of the turn to the inner corner is $R_{min}$. 
+The distance from the same center point is also $R_{min}$. 
+However, because the arc is tangent to the outer wall, the radius line is perpendicular to the inner and outer wall on both sides. 
+Therefore, the distance from the center to the inner wall is $R_{min} - \mathcal{W}$, where $\mathcal{W}$ is the SFC width.
 
-From this geometry, a right triangle is formed with the inside area, where $\gamma_{min}$ represents the half angle between the two SFCs on the inside, and is defined by the following formula:
+From this geometry, a right triangle is formed with the inside area, where $\gamma_{min}$ represents the half angle between the two SFCs on the inside, and is defined as
 
 \begin{align}
     \gamma_{min} = \arcsin{\frac{R_{min} - \mathcal{W}}{R_{min}}}
-\end{align}
+\end{align}.
 
-This triangle is a similar triangle to the one touching the center chord, and has the same angular relationships. Therefore, $\chi_{max}$, the outside angle between two SFCs is defined by:
+This triangle is a similar triangle to the one touching the center chord, and has the same angular relationships. 
+Therefore, $\chi_{max}$, the outside angle between two SFCs is defined as
 
 \begin{align*}
     \chi_{max} = \pi - 2 \cdot \gamma_{min}\\
     \chi_{max} = \pi - 2 \cdot \arcsin{\frac{R_{min} - \mathcal{W}}{R_{min}}}\\
-\end{align*}
+\end{align*}.
 
 For example, if $\mathcal{W} = 30$ and $R_{min} = 100$, then $\chi_{max} = 1.591 = 91.146^\circ$.
 
-During the RRT phase of the algorithm, the actual angle between $SFC_{i-1}$ and $SFC_i$ is calculated as $\chi_{act}$. If a candidate $SFC_i$ is found which violates this such that $\chi_{act} > \chi_{max}$, then this candidate $SFC$ is omitted and the process is repeated until an SFC with $\chi_{act} \leq \chi_{max}$ is found.
-
+During the RRT phase of the algorithm, the actual angle between $SFC_{i-1}$ and $SFC_i$ is calculated as $\chi_{act}$. 
+If a candidate $SFC_i$ is found which violates this such that $\chi_{act} > \chi_{max}$, then this candidate $SFC$ is omitted and the process is repeated until an SFC with $\chi_{act} \leq \chi_{max}$ is found.
 
 \subsection{Turn Constraints Enforcement}
 
-In order to enforce this minimum turn radius constraint, or at least to minimize its violation, constraints must be enforced upon the control points in the intersection vicinity. 
+In order to enforce this minimum turn radius constraint, or at least to minimize its violation, constraints must be enforced upon the control points in the intersection region.
 While a circle or section of a circle is convex, the area between two concentric circles is not. 
 This shape, also known as an annulus is shown in Fig. \ref{fig:annulus concentric circle}.
 
@@ -362,12 +421,12 @@ These sections will be termed annulus segments.
     \label{fig:annulus sampled diagram}
 \end{figure}
 
-
 As with safe flight corridors, control points may be constrained within annulus segments using the matrix form $Ax \leq b$.
 
 \section{Path Smoothing}
 
-The initially generated path produces suboptimal results for an SFC path; the segments are short and take a random path, as there is not an RRT* smoothing operation for reasons of computational efficiency. To solve this problem, we implemented a variation of Dijkstra's algorithm to smooth an initial path.
+The initially generated path produces suboptimal results for an SFC path; the segments are short and take a random path, as there is not an RRT* smoothing operation for reasons of computational efficiency. 
+To solve this problem, we implemented a variation of Dijkstra's algorithm to smooth an initial path.
 
 \begin{figure}
      \centering
@@ -393,13 +452,14 @@ Dijkstra's algorithm finds the shortest path between two connected nodes over a 
 An explanation for the actual algorithm is found in the original paper by Edsger Dijkstra from 1959 in \cite{EWD:NumerMath59}. 
 The method of using Dijkstra's algorithm may be seen in Fig. \ref{fig:3D Path}.
 
-
-
 \section{Objective Function}
 
-We desire to optimize the performance of the B-Spline by finding the best possible curve given the safe flight corridor constraints. The first step is to find a cost or penalty associated with a particular configuration of control points. There needs to be a mathematical relationship between a particular configuration of the control points and some sort of cost so that adjusting the position of the control points minimizes the cost. The simplest metric is to minimize the length of the B-Spline for the shortest possible path from start to finish. 
+It is desirable to optimize the performance of the B-Spline by finding the best possible curve given the safe flight corridor constraints. 
+The first step is to find a cost or penalty associated with a particular configuration of control points. 
+There must be a mathematical relationship between a particular configuration of the control points and some sort of cost so that adjusting the position of the control points minimizes the cost. The simplest metric is to minimize the length of the B-Spline for the shortest possible path from start to finish. 
 
-Fortunately, there is a direct mathematical relationship between the placement of the control points and the maximum length, velocity, and acceleration of the spline. The objective functions for maximum position, velocity, and acceleration are given in \textit{\citetitle{beard2025BSplines}} \cite{beard2025BSplines} in sections 2.2, 2.3, and 2.4 respectively. 
+Fortunately, there is a direct mathematical relationship between the placement of the control points and the maximum length, velocity, and acceleration of the spline. 
+The objective functions for maximum position, velocity, and acceleration are given in \textit{\citetitle{beard2025BSplines}} \cite{beard2025BSplines} in sections 2.2, 2.3, and 2.4 respectively. 
 
 \subsection{Minimum Distance}
 
@@ -409,8 +469,8 @@ The length of a B-Spline on the interval $t\in[s,s+1]$ is given by:
     \min_{m\in[s+1,s+d]}\norm{\bs{c}_m-\bs{c}_{m-1}} \leq L \leq \sum_{m=s+1}^{s+d}\norm{\bs{c}_m-\bs{c}_{m-1}}
 \end{align}
 
-The term $\bs{c}_m-\bs{c}_{m-1}$ refers to the vector from one control point to the next, which is the equivalent velocity control point. This can also be expressed as $\bs{c}^v_{m-1} = \bs{c}^p_m - \bs{c}^p_{m-1}$. 
-
+The term $\bs{c}_m-\bs{c}_{m-1}$ refers to the vector from one control point to the next, which is the equivalent velocity control point. 
+This can also be expressed as $\bs{c}^v_{m-1} = \bs{c}^p_m - \bs{c}^p_{m-1}$. 
 
 \begin{figure}
     \centering
@@ -425,10 +485,9 @@ The term $\bs{c}_m-\bs{c}_{m-1}$ refers to the vector from one control point to 
     \sum_{i=0}^{N-1} |V(i)|\\
 \end{align}
 
-The minimum distance optimization function then becomes:\\
+The minimum distance optimization function then becomes
 
-\textbf{Minimum Distance Objective}
-\begin{equation}\label{eq:controlPointsOptimization}
+\begin{equation}\label{eq:controlPointsOptimizationDistance}
     \begin{aligned}
         &\text{minimize} && \sum_{k=0}^{N-1} \|C_{0:N-2}(k) - C_{1:N-2}(k)\|\\
         &\text{with respect to} && C_{pts}\\
@@ -436,24 +495,23 @@ The minimum distance optimization function then becomes:\\
         &&& C_{1:d} = S \hat{B}_M^d(0)^{-1}\\
         &&& C_{(M+1):(M+d)} = E \hat{B}_M^d(0)^{-1}\\
     \end{aligned}
-\end{equation}
-
+\end{equation}.
 
 \subsection{Minimum Velocity}
 
-Minimum distance is not the only possible objective function. As the sum of velocity control points represents an upper limit on the total distance of the B-Spline, the sum of acceleration control points represents an upper limit on a velocity metric for the resulting B-Spline. This is given as:
-
+Minimum distance is not the only possible objective function. 
+As the sum of velocity control points represents an upper limit on the total distance of the B-Spline, the sum of acceleration control points represents an upper limit on a velocity metric for the resulting B-Spline. 
+This is given as
 
 \begin{align}
     A = C_{0:N-3} + C_{2:N-1} - 2 \cdot C_{1:N-2}\\
     V_{max} = 
     \sum_{i=0}^{N-2} |A(i)|\\
-\end{align}
+\end{align}.
 
-The minimum velocity optimization function then becomes:\\
+The minimum velocity optimization function then becomes
 
-\textbf{Minimum Velocity Objective}
-\begin{equation}\label{eq:controlPointsOptimization}
+\begin{equation}\label{eq:controlPointsOptimizationVelocity}
     \begin{aligned}
         &\text{minimize} && \sum_{k=0}^{N-2} \|C_{0:N-3}(k) + C_{2:N-1}(k) - 2 C_{1:N-2}(k)\|\\
         &\text{with respect to} && C_{pts}\\
@@ -461,11 +519,11 @@ The minimum velocity optimization function then becomes:\\
         &&& C_{1:d} = S \hat{B}_M^d(0)^{-1}\\
         &&& C_{(M+1):(M+d)} = E \hat{B}_M^d(0)^{-1}\\
     \end{aligned}
-\end{equation} 
+\end{equation}.
 
 \subsection{Minimum Acceleration}
 
-Likewise, we may also minimize an acceleration objective function using the jerk control points as
+Likewise, an acceleration objective function may also be minimized using the jerk control points as
 
 \begin{align}
     J = C_{3:N-1} - 3 \cdot C_{2:N-2} + 3 \cdot C_{1:N-3} - C_{0:N-4}\\
@@ -475,7 +533,6 @@ Likewise, we may also minimize an acceleration objective function using the jerk
 
 The minimum acceleration optimization function then becomes
 
-\textbf{Minimum Acceleration Objective}
 \begin{equation}\label{eq:controlPointsOptimization}
     \begin{aligned}
         &\text{minimize} && \sum_{k=0}^{N-2} \|C_{3:N-1}(k) - 3 C_{2:N-2}(k) + 3 C_{1:N-3}(k) - C_{0:N-4}(k)\|\\
@@ -486,15 +543,23 @@ The minimum acceleration optimization function then becomes
     \end{aligned}
 \end{equation}.
 
-Minimization of Distance and Acceleration are particularly useful to us. The former method connects start to end in the most direct way, given the Safe Flight Corridor constraints. The latter connects start to end while minimizing accelerations, which is particularly useful for an airplane that has minimum turning radius constraints. In this case, the most gradual turn may be the most effective.
+Minimization of Distance and Acceleration are particularly useful. 
+The former method connects start to end in the most direct way, given the SFC constraints. 
+The latter connects start to end while minimizing accelerations, which is particularly useful for an airplane that has minimum turning radius constraints. 
+In this case, the most gradual turn may be the most effective.
 
-CVXPY is a Python package containing optimization capabilities allowing the user to optimize some objective function subject to specified linear constraints. In this paper, we elected the solver CLARABEL  The vector of control point components is something that can be modified. The way it works is that a CVXPY variable is defined with shape: $(N_{cntPts}, N_{dimensions})$, so there are $N_{cntPts} \times N_{dimensions}$ degrees of freedom or variables which the optimizer can modify. CLARABEL requires linear convex constraints, which are applied to each portion of the main control point variable.
+CVXPY is a Python package containing optimization capabilities allowing the user to optimize some objective function subject to specified linear constraints. 
+This paper uses the CLARABEL solver. 
+The vector of control point components may be optimized. 
+A CVXPY variable is defined with shape $(N_{cntPts}, N_{dimensions})$, so there are $N_{cntPts} \times N_{dimensions}$ degrees of freedom or variables which the optimizer can modify. 
+CLARABEL requires linear convex constraints, which are applied to each portion of the main control point variable.
 
 \subsection{A Note on 2D slices of 3D obstacles}
 
-In the 2D section, it was stated that the RRT algorithm existed on a 2D plane at a constant altitude of $100$ meters, and the obstacles were a grid of $300$ meter tall 3D buildings. Those 3D building obstacles intersect the plane and create a 2D obstacle on the plane. 
+In the 2D section, it was stated that the RRT algorithm existed on a 2D plane at a constant altitude of $100$ meters, and the obstacles were a grid of $300$ meter tall 3D buildings. 
+Those 3D building obstacles intersect the plane and create a 2D obstacle on the plane. 
 
-In section \ref{sec:projections}, we discussed mapping vectors on a 2D plane to 3D space using the formula:
+Section \ref{sec:projections}discussed mapping vectors on a 2D plane to 3D space using the formula:
 
 \begin{align}
     v_{3D} = U v_{2D} + o_{3D}
