@@ -1,14 +1,15 @@
 \chapter{B-Spline Computation and Generation}
 \label{ch:BSplines}
 
-B-Splines are becoming increasingly important in the field of robotics. This work has discussed the application of B-Splines for a trajectory tracking controller for an eVTOL aircraft. 
+B-Splines are becoming increasingly important in the field of robotics. 
+This work has discussed the application of B-Splines for a trajectory tracking controller for a VTOL aircraft. 
 B-Splines are piecewise polynomial functions with smooth transition between each piecewise segment.
-The degree of smoothness depends on the degree of B-Spline involved.
-B-Splines have several advantages over other function representations. 
+Not only is the B-Spline smooth at each segment transition point, but its derivatives may be smooth, or at least continuous, depending on the degree of B-Spline and the degree of each derivative.
 B-Splines maintain locality, where each control point only controls a finite section of the output, instead of the entire output. 
 
 As the number of applications for B-Splines increases, the computational burden for the generation of B-Splines also increases. 
 While they have a relatively low computational burden for a single application, many of the new applications of B-Spline generation may include real time computation, updating, and optimization.
+The objective of this section is to discuss methods to reduce computational burden in the generation of B-Splines.
 
 Uniform B-Splines are B-Splines where all basis functions are only time-shifted versions of each other.
 This is in opposition to clamped B-Splines which use modified basis functions at end points so the B-Spline will be guaranteed to start or stop at a particular point.
@@ -16,17 +17,20 @@ To prevent needless repetition of what already exists in the 2025 paper, the maj
 
 \section{B-Spline Background}
 
-B-Splines can be constructed using the following formula:
+B-Splines are constructed as
 
 \begin{align}
     \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m \hat{b}_m^d(t, \bs{k}),
-\end{align}
+\end{align}.
 
-Where $\hat{b}_m^d(t, \bs{k})$ are the time-shifted basis functions of degree $d$, given the knot sequence $\bs{k}$. The knot sequence $\bs{k}$ scales the time spacing of the basis function, which means that adjusting the knot sequence adjusts the standard basis function, which can be helpful for edge cases in robotics. The control points $\bs{c}_m$, scale the basis functions to stitch together the final spline. The dimension of the control point $\bs{c}_m$ determines the dimension of the B-Spline, where a 1D $\bs{c}_m$ will create a 1D B-Spline, and so forth.
+In this equation, $\hat{b}_m^d(t, \bs{k})$ are the time-shifted basis functions of degree $d$, given the knot sequence $\bs{k}$. 
+The knot sequence $\bs{k}$ scales the time spacing of the basis function, which means that adjusting the knot sequence adjusts the standard basis function, which can be helpful for edge cases in robotics. 
+The control points $\bs{c}_m$, scale the basis functions to stitch together the final spline. 
+The dimension of the control point $\bs{c}_m$ determines the dimension of the B-Spline, where a 1D $\bs{c}_m$ will create a 1D B-Spline, and so forth.
 
-This paper uses only uniform B-Splines. 
+This paper uses only uniform B-Splines, in part because of their simplicity.
 In a uniform B-Spline, the knot points are all uniformly spaced apart. 
-If the knot points are all uniformly spaced apart with a spacing of $1$, the basis functions will be defined recursively using the following equations:
+If the knot points are all uniformly spaced apart with a spacing of $1$, the basis functions will be defined recursively as
 
 \begin{align}
 b^0(t) &= \begin{cases} 1 & \text{~if~} 0 \leq t \leq 1 \\ 
@@ -37,7 +41,11 @@ b^d(t) &= \left(\frac{t}{d}\right) b^{d-1}(t) + \left(\frac{(d+1)-t}{d}\right) b
 	\label{eq:uniform_central_basis_d}  
 \end{align}
 
-The basis functions with uniform spacing of $1$ are shown in Fig. \ref{fig:central_basis_functions}. If the knot point spacing is $\alpha$, simply replace $t$ with $\frac{t}{\alpha}$, which will scale the basis functions accordingly in the time domain. Uniform B-Splines are particularly useful, because their basis function remains the same for all copies. If all basis functions are the same for a particular B-Spline implementation, it is possible to store that function numerically in a lookup table, for ultra fast implementation. Since they are all the same we will rewrite the symbol for basis functions as: $b^d(t) = \hat{b}_m^d(t, \bs{k})$. 
+The basis functions with uniform spacing of $1$ are shown in Fig. \ref{fig:central_basis_functions}. 
+If the knot point spacing is $\alpha$, simply replace $t$ with $\frac{t}{\alpha}$, which will scale the basis functions accordingly in the time domain. 
+Uniform B-Splines are particularly useful, because their basis function remains the same for all copies. 
+If all basis functions are the same for a particular B-Spline implementation, it is possible to store that function numerically in a lookup table, for ultra fast implementation. 
+The symbol for the basis functions may be rewritten as $b^d(t) = \hat{b}_m^d(t, \bs{k})$, because all basis functions are identical. 
 
 \begin{figure}[htb]
   \centering
@@ -46,26 +54,28 @@ The basis functions with uniform spacing of $1$ are shown in Fig. \ref{fig:centr
   \label{fig:central_basis_functions}  
 \end{figure}
 
-The 
-
 \subsection{Finite Support}
 
-Each basis function is nonzero only on a finite time interval. For example the basis function for the uniform, $1$ spaced, degree 1 Bspline is:
+Each basis function is nonzero on a finite time interval. 
+For example the basis function for the uniform degree 1 Bspline, with unit spacing, is
 
 \begin{align}
     b^1(t) &= \begin{cases} t & \text{~if~} 0 \leq t \leq 1 \\ 
  						2-t & 1 \leq t \leq 2 \\
  						0 & \text{~otherwise}
  					    \end{cases}
-\end{align}
+\end{align}.
 
-This basis function is zero outside of the interval $[0,2]$, and similar rules apply to basis functions of any other degree. Recall that the definition for a uniform B-Spline has become:
+This basis function is zero outside of the interval $[0,2]$, and similar rules apply to basis functions of higher degrees. 
+The definition for a uniform B-Spline then becomes
 
 \begin{align}
     \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m b^d(t-m+d), \quad t\in[0,M]
-\end{align}
+\end{align}.
 
-Each term in this sum is a control point $\bs{c}_m$ times a time-shifted basis function $b^d(t-m+d)$, where $m$ iterates from $0$ to $M+d-1$. Each control point modifies a time-shifted and overlapped copy of the exact same basis function. A figure of overlapped copies of the same basis functions are shown in Fig. \ref{fig:uniform_basis_functions}.
+Each term in this sum is a control point $\bs{c}_m$ times a time-shifted basis function $b^d(t-m+d)$, where $m$ iterates from $0$ to $M+d-1$. 
+Each control point modifies a time-shifted and overlapped copy of the exact same basis function. 
+A figure of overlapped copies of the same basis functions are shown in Fig. \ref{fig:uniform_basis_functions}.
 
 \begin{figure}[htb]
   \includegraphics[width=\linewidth]{figs/chap3/uniform_basis_functions.pdf}
@@ -73,19 +83,25 @@ Each term in this sum is a control point $\bs{c}_m$ times a time-shifted basis f
   \label{fig:uniform_basis_functions}  
 \end{figure}
 
-This means that each control point is assigned to one basis function copy, and scales it accordingly. The size of each time-shifted basis function is finite and only covers a small section of the whole B-Spline. Therefore, modification of one control point only affects the local area around that B-Spline, and not its entirety. This is one of the great advantages of B-Splines, that modifications may be made in one area without affecting another if it is sufficiently far away. This principle is illustrated in Fig. \ref{fig:BasisFunctionsConnection}. 
+Each control point is assigned to one basis function copy, and scales it accordingly. 
+The size of each time-shifted basis function is finite and only covers a small section of the whole B-Spline. 
+Therefore, modification of one control point only affects the local area around that B-Spline, and not its entirety. 
+This is one of the advantages of B-Splines, that modifications may be made in one area without affecting another if it is sufficiently far away. 
+In other words, alterations of a localized set of control points lead to localized alteration of the B-Spline.
+This principle is illustrated in Fig. \ref{fig:BasisFunctionsConnection}. 
 
 
-This example uses $d=1$ and $M=9$, which is to say there are $9$ intervals of interest the B-Spline is defined over. The knot vector is given, with uniform spacing of $1$ as: 
+This example uses $d=1$ and $M=9$, which is to say there are $9$ intervals of interest the B-Spline is defined over. 
+The knot vector is given, with uniform spacing of $1$ as
 
 \begin{align}
         \bs{k}^{d=1}_{M=9} =
     \begin{bmatrix}
         -1 & 0 & 1 & 2 & \hdots & 7 & 8 & 9\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-Two sets of $d+M = 1+9=10$ control points are given for the same knot vector. These are:
+Two sets of $d+M = 1+9=10$ control points are given for the same knot vector, as
 
 \begin{align}
     \bs{C}_1 =
@@ -96,9 +112,10 @@ Two sets of $d+M = 1+9=10$ control points are given for the same knot vector. Th
     \begin{bmatrix}
         1&2&-1&-0.5&0.5&-2.0&3.0 & 5.0 & 4.5 & -3.0\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-The only difference is that for $\bs{C}_1$, the value at index $5$ is $1.5$, while for $\bs{C}_2$, the value at index $5$ is $-2.0$. Notice that this altered control point only modifies the B-Spline function on the interval $[4.0,6.0]$; the rest of the spline remains the same.
+The only difference is that for $\bs{C}_1$, the value at index $5$ is $1.5$, while for $\bs{C}_2$, the value at index $5$ is $-2.0$. 
+Notice that this altered control point only modifies the B-Spline function on the interval $[4.0,6.0]$; the rest of the spline remains the same.
 
 \begin{figure}
     \centering
@@ -112,11 +129,11 @@ For the specific implementation used to generate this plot, the B-Spline basis f
 \section{Matrix Representation of B-Splines}
 \label{sec:BSplineMatrixRepresentation}
 
-Recall that the summation formula for a B-Spline is given as:
+Recall that the summation formula for a B-Spline is given as
 
 \begin{align}
     \bs{p}(t) &= \sum_{m=0}^{M+d-1} \bs{c}_m b^d(t-m+d)
-\end{align}
+\end{align}.
 
 This definition may be converted from a sum to a matrix form as
 
@@ -130,9 +147,9 @@ This definition may be converted from a sum to a matrix form as
 			b^d(t-M+1)
 		\end{bmatrix} \\
 	= \bs{C} \bs{b}^d_M(t)
-\end{align}
+\end{align},
 
-Where
+where
 
 \begin{align}
 	\bs{C} &\doteq \begin{bmatrix} \bs{c}_0 & \dots & \bs{c}_{M+d-1} \end{bmatrix}
@@ -147,19 +164,22 @@ Where
 			\vdots \\
 			b^d(t-M+1)
 		\end{bmatrix},
-\end{align}
+\end{align}.
 
-This form simply stacks each shifted basis function into a vector. For any given time $t$, those shifted functions are simply evaluated to produce a number for each entry. That vector is multiplied by the control point and that produces the evaluated position $\bs{p}(t)$. 
+This form stacks each shifted basis function into a vector. 
+For any given time $t$, those shifted functions are evaluated to produce a number for each entry. 
+That vector is multiplied by the control point and that produces the evaluated position $\bs{p}(t)$. 
 
 \section{Derivatives of Uniform B-Splines}
 
-It is shown in Lemma 1.13 in \cite{beard2025BSplines} that the derivative of a B-Spline is given as:
+It is shown in Lemma 1.13 in \cite{beard2025BSplines} that the derivative of a B-Spline is given as
 
 \begin{align}
     \frac{db^d}{dt}(t) = b^{d-1}(t) - b^{d-1}(t-1).
-\end{align}
+\end{align}.
 
-Representing this in matrix form simply requires subtraction between components the two basis function vectors of degree $d-1$. This is accomplished using the derivative matrix $D_M^d$ as follows:
+Representing this in matrix form simply requires subtraction between components the two basis function vectors of degree $d-1$. 
+This is accomplished using the derivative matrix $D_M^d$ as
 
 \begin{align}
     \frac{d\bs{p}}{dt}(t) = \bs{C} D_M^{d} \bs{b}_M^{d-1}(t),\\
@@ -169,10 +189,10 @@ Representing this in matrix form simply requires subtraction between components 
     \end{bmatrix} 
  	-\begin{bmatrix}
         \bs{I}_{M+d-1} \\ \bs{0}_{1\times(M+d-1)} 
-    \end{bmatrix},
-\end{align}
+    \end{bmatrix}
+\end{align}.
 
-As an example, if $M=4$ and $d=1$, the derivative basis vector is
+For example, if $M=4$ and $d=1$, the derivative basis vector is
 
 \begin{align}
     \bs{b}^0_4(t) =
@@ -195,9 +215,9 @@ and the derivative matrix is
         0 & 0 & 1 & -1\\
         0 & 0 & 0 & 1\\
     \end{bmatrix}
-\end{align}.
+\end{align},
 
-The resulting vector $D_4^1 \bs{b}^0_4(t)$ then becomes
+then resulting vector $D_4^1 \bs{b}^0_4(t)$ becomes
 
 \begin{align}
     D_4^1 \bs{b}^0_4(t) = 
@@ -214,14 +234,14 @@ The proof for this property is given after Lemma 1.14 in \cite{beard2025BSplines
 
 \section{Endpoint Constraints}
 
-Note that the same control points $\bs{C}$ relate both position and velocity to their modified basis functions as:
+Note that the same control points $\bs{C}$ relate both position and velocity to their modified basis functions as
 
 \begin{align}
     \bs{p}(t) = \bs{C} \bs{b}^d_M(t)\\
     \frac{d\bs{p}}{dt}(t) = \bs{C} D_M^{d} \bs{b}_M^{d-1}(t),\\
-\end{align}
+\end{align}.
 
-These can also be put into matrix form for $d=2$ as:
+These may also be put into matrix form for $d=2$ as
 
 \begin{align}
     \begin{bmatrix}
@@ -231,22 +251,24 @@ These can also be put into matrix form for $d=2$ as:
     \begin{bmatrix}
         \bs{b}_M^2(t_i) & D^2_M \bs{b}^1_M(t_i) 
     \end{bmatrix}
-\end{align}
+\end{align},
 
-Where 
+where 
 
 \begin{align}
     B_M^2(t) = 
     \begin{bmatrix}
         \bs{b}_M^2(t) & D^2_M \bs{b}^1_M(t) 
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-
-
-This demonstrates the relationship between the state of the B-Spline and the evaluation of the basis functions at a particular time. The modified basis functions are already known. If the conditions are known, then it is possible to find the control points using this relationship.
-
-However, this only applies to $d$ control points, given $d$ known conditions. At any given time, most values in the $\bs{b}$ vector will be zero. For each $t$ that is equal to a knot point $k_i$, the nonzero values simply shift down the vector. For example, if $d = 2$ and $M = 4$, $k = [-2, -1, 0, 1, 2, 3, 4, 5, 6]$ $\bs{b}_M^d(t)$ becomes:
+This demonstrates the relationship between the state of the B-Spline and the evaluation of the basis functions at a particular time. 
+The modified basis functions are already known. 
+If the conditions are known, then it is possible to find the control points using this relationship.
+However, this only applies to $d$ control points, given $d$ known conditions. 
+At any given time, most values in the $\bs{b}$ vector will be zero. 
+For each $t$ that is equal to a knot point $k_i$, the nonzero values simply shift down the vector. 
+For example, if $d = 2$ and $M = 4$, $k = [-2, -1, 0, 1, 2, 3, 4, 5, 6]$ $\bs{b}_M^d(t)$ becomes
 
 \begin{align}
     \bs{b}_4^2(t) =
@@ -258,9 +280,9 @@ However, this only applies to $d$ control points, given $d$ known conditions. At
         b^2(t-2)\\
         b^2(t-3)\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-If we then evaluate this vector for knot points in the interval of interest: $\bs{k} = [0,1,2,3,4]$
+If this vector is evaluated for knot points on the interval of interest $\bs{k} = [0,1,2,3,4]$, then
 
 \begin{align}
     \bs{b}_4^2(0) =
@@ -292,10 +314,10 @@ If we then evaluate this vector for knot points in the interval of interest: $\b
         0.5\\
         0.5\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-Notice that the nonzero values simply shift down the vector. 
-The same effect occurs with the derivative vectors from $D_M^d b_M^{d-1}(t)$. For the same example, if $t=0$:
+Notice that the nonzero values are shifted down the vector. 
+The same effect occurs with the derivative vectors from $D_M^d b_M^{d-1}(t)$. For the same example, if $t=0$, then
 
 \begin{align}
     \bs{b}^1_4(t) =
@@ -306,9 +328,8 @@ The same effect occurs with the derivative vectors from $D_M^d b_M^{d-1}(t)$. Fo
         b^1(t-2)\\
         b^1(t-3)\\        
     \end{bmatrix}
-\end{align}
+\end{align},
 
-If $t=0$
 
 \begin{align}
     \bs{b}^1_4(0) =
@@ -319,8 +340,9 @@ If $t=0$
         0\\
         0\\
     \end{bmatrix}
-\end{align}
+\end{align},
 
+and
 
 \begin{align}
     D^2_4 \bs{b}^1_4(0) = 
@@ -332,9 +354,9 @@ If $t=0$
         0\\
         0\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-The matrix $B_4^2(0)$ then becomes:
+The matrix $B_4^2(0)$ then becomes
 
 \begin{align}
     \begin{bmatrix}
@@ -345,11 +367,11 @@ The matrix $B_4^2(0)$ then becomes:
         0.0 & 0\\
         0.0 & 0\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-It turns out that the top, nonzero section will simply shift down for each subsequent shift in $t$. 
-We denote the nonzero section to be $\hat{B}_4^2$, which is time invariant. 
-This simplifies the control point relationship to be:
+The top, nonzero section will be shifted down for each subsequent shift in $t$. 
+The nonzero section is denoted as $\hat{B}_4^2$, which is time invariant. 
+This simplifies the control point relationship to be
 
 \begin{align}
     \begin{bmatrix}
@@ -362,9 +384,9 @@ This simplifies the control point relationship to be:
         0.5 & -1.0\\
         0.5 & 1.0\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-Given the position and velocity conditions, it is trivial to find the initial control points using a matrix inverse as:
+Given the position and velocity conditions, the initial control points may be found using a matrix inverse as
 
 \begin{align}
     \bs{C}_{0:1} =
@@ -380,41 +402,38 @@ Given the position and velocity conditions, it is trivial to find the initial co
         0.5 & -1.0\\
         0.5 & 1.0\\
     \end{bmatrix}^{-1}
-\end{align}
+\end{align}.
 
-
-This process can be implemented for both initial and final conditions as
+This process may be implemented for both initial and final conditions as
 
  \begin{align*}
  	\bs{S} &\doteq \begin{bmatrix}\bs{p}(0) & \frac{d\bs{p}(0)}{dt} & \dots & \frac{d^\ell\bs{p}(0)}{d^\ell t} \end{bmatrix} 	\\
  	\bs{E} &\doteq \begin{bmatrix}\bs{p}(M) & \frac{d\bs{p}(M)}{dt} & \dots & \frac{d^\ell\bs{p}(M)}{d^\ell t} \end{bmatrix}.
- \end{align*}
+ \end{align*}.
 
- Segment the spline control points into the first and last $d$-elements as
+ If the spline control points are segmented into the first and last $d$-elements as
  \[
  \bs{C} = \begin{bmatrix}\bs{C}_{1:d} & \bs{C}_{(d+1):(M)} & \bs{C}_{(M+1):(M+d)} \end{bmatrix},
  \]
- and define the matrix
+ and the matrix is defined as
  \[
  B_M^d(t) \doteq \begin{bmatrix} 
  \bs{b}^d_M(t) & D_M^d \bs{b}^{d-1}_M(t) & \dots & D_M^d D_M^{d-1}\dots D_M^{d-\ell+1} \bs{b}^{d-\ell}_M(t)
  				\end{bmatrix},
  \]
-
-Then we may find the start and end control points given the start and end conditions $\bs{S}$ and $\bs{E}$. 
-This will work at any point, as long as the conditions at that point are known. 
+then the start and end control points are found given the start and end conditions $\bs{S}$ and $\bs{E}$. 
+This will work at any point, as long as the conditions at that point are known as
 
 \begin{align}
     \bs{C}_{1:d} = \bs{S} \left(\hat{B}_M^d(0)\right)^{-1}\\
     \bs{C}_{M+1:M+d} = \bs{E} \left(\hat{B}_M^d(M)\right)^{-1}
-\end{align}
-
+\end{align}.
 
 \section{Minimum Snap Trajectory}
 
-The above formula enables us to generate initial and final control points for the B-Spline, but it says nothing about the control points in between. 
-While there are countless options for placement of the control points between start and finish, one particularly useful method is a minimum snap trajectory. 
-Snap is the third derivative of position, after velocity and acceleration. 
+The above formula enables the generation of initial and final control points for the B-Spline, but it says nothing about the control points in between. 
+While there are countless options for placement of the intermediate control points, one particularly useful method is a minimum snap trajectory. 
+Snap is the fourth derivative of position, after velocity, acceleration, and jerk. 
 A minimum snap trajectory finds the trajectory with the lowest integral of snap, given the initial conditions $\bs{S}$ and $\bs{E}$. 
 This is given as
 
@@ -424,22 +443,23 @@ This is given as
  	&\min_{\bs{C}} trace {\bs{C} W_M^{d}(\bs{\rho}) \bs{C}^\top} \\
  	&\text{subject to } \: \bs{C} \begin{bmatrix} B_M^d(0) & B_M^d(M) \end{bmatrix} = \begin{bmatrix} \bs{S} & \bs{E} \end{bmatrix}. 
  	\end{aligned}
- \end{equation}
+ \end{equation},
 
 where $W_M^{d}(\bs{\rho})$ is a mixing matrix that will be defined later.
 
 \section{Integral objective}
 
-The following section summarizes the derivation for minimum snap control points. While this section highlights the most important equations, the full derivation is found in \cite{beard2025BSplines}.
+In this section, the derivation for minimum snap control points is summarized.
+While this section highlights the most important equations, the full derivation is found in \cite{beard2025BSplines}.
 
-The objective for creating control points that minimize the integral of an $\ell^{th}$ derivative, which in our case is $3^{rd}$ derivative, is given in section $2.6$ of \cite{beard2025BSplines} as:
+The objective for creating control points that minimize the integral of an $\ell^{th}$ derivative, which in our case is $3^{rd}$ derivative, is given in section $2.6$ of \cite{beard2025BSplines} as
 
 \begin{equation}
     \label{eq:integral_constraint}
     \bs{C}^\ast = \arg\min_{\bs{C}} \int_0^M \sum_{\ell=0}^L \left( \rho^\ell \norm{\bs{p}^{\ell}(t)}^2\right) \, dt
-\end{equation}
+\end{equation}.
 
-Finding the generalized $\ell^{th}$ order derivative of a B-Spline is possible using the following equations:
+Finding the generalized $\ell^{th}$ order derivative of a B-Spline is possible using the following.
 
 Define
  \[
@@ -448,27 +468,28 @@ Define
  implying that 
  \begin{align*}
  	\bs{p}^{\ell}(t) &= \bs{C} D_M^{d,\ell-1} 	\bs{b}_M^{d-\ell}(t).
- \end{align*}
+ \end{align*}.
 
-We define $\bs{\rho}$ as a vector of size $L$ coefficients that are selected by the user to weight which derivative terms are the most significant for the trajectory.
+The vector $\bs{\rho}$ is as set of user defined coefficients of size $L$ that are selected by the user to weight which derivative terms are the most significant for the trajectory.
 
-If we define the matrices $S_M^k$ and $W_M^{d,l}$ as:
+If the matrices $S_M^k$ and $W_M^{d,l}$ are defined as
 
 \begin{align*}
     S_M^k &\defeq \int_0^M 	\bs{b}_M^{k}(t) {\bs{b}_M^{k}(t)}^\top \, dt \\
     W_M^{d,\ell} &\defeq D_M^{d,\ell-1} S_M^{d-\ell} {D_M^{d,\ell-1}}^\top,
-\end{align*}
+\end{align*},
 
-Then we may define:
+then the matrix $W_M^{d}(\bs{\rho})$ is defined as
 
 \begin{align}
     W_M^{d}(\bs{\rho}) \defeq \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell}.
-\end{align}
+\end{align}.
 
-This matrix essentially creates an objective function by relating the control points $\bs{C}$ to the specified derivative we want to minimize over the entire path. From this, a solution may be derived.
+This matrix becomes an objective function by relating the control points $\bs{C}$ to the specified derivative that will be minimized over the entire path. 
+From this objective, a minimized solution may be derived.
 
-A lengthy derivation follows in section 2.6 in \cite{beard2025BSplines}, which will not be repeated here, but there is an analytical solution.
-First, the singular value decomposition of two $B$ matrices is given as
+A lengthy derivation is given in section 2.6 in \cite{beard2025BSplines}, which will not be repeated here, but there is an analytical solution to the minimum-snap problem.
+The singular value decomposition of two concatenated and shifted $B$ matrices is given as
 
 \begin{align}
     B^d_{M,SE} = 
@@ -485,7 +506,7 @@ First, the singular value decomposition of two $B$ matrices is given as
     V^\top,
 \end{align}.
 
-Then the analytical solution to the control points $\bs{C}^*$ for a minimum snap trajectory is given as
+The analytical solution to the control points $\bs{C}^*$ for a minimum snap trajectory is given as
 
 \begin{align}
     \bs{C}^\ast = 

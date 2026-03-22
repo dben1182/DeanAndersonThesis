@@ -57,43 +57,42 @@
 \contentsline {subsection}{\numberline {3.2.2}Dutch Roll Mode}{48}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Recursive Least Squares}{50}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}RLS Derivation}{50}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Batch Least Squares}{51}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.2}Batch Least Squares}{52}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Recursive Algorithm}{52}{subsection.3.3.3}%
 \contentsline {section}{\numberline {3.4}Coefficient Equations for Fixed Wing Aircraft}{54}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Y Coefficients}{54}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Lift and Drag Coefficients}{54}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.1}Y Coefficients}{55}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Lift and Drag Coefficients}{55}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}l Estimator}{55}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}m Estimator}{55}{subsection.3.4.4}%
 \contentsline {subsection}{\numberline {3.4.5}n Estimator}{55}{subsection.3.4.5}%
 \contentsline {subsection}{\numberline {3.4.6}A Note on Gravity}{55}{subsection.3.4.6}%
-\contentsline {section}{\numberline {3.5}2D VTOL Equations}{55}{section.3.5}%
+\contentsline {section}{\numberline {3.5}2D VTOL Equations}{56}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Lift And Drag}{56}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}m moment}{56}{subsection.3.5.2}%
 \contentsline {section}{\numberline {3.6}Input Signals}{56}{section.3.6}%
-\contentsline {section}{\numberline {3.7}MAVSIM Results}{56}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Coefficient Comparison Table}{57}{subsection.3.7.1}%
-\contentsline {section}{\numberline {3.8}ROSFlight Flight Data Results}{58}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Future Work}{58}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Noise}{59}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Nonlinear Modelling}{59}{subsection.3.9.2}%
-\contentsline {subsection}{\numberline {3.9.3}Design}{59}{subsection.3.9.3}%
-\contentsline {subsection}{\numberline {3.9.4}Safety}{59}{subsection.3.9.4}%
-\contentsline {subsection}{\numberline {3.9.5}Calibration}{59}{subsection.3.9.5}%
-\contentsline {subsection}{\numberline {3.9.6}Hardware Implementation}{59}{subsection.3.9.6}%
-\contentsline {section}{\numberline {3.10}Conclusion}{60}{section.3.10}%
+\contentsline {section}{\numberline {3.7}MAVSIM Results}{57}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Coefficient Comparison Table}{58}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.8}Future Work}{58}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Noise}{58}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Nonlinear Modelling}{58}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Design}{58}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Safety}{59}{subsection.3.8.4}%
+\contentsline {subsection}{\numberline {3.8.5}Calibration}{60}{subsection.3.8.5}%
+\contentsline {subsection}{\numberline {3.8.6}Hardware Implementation}{60}{subsection.3.8.6}%
+\contentsline {section}{\numberline {3.9}Conclusion}{60}{section.3.9}%
 \contentsline {chapter}{\chapternumberline {4}B-Spline Computation and Generation}{62}{chapter.4}%
 \contentsline {section}{\numberline {4.1}B-Spline Background}{62}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Finite Support}{63}{subsection.4.1.1}%
-\contentsline {section}{\numberline {4.2}Matrix Representation of B-Splines}{65}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Matrix Representation of B-Splines}{66}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Derivatives of Uniform B-Splines}{66}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Endpoint Constraints}{67}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Minimum Snap Trajectory}{70}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Integral objective}{70}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Contributions}{71}{section.4.7}%
+\contentsline {section}{\numberline {4.7}Contributions}{72}{section.4.7}%
 \contentsline {subsubsection}{B Matrices}{72}{section.4.7}%
 \contentsline {subsubsection}{Y Z Lookup Tables}{72}{equation.4.43}%
-\contentsline {section}{\numberline {4.8}Results}{73}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Conclusion}{75}{subsection.4.8.1}%
+\contentsline {section}{\numberline {4.8}Results}{74}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Conclusion}{74}{subsection.4.8.1}%
 \contentsline {chapter}{\chapternumberline {5}RRT Flight Corridors}{77}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Rapidly Exploring Random Trees (RRT)}{77}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Safe Flight Corridors}{81}{subsection.5.1.1}%

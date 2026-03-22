@@ -81,13 +81,13 @@ Some of the aerodynamic modes of the aircraft are described below.
 
 One common aerodynamic mode is called the phughoid mode. 
 This effect is a vertical oscillation of the aircraft, as depicted in Fig. \ref{fig:phughoid_diagram}. 
-When the aircraft's phughoid mode has been excited, the aircraft will pitch up, ascend slightly, lose airspeed, and then pitch down, gain airspeed, and descend slightly before repeating the process. 
+When the aircraft's phughoid mode is excited, the aircraft pitches up, ascends slightly, and loses airspeed.
+Then the aircraft pitches down, gains airspeed, and descends slightly before repeating the process. 
 In other words, the phughoid mode couples north velocity $\dot{n}$ with pitch $\theta$, and down position $d$. 
 According to chapter 6 in \cite{flightDynamicsPrinciples}, this mode is relatively slow, and lightly damped, so it takes some time return to normal. 
-When the aircraft goes through this, it will experience large signal changes in angle of attack $\alpha$, pitch angular rate $q$, pitch angular acceleration $\dot{q}$, north acceleration $\ddot{n}$, and down acceleration $\ddot{d}$. 
-This mode is typically induced by quick impulses on the elevator. 
-Excitation of this mode is useful as it may produce large signals from internal sensors for estimate of coefficients of aerodynamics. 
-
+When this mode is excited, the aircraft experiences a large change in angle of attack $\alpha$, pitch angular rate $q$, pitch angular acceleration $\dot{q}$, north acceleration $\ddot{n}$, and down acceleration $\ddot{d}$. 
+This mode may be induced by quick impulses on the elevator. 
+Excitation of this mode is useful as it produces large signals from internal sensors for estimate of coefficients of aerodynamics. 
 
 \begin{figure}
     \centering
@@ -100,7 +100,12 @@ Excitation of this mode is useful as it may produce large signals from internal 
 \subsection{Dutch Roll Mode}
 
 Another common aerodynamic mode is called dutch roll, which is a coupling of both yaw and pitching moments, as described in \cite{cookLateralDirectionalDynamics}. 
-That is, the aircraft oscillates between yawing sharply, rolling sharply as yaw returns to zero, and then repeating in the other directions, according to chapter 7 of \cite{flightDynamicsPrinciples}. This means that after an aircraft has rolled to the left and it returns upright, the aircraft will yaw to the right, which will cause the aircraft to roll to the right, which will repeat the process. Just as excitation of the phughoid mode created large longitudinal signals, dutch roll creates large lateral signals. For example, the the two roll moments $l$ and $n$ cause large signals for $p$, $r$, $\dot{p}$, and $\dot{r}$. Large yaw $\psi$ maneuvers will also create large signals for east acceleration $\ddot{e}$ and sideslip angle $\beta$. Intentional excitation of this mode is generally accomplished by rudder impulses, though this may also be enhanced with delayed aileron impulses.
+That is, the aircraft oscillates between yawing sharply, rolling sharply as yaw returns to zero, and then repeating in the other directions, according to chapter 7 of \cite{flightDynamicsPrinciples}. 
+This means that after an aircraft has rolled to the left and it returns upright, the aircraft yaws to the right, which causes the aircraft to roll to the right.
+The process then repeats itself, until aerodynamic damping causes the aircraft to return to stability.
+Just as excitation of the phughoid mode created large longitudinal signals, dutch roll creates large lateral signals. 
+For example, the the two roll moments $l$ and $n$ cause large signals for $p$, $r$, $\dot{p}$, and $\dot{r}$. Large yaw $\psi$ maneuvers will also create large signals for east acceleration $\ddot{e}$ and sideslip angle $\beta$. 
+Intentional excitation of this mode is generally accomplished by rudder impulses, though this may also be enhanced with delayed aileron impulses.
 
 \begin{figure}
     \centering
@@ -109,15 +114,26 @@ That is, the aircraft oscillates between yawing sharply, rolling sharply as yaw 
     \label{fig:dutchRollDiagram}
 \end{figure}
 
-These modes are generally undesirable for aircraft to experience during normal flight. For aircraft with less stable airframes, inducing such modes pushes the aircraft closer to instability. Such large oscillations may also cause motion sickness for passengers and crew. However, such maneuvers tend to excite the  aerodynamic characteristics, which means that the signal associated with each aerodynamic coefficient can become large enough to distinguish it from the other generated signals.
+These modes are generally undesirable for aircraft to experience during normal flight. 
+Inducing such modes may push the aircraft closer to instability. 
+Such large oscillations may also cause motion sickness for passengers and crew. 
+However, such maneuvers tend to excite the components of the aerodynamic force and moment equations. 
+This means that the signal associated with each aerodynamic coefficient may grow large enough to distinguish it from the other generated signals.
 
 \section{Recursive Least Squares}
 
-While sensor data is being collected from the aircraft, an algorithm  must run to calculate the coefficients of aerodynamics. Such an algorithm would make the best estimate of the coefficients of aerodynamics, based on the acquired data. For this reason, the recursive least squares (RLS) filter was selected. The following explanation or derivation of an RLS filter is an adaptation of lecture slides created in \cite{beardRLS}.
+While sensor data is being collected from the aircraft, an algorithm must run to calculate the coefficients of aerodynamics. 
+Such an algorithm would make the best estimate of the coefficients of aerodynamics, based on the acquired data. 
+For this reason, the recursive least squares (RLS) filter was selected. 
+The following explanation or derivation of an RLS filter is an adaptation of lecture slides created in \cite{beardRLS}.
 
 \subsection{RLS Derivation}
 
-The equation for an Infinite Impulse response (IIR) system, with $n$ poles and $m+1$ zeroes is shown in \ref{eq:Difference} and is shown graphically in Fig. \ref{fig:IIR}. In a standard IIR filter setup, a signal $x_n$ is the time series input to the system and $y_n$ is the time series output of the system. The coefficients $a_i$ scale time delayed outputs $y_n$ of the system, and the coefficients $b_i$ scale time delayed inputs $x_n$ of the system. The input signal $x_n$, $b_i$ coefficients, and $a_i$ coefficients are known quantities. The IIR filter then generates the output signal $y_n$ using these known values for each timestep.
+The equation for an Infinite Impulse response (IIR) system, with $n$ poles and $m+1$ zeroes is shown in \ref{eq:Difference} and is shown graphically in Fig. \ref{fig:IIR}. 
+In a standard IIR filter setup, a signal $x_n$ is the time series input to the system and $y_n$ is the time series output of the system. 
+The coefficients $a_i$ scale time delayed outputs $y_n$ of the system, and the coefficients $b_i$ scale time delayed inputs $x_n$ of the system. 
+The input signal $x_n$, $b_i$ coefficients, and $a_i$ coefficients are known quantities. 
+The IIR filter then generates the output signal $y_n$ using these known values for each timestep.
 
 \begin{align}
     y[k] = a_1 y[k-1] + \hdots + a_n y[k-n] + b_0 u[k] + \hdots + b_m u[k-m] + \eta_k
@@ -131,7 +147,9 @@ The equation for an Infinite Impulse response (IIR) system, with $n$ poles and $
     \label{fig:IIR}
 \end{figure}
 
-In the case of an LMS filter, the $a_i$ and $b_i$ coefficients are unknown, while the input $x_n$ and output $y_n$ signals are known. The goal is to estimate these scaling coefficients $a_i$ and $b_i$ using data from input and output. In other words, the LMS filter estimates the coefficients of an IIR filter, or a system that is approximated as an IIR filter, as shown in Fig. \ref{fig:LMSEstimatingIIR}.
+In the case of an LMS filter, the $a_i$ and $b_i$ coefficients are unknown, while the input $x_n$ and output $y_n$ signals are known. 
+The goal is to estimate these scaling coefficients $a_i$ and $b_i$ using data from input and output. 
+In other words, the LMS filter estimates the coefficients of an IIR filter, or a system that is approximated as an IIR filter, as shown in Fig. \ref{fig:LMSEstimatingIIR}.
 
 \begin{figure}
     \centering
@@ -140,12 +158,12 @@ In the case of an LMS filter, the $a_i$ and $b_i$ coefficients are unknown, whil
     \label{fig:LMSEstimatingIIR}
 \end{figure}
 
-Equation \ref{eq:Difference} is represented in matrix form in Eq. 
+Equation \ref{eq:Difference} is represented in matrix form as
 
 \begin{align}
     y[k] = \bs{a}_k^\top \bs{x} + \eta_k \\
-\end{align}
-Where:
+\end{align},
+where
 \begin{align}
     \bs{a}_k^\top =
     \begin{bmatrix}
@@ -155,9 +173,12 @@ Where:
     \begin{bmatrix}
         a_1 & \hdots & a_n & b_0 & \vdots & b_m
     \end{bmatrix}^\top
-\end{align}
+\end{align},
 
-Where $\eta$ represents a random variable as noise added to the system. The vector $\bs{a}_k^\top$ represents a window of $n$ samples of $y[k]$ and $m+1$ samples of input $u[k]$. Each new sample $k$ is a new shifted $\bs{a}_k^\top$ vector with a corresponding output $y[k]$. These shifted $y[k]$, $a_k$, and $\eta_k$ vectors can be stacked into the following matrix form.
+where $\eta$ represents a random variable as noise added to the system. 
+The vector $\bs{a}_k^\top$ represents a window of $n$ samples of $y[k]$ and $m+1$ samples of input $u[k]$. 
+Each new sample $k$ is a new shifted $\bs{a}_k^\top$ vector with a corresponding output $y[k]$. 
+These shifted $y[k]$, $a_k$, and $\eta_k$ vectors can be stacked into the following matrix form as
 
 \begin{align}
     \begin{bmatrix}
@@ -178,9 +199,9 @@ Where $\eta$ represents a random variable as noise added to the system. The vect
         \vdots\\
         \eta_N\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-And can be represented as:
+These may be represented as
 
 \begin{align*}
     \bs{y}_N = A_N \bs{x}_N + \bs{\eta}_N\\
@@ -206,32 +227,34 @@ And can be represented as:
         \vdots\\
         \eta_N\\
     \end{bmatrix}
-\end{align*}
+\end{align*}.
 
 \subsection{Batch Least Squares}
 
-For a complete set of matrices, the least squares solution is found using the left pseudoinverse of the form:
+For a complete set of matrices, the least squares solution is found using the left pseudoinverse of the form
 
 \begin{align*}
     \bs{x}^*_N = \left(A_N^\top A_N\right)^{-1} A_N^\top \bs{y}_N\\
-\end{align*}
+\end{align*}.
 
-This is the mathematical solution for this problem. However, a large matrix inverse like this would be prohibitively expensive to recalculate. This equation would have to be recalculated at each time step, which would be a prohibitively large $\mathcal{O}(n^3)$ operation. We need an algorithm that only performs a pseudoinverse once, and uses a recursive formula to perform a much smaller computation at each time step afterwards.
+This is the mathematical solution for this problem. 
+However, this equation would have to be recalculated at each time step, which would be a prohibitively large $\mathcal{O}(n^3)$ operation. 
+An algorithm is needed that only performs a pseudoinverse once, and uses a recursive formula to perform a much smaller computation at each time step afterwards.
 
 \subsection{Recursive Algorithm}
 
-Given: 
+Given
 \begin{align*}
     \bs{x}^*_N = \left(A_N^\top A_N\right)^{-1} A_N^\top \bs{y}_N\\
-\end{align*}
+\end{align*},
 
-Define:
+define
 \begin{align*}
     P_N = \left(A_N^\top A_N\right)^{-1}\\
     \bs{z}_N = A_N^\top \bs{y}_N\\
-\end{align*}
+\end{align*}.
 
-For the previous sample of $N-1$, where $A_n$ is one row shorter:
+For the previous sample of $N-1$, where $A_n$ is one row shorter
 
 \begin{align}
     A_{N-1} = 
@@ -250,29 +273,30 @@ For the previous sample of $N-1$, where $A_n$ is one row shorter:
         \bs{a}_{N-1}^\top
     \end{bmatrix}
     =\sum_{i=1}^{N-1} \bs{a}_i \bs{a}_i^\top
-\end{align}
+\end{align}.
 
-So then for the current sample
+Then for the current sample
 \begin{align}
     P_N^{-1} = \sum_{i=1}^{N} \bs{a}_i \bs{a}_i^\top = 
     \bs{a}_N \bs{a}_N^\top +\sum_{i=1}^{N-1} \bs{a}_i \bs{a}_i^\top
     = P_{N-1}^{-1} + \bs{a}_N \bs{a}_N^\top
-\end{align}
+\end{align}.
 
-So, $P_N^{-1}$ is just the previous matrix $P_{N-1}^{-1}$ plus the update $\bs{a}_N \bs{a}_N^\top$. We want to find the inverse of this matrix: $P_N$, which is:
+$P_N^{-1}$ is the previous matrix $P_{N-1}^{-1}$ plus the update $\bs{a}_N \bs{a}_N^\top$. 
+The next step is to find $P_N$, which is
 
 \begin{align*}
     P_N = \left( P_{N-1}^{-1} + \bs{a}_N \bs{a}_N^\top\right)^{-1}
-\end{align*}
+\end{align*}.
 
-Now, the matrix inversion Lemma provides a shortcut as:
+The matrix inversion lemma provides the simplification
 
 \begin{align}
     P_N = P_{N-1} - P_{N-1} \bs{a}_N \bs{a}_N^\top P_{N-1} \left(I + \bs{a}_N^\top P_{N-1} \bs{a}_N\right)^{-1}
-\end{align}
+\end{align}.
 
-Which simplifies the inverse to the inverse of a 1x1 matrix, which is significantly more computationally efficient and stable than an (n+m)x(n+m) matrix inverse.
-
+This simplifies the inverse to the inverse of a $1\times1$ matrix, which is significantly more computationally efficient and stable than an (n+m)x(n+m) matrix inverse.
+The inverse of a $1 \times 1$ matrix is just the fractional reciprocal of the scalar value, which is simple to calculate.
 
 Similarly,
 
@@ -281,9 +305,9 @@ Similarly,
   =\Sigma_{i=1}^N \bs{a}_i y[i]\\
   =\left(\Sigma_{i=1}^{N-1} \bs{a}_i y[i] + \bs{a}_N y[N] \right)\\
 = \bs{z}_{N-1} + \bs{a}_N y[N]\\
-\end{align}
+\end{align}.
 
-With these tools, we can rewrite the least squares solution as
+With these tools, the least squares solution may be rewritten as
 
 \begin{align*}
     \bs{x}_N = (A_N^\top A_N) A_N^{\top} \bs{y}_N\\
@@ -293,13 +317,13 @@ With these tools, we can rewrite the least squares solution as
         \quad \left(P_{N-1} - \frac{P_{N-1}\bs{a}_N \bs{a}_N^\top P_{N-1}}{1 + \bs{a}^{\top}P_{N-1} \bs{a}_N}\right) \bs{a}_N y[N]\\
     = \bs{x}_{N-1} - \left(\frac{P_{N-1} \bs{a}_N}{1 + \bs{a}_N^\top P_{N-1} \bs{a}_N}\right) \bs{a}_N^\top P_{N-1} \bs{z}_{N-1} +
         \quad \left(P_{N-1} - \frac{P_{N-1}\bs{a}_N \bs{a}_N^\top P_{N-1}}{1 + \bs{a}^{\top}P_{N-1} \bs{a}_N}\right) \bs{a}_N y[N]
-\end{align*}
+\end{align*}.
 
-If we define the Kalman gain as
+If the Kalman gain is defined as
 
 \begin{align}
   \bs{k}_N = \frac{P_{N-1} \bs{a}_N}{1 + \bs{a}_N^\top P_{N-1} \bs{a}_N}
-\end{align}
+\end{align},
 
 then the previous equation can be simplified as
 
@@ -309,11 +333,11 @@ then the previous equation can be simplified as
     = \bs{x}_{N-1} - \bs{k}_N \left(y[N] - \bs{a}_N^\top \bs{x}_{N-1}\right)
 \end{align}.
 
-So this update equation for the new estimate $\bs{x}_N$ then becomes
+This update equation for the new estimate $\bs{x}_N$ then becomes
 
 \begin{align}
   \bs{x}_N = \bs{x}_{N-1} + \bs{k}_N \left(y[N] - \bs{a}_N^\top \bs{x}_{N-1}\right)
-\end{align}
+\end{align},
 
 where
 
@@ -323,14 +347,19 @@ where
 \end{align}.
 
 This system is equivalent to a stationary Kalman filter where $\bs{k}_N$ represents the Kalman gain, $P_N$ represents the covariance matrix, and $\bs{x}_N$ represents the current state.
-A stationary Kalman filter is a Kalman filter with stationary dynamics. In the case of this system, the coefficients of aerodynamics are assumed to be unchanging, so there is no propagation of dynamics.
-
+A stationary Kalman filter is a Kalman filter with stationary dynamics.
+That is, the estimator for the state of a system where there state is assumed to be constant.
+In the case of this system, the coefficients of aerodynamics are assumed to be unchanging, so there is no propagation of dynamics.
 
 \section{Coefficient Equations for Fixed Wing Aircraft}
 
 \label{sec:equationsOfMotion}
 
-The equations for each set of coefficients are given in the following sections. All of the original equations are found in Small Unmanned Aircraft: Theory and Practice \cite{uav_book}. The equations for Lift, Drag and y forces are given in 4.3, 4.4, and 4.14 in \cite{uav_book} respectively. The equations for moments about the x, y, and z axes are given in 4.15, 4.5, and 4.16 respectively. For example, the equation for forces in the y direction is given as:
+The equations for each set of coefficients are given in the following sections. 
+All of the original equations are found in chapter 4 in \cite{uav_book}. 
+The equations for lift, drag and y forces are given in sections 4.3, 4.4, and 4.14 in \cite{uav_book} respectively. 
+The equations for moments about the x, y, and z axes are given in 4.15, 4.5, and 4.16 in \cite{uav_book} respectively. 
+They are repeated here as
 
 \begin{align*}
     f_y = \frac{1}{2} \rho V_a^2 S \left[ C_{Y_0} + C_{Y_\beta} \beta + C_{Y_p} \frac{b}{2 V_a} p + C_{Y_r} \frac{b}{2 V_a} r + C_{Y_{\delta_a}} \delta_a + C_{Y_{\delta_r}} \delta_r\right]\\
@@ -339,9 +368,11 @@ The equations for each set of coefficients are given in the following sections. 
     l = \frac{1}{2} \rho V_a^2 S c \left[ C_{l_0} + C_{l_\beta} \beta + C_{l_p} \frac{b}{2 V_a} p + C_{l_r} \frac{b}{2 V_a} r + C_{l_{\delta_a}} \delta_a + C_{l_{\delta_r}} \delta_r\right]\\
     m = \frac{1}{2} \rho V_a^2 S \left[C_{m_0} + C_{m_\alpha} \alpha + C_{m_q} \frac{c}{2 V_a} q + C_{m_{\delta_e}} \delta_e \right]\\
     n = \frac{1}{2} \rho V_a^2 S c \left[C_{n_0} + C_{n_\beta} \beta + C_{n_p} \frac{b}{2 V_a} p + C_{n_r} \frac{b}{2 V_a} r + C_{n_{\delta_a}} \delta_a + C_{n_{\delta_r}} \delta_r\right]
-\end{align*}
+\end{align*}.
 
-Similar equations exist for the two other forces and three other moments. These equations are for a standard Fixed-Wing aircraft, as found in the Mavsim simulation environment.
+These equations are for a standard fixed-wing aircraft, as found in the Mavsim simulation environment.
+For each equation, an individual RLS algorithm is instantiated with its unique equations for aerodynamic coefficient estimation.
+These are all given in the subsections that follow, for each set of aerodynamic equations.
 
 \subsection{Y Coefficients}
 
@@ -391,9 +422,12 @@ Note that the signal $y_n$ for lift and drag must subtract thrust generated by t
     \end{bmatrix}\\
     y_n = 
     \begin{bmatrix}
-        J_x \dot{p} - J_y q r + J_z q r - J_{xz} \dot{r} - J_{xz} p q
+        J_x \dot{p} - J_y q r + J_z q r - J_{xz} \dot{r} - J_{xz} p q - Q_p(\delta_t)
     \end{bmatrix}
 \end{align*}
+
+Note that $Q_p(\delta_t)$ is the aerodyanmic moment generated by the forward rotor. 
+This is the moment being exerted on the aircraft in opposition to the direction of rotation for the forward rotor, and it must also be sutracted.
 
 \subsection{m Estimator}
 
@@ -423,7 +457,8 @@ Note that the signal $y_n$ for lift and drag must subtract thrust generated by t
 
 \subsection{A Note on Gravity}
 
-A confusing part of this problem is gravity. We naturally assume in the paper that acceleration due to gravity is given as:
+A difficult part of this problem is gravity. 
+It is assumed in the paper that acceleration due to gravity is given as
 
 \begin{align}
     a_{g_{3D}} =
@@ -438,13 +473,20 @@ A confusing part of this problem is gravity. We naturally assume in the paper th
         0\\
         9.81\\
     \end{bmatrix}
-\end{align}
+\end{align}.
 
-However, because all components of the accelerometer are equally influenced by gravitational acceleration, it is impossible to discriminate a gravitational field. If an accelerometer is placed on a table, it will sense the normal force of $9.81 \frac{m}{s^2}$ in the upwards direction. In the same manner, if the aircraft is flying in trim, level flight with no acceleration, the accelerometer will sense the Lift force as $9.81 \frac{m}{s^2}$ in the up direction. Gravity is then entirely removed from all aerodynamic sensing equations.
+However, all components of the accelerometer are equally influenced by gravitational acceleration.
+It is impossible to discriminate a gravitational field in free fall. 
+If an accelerometer is placed on a table, it will sense the normal force of $9.81 \frac{m}{s^2}$ in the upwards direction. 
+In the same manner, if the aircraft is flying in trim, level flight with no acceleration, the accelerometer will sense the Lift force as $9.81 \frac{m}{s^2}$ in the up direction. 
+Gravity is therefore entirely removed from all aerodynamic sensing equations.
 
 \section{2D VTOL Equations}
 
-The equations for a 2D VTOL are somewhat modified from a standard aircraft; they do not include y forces, nor l and n moments. There is also the addition of two vertical rotors. This modifies the equations of motion to be the following. It is easiest to group the x and z forces into the same category, because they are linked to Lift and Drag forces, which are functions of angle of attack.
+The equations for a 2D VTOL are somewhat modified from a standard aircraft. 
+They do not include y forces, nor l and n moments. 
+There is also the addition of two vertical rotors. 
+It is easiest to group the x and z forces into the same category, because they are linked to lift and drag forces, which are functions of angle of attack.
 
 \subsection{Lift And Drag}
 
@@ -495,26 +537,45 @@ The equations for a 2D VTOL are somewhat modified from a standard aircraft; they
     \end{bmatrix}
 \end{align}
 
-Note that $y_n$ simplifies significantly in this equation because all rotational inertia values besides $J_y$ are all zero. Also please note the subtraction of all forces and moments caused by the three rotors.
-
+Note that $y_n$ simplifies significantly in this equation because all rotational inertia values besides $J_y$ are all zero. 
+Also note the subtraction of all forces and moments caused by the three rotors.
 
 \section{Input Signals}
 
-There must be sufficient excitation of the aircraft for the LMS filter to converge on stable values. The values of $y_n$ and the components in $a_n$ for each of the 5 estimators have sufficiently large magnitudes to overcome noise and other internal parasitic signals. If the aircraft flies solely in trimmed level flight, the LMS filter will not converge on stable or accurate values. There must also be a significant variation in the corresponding values to set the columns of $A$ as linearly independent. Sufficiently large control surface inputs are required for this. This usually means creating a series of square wave impulses for each of the control surfaces: aileron $\delta_a$, elevator $\delta_e$, and rudder $\delta_r$. 
+There must be sufficient excitation of the aircraft for the LMS filter to converge on stable values. 
+The values of $y_n$ and the components in $a_n$ for each of the 5 estimators have sufficiently large magnitudes to overcome noise and other internal parasitic signals. 
+If the aircraft flies solely in trimmed level flight, the LMS filter cannot converge onto stable values. 
+There must also be a significant variation in the corresponding values to set the columns of $A$ as linearly independent. 
+Sufficiently large control surface inputs are required for this. 
+This usually means creating a series of square wave impulses for each of the control surfaces: aileron $\delta_a$, elevator $\delta_e$, and rudder $\delta_r$. 
 
-Phughoid mode is induced by impulses of elevator control input, which excites the vertical dynamics of the aircraft. Similarly, Dutch roll mode is induced by the impulses of the aileron and rudder, though the best results happen when there is a separation between the aileron control input and the rudder control input.
+Phughoid mode is induced by impulses of elevator control input, which excites the vertical dynamics of the aircraft. 
+Similarly, dutch roll mode is induced by the impulses of the aileron and rudder, though the best results happen when there is a separation between the aileron control input and the rudder control input.
 
 \section{MAVSIM Results}
 
-Mavsim is a Python flight simulator package that was developed for testing flight dynamics and control. The main simulation in Mavsim is an airplane with the same aerodynamic equations of motion as described in section \ref{sec:equationsOfMotion}. That is, it is a standard airplane with 30 coefficients of aerodynamics, with 12 longitudinal coefficients and 18 lateral coefficients.
+Mavsim is a Python flight simulator package that was developed for testing flight dynamics and control. 
+The main simulation in Mavsim is an airplane with the same aerodynamic equations of motion as described in section \ref{sec:equationsOfMotion}. 
+That is, it is a standard airplane with 30 coefficients of aerodynamics, with 12 longitudinal coefficients and 18 lateral coefficients.
 
-An LMS filter specific to this aircraft model was written. When the aircraft is flying during a simulation, the applicable flight data, as specified in the above sections, is passed into the LMS filter and run recursively.
+An LMS filter specific to this aircraft model was written. 
+When the aircraft is flying during a simulation, the applicable flight data, as specified in the above sections, is passed into the LMS filter and run recursively.
 
-The control input signal for elevator $\delta_e$ control is shown in Fig. \ref{fig:phughoidControlInput} and the control input signals for aileron $\delta_a$ and rudder $\delta_r$ are shown in Fig. \ref{fig:dutchRollControlInput}. It turns out that the best control input for the elevator we could find was a chirp signal, which is a sine wave of steadily increasing frequency. This corresponded well to the aircraft's phughoid mode oscillation. 
+The control input signal for elevator $\delta_e$ control is shown in Fig. \ref{fig:phughoidControlInput} and the control input signals for aileron $\delta_a$ and rudder $\delta_r$ are shown in Fig. \ref{fig:dutchRollControlInput}. 
+It turns out that the best control input for the elevator was a chirp signal, which is a sine wave of steadily increasing frequency. 
+This corresponded well to the aircraft's phughoid mode oscillation. 
 
-When the elevator maneuver is completed, the dutch roll is performed, For the dutch roll mode, both rudder and aileron control input were used. Each impulse lasts $0.2$ seconds total, where the control $\delta_a$ or $\delta_r$ is $0.3$ for $0.1$ seconds and $-0.3$ for $0.1$ seconds. That is, each impulse has an equal positive and then negative component. The signals are two-sided because a one-sided control in the aileron signal causes the aircraft to roll around, which is unstable for flight. Each maneuver is repeated six times for each control surface, with a delay of $2.0$ seconds between impulses. The entire maneuver lasts approximately $25.0$ seconds.
+When the elevator maneuver is completed, the dutch roll is performed. 
+For the dutch roll mode, both rudder and aileron control input were used. 
+Each impulse lasts $0.2$ seconds total, where the control $\delta_a$ or $\delta_r$ is $0.3$ for $0.1$ seconds and $-0.3$ for $0.1$ seconds. 
+That is, each impulse has an equal positive and then negative component. 
+The signals are two-sided because a one-sided control in the aileron signal causes the aircraft to roll around, which is unstable for flight. 
+Each maneuver is repeated six times for each control surface, with a delay of $2.0$ seconds between impulses. 
+The entire maneuver lasts approximately $25.0$ seconds.
 
-It is worth noting that dutch roll can be induced with rudder alone. However, the aerodynamic coefficients corresponding to $\delta_a$ ($C_{Y_{\delta_a}}$, $C_{l_{\delta_a}}$, $C_{n_{\delta_a}}$) would not be excited with $\delta_a = 0$. Therefore, both control surfaces are utilized. 
+It must be noted that dutch roll can be induced with rudder alone. 
+However, the aerodynamic coefficients corresponding to $\delta_a$ ($C_{Y_{\delta_a}}$, $C_{l_{\delta_a}}$, $C_{n_{\delta_a}}$) would not be excited with $\delta_a = 0$. 
+Therefore, both control surfaces are utilized. 
 
 \begin{figure}
     \centering
@@ -530,11 +591,14 @@ It is worth noting that dutch roll can be induced with rudder alone. However, th
     \label{fig:dutchRollControlInput}
 \end{figure}
 
-These open loop control signals cause the aircraft to deviate from the original direction. After each maneuver is completed, the autopilot engages and the aircraft returns to its original stable trajectory. Videos of the Mavsim flight simulation for coefficient estimation are found at: \href{https://youtube.com/shorts/tUv_ZsYx78U?feature=share}{Simulation Video} and \href{https://youtu.be/tRkiyvk2C58}{Signals Video}.
+These open loop control signals cause the aircraft to deviate from the original direction. 
+After each maneuver is completed, the autopilot engages and the aircraft returns to its original stable trajectory. 
+Videos of the Mavsim flight simulation for coefficient estimation are found at: \href{https://youtube.com/shorts/tUv_ZsYx78U?feature=share}{Simulation Video} and \href{https://youtu.be/tRkiyvk2C58}{Signals Video}.
 
 \subsection{Coefficient Comparison Table}
 
-Table \ref{tb:coefficients} contains all of the actual coefficients of aerodynamics compared to the coefficients calculated using the LMS filter, from the previous section. The error and error percentage are also given for each aerodynamic coefficient. 
+Table \ref{tb:coefficients} contains all of the actual coefficients of aerodynamics compared to the coefficients calculated using the LMS filter, from the previous section. 
+The error and error percentage are also given for each aerodynamic coefficient. 
 
 \begin{table}[ht]
 \centering
@@ -555,42 +619,41 @@ Table \ref{tb:coefficients} contains all of the actual coefficients of aerodynam
 %The table with all of this information can be found at: https://docs.google.com/spreadsheets/d/1DW3H2LaMANrdXDkPXQFCwfoodEIRIJS1OVjl9R6R920/edit?usp=sharing
 
 
-\section{ROSFlight Flight Data Results}
-
-In August of 2025, we worked with the Rosflight team to obtain actual flight data from one of their flights. This was performed on an Anaconda Airframe as shown in Fig. \ref{fig:anaconda}. 
-
-
-
-
 \section{Future Work}
 
 
 \subsection{Noise}
-The most obvious limitation for this sort of signal processing endeavor, as with all signal processing endeavors, is always noise. 
-Noise is a pervasive parasite which was not assumed in these simulations.
+The most obvious limitation for this sort of signal processing endeavor, as with all signal processing, is noise. 
 This simulation did not include noise in the signal, so many of the estimated coefficients may not be so well estimated in the end.
 In the future, in order to overcome large signal noise, even larger input maneuvers may need to be input to the system.
 
 \subsection{Nonlinear Modelling}
 
 One of the challenges with a simplified model of the flight controller is that while the aircraft's coefficients of aerodynamics stay approximately constant within a small angle of attack, they are actually functions of the state, and are not entirely linear. 
-
-Perhaps the most important coefficients for the VTOL project are those associated with pitch, such as $C_{L \alpha}$ and $C_{D \alpha}$. They are really functions of $\alpha$ as $C_L(\alpha)$ and $C_D(\alpha)$. The amount of lift depends on the localized angle of attack. 
+Perhaps the most important coefficients for the VTOL project are those associated with pitch, such as $C_{L \alpha}$ and $C_{D \alpha}$. 
+They are really functions of $\alpha$ as $C_L(\alpha)$ and $C_D(\alpha)$. 
+The amount of lift depends on the localized angle of attack. 
+In the future, nonlinear modelling techniques must be utilized to generate a better model of the aircraft.
 
 \subsection{Design}
 
-Another problem is the design of the eVTOL itself. With the addition of the booms for the vertical rotor, and the rotors themselves, this can significantly affect the aerodynamic model of the aircraft. This discrepancy will become more poignant in the future with future hardware implementation of the VTOL. The drag caused by the rotors during forward flight is of particular concern. The drag model may need to be updated with extra coefficients to take this into account 
+Another problem is the design of the eVTOL itself. 
+The addition of the booms, rotors, and propellers for the vertical takeoff can significantly affect the aerodynamic model of the aircraft. 
+This discrepancy will become more apparent with future hardware implementation of the VTOL. 
+The drag caused by the rotors during forward flight is of particular concern. 
+The drag model may need to be updated with extra coefficients to take this into account.
 
 \subsection{Safety}
 
-For hardware implementation, safety mechanisms in code will also need to be implemented. Boundaries will need to be drawn, and if the controller exceeds those boundaries, the safest fail-safe will probably be to enter quadrotor mode again, and thereby remain in a safe flight regime.
+For hardware implementation, safety mechanisms in code will also need to be implemented and boundaries must be drawn.
+If the controller exceeds those boundaries, the safest fail-safe will probably be to enter quadrotor mode again, and thereby remain in a safe flight regime.
 
 \subsection{Calibration}
 
-It may also be necessary for a differentially flat autopilot to work for the aircraft to fly some initial flights in standard fixed-wing flight and perform the maneuvers discussed above, in order to have a good estimation of the coefficients of aerodynamics beforehand. Without this calibration step, the differentially flat controller may make grave errors with calculations, and thereby increase the chance of failure dramatically.
+It may also be necessary for a differentially flat autopilot to work for the aircraft to fly some initial flights in standard fixed-wing flight and perform the maneuvers discussed above, in order to have a good estimation of the coefficients of aerodynamics beforehand. 
+Without this calibration step, the differentially flat controller may make significant errors with calculations, and thereby dramatically increase the probability of failure.
 
 \subsection{Hardware Implementation}
-
 
 \begin{figure}
     \centering
@@ -599,36 +662,36 @@ It may also be necessary for a differentially flat autopilot to work for the air
     \label{fig:anaconda}
 \end{figure}
 
-Another airframe we want to develop a better model for is called the anaconda airframe, as shown in Fig. \ref{fig:anaconda}. 
+It is particularly desirable to find the coefficients of aerodynamics for the anaconda airframe, which is shown in Fig. \ref{fig:anaconda}.
 This airframe is the primary platform for the development of Rosplane for the Rosflight autopilot stack. 
-There is no current model of this airframe and it is desirable for the development of this autopilot to know those coefficients. 
+There is no current model of this airframe and it is desirable for the development of this autopilot to know its characteristic coefficients of aerodynamics.
 Having this information will help with development and better tuning the autopilots.
 
-Plenty of flight data has been gathered from autopilot test flights for Rosflight.
+Standard flight data has been gathered from autopilot test flights for Rosflight.
 This flight data includes airspeed, accelerometer, gyroscope, and other related sensor and estimate data.
-Originally, we had intended to use this flight data and implement it in the algorithm described previously.
+Originally, it was intended to use this flight data and implement it in the LMS algorithm.
 However, it quickly became apparent that the estimates for angle of attack $\alpha$, and sideslip angle $\beta$ are inaccurate, and would not yield proper results.
 Accurate estimates for $\alpha$ and $\beta$ traditionally require a multi-axis airspeed sensor, which are extremely expensive pieces of equipment at present.
-One alterative to a multi-axis airspeed sensor is the use of weather vanes, as described in \cite{weatherVane}.
-These devices are relatively simple, and are even used extensiely on actual large airplanes.
+One alterative to a multi-axis airspeed sensor is the use of angle of attack and sideslip vanes, which are described in \cite{weatherVane}.
+These devices are relatively simple, and are actually used extensiely on commercial aircraft.
 Such implementation may enable future estimation for the Rosflight project.
 
 \section{Conclusion}
 
-During an airplane's flight, it may be subject to numerous aerodynamic effects including angle of attack $\alpha$, sideslip angle $\beta$, and angular rates $p, q, r$.
+During the flight of an aircraft, it is subject to numerous aerodynamic effects including angle of attack $\alpha$ and sideslip angle $\beta$.
 The combination of all aerodynamic and thrust forces and moments create a large collection of sensor data, including accelerometer, gyroscope, and airspeed.
 The aircraft already has a simplified aerodynamic model which is assumed to be an accurate representation of reality, although the specific parameter coefficients are unknown.
 These aerodynamic coefficients may then be found using existing flight data.
 
-A recursive LMS filter was developed which updates the estimate for each coefficient of aerodynamics after each data sample has been received.
+A recursive LMS filter was developed which updates the estimate for each aerodynamic coefficient after each data sample has been received.
 Larger maneuvers that excite the main aircraft aerodynamic modes are created using large impules on elevator $\delta_e$, aileron $\delta_a$, and rudder $\delta_r$.
 These large maneuvers create large signals for each LMS filter to accurately estimate the aircraft's coefficients of aerodynamics.
 This algorithm was implemented in simulation for a 3D fixed-wing aircraft with 30 coefficients of aerodynamics corresponding to lift, drag, and east forces, as well as roll, pitch, and yaw.
 
-While this preliminary work demonstrates the potential of an RLS algorithm for calculating coefficients of aerodynamics, there are actually many other implementations that already exist.
+While this preliminary work demonstrates the potential of an RLS algorithm for calculating coefficients of aerodynamics, there are many other implementations that already exist.
 That is to say, there already exist several other open source code repositories that perform system identification on aircraft. 
 While this implementation focuses solely on coefficients these other tools contain additional tools, including transfer function estimation, full state space modelling, and frequency response estimation.
 One such tool was developed at ETH Zurich, and is available at \href{https://github.com/ethz-asl/data-driven-dynamics}{ETH Zurich Repo}.
 
 In the future, the VTOL project will require implementation of these system identification techniques to produce an accurate estimate of the aircraft.
-Calibration flights must be flown first to create an estimate of the system for large angles of attack, and then use that estimation afterwards in the autopilot.
+Calibration flights must be flown first to create an estimate of the system for large angles of attack, and then use that estimation in the autopilot.
