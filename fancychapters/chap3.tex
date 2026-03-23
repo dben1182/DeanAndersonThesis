@@ -12,7 +12,7 @@ While they have a relatively low computational burden for a single application, 
 The objective of this section is to discuss methods to reduce computational burden in the generation of B-Splines.
 
 Uniform B-Splines are B-Splines where all basis functions are only time-shifted versions of each other.
-This is in opposition to clamped B-Splines which use modified basis functions at end points so the B-Spline will be guaranteed to start or stop at a particular point.
+On the other hand, clamped B-Splines use modified basis functions at end points to guarantee that the B-Spline starts and stops at particular locations.
 To prevent needless repetition of what already exists in the 2025 paper, the majority of the derivations must be referenced only. 
 
 \section{B-Spline Background}
@@ -26,11 +26,11 @@ B-Splines are constructed as
 In this equation, $\hat{b}_m^d(t, \bs{k})$ are the time-shifted basis functions of degree $d$, given the knot sequence $\bs{k}$. 
 The knot sequence $\bs{k}$ scales the time spacing of the basis function, which means that adjusting the knot sequence adjusts the standard basis function, which can be helpful for edge cases in robotics. 
 The control points $\bs{c}_m$, scale the basis functions to stitch together the final spline. 
-The dimension of the control point $\bs{c}_m$ determines the dimension of the B-Spline, where a 1D $\bs{c}_m$ will create a 1D B-Spline, and so forth.
+The dimension of the control point $\bs{c}_m$ determines the dimension of the B-Spline, where a 1D $\bs{c}_m$ creates a 1D B-Spline, and so forth.
 
 This paper uses only uniform B-Splines, in part because of their simplicity.
 In a uniform B-Spline, the knot points are all uniformly spaced apart. 
-If the knot points are all uniformly spaced apart with a spacing of $1$, the basis functions will be defined recursively as
+If the knot points are all uniformly spaced apart with a spacing of $1$, the basis functions is defined recursively as
 
 \begin{align}
 b^0(t) &= \begin{cases} 1 & \text{~if~} 0 \leq t \leq 1 \\ 
@@ -42,7 +42,7 @@ b^d(t) &= \left(\frac{t}{d}\right) b^{d-1}(t) + \left(\frac{(d+1)-t}{d}\right) b
 \end{align}
 
 The basis functions with uniform spacing of $1$ are shown in Fig. \ref{fig:central_basis_functions}. 
-If the knot point spacing is $\alpha$, simply replace $t$ with $\frac{t}{\alpha}$, which will scale the basis functions accordingly in the time domain. 
+If the knot point spacing is $\alpha$, then $t$ is replaced with $\frac{t}{\alpha}$; $\alpha$ scales the basis functions accordingly in the time domain. 
 Uniform B-Splines are particularly useful, because their basis function remains the same for all copies. 
 If all basis functions are the same for a particular B-Spline implementation, it is possible to store that function numerically in a lookup table, for ultra fast implementation. 
 The symbol for the basis functions may be rewritten as $b^d(t) = \hat{b}_m^d(t, \bs{k})$, because all basis functions are identical. 
@@ -266,7 +266,7 @@ This demonstrates the relationship between the state of the B-Spline and the eva
 The modified basis functions are already known. 
 If the conditions are known, then it is possible to find the control points using this relationship.
 However, this only applies to $d$ control points, given $d$ known conditions. 
-At any given time, most values in the $\bs{b}$ vector will be zero. 
+For a set time, most values in the $\bs{b}$ vector are zero. 
 For each $t$ that is equal to a knot point $k_i$, the nonzero values simply shift down the vector. 
 For example, if $d = 2$ and $M = 4$, $k = [-2, -1, 0, 1, 2, 3, 4, 5, 6]$ $\bs{b}_M^d(t)$ becomes
 
@@ -369,7 +369,7 @@ The matrix $B_4^2(0)$ then becomes
     \end{bmatrix}
 \end{align}.
 
-The top, nonzero section will be shifted down for each subsequent shift in $t$. 
+The top, nonzero section is shifted down for each subsequent shift in $t$. 
 The nonzero section is denoted as $\hat{B}_4^2$, which is time invariant. 
 This simplifies the control point relationship to be
 
@@ -422,7 +422,7 @@ This process may be implemented for both initial and final conditions as
  				\end{bmatrix},
  \]
 then the start and end control points are found given the start and end conditions $\bs{S}$ and $\bs{E}$. 
-This will work at any point, as long as the conditions at that point are known as
+This works at any point, as long as the conditions at that point are known as
 
 \begin{align}
     \bs{C}_{1:d} = \bs{S} \left(\hat{B}_M^d(0)\right)^{-1}\\
@@ -445,14 +445,14 @@ This is given as
  	\end{aligned}
  \end{equation},
 
-where $W_M^{d}(\bs{\rho})$ is a mixing matrix that will be defined later.
+where $W_M^{d}(\bs{\rho})$ is a mixing matrix that is defined later.
 
 \section{Integral objective}
 
 In this section, the derivation for minimum snap control points is summarized.
 While this section highlights the most important equations, the full derivation is found in \cite{beard2025BSplines}.
 
-The objective for creating control points that minimize the integral of an $\ell^{th}$ derivative, which in our case is $3^{rd}$ derivative, is given in section $2.6$ of \cite{beard2025BSplines} as
+The objective for creating control points that minimizes the integral of an $\ell^{th}$ derivative, is given in section $2.6$ of \cite{beard2025BSplines} as
 
 \begin{equation}
     \label{eq:integral_constraint}
@@ -485,10 +485,10 @@ then the matrix $W_M^{d}(\bs{\rho})$ is defined as
     W_M^{d}(\bs{\rho}) \defeq \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell}.
 \end{align}.
 
-This matrix becomes an objective function by relating the control points $\bs{C}$ to the specified derivative that will be minimized over the entire path. 
+This matrix becomes an objective function by relating the control points $\bs{C}$ to the specified derivative that is minimized over the entire path. 
 From this objective, a minimized solution may be derived.
 
-A lengthy derivation is given in section 2.6 in \cite{beard2025BSplines}, which will not be repeated here, but there is an analytical solution to the minimum-snap problem.
+A lengthy derivation is given in section 2.6 in \cite{beard2025BSplines}, which is not repeated here, but there is an analytical solution to the minimum-snap problem.
 The singular value decomposition of two concatenated and shifted $B$ matrices is given as
 
 \begin{align}
@@ -633,7 +633,7 @@ The equation for finding the remaining control points becomes
     Q_M^{d}(\bs{\rho})
 \end{align}.
 
-If a user's mixing vector $\bs{\rho}$ is known beforehand, the entire $Q_M^{d}(\bs{\rho})$ matrix can be computed once, which would further reduce computation time. 
+If a mixing vector $\bs{\rho}$ is known beforehand, the entire $Q_M^{d}(\bs{\rho})$ matrix can be computed once, which would further reduce computation time. 
 
 \section{Results}
 

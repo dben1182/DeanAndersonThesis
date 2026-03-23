@@ -2465,18 +2465,19 @@
     <bcf:citekey order="90" intorder="1">SUN2025103174</bcf:citekey>
     <bcf:citekey order="91" intorder="1">osburn</bcf:citekey>
     <bcf:citekey order="92" intorder="1">LIAN</bcf:citekey>
-    <bcf:citekey order="93" intorder="1">david_bspline</bcf:citekey>
+    <bcf:citekey order="93" intorder="1">LIAN</bcf:citekey>
     <bcf:citekey order="94" intorder="1">david_bspline</bcf:citekey>
-    <bcf:citekey order="95" intorder="1">laube2018deeplearningparametrizationbspline</bcf:citekey>
-    <bcf:citekey order="96" intorder="1">Urmson_2003_8792</bcf:citekey>
-    <bcf:citekey order="97" intorder="1">LaValle_greedy</bcf:citekey>
-    <bcf:citekey order="98" intorder="1">Gammell-2014-7921</bcf:citekey>
-    <bcf:citekey order="99" intorder="1">mpc_controller</bcf:citekey>
-    <bcf:citekey order="100" intorder="1">lavretskyRobustAdaptiveControl2024</bcf:citekey>
-    <bcf:citekey order="101" intorder="1">lou_unified_energy_control_tilt_body</bcf:citekey>
-    <bcf:citekey order="102" intorder="1">galliker2021datadriven</bcf:citekey>
-    <bcf:citekey order="103" intorder="1">SUN2025103174</bcf:citekey>
-    <bcf:citekey order="104" intorder="1">Gammell-2014-7921</bcf:citekey>
+    <bcf:citekey order="95" intorder="1">david_bspline</bcf:citekey>
+    <bcf:citekey order="96" intorder="1">laube2018deeplearningparametrizationbspline</bcf:citekey>
+    <bcf:citekey order="97" intorder="1">Urmson_2003_8792</bcf:citekey>
+    <bcf:citekey order="98" intorder="1">LaValle_greedy</bcf:citekey>
+    <bcf:citekey order="99" intorder="1">Gammell-2014-7921</bcf:citekey>
+    <bcf:citekey order="100" intorder="1">mpc_controller</bcf:citekey>
+    <bcf:citekey order="101" intorder="1">lavretskyRobustAdaptiveControl2024</bcf:citekey>
+    <bcf:citekey order="102" intorder="1">lou_unified_energy_control_tilt_body</bcf:citekey>
+    <bcf:citekey order="103" intorder="1">galliker2021datadriven</bcf:citekey>
+    <bcf:citekey order="104" intorder="1">SUN2025103174</bcf:citekey>
+    <bcf:citekey order="105" intorder="1">Gammell-2014-7921</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

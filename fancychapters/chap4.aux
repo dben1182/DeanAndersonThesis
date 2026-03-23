@@ -9,8 +9,8 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Three examples of obstacle fields are presented. The 2x2 and 3x3 grids run fairly well. The algorithm breaks down on the 4x4 grid; it does not find a good initialization point.}}{78}{figure.caption.45}\protected@file@percent }
 \newlabel{fig:davidObstacleComparison}{{5.1}{78}{Three examples of obstacle fields are presented. The 2x2 and 3x3 grids run fairly well. The algorithm breaks down on the 4x4 grid; it does not find a good initialization point}{figure.caption.45}{}}
 \newlabel{fig:davidObstacleComparison@cref}{{[figure][1][5]5.1}{[1][77][]78}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Point to point RRT expansion process. Two configurations are shown. A random point $Rand$ is selected in the configuration space, a line is drawn between $Rand$ and the nearest existing node $N_i$. A new candidate node $N_k$ is placed a distance $d$ from $N_i$. If the line from $N_i$ to $N_k$ is not obstructed, it is added. Otherwise, it is discarded, as in the Invalid Case.}}{79}{figure.caption.46}\protected@file@percent }
-\newlabel{fig:new node diagram}{{5.2}{79}{Point to point RRT expansion process. Two configurations are shown. A random point $Rand$ is selected in the configuration space, a line is drawn between $Rand$ and the nearest existing node $N_i$. A new candidate node $N_k$ is placed a distance $d$ from $N_i$. If the line from $N_i$ to $N_k$ is not obstructed, it is added. Otherwise, it is discarded, as in the Invalid Case}{figure.caption.46}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Point to point RRT expansion process. Two configurations are shown. A random point $Rand$ is selected in the configuration space, a line is drawn between $Rand$ and the nearest existing node $N_i$. A new candidate node $N_k$ is placed a distance $d$ from $N_i$. If the line from $N_i$ to $N_k$ is not obstructed, it is added. Otherwise, it is discarded, as in the invalid case.}}{79}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:new node diagram}{{5.2}{79}{Point to point RRT expansion process. Two configurations are shown. A random point $Rand$ is selected in the configuration space, a line is drawn between $Rand$ and the nearest existing node $N_i$. A new candidate node $N_k$ is placed a distance $d$ from $N_i$. If the line from $N_i$ to $N_k$ is not obstructed, it is added. Otherwise, it is discarded, as in the invalid case}{figure.caption.46}{}}
 \newlabel{fig:new node diagram@cref}{{[figure][2][5]5.2}{[1][78][]79}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Example of generating first safe flight corridor. Environment is a 2x2 grid of buildings}}{79}{figure.caption.47}\protected@file@percent }
 \newlabel{fig:SFC_start}{{5.3}{79}{Example of generating first safe flight corridor. Environment is a 2x2 grid of buildings}{figure.caption.47}{}}
@@ -21,21 +21,21 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces RRT algorithm integrating Dubins path into planning. From \blx@tocontentsinit {0}\cite {uav_book} Fig. 12.12, pg. 255}}{81}{figure.caption.49}\protected@file@percent }
 \newlabel{fig:dubinsRRT}{{5.5}{81}{RRT algorithm integrating Dubins path into planning. From \cite {uav_book} Fig. 12.12, pg. 255}{figure.caption.49}{}}
 \newlabel{fig:dubinsRRT@cref}{{[figure][5][5]5.5}{[1][80][]81}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces An example of a Non-Convex and a Convex shape. A line segment can be drawn between points within the Non-Convex shape and leave the shape temporarily. This is because of the reflex vertex, which has an internal angle greater than $\pi $ radians. Such is not the case with the convex shape, which maintains all internal points.}}{81}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:Convex and Non-Convex Comparison}{{5.6}{81}{An example of a Non-Convex and a Convex shape. A line segment can be drawn between points within the Non-Convex shape and leave the shape temporarily. This is because of the reflex vertex, which has an internal angle greater than $\pi $ radians. Such is not the case with the convex shape, which maintains all internal points}{figure.caption.50}{}}
-\newlabel{fig:Convex and Non-Convex Comparison@cref}{{[figure][6][5]5.6}{[1][81][]81}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Safe Flight Corridors}{81}{subsection.5.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Convexity}{81}{subsection.5.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces An example of a Non-Convex and a Convex shape. A line segment can be drawn between points within the Non-Convex shape and leave the shape temporarily. This is because of the reflex vertex, which has an internal angle greater than $\pi $ radians. Such is not the case with the convex shape, which maintains all internal points.}}{82}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:Convex and Non-Convex Comparison}{{5.6}{82}{An example of a Non-Convex and a Convex shape. A line segment can be drawn between points within the Non-Convex shape and leave the shape temporarily. This is because of the reflex vertex, which has an internal angle greater than $\pi $ radians. Such is not the case with the convex shape, which maintains all internal points}{figure.caption.50}{}}
+\newlabel{fig:Convex and Non-Convex Comparison@cref}{{[figure][6][5]5.6}{[1][81][]82}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Showing geometrical intuition for half-plane switching. $\hat  {n}$ represents the vector normal to the half-plane bisecting line, $\vec  {r}$ represents an arbitrary point the bisecting line passes through, and $\vec  {p_i}$ represents a given point in the plane. This shows three different scenarios: the projections of $\vec  {r}$, $\vec  {p_1}$, and $\vec  {p_2}$ onto $\hat  {n}$. $\hat  {n}^\top p_1$, is less than $\hat  {n}^\top r$ and $(\hat  {n}^\top p_1) \hat  {n}$ is on the opposite side of the plane as $\hat  {n}$, while the opposite is true for $\vec  {p_2}$.}}{82}{figure.caption.51}\protected@file@percent }
 \newlabel{fig:half plane}{{5.7}{82}{Showing geometrical intuition for half-plane switching. $\hat {n}$ represents the vector normal to the half-plane bisecting line, $\vec {r}$ represents an arbitrary point the bisecting line passes through, and $\vec {p_i}$ represents a given point in the plane. This shows three different scenarios: the projections of $\vec {r}$, $\vec {p_1}$, and $\vec {p_2}$ onto $\hat {n}$. $\hat {n}^\top p_1$, is less than $\hat {n}^\top r$ and $(\hat {n}^\top p_1) \hat {n}$ is on the opposite side of the plane as $\hat {n}$, while the opposite is true for $\vec {p_2}$}{figure.caption.51}{}}
-\newlabel{fig:half plane@cref}{{[figure][7][5]5.7}{[1][82][]82}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Enclosure within Safe Flight Corridors}{82}{subsection.5.1.3}\protected@file@percent }
+\newlabel{fig:half plane@cref}{{[figure][7][5]5.7}{[1][81][]82}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Geometry of rectangular flight corridor, with four normal vectors and vertex points respectively.}}{83}{figure.caption.52}\protected@file@percent }
 \newlabel{fig:single SFC}{{5.8}{83}{Geometry of rectangular flight corridor, with four normal vectors and vertex points respectively}{figure.caption.52}{}}
 \newlabel{fig:single SFC@cref}{{[figure][8][5]5.8}{[1][82][]83}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Non-convex union of two safe flight corridors}}{83}{figure.caption.53}\protected@file@percent }
 \newlabel{fig:non-convex union}{{5.9}{83}{Non-convex union of two safe flight corridors}{figure.caption.53}{}}
-\newlabel{fig:non-convex union@cref}{{[figure][9][5]5.9}{[1][82][]83}{}{}{}}
+\newlabel{fig:non-convex union@cref}{{[figure][9][5]5.9}{[1][83][]83}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Enclosure within Safe Flight Corridors}{83}{subsection.5.1.3}\protected@file@percent }
 \newlabel{thm:overlapping_SFCs}{{5.1.1}{84}{Enclosure within Safe Flight Corridors}{theorem.5.1.1}{}}
 \newlabel{thm:overlapping_SFCs@cref}{{[theorem][1][5,1]5.1.1}{[1][84][]84}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}RRT Implementation}{84}{section.5.2}\protected@file@percent }
@@ -47,8 +47,8 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Example of RRT tree.}}{86}{figure.caption.54}\protected@file@percent }
 \newlabel{fig:rrt tree example}{{5.10}{86}{Example of RRT tree}{figure.caption.54}{}}
 \newlabel{fig:rrt tree example@cref}{{[figure][10][5]5.10}{[1][84][]86}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces SFC and obstacle intersections. On the left there is no intersection, and on the right there is an intersection.}}{87}{figure.caption.55}\protected@file@percent }
-\newlabel{fig:obstacleIntersection}{{5.11}{87}{SFC and obstacle intersections. On the left there is no intersection, and on the right there is an intersection}{figure.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces SFC and obstacle intersections. On the left side, there is no intersection. On the right side there is an intersection.}}{87}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:obstacleIntersection}{{5.11}{87}{SFC and obstacle intersections. On the left side, there is no intersection. On the right side there is an intersection}{figure.caption.55}{}}
 \newlabel{fig:obstacleIntersection@cref}{{[figure][11][5]5.11}{[1][84][]87}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Aircraft flying section of Dubins Path with straight lines, and connected with arcs of minimum turning radius. Anything with sharper curvature, and the aircraft will be unable to perform the turn.}}{87}{figure.caption.56}\protected@file@percent }
 \newlabel{fig:MinTurnRadius}{{5.12}{87}{Aircraft flying section of Dubins Path with straight lines, and connected with arcs of minimum turning radius. Anything with sharper curvature, and the aircraft will be unable to perform the turn}{figure.caption.56}{}}
@@ -62,38 +62,39 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Turn Constraints Enforcement}{88}{subsection.5.3.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Diagram of sampled annulus constraints}}{89}{figure.caption.59}\protected@file@percent }
 \newlabel{fig:annulus sampled diagram}{{5.15}{89}{Diagram of sampled annulus constraints}{figure.caption.59}{}}
-\newlabel{fig:annulus sampled diagram@cref}{{[figure][15][5]5.15}{[1][88][]89}{}{}{}}
-\newlabel{fig:blank 3D obstacle field}{{5.16a}{89}{Complete set of nodes for RRT algorithm on a $2 \times 2$ obstacle field. The intermediate nodes are shown in orange and the original path is shown in green connecting them sequentially. The other plausible paths between existing nodes are shown in yellow. These alternative paths will be explored using Dijkstra's algorithm}{figure.caption.60}{}}
-\newlabel{fig:blank 3D obstacle field@cref}{{[subfigure][1][5,16]5.16a}{[1][89][]89}{}{}{}}
-\newlabel{sub@fig:blank 3D obstacle field}{{a}{89}{Complete set of nodes for RRT algorithm on a $2 \times 2$ obstacle field. The intermediate nodes are shown in orange and the original path is shown in green connecting them sequentially. The other plausible paths between existing nodes are shown in yellow. These alternative paths will be explored using Dijkstra's algorithm}{figure.caption.60}{}}
-\newlabel{sub@fig:blank 3D obstacle field@cref}{{[subfigure][1][5,16]5.16a}{[1][89][]89}{}{}{}}
-\newlabel{fig:3D Waypoints Not Smooth}{{5.16b}{89}{This displays the same node network, but with Dijkstra's algorithm outputting smoothed path in blue}{figure.caption.60}{}}
-\newlabel{fig:3D Waypoints Not Smooth@cref}{{[subfigure][2][5,16]5.16b}{[1][89][]89}{}{}{}}
-\newlabel{sub@fig:3D Waypoints Not Smooth}{{b}{89}{This displays the same node network, but with Dijkstra's algorithm outputting smoothed path in blue}{figure.caption.60}{}}
-\newlabel{sub@fig:3D Waypoints Not Smooth@cref}{{[subfigure][2][5,16]5.16b}{[1][89][]89}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Diagram of initial RRT output and all possible alternative connections between nodes. Dijkstra's algorithm finds the shortest possible route in the end.}}{89}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:3D Path}{{5.16}{89}{Diagram of initial RRT output and all possible alternative connections between nodes. Dijkstra's algorithm finds the shortest possible route in the end}{figure.caption.60}{}}
-\newlabel{fig:3D Path@cref}{{[figure][16][5]5.16}{[1][89][]89}{}{}{}}
+\newlabel{fig:annulus sampled diagram@cref}{{[figure][15][5]5.15}{[1][89][]89}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}Path Smoothing}{89}{section.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Objective Function}{90}{section.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Objective Function}{89}{section.5.5}\protected@file@percent }
+\newlabel{fig:blank 3D obstacle field}{{5.16a}{90}{Complete set of nodes for RRT algorithm on a $2 \times 2$ obstacle field. The intermediate nodes are shown in orange and the original path is shown in green connecting them sequentially. The other plausible paths between existing nodes are shown in yellow. These alternative paths will be explored using Dijkstra's algorithm}{figure.caption.60}{}}
+\newlabel{fig:blank 3D obstacle field@cref}{{[subfigure][1][5,16]5.16a}{[1][89][]90}{}{}{}}
+\newlabel{sub@fig:blank 3D obstacle field}{{a}{90}{Complete set of nodes for RRT algorithm on a $2 \times 2$ obstacle field. The intermediate nodes are shown in orange and the original path is shown in green connecting them sequentially. The other plausible paths between existing nodes are shown in yellow. These alternative paths will be explored using Dijkstra's algorithm}{figure.caption.60}{}}
+\newlabel{sub@fig:blank 3D obstacle field@cref}{{[subfigure][1][5,16]5.16a}{[1][89][]90}{}{}{}}
+\newlabel{fig:3D Waypoints Not Smooth}{{5.16b}{90}{This displays the same node network, but with Dijkstra's algorithm outputting smoothed path in blue}{figure.caption.60}{}}
+\newlabel{fig:3D Waypoints Not Smooth@cref}{{[subfigure][2][5,16]5.16b}{[1][89][]90}{}{}{}}
+\newlabel{sub@fig:3D Waypoints Not Smooth}{{b}{90}{This displays the same node network, but with Dijkstra's algorithm outputting smoothed path in blue}{figure.caption.60}{}}
+\newlabel{sub@fig:3D Waypoints Not Smooth@cref}{{[subfigure][2][5,16]5.16b}{[1][89][]90}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Diagram of initial RRT output and all possible alternative connections between nodes. Dijkstra's algorithm finds the shortest possible route in the end.}}{90}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:3D Path}{{5.16}{90}{Diagram of initial RRT output and all possible alternative connections between nodes. Dijkstra's algorithm finds the shortest possible route in the end}{figure.caption.60}{}}
+\newlabel{fig:3D Path@cref}{{[figure][16][5]5.16}{[1][89][]90}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Minimum Distance}{90}{subsection.5.5.1}\protected@file@percent }
-\newlabel{eq:controlPointsOptimization}{{5.17}{90}{Minimum Distance}{equation.5.17}{}}
-\newlabel{eq:controlPointsOptimization@cref}{{[equation][17][5]5.17}{[1][90][]90}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Diagram of relationships between Control Points. This example shows that the vectors between control points are the control points of the derivative.}}{91}{figure.caption.61}\protected@file@percent }
 \newlabel{fig:Control Points Relationships}{{5.17}{91}{Diagram of relationships between Control Points. This example shows that the vectors between control points are the control points of the derivative}{figure.caption.61}{}}
 \newlabel{fig:Control Points Relationships@cref}{{[figure][17][5]5.17}{[1][90][]91}{}{}{}}
+\newlabel{eq:controlPointsOptimizationDistance}{{5.17}{91}{Minimum Distance}{equation.5.17}{}}
+\newlabel{eq:controlPointsOptimizationDistance@cref}{{[equation][17][5]5.17}{[1][90][]91}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Minimum Velocity}{91}{subsection.5.5.2}\protected@file@percent }
-\newlabel{eq:controlPointsOptimization}{{5.21}{91}{Minimum Velocity}{equation.5.21}{}}
-\newlabel{eq:controlPointsOptimization@cref}{{[equation][21][5]5.21}{[1][91][]91}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Minimum Acceleration}{91}{subsection.5.5.3}\protected@file@percent }
+\newlabel{eq:controlPointsOptimizationVelocity}{{5.21}{92}{Minimum Velocity}{equation.5.21}{}}
+\newlabel{eq:controlPointsOptimizationVelocity@cref}{{[equation][21][5]5.21}{[1][91][]92}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Minimum Acceleration}{92}{subsection.5.5.3}\protected@file@percent }
 \newlabel{eq:controlPointsOptimization}{{5.25}{92}{Minimum Acceleration}{equation.5.25}{}}
 \newlabel{eq:controlPointsOptimization@cref}{{[equation][25][5]5.25}{[1][92][]92}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}A Note on 2D slices of 3D obstacles}{92}{subsection.5.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}A Note on 2D slices of 3D obstacles}{93}{subsection.5.5.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5.6}2D Results}{93}{section.5.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces 4x4 Building Map for 2D algorithm}}{94}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:4x4Map}{{5.18}{94}{4x4 Building Map for 2D algorithm}{figure.caption.62}{}}
-\newlabel{fig:4x4Map@cref}{{[figure][18][5]5.18}{[1][94][]94}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}$4 \times 4$ grid}{94}{subsection.5.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}6x6 Grid}{94}{subsection.5.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces 4x4 Building Map for 2D algorithm}}{95}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:4x4Map}{{5.18}{95}{4x4 Building Map for 2D algorithm}{figure.caption.62}{}}
+\newlabel{fig:4x4Map@cref}{{[figure][18][5]5.18}{[1][94][]95}{}{}{}}
 \newlabel{fig:4x4Waypoints1}{{5.19a}{95}{Side View of safe flight corridors path through obstacle field}{figure.caption.63}{}}
 \newlabel{fig:4x4Waypoints1@cref}{{[subfigure][1][5,19]5.19a}{[1][94][]95}{}{}{}}
 \newlabel{sub@fig:4x4Waypoints1}{{a}{95}{Side View of safe flight corridors path through obstacle field}{figure.caption.63}{}}
@@ -105,8 +106,6 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Safe flight corridors through obstacle field. The original path is shown in red and the smoothed path is shown in purple.}}{95}{figure.caption.63}\protected@file@percent }
 \newlabel{fig:4x4Waypoints}{{5.19}{95}{Safe flight corridors through obstacle field. The original path is shown in red and the smoothed path is shown in purple}{figure.caption.63}{}}
 \newlabel{fig:4x4Waypoints@cref}{{[figure][19][5]5.19}{[1][94][]95}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}6x6 Grid}{95}{subsection.5.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.3}Maze}{95}{subsection.5.6.3}\protected@file@percent }
 \newlabel{fig:4x4Splines1}{{5.20a}{96}{Side view of three B-spline paths through SFC path. Green is min distance, yellow is min velocity, orange in min acceleration}{figure.caption.64}{}}
 \newlabel{fig:4x4Splines1@cref}{{[subfigure][1][5,20]5.20a}{[1][94][]96}{}{}{}}
 \newlabel{sub@fig:4x4Splines1}{{a}{96}{Side view of three B-spline paths through SFC path. Green is min distance, yellow is min velocity, orange in min acceleration}{figure.caption.64}{}}
@@ -118,8 +117,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Spline paths through smoothed SFC path. Path in green generated using minimum distance objective function. Path in yellow generated using minimum velocity objective function. Path in orange generated using minimum acceleration objective function.}}{96}{figure.caption.64}\protected@file@percent }
 \newlabel{fig:4x4Splines}{{5.20}{96}{Spline paths through smoothed SFC path. Path in green generated using minimum distance objective function. Path in yellow generated using minimum velocity objective function. Path in orange generated using minimum acceleration objective function}{figure.caption.64}{}}
 \newlabel{fig:4x4Splines@cref}{{[figure][20][5]5.20}{[1][94][]96}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}3D RRT Extension}{96}{section.5.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.1}3D Object Definitions}{96}{subsection.5.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.3}Maze}{96}{subsection.5.6.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Zoom in on SFC connection. Comparison of three B-Spline outputs at boundaries. Green is minimum distance, yellow is minimum velocity, and orange is minimum acceleration.}}{97}{figure.caption.65}\protected@file@percent }
 \newlabel{fig:4x4Zoom}{{5.21}{97}{Zoom in on SFC connection. Comparison of three B-Spline outputs at boundaries. Green is minimum distance, yellow is minimum velocity, and orange is minimum acceleration}{figure.caption.65}{}}
 \newlabel{fig:4x4Zoom@cref}{{[figure][21][5]5.21}{[1][94][]97}{}{}{}}
@@ -128,83 +126,94 @@
 \newlabel{fig:4x4Metrics@cref}{{[figure][22][5]5.22}{[1][94][]97}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces 6x6 Building Map for 2D algorithm}}{98}{figure.caption.67}\protected@file@percent }
 \newlabel{fig:6x6Map}{{5.23}{98}{6x6 Building Map for 2D algorithm}{figure.caption.67}{}}
-\newlabel{fig:6x6Map@cref}{{[figure][23][5]5.23}{[1][95][]98}{}{}{}}
+\newlabel{fig:6x6Map@cref}{{[figure][23][5]5.23}{[1][96][]98}{}{}{}}
 \newlabel{fig:6x6Waypoints1}{{5.24a}{98}{Side View of safe flight corridors path through obstacle field}{figure.caption.68}{}}
-\newlabel{fig:6x6Waypoints1@cref}{{[subfigure][1][5,24]5.24a}{[1][95][]98}{}{}{}}
+\newlabel{fig:6x6Waypoints1@cref}{{[subfigure][1][5,24]5.24a}{[1][96][]98}{}{}{}}
 \newlabel{sub@fig:6x6Waypoints1}{{a}{98}{Side View of safe flight corridors path through obstacle field}{figure.caption.68}{}}
-\newlabel{sub@fig:6x6Waypoints1@cref}{{[subfigure][1][5,24]5.24a}{[1][95][]98}{}{}{}}
-\newlabel{fig:4x4Waypoints2}{{5.24b}{98}{Top view of same path}{figure.caption.68}{}}
-\newlabel{fig:4x4Waypoints2@cref}{{[subfigure][2][5,24]5.24b}{[1][95][]98}{}{}{}}
-\newlabel{sub@fig:4x4Waypoints2}{{b}{98}{Top view of same path}{figure.caption.68}{}}
-\newlabel{sub@fig:4x4Waypoints2@cref}{{[subfigure][2][5,24]5.24b}{[1][95][]98}{}{}{}}
+\newlabel{sub@fig:6x6Waypoints1@cref}{{[subfigure][1][5,24]5.24a}{[1][96][]98}{}{}{}}
+\newlabel{fig:6x6Waypoints2}{{5.24b}{98}{Top view of same path}{figure.caption.68}{}}
+\newlabel{fig:6x6Waypoints2@cref}{{[subfigure][2][5,24]5.24b}{[1][96][]98}{}{}{}}
+\newlabel{sub@fig:6x6Waypoints2}{{b}{98}{Top view of same path}{figure.caption.68}{}}
+\newlabel{sub@fig:6x6Waypoints2@cref}{{[subfigure][2][5,24]5.24b}{[1][96][]98}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Safe flight corridors through obstacle field. The original path is shown in red and the smoothed path is shown in purple.}}{98}{figure.caption.68}\protected@file@percent }
 \newlabel{fig:6x6Waypoints}{{5.24}{98}{Safe flight corridors through obstacle field. The original path is shown in red and the smoothed path is shown in purple}{figure.caption.68}{}}
-\newlabel{fig:6x6Waypoints@cref}{{[figure][24][5]5.24}{[1][95][]98}{}{}{}}
+\newlabel{fig:6x6Waypoints@cref}{{[figure][24][5]5.24}{[1][96][]98}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}3D RRT Extension}{98}{section.5.7}\protected@file@percent }
 \newlabel{fig:6x6Splines1}{{5.25a}{99}{Side view of three B-spline paths through SFC path. Green is min distance, yellow is min velocity, orange in min acceleration}{figure.caption.69}{}}
-\newlabel{fig:6x6Splines1@cref}{{[subfigure][1][5,25]5.25a}{[1][95][]99}{}{}{}}
+\newlabel{fig:6x6Splines1@cref}{{[subfigure][1][5,25]5.25a}{[1][96][]99}{}{}{}}
 \newlabel{sub@fig:6x6Splines1}{{a}{99}{Side view of three B-spline paths through SFC path. Green is min distance, yellow is min velocity, orange in min acceleration}{figure.caption.69}{}}
-\newlabel{sub@fig:6x6Splines1@cref}{{[subfigure][1][5,25]5.25a}{[1][95][]99}{}{}{}}
+\newlabel{sub@fig:6x6Splines1@cref}{{[subfigure][1][5,25]5.25a}{[1][96][]99}{}{}{}}
 \newlabel{fig:6x6Splines2}{{5.25b}{99}{Top view of three B-spline paths through SFC path. Green is min distance, yellow is min velocity, orange in min acceleration}{figure.caption.69}{}}
-\newlabel{fig:6x6Splines2@cref}{{[subfigure][2][5,25]5.25b}{[1][95][]99}{}{}{}}
+\newlabel{fig:6x6Splines2@cref}{{[subfigure][2][5,25]5.25b}{[1][96][]99}{}{}{}}
 \newlabel{sub@fig:6x6Splines2}{{b}{99}{Top view of three B-spline paths through SFC path. Green is min distance, yellow is min velocity, orange in min acceleration}{figure.caption.69}{}}
-\newlabel{sub@fig:6x6Splines2@cref}{{[subfigure][2][5,25]5.25b}{[1][95][]99}{}{}{}}
+\newlabel{sub@fig:6x6Splines2@cref}{{[subfigure][2][5,25]5.25b}{[1][96][]99}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.25}{\ignorespaces Spline paths through smoothed SFC path. Path in green generated using minimum distance objective function. Path in yellow generated using minimum velocity objective function. Path in orange generated using minimum acceleration objective function.}}{99}{figure.caption.69}\protected@file@percent }
 \newlabel{fig:6x6Splines}{{5.25}{99}{Spline paths through smoothed SFC path. Path in green generated using minimum distance objective function. Path in yellow generated using minimum velocity objective function. Path in orange generated using minimum acceleration objective function}{figure.caption.69}{}}
-\newlabel{fig:6x6Splines@cref}{{[figure][25][5]5.25}{[1][95][]99}{}{}{}}
+\newlabel{fig:6x6Splines@cref}{{[figure][25][5]5.25}{[1][96][]99}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.26}{\ignorespaces Zoom in on SFC connection. Comparison of three B-Spline outputs at boundaries. Green is minimum distance, yellow is minimum velocity, and orange is minimum acceleration.}}{99}{figure.caption.70}\protected@file@percent }
 \newlabel{fig:6x6Zoom}{{5.26}{99}{Zoom in on SFC connection. Comparison of three B-Spline outputs at boundaries. Green is minimum distance, yellow is minimum velocity, and orange is minimum acceleration}{figure.caption.70}{}}
-\newlabel{fig:6x6Zoom@cref}{{[figure][26][5]5.26}{[1][95][]99}{}{}{}}
+\newlabel{fig:6x6Zoom@cref}{{[figure][26][5]5.26}{[1][96][]99}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.27}{\ignorespaces Metrics from 4x4 test. Comparing results for minimum distance, velocity, and acceleration. Top subplot is velocity for each. Middle subplot is acceleration for each. Bottom subplot is curvature for each.}}{100}{figure.caption.71}\protected@file@percent }
 \newlabel{fig:6x6Metrics}{{5.27}{100}{Metrics from 4x4 test. Comparing results for minimum distance, velocity, and acceleration. Top subplot is velocity for each. Middle subplot is acceleration for each. Bottom subplot is curvature for each}{figure.caption.71}{}}
-\newlabel{fig:6x6Metrics@cref}{{[figure][27][5]5.27}{[1][95][]100}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.28}{\ignorespaces Rectangular Prism. The normal vectors $n_i$ and sampled points $v_i$ are used to determine whether an object lies within the the Prism.}}{100}{figure.caption.72}\protected@file@percent }
-\newlabel{fig:rectangularPrism}{{5.28}{100}{Rectangular Prism. The normal vectors $n_i$ and sampled points $v_i$ are used to determine whether an object lies within the the Prism}{figure.caption.72}{}}
-\newlabel{fig:rectangularPrism@cref}{{[figure][28][5]5.28}{[1][96][]100}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.29}{\ignorespaces Rectangular Prism as a Safe Flight Corridor encompassing points $b_i$ to $b_{i+1}$}}{100}{figure.caption.73}\protected@file@percent }
-\newlabel{fig:3DSafeFlightCorridor}{{5.29}{100}{Rectangular Prism as a Safe Flight Corridor encompassing points $b_i$ to $b_{i+1}$}{figure.caption.73}{}}
-\newlabel{fig:3DSafeFlightCorridor@cref}{{[figure][29][5]5.29}{[1][98][]100}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.2}3D Results}{101}{subsection.5.7.2}\protected@file@percent }
-\newlabel{fig:3D_Map}{{5.30a}{101}{Map of 64 cubical obstacles in $4 \times 4 \times 4$ grid on a $3000 \times 3000 \times 3000$ field. The object is to find a path from the origin to the opposite diagonal corner}{figure.caption.74}{}}
-\newlabel{fig:3D_Map@cref}{{[subfigure][1][5,30]5.30a}{[1][101][]101}{}{}{}}
-\newlabel{sub@fig:3D_Map}{{a}{101}{Map of 64 cubical obstacles in $4 \times 4 \times 4$ grid on a $3000 \times 3000 \times 3000$ field. The object is to find a path from the origin to the opposite diagonal corner}{figure.caption.74}{}}
-\newlabel{sub@fig:3D_Map@cref}{{[subfigure][1][5,30]5.30a}{[1][101][]101}{}{}{}}
-\newlabel{fig:3D_waypoints_1}{{5.30b}{101}{Unsmoothed and smoothed SFC paths from start to finish on the same grid. 13 SFCs were initially generated, with 3 SFCs for the smoothed path}{figure.caption.74}{}}
-\newlabel{fig:3D_waypoints_1@cref}{{[subfigure][2][5,30]5.30b}{[1][101][]101}{}{}{}}
-\newlabel{sub@fig:3D_waypoints_1}{{b}{101}{Unsmoothed and smoothed SFC paths from start to finish on the same grid. 13 SFCs were initially generated, with 3 SFCs for the smoothed path}{figure.caption.74}{}}
-\newlabel{sub@fig:3D_waypoints_1@cref}{{[subfigure][2][5,30]5.30b}{[1][101][]101}{}{}{}}
-\newlabel{fig:3D_waypoints_2}{{5.30c}{101}{Same unsmoothed and smoothed SFC paths from another angle}{figure.caption.74}{}}
-\newlabel{fig:3D_waypoints_2@cref}{{[subfigure][3][5,30]5.30c}{[1][101][]101}{}{}{}}
-\newlabel{sub@fig:3D_waypoints_2}{{c}{101}{Same unsmoothed and smoothed SFC paths from another angle}{figure.caption.74}{}}
-\newlabel{sub@fig:3D_waypoints_2@cref}{{[subfigure][3][5,30]5.30c}{[1][101][]101}{}{}{}}
-\newlabel{fig:3D_Spline}{{5.30d}{101}{Splines generated through smoothed SFCs}{figure.caption.74}{}}
-\newlabel{fig:3D_Spline@cref}{{[subfigure][4][5,30]5.30d}{[1][101][]101}{}{}{}}
-\newlabel{sub@fig:3D_Spline}{{d}{101}{Splines generated through smoothed SFCs}{figure.caption.74}{}}
-\newlabel{sub@fig:3D_Spline@cref}{{[subfigure][4][5,30]5.30d}{[1][101][]101}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.30}{\ignorespaces 3D safe flight corridors generated through a $4\times 4\times 4$ grid of 3D obstacles. The same mathematical principles used in the 2D method were reapplied to 3 dimensional objects.}}{101}{figure.caption.74}\protected@file@percent }
-\newlabel{fig:3DRRTResults}{{5.30}{101}{3D safe flight corridors generated through a $4\times 4\times 4$ grid of 3D obstacles. The same mathematical principles used in the 2D method were reapplied to 3 dimensional objects}{figure.caption.74}{}}
-\newlabel{fig:3DRRTResults@cref}{{[figure][30][5]5.30}{[1][101][]101}{}{}{}}
+\newlabel{fig:6x6Metrics@cref}{{[figure][27][5]5.27}{[1][96][]100}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.28}{\ignorespaces Maze Map for 2D algorithm}}{100}{figure.caption.72}\protected@file@percent }
+\newlabel{fig:MazeMap}{{5.28}{100}{Maze Map for 2D algorithm}{figure.caption.72}{}}
+\newlabel{fig:MazeMap@cref}{{[figure][28][5]5.28}{[1][98][]100}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.29}{\ignorespaces Safe flight corridors through maze. The original path is shown in red and the smoothed path is shown in purple.}}{100}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:MazeWaypoints}{{5.29}{100}{Safe flight corridors through maze. The original path is shown in red and the smoothed path is shown in purple}{figure.caption.73}{}}
+\newlabel{fig:MazeWaypoints@cref}{{[figure][29][5]5.29}{[1][98][]100}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.30}{\ignorespaces Spline paths through smoothed SFC path. Path in green generated using minimum distance objective function. Path in yellow generated using minimum velocity objective function. Path in orange generated using minimum acceleration objective function.}}{101}{figure.caption.74}\protected@file@percent }
+\newlabel{fig:MazeSplines}{{5.30}{101}{Spline paths through smoothed SFC path. Path in green generated using minimum distance objective function. Path in yellow generated using minimum velocity objective function. Path in orange generated using minimum acceleration objective function}{figure.caption.74}{}}
+\newlabel{fig:MazeSplines@cref}{{[figure][30][5]5.30}{[1][98][]101}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.31}{\ignorespaces Diagram of a rectangular prism. The normal vectors $n_i$ and sampled points $v_i$ are used to determine whether an object lies within the the prism.}}{101}{figure.caption.75}\protected@file@percent }
+\newlabel{fig:rectangularPrism}{{5.31}{101}{Diagram of a rectangular prism. The normal vectors $n_i$ and sampled points $v_i$ are used to determine whether an object lies within the the prism}{figure.caption.75}{}}
+\newlabel{fig:rectangularPrism@cref}{{[figure][31][5]5.31}{[1][101][]101}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.1}3D Object Definitions}{101}{subsection.5.7.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.32}{\ignorespaces Rectangular Prism as a Safe Flight Corridor encompassing points $b_i$ to $b_{i+1}$.}}{102}{figure.caption.76}\protected@file@percent }
+\newlabel{fig:3DSafeFlightCorridor}{{5.32}{102}{Rectangular Prism as a Safe Flight Corridor encompassing points $b_i$ to $b_{i+1}$}{figure.caption.76}{}}
+\newlabel{fig:3DSafeFlightCorridor@cref}{{[figure][32][5]5.32}{[1][101][]102}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.2}3D Results}{102}{subsection.5.7.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5.8}2D Shapes Within a 3D Environment}{102}{section.5.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.31}{\ignorespaces Example setup of waypoints which Dijkstra's Algorithm would be utilized to smooth. Angles between each segment are given.}}{103}{figure.caption.75}\protected@file@percent }
-\newlabel{fig:DijkstraScenario}{{5.31}{103}{Example setup of waypoints which Dijkstra's Algorithm would be utilized to smooth. Angles between each segment are given}{figure.caption.75}{}}
-\newlabel{fig:DijkstraScenario@cref}{{[figure][31][5]5.31}{[1][103][]103}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.9}Future Work}{103}{section.5.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.1}Dijkstra's Algorithm and Turn Constraints}{103}{subsection.5.9.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.32}{\ignorespaces Dilemma of Dijkstra's algorithm with angular constraint at $b_2$}}{104}{figure.caption.76}\protected@file@percent }
-\newlabel{fig:DijkstraDilemma}{{5.32}{104}{Dilemma of Dijkstra's algorithm with angular constraint at $b_2$}{figure.caption.76}{}}
-\newlabel{fig:DijkstraDilemma@cref}{{[figure][32][5]5.32}{[1][104][]104}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.2}Turn Constraints}{104}{subsection.5.9.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.33}{\ignorespaces Tangential circle radius and curvature. Reproduced from \blx@tocontentsinit {0}\cite {david_bspline}}}{105}{figure.caption.77}\protected@file@percent }
-\newlabel{fig:curvature}{{5.33}{105}{Tangential circle radius and curvature. Reproduced from \cite {david_bspline}}{figure.caption.77}{}}
-\newlabel{fig:curvature@cref}{{[figure][33][5]5.33}{[1][104][]105}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.3}Real Time Implementation}{105}{subsection.5.9.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.4}3D limitations}{106}{subsection.5.9.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.5}Annulus Constraints}{106}{subsection.5.9.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.34}{\ignorespaces Example of overlapping annulus constraints between two safe flight corridor corners. Such overlapping may cause infeasible constraints on B-Spline generation.}}{107}{figure.caption.78}\protected@file@percent }
-\newlabel{fig:annulusOverlap}{{5.34}{107}{Example of overlapping annulus constraints between two safe flight corridor corners. Such overlapping may cause infeasible constraints on B-Spline generation}{figure.caption.78}{}}
-\newlabel{fig:annulusOverlap@cref}{{[figure][34][5]5.34}{[1][106][]107}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.10}Conclusion}{107}{section.5.10}\protected@file@percent }
+\newlabel{fig:3D_Map}{{5.33a}{103}{Map of 64 cubical obstacles in $4 \times 4 \times 4$ grid on a $3000 \times 3000 \times 3000$ field. The object is to find a path from the origin to the opposite diagonal corner}{figure.caption.77}{}}
+\newlabel{fig:3D_Map@cref}{{[subfigure][1][5,33]5.33a}{[1][102][]103}{}{}{}}
+\newlabel{sub@fig:3D_Map}{{a}{103}{Map of 64 cubical obstacles in $4 \times 4 \times 4$ grid on a $3000 \times 3000 \times 3000$ field. The object is to find a path from the origin to the opposite diagonal corner}{figure.caption.77}{}}
+\newlabel{sub@fig:3D_Map@cref}{{[subfigure][1][5,33]5.33a}{[1][102][]103}{}{}{}}
+\newlabel{fig:3D_waypoints_1}{{5.33b}{103}{Unsmoothed and smoothed SFC paths from start to finish on the same grid. 13 SFCs were initially generated, with 3 SFCs for the smoothed path}{figure.caption.77}{}}
+\newlabel{fig:3D_waypoints_1@cref}{{[subfigure][2][5,33]5.33b}{[1][102][]103}{}{}{}}
+\newlabel{sub@fig:3D_waypoints_1}{{b}{103}{Unsmoothed and smoothed SFC paths from start to finish on the same grid. 13 SFCs were initially generated, with 3 SFCs for the smoothed path}{figure.caption.77}{}}
+\newlabel{sub@fig:3D_waypoints_1@cref}{{[subfigure][2][5,33]5.33b}{[1][102][]103}{}{}{}}
+\newlabel{fig:3D_waypoints_2}{{5.33c}{103}{Same unsmoothed and smoothed SFC paths from another angle}{figure.caption.77}{}}
+\newlabel{fig:3D_waypoints_2@cref}{{[subfigure][3][5,33]5.33c}{[1][102][]103}{}{}{}}
+\newlabel{sub@fig:3D_waypoints_2}{{c}{103}{Same unsmoothed and smoothed SFC paths from another angle}{figure.caption.77}{}}
+\newlabel{sub@fig:3D_waypoints_2@cref}{{[subfigure][3][5,33]5.33c}{[1][102][]103}{}{}{}}
+\newlabel{fig:3D_Spline}{{5.33d}{103}{Splines generated through smoothed SFCs}{figure.caption.77}{}}
+\newlabel{fig:3D_Spline@cref}{{[subfigure][4][5,33]5.33d}{[1][102][]103}{}{}{}}
+\newlabel{sub@fig:3D_Spline}{{d}{103}{Splines generated through smoothed SFCs}{figure.caption.77}{}}
+\newlabel{sub@fig:3D_Spline@cref}{{[subfigure][4][5,33]5.33d}{[1][102][]103}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.33}{\ignorespaces 3D safe flight corridors generated through a $4\times 4\times 4$ grid of 3D obstacles. The same mathematical principles used in the 2D method were reapplied to 3 dimensional objects.}}{103}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:3DRRTResults}{{5.33}{103}{3D safe flight corridors generated through a $4\times 4\times 4$ grid of 3D obstacles. The same mathematical principles used in the 2D method were reapplied to 3 dimensional objects}{figure.caption.77}{}}
+\newlabel{fig:3DRRTResults@cref}{{[figure][33][5]5.33}{[1][102][]103}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.9}Future Work}{104}{section.5.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.1}Dijkstra's Algorithm and Turn Constraints}{104}{subsection.5.9.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.34}{\ignorespaces Example setup of waypoints which Dijkstra's Algorithm would be utilized to smooth. Angles between each segment are given.}}{105}{figure.caption.78}\protected@file@percent }
+\newlabel{fig:DijkstraScenario}{{5.34}{105}{Example setup of waypoints which Dijkstra's Algorithm would be utilized to smooth. Angles between each segment are given}{figure.caption.78}{}}
+\newlabel{fig:DijkstraScenario@cref}{{[figure][34][5]5.34}{[1][105][]105}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.35}{\ignorespaces Dilemma of Dijkstra's algorithm with angular constraint at $b_2$}}{106}{figure.caption.79}\protected@file@percent }
+\newlabel{fig:DijkstraDilemma}{{5.35}{106}{Dilemma of Dijkstra's algorithm with angular constraint at $b_2$}{figure.caption.79}{}}
+\newlabel{fig:DijkstraDilemma@cref}{{[figure][35][5]5.35}{[1][105][]106}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.36}{\ignorespaces Tangential circle radius and curvature. Reproduced from \blx@tocontentsinit {0}\cite {david_bspline}}}{106}{figure.caption.80}\protected@file@percent }
+\newlabel{fig:curvature}{{5.36}{106}{Tangential circle radius and curvature. Reproduced from \cite {david_bspline}}{figure.caption.80}{}}
+\newlabel{fig:curvature@cref}{{[figure][36][5]5.36}{[1][106][]106}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.2}Turn Constraints}{106}{subsection.5.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.3}Real Time Implementation}{107}{subsection.5.9.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.37}{\ignorespaces Example of overlapping annulus constraints between two safe flight corridor corners. Such overlapping may cause infeasible constraints on B-Spline generation.}}{108}{figure.caption.81}\protected@file@percent }
+\newlabel{fig:annulusOverlap}{{5.37}{108}{Example of overlapping annulus constraints between two safe flight corridor corners. Such overlapping may cause infeasible constraints on B-Spline generation}{figure.caption.81}{}}
+\newlabel{fig:annulusOverlap@cref}{{[figure][37][5]5.37}{[1][108][]108}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.4}3D limitations}{108}{subsection.5.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9.5}Annulus Constraints}{108}{subsection.5.9.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.10}Conclusion}{108}{section.5.10}\protected@file@percent }
 \@setckpt{fancychapters/chap4}{
-\setcounter{page}{108}
+\setcounter{page}{110}
 \setcounter{equation}{41}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -252,10 +261,10 @@
 \setcounter{cmsm@mctr}{0}
 \setcounter{bsm@mctr}{0}
 \setcounter{workm@mctr}{0}
-\setcounter{sheetsequence}{120}
-\setcounter{lastsheet}{132}
-\setcounter{lastpage}{120}
-\setcounter{figure}{34}
+\setcounter{sheetsequence}{122}
+\setcounter{lastsheet}{134}
+\setcounter{lastpage}{122}
+\setcounter{figure}{37}
 \setcounter{lofdepth}{1}
 \setcounter{table}{0}
 \setcounter{lotdepth}{1}
@@ -273,7 +282,7 @@
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{54}
-\setcounter{mn@abspage}{120}
+\setcounter{mn@abspage}{122}
 \setcounter{rnote}{0}
 \setcounter{tabx@nest}{0}
 \setcounter{listtotal}{0}
@@ -284,7 +293,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{99}
+\setcounter{instcount}{100}
 \setcounter{maxnames}{1}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}

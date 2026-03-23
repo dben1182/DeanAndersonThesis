@@ -77,7 +77,7 @@
 \contentsline {subsection}{\numberline {3.8.2}Nonlinear Modelling}{58}{subsection.3.8.2}%
 \contentsline {subsection}{\numberline {3.8.3}Design}{58}{subsection.3.8.3}%
 \contentsline {subsection}{\numberline {3.8.4}Safety}{59}{subsection.3.8.4}%
-\contentsline {subsection}{\numberline {3.8.5}Calibration}{60}{subsection.3.8.5}%
+\contentsline {subsection}{\numberline {3.8.5}Calibration}{59}{subsection.3.8.5}%
 \contentsline {subsection}{\numberline {3.8.6}Hardware Implementation}{60}{subsection.3.8.6}%
 \contentsline {section}{\numberline {3.9}Conclusion}{60}{section.3.9}%
 \contentsline {chapter}{\chapternumberline {4}B-Spline Computation and Generation}{62}{chapter.4}%
@@ -92,48 +92,48 @@
 \contentsline {subsubsection}{B Matrices}{72}{section.4.7}%
 \contentsline {subsubsection}{Y Z Lookup Tables}{72}{equation.4.43}%
 \contentsline {section}{\numberline {4.8}Results}{74}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Conclusion}{74}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.1}Conclusion}{76}{subsection.4.8.1}%
 \contentsline {chapter}{\chapternumberline {5}RRT Flight Corridors}{77}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Rapidly Exploring Random Trees (RRT)}{77}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Safe Flight Corridors}{81}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Convexity}{81}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Enclosure within Safe Flight Corridors}{82}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.3}Enclosure within Safe Flight Corridors}{83}{subsection.5.1.3}%
 \contentsline {section}{\numberline {5.2}RRT Implementation}{84}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Obstacle Intersection}{84}{subsection.5.2.1}%
 \contentsline {section}{\numberline {5.3}Turn Constraints}{85}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Turn Constraints Enforcement}{88}{subsection.5.3.1}%
 \contentsline {section}{\numberline {5.4}Path Smoothing}{89}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Objective Function}{90}{section.5.5}%
+\contentsline {section}{\numberline {5.5}Objective Function}{89}{section.5.5}%
 \contentsline {subsection}{\numberline {5.5.1}Minimum Distance}{90}{subsection.5.5.1}%
 \contentsline {subsection}{\numberline {5.5.2}Minimum Velocity}{91}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Minimum Acceleration}{91}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}A Note on 2D slices of 3D obstacles}{92}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.3}Minimum Acceleration}{92}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}A Note on 2D slices of 3D obstacles}{93}{subsection.5.5.4}%
 \contentsline {section}{\numberline {5.6}2D Results}{93}{section.5.6}%
 \contentsline {subsection}{\numberline {5.6.1}$4 \times 4$ grid}{94}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}6x6 Grid}{95}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Maze}{95}{subsection.5.6.3}%
-\contentsline {section}{\numberline {5.7}3D RRT Extension}{96}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}3D Object Definitions}{96}{subsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.7.2}3D Results}{101}{subsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.6.2}6x6 Grid}{94}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Maze}{96}{subsection.5.6.3}%
+\contentsline {section}{\numberline {5.7}3D RRT Extension}{98}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}3D Object Definitions}{101}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}3D Results}{102}{subsection.5.7.2}%
 \contentsline {section}{\numberline {5.8}2D Shapes Within a 3D Environment}{102}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Future Work}{103}{section.5.9}%
-\contentsline {subsection}{\numberline {5.9.1}Dijkstra's Algorithm and Turn Constraints}{103}{subsection.5.9.1}%
-\contentsline {subsection}{\numberline {5.9.2}Turn Constraints}{104}{subsection.5.9.2}%
-\contentsline {subsection}{\numberline {5.9.3}Real Time Implementation}{105}{subsection.5.9.3}%
-\contentsline {subsection}{\numberline {5.9.4}3D limitations}{106}{subsection.5.9.4}%
-\contentsline {subsection}{\numberline {5.9.5}Annulus Constraints}{106}{subsection.5.9.5}%
-\contentsline {section}{\numberline {5.10}Conclusion}{107}{section.5.10}%
-\contentsline {chapter}{\chapternumberline {6}Conclusion}{108}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Safe Flight Corridor Path Following}{108}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Controller Failure}{109}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Conclusion}{109}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Contributions}{109}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}Future Work}{111}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Autopilot}{111}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Aerodynamic Coefficient Estimation}{112}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}B-Spline Libraries}{112}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}SFC RRT}{112}{subsection.6.3.4}%
-\contentsline {subsection}{\numberline {6.3.5}Software Integration}{113}{subsection.6.3.5}%
-\contentsline {chapter}{References}{114}{section*.85}%
-\contentsline {chapter}{Appendices}{119}{chapter*.86}%
-\contentsline {section}{\numberline {.1}Code Repositories and User Information}{120}{section.Alph0.1}%
+\contentsline {section}{\numberline {5.9}Future Work}{104}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Dijkstra's Algorithm and Turn Constraints}{104}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Turn Constraints}{106}{subsection.5.9.2}%
+\contentsline {subsection}{\numberline {5.9.3}Real Time Implementation}{107}{subsection.5.9.3}%
+\contentsline {subsection}{\numberline {5.9.4}3D limitations}{108}{subsection.5.9.4}%
+\contentsline {subsection}{\numberline {5.9.5}Annulus Constraints}{108}{subsection.5.9.5}%
+\contentsline {section}{\numberline {5.10}Conclusion}{108}{section.5.10}%
+\contentsline {chapter}{\chapternumberline {6}Conclusion}{110}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Safe Flight Corridor Path Following}{110}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Controller Failure}{111}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Conclusion}{111}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Contributions}{112}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Future Work}{113}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Autopilot}{113}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Aerodynamic Coefficient Estimation}{114}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}B-Spline Libraries}{114}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}SFC RRT}{115}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Software Integration}{115}{subsection.6.3.5}%
+\contentsline {chapter}{References}{116}{section*.88}%
+\contentsline {chapter}{Appendices}{121}{chapter*.89}%
+\contentsline {section}{\numberline {.1}Code Repositories and User Information}{122}{section.Alph0.1}%

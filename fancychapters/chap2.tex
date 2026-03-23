@@ -4,7 +4,7 @@
 In the preceding chapter, a model-dependent, differentially flat controller was introduced for the control of an eVTOL aircraft. 
 In order for that controller to work outside of simulation in hardware, the aerodynamic model of the aircraft must be very accurate. 
 That is, the mathematical aircraft model must closely approximate the physical aircraft. 
-If this is not the case, the autopilot will internally calculate forces and moments which do not accurately correspond to the actual forces and moments on the aircraft. 
+If this is not the case, the autopilot internally calculates forces and moments which do not accurately correspond to the actual forces and moments on the aircraft. 
 
 Recall from chapter \ref{ch:VTOL} Equations \ref{eq:totalAerodynamicForcesMoments} for aerodynamic Forces and Moments. 
 These equations are an approximation of the true forces and moments experienced by the aircraft. 
@@ -104,7 +104,8 @@ That is, the aircraft oscillates between yawing sharply, rolling sharply as yaw 
 This means that after an aircraft has rolled to the left and it returns upright, the aircraft yaws to the right, which causes the aircraft to roll to the right.
 The process then repeats itself, until aerodynamic damping causes the aircraft to return to stability.
 Just as excitation of the phughoid mode created large longitudinal signals, dutch roll creates large lateral signals. 
-For example, the the two roll moments $l$ and $n$ cause large signals for $p$, $r$, $\dot{p}$, and $\dot{r}$. Large yaw $\psi$ maneuvers will also create large signals for east acceleration $\ddot{e}$ and sideslip angle $\beta$. 
+For example, the the two roll moments $l$ and $n$ cause large signals for $p$, $r$, $\dot{p}$, and $\dot{r}$. 
+Large yaw $\psi$ maneuvers create large signals for east acceleration $\ddot{e}$ and sideslip angle $\beta$. 
 Intentional excitation of this mode is generally accomplished by rudder impulses, though this may also be enhanced with delayed aileron impulses.
 
 \begin{figure}
@@ -477,8 +478,8 @@ It is assumed in the paper that acceleration due to gravity is given as
 
 However, all components of the accelerometer are equally influenced by gravitational acceleration.
 It is impossible to discriminate a gravitational field in free fall. 
-If an accelerometer is placed on a table, it will sense the normal force of $9.81 \frac{m}{s^2}$ in the upwards direction. 
-In the same manner, if the aircraft is flying in trim, level flight with no acceleration, the accelerometer will sense the Lift force as $9.81 \frac{m}{s^2}$ in the up direction. 
+If an accelerometer is placed on a table, it senses the normal force of $9.81 \frac{m}{s^2}$ in the upwards direction. 
+In the same manner, if the aircraft is flying in trim, level flight with no acceleration, the accelerometer senses the Lift force as $9.81 \frac{m}{s^2}$ in the up direction. 
 Gravity is therefore entirely removed from all aerodynamic sensing equations.
 
 \section{2D VTOL Equations}
@@ -639,14 +640,14 @@ In the future, nonlinear modelling techniques must be utilized to generate a bet
 
 Another problem is the design of the eVTOL itself. 
 The addition of the booms, rotors, and propellers for the vertical takeoff can significantly affect the aerodynamic model of the aircraft. 
-This discrepancy will become more apparent with future hardware implementation of the VTOL. 
+This discrepancy becomes more apparent with hardware implementation of the VTOL. 
 The drag caused by the rotors during forward flight is of particular concern. 
 The drag model may need to be updated with extra coefficients to take this into account.
 
 \subsection{Safety}
 
-For hardware implementation, safety mechanisms in code will also need to be implemented and boundaries must be drawn.
-If the controller exceeds those boundaries, the safest fail-safe will probably be to enter quadrotor mode again, and thereby remain in a safe flight regime.
+For hardware implementation, safety mechanisms in code must also be implemented and boundaries must be drawn.
+If the controller exceeds those boundaries, the safest fail-safe is probably to enter quadrotor mode again, and thereby remain in a safe flight regime.
 
 \subsection{Calibration}
 

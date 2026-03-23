@@ -1,15 +1,22 @@
 \chapter{Introduction}
 
 Unmanned Aerial Vehicles (UAVs) have seen an explosion of use in the last few decades in both civilian and defense spaces. 
-UAVs take advantage of the vast airspace available over land, sea, and city to avoid the traffic inherent to civilization \cite{sabour2023applications}. UAVs can reach remote locations in minutes what would otherwise take hours or days for humans and automobiles to reach, such as remote or mountainous areas with poor roads. 
+UAVs take advantage of the vast airspace available over land, sea, and city to avoid the traffic inherent to civilization \cite{sabour2023applications}. 
+UAVs can reach remote locations in minutes what would otherwise take hours or days for humans and automobiles to reach, such as remote or mountainous areas with poor roads. 
 Small UAVs are performing many tasks that used to require large and expensive manned helicopters and airplanes, such as creating aerial shots in film \cite{aerial_shot} or surveying construction sites \cite{drones6050117}. 
-Demand for better autopilots and controllers will continue to grow as the number of desired applications for UAVs increases.
+Demand for better autopilots and controllers continues to grow as the number of desired applications for UAVs increases.
 
 Airplanes are aircraft that generate lift using an airframe and forward airspeed. 
 That is, they rely on moving quickly and using an airfoil to generate lift, and a propeller or jet engine to generate thrust.
 Airplanes are very efficient at moving long distances quickly.
 
-Rotorcraft are aircraft that generate lift solely from vertically oriented rotors. This is to say, they generate little to no lift from airflow over some sort of airfoil. Some examples of rotorcraft include helicopters, quadcopters, and hexacopters, as shown in \ref{fig:Multicopters}. Pure rotorcraft UAVs like quadcopters have several advantages over fixed-wing aircraft. They can take off and land almost anywhere without any additional hardware, while airplanes require landing strips or launch tracks. Quadcopters can also converge to and hold a set position, unlike airplanes which have to remain in motion to stay airborne. Quadcopters are more maneuverable and can track almost any trajectory, as they do not have a minimum turning radius. 
+Rotorcraft are aircraft that generate lift solely from vertically oriented rotors. 
+They generate little to no lift from airflow over some sort of airfoil. 
+Some examples of rotorcraft include helicopters, quadcopters, and hexacopters, as shown in \ref{fig:Multicopters}. 
+Pure rotorcraft UAVs like quadcopters have several advantages over fixed-wing aircraft. 
+They can take off and land almost anywhere without any additional hardware, while airplanes require landing strips or launch tracks. 
+Quadcopters can also converge to and hold a set position, unlike airplanes which have to remain in motion to stay airborne. 
+Quadcopters are more maneuverable and can track almost any trajectory, as they do not have a minimum turning radius. 
 
 \begin{figure}[htbp]
     \centering
@@ -48,7 +55,11 @@ Rotorcraft are aircraft that generate lift solely from vertically oriented rotor
     \label{fig:Multicopters}
 \end{figure}
 
-However, airplanes are much more efficient at traveling long distances at high speeds, with much less energy consumption than copters. A quadcopter uses four rotors with fairly high power consumption just to stay in the air without any movement, while an airplane uses a relatively low power thruster maintain a high kinetic energy. For a given battery size, an airplane can stay in the air significantly longer than its equivalent rotorcraft. Airplanes have fewer moving parts than rotorcraft, and can glide to safety in case of rotor failure, which lends some inherent advantages to the use of airframes. Some examples of fixed wing UAVs are shown in Fig. \ref{fig:FixedWings}.
+On the other hand, airplanes are much more efficient at traveling long distances at high speeds, with much less energy consumption than rotorcraft. 
+A quadcopter uses four rotors with fairly high power consumption just to stay in the air without any movement, while an airplane uses a relatively low power thruster maintain a high kinetic energy. 
+For a given battery size, an airplane can stay in the air significantly longer than its equivalent rotorcraft. 
+Airplanes have fewer moving parts than rotorcraft, and can glide to safety in case of rotor failure, which lends some inherent advantages to the use of airframes. 
+Some examples of fixed wing UAVs are shown in Fig. \ref{fig:FixedWings}.
 
 \begin{figure}[htbp]
     \centering
@@ -74,10 +85,11 @@ Today, aircraft are rarely flown manually by a direct remote control pilot.
 While manual control is fun for recreational purposes, it is hardly accurate or stable enough for many of the missions performed by UAVs. 
 Most aircraft are now flown autonomously using autopilot stacks on the onboard computers. 
 Many open source autopilots exist today, including Px4, Ardupilot, and Rosflight. 
-Two books on writing an autopilot stack for airplane and rotorcraft UAVs were written and heavily influenced the research in this paper \cite{uav_book, vtol_book}.
+Two books on developing an autopilot stack for airplane and rotorcraft UAVs were written and heavily influenced the research in this paper \cite{uav_book, vtol_book}.
 
 The primary interest of this research has been to study control for a specific classification of UAV called a VTOL (vertical takeoff and landing) aircraft. 
-A VTOL is defined as an airplane that can take off and land vertically \cite{Rehan_Akram_Shahzad_Shams_Ali_2022}. That is, they are rotorcraft and airplane hybrids, with airfoils to generate lift and vertical rotors to take off and land vertically. 
+A VTOL is defined as an airplane that can take off and land vertically \cite{Rehan_Akram_Shahzad_Shams_Ali_2022}. 
+That is, they are rotorcraft and airplane hybrids, with airfoils to generate lift and vertical rotors to take off and land vertically. 
 Such hybridization of design allows VTOLs to take advantage of the takeoff and landing capabilities of pure rotorcraft, while also having an airfoil to travel long distances quickly and efficiently. 
 Much research and development is already underway for applications in both civilian and defense spaces. 
 Some examples of existing VTOL craft are shown in Fig. \ref{fig:eVTOLExamples}. 
@@ -119,13 +131,22 @@ Some examples of existing VTOL craft are shown in Fig. \ref{fig:eVTOLExamples}.
     \label{fig:eVTOLExamples}
 \end{figure}
 
-The most difficult challenge for VTOL control is transitioning. Transition refers changing from rotorcraft hovering flight into airframe forward flight and vice versa. The goal for a transition autopilot is to take the aircraft from hover to forward flight and back again as quickly, efficiently, and stabily as possible. During takeoff transition, the aircraft needs to slowly gain altitude while simultaneously gaining forward airspeed to generate more lift, while the opposite is true for landing. Unfortunately, during the transision, the aircraft is subject to uncertain dynamics and conditions that hold for neither mode of control. For example, angle of attack $\alpha$ is often far larger than permissible for a standard airplane controller. This makes it impossible to use a purely standard control law. 
+The most difficult challenge for VTOL control is transitioning. 
+Transition refers changing from rotorcraft hovering flight into airframe forward flight and vice versa. 
+The objective for a transition autopilot is to take the aircraft from hover to forward flight and back again as quickly, efficiently, and stabily as possible. 
+During takeoff transition, the aircraft needs to slowly gain altitude while simultaneously gaining forward airspeed to generate more lift, while the opposite is true for landing. 
+Unfortunately, during the transision, the aircraft is subject to uncertain dynamics and conditions that hold for neither mode of control. 
+For example, angle of attack $\alpha$ is often far larger than permissible for a standard airplane controller. 
 
-A problem with many current solutions is that they bifurcate the transition of aircraft into multiple parts. In other words, aircraft are only thought of as fixed-wing aircraft or multicopter aircraft, and that an aircraft can only be one of those at a given time. In other words, when the VTOL aircraft is moving at low lateral airspeed, it is considered to actually be a multicopter and thus uses a multicopter autopilot framework. Likewise, when the aircraft is moving at a high lateral airspeed, the aircraft is considered to be a fixed-wing airplane with a fixed-wing autopilot framework. This mentality leads to a bifurcation in autopilot design; both fixed-wing and quadrotor control are excellent in their own domains, but their isolation from each other causes significant issues in bridging between the two. 
+A problem with many current solutions is that they bifurcate the transition of aircraft into multiple parts. 
+In other words, aircraft are only thought of as fixed-wing aircraft or multicopter aircraft, and that an aircraft can only be one of those at a given time. 
+When the VTOL aircraft is moving at low lateral airspeed, it is considered to actually be a multicopter and thus uses a multicopter autopilot framework. 
+Likewise, when the aircraft is moving at a high lateral airspeed, the aircraft is considered to be a fixed-wing airplane with a fixed-wing autopilot framework. 
+This mentality leads to a bifurcation in autopilot design; both fixed-wing and quadrotor control are excellent in their own domains, but their isolation from each other causes significant issues in bridging between the two. 
 
 In addition to the VTOL controller, several other tangential areas for control and planning were explored and developed.
 First, during the first stages of development of the VTOL controller, it became apparent that the controller would be model dependent.
-In particular, we desired to obtain the aerodynamic coeffients for the vehicle.
+Threfore, it was desired to obtain the aerodynamic coeffients for the vehicle.
 There was no 3D CAD model of the first VTOL aircraft being developed, so it was not feasible to use aerodynamic software to determine a model for the aircraft.
 However, real flight data was and is readily accessible to the user after a fixed-wing flight.
 Therefore, a system identification scheme was developed that used flight data with an assumed system structure to recursively estimate the coefficients of aerodynamics.
@@ -149,10 +170,13 @@ Each of these components are part of the growing framework for the development o
 
 \subsection{Contributions}
 
+The main contributions of this paper are
+
 \begin{itemize}
     \item Differentially flat 2D quadplane controller
     \item Aerodynamic coefficient system identification
     \item B-Spline look up tables for minimum snap trajectory generation
     \item Obstacle avoidance path planner using safe flight corridors and an optimized B-Spline path
 \end{itemize}
+
 
