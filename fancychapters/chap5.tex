@@ -6,7 +6,7 @@
 Before the final conclusion, it is desirable to combine both of the major contributions of this paper.
 These are the trajectory-following controller for a VTOL aircraft and a path-planning algorithm based on RRT to create safe flight corridors. 
 A combination of these two contributions is for an eVTOL aircraft to traverse a trajectory generated over an obstacle field by the RRT Safe Flight Corridor algorithm. 
-This will test whether the aircraft is capable of following a more complex shape than the simple root trajectories described earlier.
+This tests whether the aircraft is capable of following a more complex shape than the simple root trajectories described earlier.
 
 A 2D obstacle field was generated using the RRT algorithm on the North-Down plane. 
 The start position was the origin and the end position was $(2000.0, 1000.0)$. 
@@ -94,7 +94,7 @@ The results from this thesis include the following key results:
       This paper develops the dynamics and controller for a 2D quadplane VTOL simplification.
       Specifically, it is shown that a 2D quadplane is a differentially flat sytem, so a differentially flat controller is implemented.
       This controller requires an input trajectory of position, velocity, and acceleration for all time samples.
-      The pitch-free trajectory tracking controller finds the inertial frame force that will zero the state error.
+      The pitch-free trajectory tracking controller finds the inertial frame force that zeros the state error.
       The pitch optimizer finds the optimal pitch to generate the most lift possible from the airframe; this causes the switch from hover to fixed-wing.
       The moment controller finds needed moment to control the aircraft to that specified pitch.
       Finally, the elevator and thrust allocators find the control inputs that produced the desired forces and moments.
@@ -127,18 +127,18 @@ The results from this thesis include the following key results:
 \section{Future Work}
 
 In the conclusions for each of the preceeding chapters, the future work was already discussed for the respective subject.
-Here, we reiterate some of the most important ideas for future work on each subject.
+Some of the most important ideas are reiterated for future work on each subject
 
 \subsection{Autopilot}
 
 This autopilot framework is still in its infancy.
 Much work must be done before this is ever implemented in hardware on a real quadplane.
 First, the negative thrust problem must be solved, probably using quadcopter braking methods.
-The next step for this algorithm will be to extend from 2D to 3D, which will include proving whether a 3D quadplane is a differentially flat system.
+The next step for this algorithm is to extend it from 2D to 3D, which includes proving whether a 3D quadplane is a differentially flat system.
 Unfortunately, this autopilot framework is not robust enough for implementation on a quadplane. 
 There are too many unknown and nonideal factors that seperate hardware from simulation, especially with the very large angles of attack inherent to transition.
 The paper on model predictive control for tiltrotors \cite{mpc_controller} has actually solved many of these problems.
-Their implementation is remarkably similar to ours, including optimization for control outputs, model inversion, and roll, pitch, and yaw controllers.
+That implementation is remarkably similar to this one, including optimization for control outputs, model inversion, and roll, pitch, and yaw controllers.
 This paper should be studied carefully, compared with this one, and combined to prevent redundant research.
 In addition, the uncertainty of the aircraft model during transition requires more robust nonlinear control.
 Such nonlinear control for aircraft is discussed in \cite{lavretskyRobustAdaptiveControl2024}; the principles in this book should be studied and implemented for the possibility of future success.
@@ -151,7 +151,7 @@ Aerodynamic coefficient estimation requires many advances and better integration
 Although the LMS filter may be sufficient for simulation, it fails at modelling more advanced linear and nonlinear aerodynamic relationships.
 Fortunately, many of these problems have already been resolved in other publications and code repositories. 
 For example, \cite{galliker2021datadriven} describes more robust aerodynamic estimation framework, with a working repository \href{https://github.com/ethz-asl/data-driven-dynamics}{data-driven-dynamics}. 
-\href{https://github.com/xuhao1/pyAircraftIden}{PyAircraftIden} is another valuable Python library that can perform this estimation much better than our LMS filter does.
+\href{https://github.com/xuhao1/pyAircraftIden}{PyAircraftIden} is another valuable Python library that can perform this estimation far better than this LMS filter.
 Future implementation for estimation should focus on implementing the existing estimation algorithms in real time to assist the VTOL autopilot.
 
 \subsection{B-Spline Libraries}
@@ -167,7 +167,8 @@ Rewriting these libraries in C++ or Rust may further improve efficiency.
 
 The safe flight corridor RRT algorithm has been developed for path planning through obstacle fields.
 However, it has assumed that such obstacle fields were static, unchanging environments, which is not always the case.
-We want to make real-time implementation and updating a possibility for for this algorithm, which is not currently possible because of how slow it currently is.
+Due to its long processing time, this algorithm is not yet ready for real-time implementation.
+Run-time optimization of this algorithm will help make such implementation viable. 
 The algorithm currently runs unconstrained, without any guarantees of convergence or optimal performance.
 To overcome this, several existing RRT papers should be reapplied to this application.
 For example, \cite{SUN2025103174} develops a more sophisticated method of planning SFCs that morph to encompass most of the available space in the obstacle field.
@@ -175,7 +176,7 @@ Their algorithm also incorporates turn constraints directly in.
 However, they do not incorporate the same type of B-Spline optimization, which could be an interesting area of future research.
 The paper on informed RRT* \cite{Gammell-2014-7921} is currently only applied to straight-line sampling.
 Reimplementation of this with SFCs would be a phenominal improvement on the current implementation.
-The implementation for this code was all done in Python. It may run significantly faster if it is implemented in C++ or Rust.
+This code was implemented entirely in Python, and conversion to C++ or Rust may help significantly decrease computational time.
 
 \subsection{Software Integration}
 
@@ -192,7 +193,7 @@ When a better VTOL autopilot is developed, it should be done using Rosflight.
     \label{fig:RosflightLogo}
 \end{figure}
 
-The OpenGL simulation environment we have been using in Python is rather primitive. 
+The Python OpenGL simulation environment used in this paper is rather primitive. 
 The graphics are rather grainy and unsophisticated and data plots take forever to run.
 If this algorithm is integrated into Rosflight, updating these graphics would make a big difference. 
 RViz is a visualization software developed specifically for ROS.

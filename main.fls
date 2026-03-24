@@ -699,15 +699,30 @@ INPUT ./figs/chap1/Orthogonal Projection.png
 INPUT ./figs/chap1/Orthogonal Projection.png
 INPUT ./figs/chap1/Orthogonal Projection.png
 INPUT ./figs/chap1/Orthogonal Projection.png
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplsyc.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newtx/ntxsyc.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/txfonts/txsyc.tfm
+INPUT ./figs/chap1/elevator and q force omission.png
+INPUT ./figs/chap1/elevator and q force omission.png
+INPUT ./figs/chap1/elevator and q force omission.png
+INPUT ./figs/chap1/elevator and q force omission.png
+INPUT ./figs/chap1/elevator and q force omission.png
+INPUT ./figs/chap1/1 Norm Visualization.drawio.png
+INPUT ./figs/chap1/1 Norm Visualization.drawio.png
+INPUT ./figs/chap1/1 Norm Visualization.drawio.png
+INPUT ./figs/chap1/1 Norm Visualization.drawio.png
+INPUT ./figs/chap1/1 Norm Visualization.drawio.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-ot1.tfm
+INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
+INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
+INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
+INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
+INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
@@ -716,59 +731,30 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplexx.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/newtx/ntxexx.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txexs.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txex-bar.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
-INPUT ./figs/chap1/elevator and q force omission.png
-INPUT ./figs/chap1/elevator and q force omission.png
-INPUT ./figs/chap1/elevator and q force omission.png
-INPUT ./figs/chap1/elevator and q force omission.png
-INPUT ./figs/chap1/elevator and q force omission.png
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
-INPUT ./figs/chap1/1 Norm Visualization.drawio.png
-INPUT ./figs/chap1/1 Norm Visualization.drawio.png
-INPUT ./figs/chap1/1 Norm Visualization.drawio.png
-INPUT ./figs/chap1/1 Norm Visualization.drawio.png
-INPUT ./figs/chap1/1 Norm Visualization.drawio.png
-INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
-INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
-INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
-INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
-INPUT ./figs/chap1/Moment Control Flowchart.drawio.png
 INPUT ./figs/chap1/controllerOverview.jpg
 INPUT ./figs/chap1/controllerOverview.jpg
 INPUT ./figs/chap1/controllerOverview.jpg
 INPUT ./figs/chap1/controllerOverview.jpg
 INPUT ./figs/chap1/controllerOverview.jpg
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/startControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/endControlPoints.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
+INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/pxb-lms.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplbmi.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI_gnu.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXBMI.tfm
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/startControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/endControlPoints.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
-INPUT ./figs/chap1/Takeoff/startEndControlPoints_2.png
 INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
 INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
 INPUT ./figs/chap1/Takeoff/Takeoff shape without control points.png
@@ -859,6 +845,9 @@ INPUT ./figs/chap1/landing/Angles.png
 INPUT ./figs/chap1/landing/Angles.png
 INPUT ./figs/chap1/landing/Angles.png
 INPUT ./figs/chap1/landing/Angles.png
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
 INPUT ./figs/chap1/successiveAscent/Successive Ascent.drawio.png
 INPUT ./figs/chap1/successiveAscent/Successive Ascent.drawio.png
 INPUT ./figs/chap1/successiveAscent/Successive Ascent.drawio.png
@@ -1119,19 +1108,19 @@ INPUT /usr/share/texmf-dist/tex/latex/bera/t1fvm.fd
 INPUT /usr/share/texmf-dist/tex/latex/bera/t1fvm.fd
 INPUT /usr/share/texmf-dist/tex/latex/bera/t1fvm.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
+INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
 INPUT /usr/share/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc
-INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
-INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
-INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
-INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
-INPUT ./figs/chap4/Minimum Turing Radius.drawio.png
-INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
-INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
-INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
-INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
-INPUT ./figs/chap4/Turn Rate Constraints/SFC Angular Boundary Conditions (1).png
 INPUT ./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg
 INPUT ./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg
 INPUT ./figs/chap4/Turn Rate Constraints/Annulus Concentric Circles.jpg

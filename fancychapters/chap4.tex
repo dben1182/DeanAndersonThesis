@@ -119,7 +119,7 @@ A similar algorithm is presented in \cite{eshtehardianContinuousRRTbasedPath2023
 Safe Flight Corridors are a defined space, which are known to be a safe area for a vehicle to travel inside. 
 A corridor is determined to be safe if there is no obstacle or portion of an obstacle within some defined space. 
 It is assumed that the obstacles are static; therefore a path remains safe for all time after calculation. 
-If a specified corridor or series of corridors remains completely free of obstacles and the aircraft stays within that corridor or series of corridors for its flight period, no collisions will result during that time.
+If a specified corridor or series of corridors remains completely free of obstacles and the aircraft stays within that corridor or series of corridors for its flight period, no collisions result during that time.
 
 
 \subsection{Convexity}
@@ -158,8 +158,8 @@ This equation can be generalized to the form $Ap < b$ where
     b = 
     \begin{bmatrix}
         \hat{n}^\top \vec{r}\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 A polygon can be represented as a conglomeration of multiple half-planes, where each edge has its own vectors as $\hat{n}_i$ and $\vec{r}_i$. 
 For a convex polygon with $N$ sides, these can be combined into a generalized equation as
@@ -175,8 +175,8 @@ For a convex polygon with $N$ sides, these can be combined into a generalized eq
         \hat{n}_1^\top \vec{r}_1 & 
         \hdots & 
         \hat{n}_{N-1}^\top \vec{r}_{N-1}
-    \end{bmatrix}^\top
-\end{align}.
+    \end{bmatrix}^\top.
+\end{align}
 
 An example of a rectangular Safe Flight Corridor is shown in Fig. \ref{fig:single SFC} with normal vectors and a sampled point from each of its four sides. 
 For each side $j$ on $SFC_i$ the point $v_{i,j}$ and the normal vector $\hat{n}_{i,j}$ are extracted and input as $\vec{r}_j$ and $\hat{n}_j$ respectively. 
@@ -222,8 +222,8 @@ For two safe flight corridors with matrices $A_1$ and $A_2$ and vectors $b_1$ an
     b_1\\
     b_2\\
   \end{bmatrix}\\
-  A_{int} p < b_{int}
-\end{align}.
+  A_{int} p < b_{int}.
+\end{align}
 
 
 This is shown in Thm. \ref{thm:overlapping_SFCs}.
@@ -232,12 +232,12 @@ This is shown in Thm. \ref{thm:overlapping_SFCs}.
     A set $\mathcal{S}$ is said to be convex iff for every $x_1$ and $x_2$ in $\mathcal{S}$, and every $t \in \left[0,1\right]$, the point $x_3 = tx_1 + (1-t)x_2$ is also in the set $S$. 
     Therefore, the intersection of $\mathcal{S}_1$ and $\mathcal{S}_2$ is also a convex set as: $\mathcal{S}_3 = \mathcal{S}_1 \cap \mathcal{S}_2$.
     
-    Given two Safe Flight Corridors $SFC_i$ and $SFC_{i+1}$, existing in dimension $dim$, are defined by the linear inequalities:
+    Given two Safe Flight Corridors $SFC_i$ and $SFC_{i+1}$, existing in dimension $dim$, are defined by the linear inequalities
     \begin{align}
         SFC_i = \left\{x \in \mathbb{R}^{dim} \space | A_i x \leq b_i\space \right\}\\
-        SFC_{i+1} = \left\{x \in \mathbb{R}^{dim} \space | A_{i+1} x \leq b_{i+1}\space \right\}
+        SFC_{i+1} = \left\{x \in \mathbb{R}^{dim} \space | A_{i+1} x \leq b_{i+1}\space \right\}.
     \end{align}
-    The intersection region of $SFC_i$ and $SFC_{i+1}$ or $\mathcal{P}_i$ is given by:
+    The intersection region of $SFC_i$ and $SFC_{i+1}$ or $\mathcal{P}_i$ is given by
     \begin{align}
         \mathcal{P}_i = SFC_i \cap SFC_{i+1} = \left\{x \in \mathbb{R}^{dim} \space |
         \begin{bmatrix}
@@ -249,11 +249,11 @@ This is shown in Thm. \ref{thm:overlapping_SFCs}.
             b_i\\
             b_{i+1}\\
         \end{bmatrix}
-        \space \right\}
+        \space \right\}.
     \end{align}
 \end{theorem}
 
-Given these conditions, a B-Spline, $b(t)$ will remain within the set $SFC_i \space \cup \space SFC_{i+1}$ if $d$ sequential control points $\left\{C_j,C_{j+1}, ..., C_{j+d}\right\}$ are constrained to the intersection region $\mathcal{P}_i$ for the transition from $SFC_i$ to $SFC_{i+1}$.
+Given these conditions, a B-Spline, $b(t)$ remains within the set $SFC_i \space \cup \space SFC_{i+1}$ if $d$ sequential control points $\left\{C_j,C_{j+1}, ..., C_{j+d}\right\}$ are constrained to the intersection region $\mathcal{P}_i$ for the transition from $SFC_i$ to $SFC_{i+1}$.
 
 \section{RRT Implementation}
 
@@ -292,8 +292,8 @@ This algorithm is given as
             \EndIf
         \EndIf
     \EndWhile
-    \end{algorithmic}
-\end{algorithm}.
+    \end{algorithmic}.
+\end{algorithm}
 
 
 An example of a resultant tree is shown in Fig. \ref{fig:rrt tree example}.
@@ -304,7 +304,6 @@ An example of a resultant tree is shown in Fig. \ref{fig:rrt tree example}.
     \caption{Example of RRT tree.}
     \label{fig:rrt tree example}
 \end{figure}
-
 
 \subsection{Obstacle Intersection}
 
@@ -335,8 +334,8 @@ This is accomplished by concatenating both matrices as
     \begin{bmatrix}
         b_{obs}\\
         b_{SFC}\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 This linear inequality is determined to be feasible or not using the Scipy linprog function.
 
@@ -358,7 +357,7 @@ This is depicted in figure \ref{fig:angular boundary conditions}.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figs/chap4/Minimum Turing Radius.drawio.png}
-    \caption{Aircraft flying section of Dubins Path with straight lines, and connected with arcs of minimum turning radius. Anything with sharper curvature, and the aircraft will be unable to perform the turn.}
+    \caption{Aircraft flying section of Dubins Path with straight lines, and connected with arcs of minimum turning radius. The aircraft is unable to perform the turn for anything with sharper curvature.}
     \label{fig:MinTurnRadius}
 \end{figure}
 
@@ -370,7 +369,7 @@ This is depicted in figure \ref{fig:angular boundary conditions}.
 \end{figure}
 
 
-For a given minimum turning Radius $R_{min}$, the SFC boundary condition exists when the arc touches the inner corner of the SFC and the circle is tangent to the two outer walls. 
+For a given minimum turning radius $R_{min}$, the SFC boundary condition exists when the arc touches the inner corner of the SFC and the circle is tangent to the two outer walls. 
 Under these conditions, the distance from the center point of the turn to the inner corner is $R_{min}$. 
 The distance from the same center point is also $R_{min}$. 
 However, because the arc is tangent to the outer wall, the radius line is perpendicular to the inner and outer wall on both sides. 
@@ -379,16 +378,16 @@ Therefore, the distance from the center to the inner wall is $R_{min} - \mathcal
 From this geometry, a right triangle is formed with the inside area, where $\gamma_{min}$ represents the half angle between the two SFCs on the inside, and is defined as
 
 \begin{align}
-    \gamma_{min} = \arcsin{\frac{R_{min} - \mathcal{W}}{R_{min}}}
-\end{align}.
+    \gamma_{min} = \arcsin{\frac{R_{min} - \mathcal{W}}{R_{min}}}.
+\end{align}
 
 This triangle is a similar triangle to the one touching the center chord, and has the same angular relationships. 
 Therefore, $\chi_{max}$, the outside angle between two SFCs is defined as
 
 \begin{align*}
     \chi_{max} = \pi - 2 \cdot \gamma_{min}\\
-    \chi_{max} = \pi - 2 \cdot \arcsin{\frac{R_{min} - \mathcal{W}}{R_{min}}}\\
-\end{align*}.
+    \chi_{max} = \pi - 2 \cdot \arcsin{\frac{R_{min} - \mathcal{W}}{R_{min}}}.
+\end{align*}
 
 For example, if $\mathcal{W} = 30$ and $R_{min} = 100$, then $\chi_{max} = 1.591 = 91.146^\circ$.
 
@@ -411,8 +410,8 @@ This shape, also known as an annulus is shown in Fig. \ref{fig:annulus concentri
 Fortunately, constraints may be made on the control points by approximating the annulus. 
 By sampling the points along the minimum turning radius, along with an outer radius, an approximation can be made for the inner turning radius. 
 This provides a convex hull for the control points. 
-One control point will be constrained to a single annulus approximation section, as shown in figure \ref{fig:annulus sampled diagram}. 
-These sections will be termed annulus segments. 
+One control point is constrained to a single annulus approximation section, as shown in figure \ref{fig:annulus sampled diagram}. 
+These sections are termed annulus segments. 
 
 \begin{figure}
     \centering
@@ -433,7 +432,7 @@ To solve this problem, we implemented a variation of Dijkstra's algorithm to smo
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{figs/chap4/Smoothing/Dijkstra's Possibilities.drawio.png}
-         \caption{Complete set of nodes for RRT algorithm on a $2 \times 2$ obstacle field. The intermediate nodes are shown in orange and the original path is shown in green connecting them sequentially. The other plausible paths between existing nodes are shown in yellow. These alternative paths will be explored using Dijkstra's algorithm.}
+         \caption{Complete set of nodes for RRT algorithm on a $2 \times 2$ obstacle field. The intermediate nodes are shown in orange and the original path is shown in green connecting them sequentially. The other plausible paths between existing nodes are shown in yellow. These alternative paths are explored using Dijkstra's algorithm.}
          \label{fig:blank 3D obstacle field}
      \end{subfigure}
      \hfill
@@ -463,10 +462,10 @@ The objective functions for maximum position, velocity, and acceleration are giv
 
 \subsection{Minimum Distance}
 
-The length of a B-Spline on the interval $t\in[s,s+1]$ is given by:
+The length of a B-Spline on the interval $t\in[s,s+1]$ is given by
 
 \begin{align}
-    \min_{m\in[s+1,s+d]}\norm{\bs{c}_m-\bs{c}_{m-1}} \leq L \leq \sum_{m=s+1}^{s+d}\norm{\bs{c}_m-\bs{c}_{m-1}}
+    \min_{m\in[s+1,s+d]}\norm{\bs{c}_m-\bs{c}_{m-1}} \leq L \leq \sum_{m=s+1}^{s+d}\norm{\bs{c}_m-\bs{c}_{m-1}}.
 \end{align}
 
 The term $\bs{c}_m-\bs{c}_{m-1}$ refers to the vector from one control point to the next, which is the equivalent velocity control point. 
@@ -482,7 +481,7 @@ This can also be expressed as $\bs{c}^v_{m-1} = \bs{c}^p_m - \bs{c}^p_{m-1}$.
 \begin{align}
     V = C_{0:N-2} - C_{1:N-1}\\
     D_{max} = 
-    \sum_{i=0}^{N-1} |V(i)|\\
+    \sum_{i=0}^{N-1} |V(i)|.
 \end{align}
 
 The minimum distance optimization function then becomes
@@ -494,8 +493,8 @@ The minimum distance optimization function then becomes
         &\text{subject to} && A_{tot} C_{pts} < b_{tot}\\
         &&& C_{1:d} = S \hat{B}_M^d(0)^{-1}\\
         &&& C_{(M+1):(M+d)} = E \hat{B}_M^d(0)^{-1}\\
-    \end{aligned}
-\end{equation}.
+    \end{aligned}.
+\end{equation}
 
 \subsection{Minimum Velocity}
 
@@ -506,8 +505,8 @@ This is given as
 \begin{align}
     A = C_{0:N-3} + C_{2:N-1} - 2 \cdot C_{1:N-2}\\
     V_{max} = 
-    \sum_{i=0}^{N-2} |A(i)|\\
-\end{align}.
+    \sum_{i=0}^{N-2} |A(i)|
+\end{align}
 
 The minimum velocity optimization function then becomes
 
@@ -518,8 +517,8 @@ The minimum velocity optimization function then becomes
         &\text{subject to} && A_{tot} C_{pts} < b_{tot}\\
         &&& C_{1:d} = S \hat{B}_M^d(0)^{-1}\\
         &&& C_{(M+1):(M+d)} = E \hat{B}_M^d(0)^{-1}\\
-    \end{aligned}
-\end{equation}.
+    \end{aligned}.
+\end{equation}
 
 \subsection{Minimum Acceleration}
 
@@ -528,8 +527,8 @@ Likewise, an acceleration objective function may also be minimized using the jer
 \begin{align}
     J = C_{3:N-1} - 3 \cdot C_{2:N-2} + 3 \cdot C_{1:N-3} - C_{0:N-4}\\
     A_{max} = 
-    \sum_{i=0}^{N-3} |J(i)|\\
-\end{align}.
+    \sum_{i=0}^{N-3} |J(i)|.
+\end{align}
 
 The minimum acceleration optimization function then becomes
 
@@ -540,8 +539,8 @@ The minimum acceleration optimization function then becomes
         &\text{subject to} && A_{tot} C_{pts} < b_{tot}\\
         &&& C_{1:d} = S \hat{B}_M^d(0)^{-1}\\
         &&& C_{(M+1):(M+d)} = E \hat{B}_M^d(0)^{-1}\\
-    \end{aligned}
-\end{equation}.
+    \end{aligned}.
+\end{equation}
 
 Minimization of Distance and Acceleration are particularly useful. 
 The former method connects start to end in the most direct way, given the SFC constraints. 
@@ -562,8 +561,8 @@ Those 3D building obstacles intersect the plane and create a 2D obstacle on the 
 Section \ref{sec:projections}discussed mapping vectors on a 2D plane to 3D space using the formula
 
 \begin{align}
-    v_{3D} = U v_{2D} + o_{3D}
-\end{align}.
+    v_{3D} = U v_{2D} + o_{3D}.
+\end{align}
 
 This equation may be substituted into the linear inequality $Ax < b$ as
 
@@ -571,16 +570,16 @@ This equation may be substituted into the linear inequality $Ax < b$ as
     A v_{3D} < b\\
     A (U v_{2D} + o_{3D}) < b\\
     A U v_{2D} + A o_{3D} < b\\
-    A U v_{2D} < (b - A o_{3D})
-\end{align}.
+    A U v_{2D} < (b - A o_{3D}).
+\end{align}
 
 The equation becomes
 
 \begin{align}
     A_{2D} v_{2D} < b_{2D}\\
     A_{2D} = A U\\
-    b_{2D} = b - A o_{3D}
-\end{align}.
+    b_{2D} = b - A o_{3D}.
+\end{align}
 
 An intersection between a 2D SFC represented by $A_{SFC,2D} x < b_{SFC,2D}$ can be determined using Scipy's linprog function on the stacked matrices
 
@@ -594,8 +593,8 @@ An intersection between a 2D SFC represented by $A_{SFC,2D} x < b_{SFC,2D}$ can 
     \begin{bmatrix}
         b_{2D}\\
         b_{SFC,2D}
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 The new $A_{2D}$ and $b_{2D}$ matrices need only be calculated once for each obstacle, given the working plane, so it does not increase the overall complexity of the algorithm. 
 This method enables consistent method to translate between 2D spaces existing on planes within a 3D space.
@@ -775,7 +774,6 @@ Fig. \ref{fig:6x6Metrics} shows some metrics for the optimized B-Splines.
     \label{fig:6x6Metrics}
 \end{figure}
 
-
 \subsection{Maze}
 
 To demonstrate that the RRT algorithm is capable of generating paths through more confined spaces, a simple maze corridor was created and tested against the algorithm. 
@@ -875,7 +873,6 @@ The start position was $[0.0, 0.0, 0.0]$, and the goal position was $[3000.0, 30
 In one test, RRT algorithm ran in $23.590$ seconds, which is comparable to many 2D algorithm implementations. 
 The results are shown in figure \ref{fig:3DRRTResults}.
 
-
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.48\textwidth}
@@ -930,15 +927,14 @@ This allows the boundaries of an obstacle to take the form of $Ax < b$.
 If it is desired to create a generalized 2D algorithm in a 3D environment, a plane may be specified, and any obstacles intersecting that plane are projected onto it as 2D using the newfound equality constraint, represented as
 
 \begin{align}
-    A_2 x = b_2
+    A_2 x = b_2,
 \end{align}
 
 or equivalently
 
 \begin{align}
-    ax + by + cz = d
-\end{align}.
-
+    ax + by + cz = d.
+\end{align}
 
 \begin{align}
     \Vec{p}(t) =
@@ -958,12 +954,12 @@ or equivalently
 \end{align*}
 
 Using the Moore-Penrose Pseudoinverse, we can find the 2D representation of a 3D vector which already lies on the plane. 
-Because $Q$ is a tall, full rank matrix $(3 \times 2)$, a left pseudoinverse of the form $Q^+ = (Q^\top Q)Q^\top$ will get the best solution for $y$ as
+Because $Q$ is a tall, full rank matrix $(3 \times 2)$, a left pseudoinverse of the form $Q^+ = (Q^\top Q)Q^\top$ obtains the best solution for $y$ as
 
 \begin{align*}
     y = Q^+ (x-p_0)\\
-    Q^+ = (Q^\top Q)Q^\top\\
-\end{align*}.
+    Q^+ = (Q^\top Q)Q^\top.
+\end{align*}
 
 The method of obtaining an orthonormal basis $Q$ from a normal vector $\hat{n}$ is described in section \ref{sec:2DProjection}.
 
@@ -990,7 +986,6 @@ In the primary algorithm, nodes were only added to the tree if they satisfied th
 In this case, each segment angle must be greater than $120^{\circ}$. 
 The algorithm also finds that there are $2$ other segments that satisfy the intersection constraint, but not necessarily the angular constraint. 
 
-
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figs/chap4/Turn Rate Constraints/Dijkstras Scenario.drawio.png}
@@ -998,7 +993,7 @@ The algorithm also finds that there are $2$ other segments that satisfy the inte
     \label{fig:DijkstraScenario}
 \end{figure}
 
-The problem with Dijkstra's algorithm is that it will select segment $S_4$ to connect $b_0$ and $b_2$ and bypass $b_1$, where we assume that adding $S_4$ does not violate angular constraints with the previous line segment not shown in this diagram for simplicity. 
+The problem with Dijkstra's algorithm is that it selects segment $S_4$ to connect $b_0$ and $b_2$ and bypass $b_1$, where we assume that adding $S_4$ does not violate angular constraints with the previous line segment not shown in this diagram for simplicity. 
 Now that the algorithm is at $b_2$, it has to choose between $S_2$ and $S_5$. 
 Unfortunately, both choices violate the minimum turn constraint with $90^{\circ}$ and $116^{\circ}$, respectively, which causing the algorithm to fail. 
 This is illustrated in Fig. \ref{fig:DijkstraDilemma}.
@@ -1017,7 +1012,7 @@ LIAN was introduced in 2015 in \cite{LIAN} as a variant of $A^*$.
 LIAN works by storing two copies of each node and working backward if the angle constraint is ever violated. 
 In \cite{LIAN}, success rates in the high $90$ percentages were achieved. 
 Another paper was published in 2018 on eLIAM or enhanced LIAM that solved an angle-constrained problem 20\% more often than standard LIAM. 
-Implementation of LIAM, or some other algorithm, will generate a more robust framework for a better algorithm.
+Implementation of LIAM creates a more robust framework for a better algorithm.
 
 \subsection{Turn Constraints}
 
@@ -1025,7 +1020,7 @@ It is demonstrated in section \ref{sec:Turn Constraints} how to find the maximum
 In the previous section, the necessity for an SFC smoothing algorithm that maintains angular conditions was discussed. 
 However, a resulting B-Spline within the annulus does not automatically conform to the minimum turning radius constraint. 
 Even with segmented annulus constraints along each SFC intersection. 
-There is no guarantee that the control points will remain along the inside turning radius. 
+There is no guarantee that the control points remain along the inside turning radius. 
 Many edge cases exist that violate the minimum turning radius. 
 
 Curvature measures how sharply a function turns. 
@@ -1043,8 +1038,8 @@ This is shown in figure \ref{fig:curvature}.
 The definition for curvature of a B-Spline $C(t)$ is
 
 \begin{align}
-    C(t) = \frac{|| \dot{b}(t) \times \ddot{b}(t)||}{||\dot{b}(t)||^3}
-\end{align}.
+    C(t) = \frac{|| \dot{b}(t) \times \ddot{b}(t)||}{||\dot{b}(t)||^3}.
+\end{align}
 
 Notice that this formula does not directly involve the control points, but only includes the actual B-Spline equation. 
 This makes it difficult to directly minimize curvature of a B-Spline generated within a safe flight corridor.
@@ -1066,7 +1061,7 @@ The UAV may be dynamically mapping its environment with lidar or ultrasonics, so
 In both of these cases, a fast algorithm is needed that can quickly rerun the RRT algorithm based on newly acquired information. 
 Unfortunately, the present algorithm is too slow for such use. 
 For example, during a test on the $6\times6$ grid, the RRT generation segment took $38.58$ seconds, and the cumulative time to generate the three control point paths was $7.27$ seconds, which is obviously far too slow. 
-Real time implementation will require the total algorithm run time to be ideally less than one second.
+Real time implementation requires the total algorithm run time to be ideally less than one second.
 
 Several possible solutions exist which may help reduce computation time. 
 First, this entire algorithm is written in Python; rewriting many of the computationally intensive functions in a faster language such as C or Rust may help significantly. 
@@ -1091,7 +1086,7 @@ Numerous issues exist in the present implementation.
 For example, the annulus segments of one SFC intersection may sometimes intersect with the annulus segments of the next SFC intersection. 
 Such intersections may lead to infeasible constraints on the control points and cause the control point optimizer to fail. 
 An example of this is shown in figure \ref{fig:annulusOverlap}. 
-Future work in this area will have to take into account all such edge cases of these annulus constraints.
+Future work in this area must take into account all such edge cases of these annulus constraints.
 
 \begin{figure}
     \centering
@@ -1113,3 +1108,4 @@ The solution presented in this section is a path planning algorithm that avoids 
 It is a variation of the RRT algorithm that uses safe flight corridors instead of straight lines.
 Within those SFCs, a B-Spline path is generated.
 This work may add another tool in the development of obstacle avoiding algorithms.
+

@@ -20,8 +20,8 @@ To prevent needless repetition of what already exists in the 2025 paper, the maj
 B-Splines are constructed as
 
 \begin{align}
-    \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m \hat{b}_m^d(t, \bs{k}),
-\end{align}.
+    \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m \hat{b}_m^d(t, \bs{k}).
+\end{align}
 
 In this equation, $\hat{b}_m^d(t, \bs{k})$ are the time-shifted basis functions of degree $d$, given the knot sequence $\bs{k}$. 
 The knot sequence $\bs{k}$ scales the time spacing of the basis function, which means that adjusting the knot sequence adjusts the standard basis function, which can be helpful for edge cases in robotics. 
@@ -63,15 +63,15 @@ For example the basis function for the uniform degree 1 Bspline, with unit spaci
     b^1(t) &= \begin{cases} t & \text{~if~} 0 \leq t \leq 1 \\ 
  						2-t & 1 \leq t \leq 2 \\
  						0 & \text{~otherwise}
- 					    \end{cases}
-\end{align}.
+ 					    \end{cases}.
+\end{align}
 
 This basis function is zero outside of the interval $[0,2]$, and similar rules apply to basis functions of higher degrees. 
 The definition for a uniform B-Spline then becomes
 
 \begin{align}
-    \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m b^d(t-m+d), \quad t\in[0,M]
-\end{align}.
+    \bs{p}(t) = \sum_{m=0}^{M+d-1} \bs{c}_m b^d(t-m+d), \quad t\in[0,M].
+\end{align}
 
 Each term in this sum is a control point $\bs{c}_m$ times a time-shifted basis function $b^d(t-m+d)$, where $m$ iterates from $0$ to $M+d-1$. 
 Each control point modifies a time-shifted and overlapped copy of the exact same basis function. 
@@ -90,16 +90,15 @@ This is one of the advantages of B-Splines, that modifications may be made in on
 In other words, alterations of a localized set of control points lead to localized alteration of the B-Spline.
 This principle is illustrated in Fig. \ref{fig:BasisFunctionsConnection}. 
 
-
 This example uses $d=1$ and $M=9$, which is to say there are $9$ intervals of interest the B-Spline is defined over. 
 The knot vector is given, with uniform spacing of $1$ as
 
 \begin{align}
-        \bs{k}^{d=1}_{M=9} =
+    \bs{k}^{d=1}_{M=9} =
     \begin{bmatrix}
         -1 & 0 & 1 & 2 & \hdots & 7 & 8 & 9\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 Two sets of $d+M = 1+9=10$ control points are given for the same knot vector, as
 
@@ -111,8 +110,8 @@ Two sets of $d+M = 1+9=10$ control points are given for the same knot vector, as
     \bs{C}_2 =
     \begin{bmatrix}
         1&2&-1&-0.5&0.5&-2.0&3.0 & 5.0 & 4.5 & -3.0\\
-    \end{bmatrix}
-\end{align}.
+      \end{bmatrix}.
+\end{align}
 
 The only difference is that for $\bs{C}_1$, the value at index $5$ is $1.5$, while for $\bs{C}_2$, the value at index $5$ is $-2.0$. 
 Notice that this altered control point only modifies the B-Spline function on the interval $[4.0,6.0]$; the rest of the spline remains the same.
@@ -132,8 +131,8 @@ For the specific implementation used to generate this plot, the B-Spline basis f
 Recall that the summation formula for a B-Spline is given as
 
 \begin{align}
-    \bs{p}(t) &= \sum_{m=0}^{M+d-1} \bs{c}_m b^d(t-m+d)
-\end{align}.
+    \bs{p}(t) &= \sum_{m=0}^{M+d-1} \bs{c}_m b^d(t-m+d).
+\end{align}
 
 This definition may be converted from a sum to a matrix form as
 
@@ -146,8 +145,8 @@ This definition may be converted from a sum to a matrix form as
                 \vdots \\
 			b^d(t-M+1)
 		\end{bmatrix} \\
-	= \bs{C} \bs{b}^d_M(t)
-\end{align},
+	= \bs{C} \bs{b}^d_M(t).
+\end{align}
 
 where
 
@@ -163,8 +162,8 @@ where
 			b^d(t-1)\\
 			\vdots \\
 			b^d(t-M+1)
-		\end{bmatrix},
-\end{align}.
+		\end{bmatrix}.
+\end{align}
 
 This form stacks each shifted basis function into a vector. 
 For any given time $t$, those shifted functions are evaluated to produce a number for each entry. 
@@ -189,8 +188,8 @@ This is accomplished using the derivative matrix $D_M^d$ as
     \end{bmatrix} 
  	-\begin{bmatrix}
         \bs{I}_{M+d-1} \\ \bs{0}_{1\times(M+d-1)} 
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 For example, if $M=4$ and $d=1$, the derivative basis vector is
 
@@ -201,7 +200,7 @@ For example, if $M=4$ and $d=1$, the derivative basis vector is
         b^0(t-1)\\
         b^0(t-2)\\
         b^0(t-3)\\
-    \end{bmatrix}
+    \end{bmatrix},
 \end{align}
 
 and the derivative matrix is
@@ -214,8 +213,8 @@ and the derivative matrix is
         0 & 1 & -1 & 0\\
         0 & 0 & 1 & -1\\
         0 & 0 & 0 & 1\\
-    \end{bmatrix}
-\end{align},
+    \end{bmatrix},
+\end{align}
 
 then resulting vector $D_4^1 \bs{b}^0_4(t)$ becomes
 
@@ -227,8 +226,8 @@ then resulting vector $D_4^1 \bs{b}^0_4(t)$ becomes
         b^0(t-1) - b^0(t-2)\\
         b^0(t-2) - b^0(t-3)\\
         b^0(t-3)\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 The proof for this property is given after Lemma 1.14 in \cite{beard2025BSplines}.
 
@@ -238,8 +237,8 @@ Note that the same control points $\bs{C}$ relate both position and velocity to 
 
 \begin{align}
     \bs{p}(t) = \bs{C} \bs{b}^d_M(t)\\
-    \frac{d\bs{p}}{dt}(t) = \bs{C} D_M^{d} \bs{b}_M^{d-1}(t),\\
-\end{align}.
+    \frac{d\bs{p}}{dt}(t) = \bs{C} D_M^{d} \bs{b}_M^{d-1}(t).
+\end{align}
 
 These may also be put into matrix form for $d=2$ as
 
@@ -250,8 +249,8 @@ These may also be put into matrix form for $d=2$ as
 	= \bs{C}
     \begin{bmatrix}
         \bs{b}_M^2(t_i) & D^2_M \bs{b}^1_M(t_i) 
-    \end{bmatrix}
-\end{align},
+    \end{bmatrix},
+\end{align}
 
 where 
 
@@ -259,8 +258,8 @@ where
     B_M^2(t) = 
     \begin{bmatrix}
         \bs{b}_M^2(t) & D^2_M \bs{b}^1_M(t) 
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 This demonstrates the relationship between the state of the B-Spline and the evaluation of the basis functions at a particular time. 
 The modified basis functions are already known. 
@@ -279,8 +278,8 @@ For example, if $d = 2$ and $M = 4$, $k = [-2, -1, 0, 1, 2, 3, 4, 5, 6]$ $\bs{b}
         b^2(t-1)\\
         b^2(t-2)\\
         b^2(t-3)\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 If this vector is evaluated for knot points on the interval of interest $\bs{k} = [0,1,2,3,4]$, then
 
@@ -313,8 +312,8 @@ If this vector is evaluated for knot points on the interval of interest $\bs{k} 
         0.0\\
         0.5\\
         0.5\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 Notice that the nonzero values are shifted down the vector. 
 The same effect occurs with the derivative vectors from $D_M^d b_M^{d-1}(t)$. For the same example, if $t=0$, then
@@ -327,8 +326,8 @@ The same effect occurs with the derivative vectors from $D_M^d b_M^{d-1}(t)$. Fo
         b^1(t-1)\\
         b^1(t-2)\\
         b^1(t-3)\\        
-    \end{bmatrix}
-\end{align},
+    \end{bmatrix},
+\end{align}
 
 
 \begin{align}
@@ -339,8 +338,8 @@ The same effect occurs with the derivative vectors from $D_M^d b_M^{d-1}(t)$. Fo
         0\\
         0\\
         0\\
-    \end{bmatrix}
-\end{align},
+    \end{bmatrix},
+\end{align}
 
 and
 
@@ -353,8 +352,8 @@ and
         0\\
         0\\
         0\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 The matrix $B_4^2(0)$ then becomes
 
@@ -366,8 +365,8 @@ The matrix $B_4^2(0)$ then becomes
         0.0 & 0\\
         0.0 & 0\\
         0.0 & 0\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 The top, nonzero section is shifted down for each subsequent shift in $t$. 
 The nonzero section is denoted as $\hat{B}_4^2$, which is time invariant. 
@@ -383,8 +382,8 @@ This simplifies the control point relationship to be
     \begin{bmatrix}
         0.5 & -1.0\\
         0.5 & 1.0\\
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 Given the position and velocity conditions, the initial control points may be found using a matrix inverse as
 
@@ -401,15 +400,15 @@ Given the position and velocity conditions, the initial control points may be fo
     \begin{bmatrix}
         0.5 & -1.0\\
         0.5 & 1.0\\
-    \end{bmatrix}^{-1}
-\end{align}.
+    \end{bmatrix}^{-1}.
+\end{align}
 
 This process may be implemented for both initial and final conditions as
 
- \begin{align*}
+\begin{align*}
  	\bs{S} &\doteq \begin{bmatrix}\bs{p}(0) & \frac{d\bs{p}(0)}{dt} & \dots & \frac{d^\ell\bs{p}(0)}{d^\ell t} \end{bmatrix} 	\\
  	\bs{E} &\doteq \begin{bmatrix}\bs{p}(M) & \frac{d\bs{p}(M)}{dt} & \dots & \frac{d^\ell\bs{p}(M)}{d^\ell t} \end{bmatrix}.
- \end{align*}.
+\end{align*}
 
  If the spline control points are segmented into the first and last $d$-elements as
  \[
@@ -426,8 +425,8 @@ This works at any point, as long as the conditions at that point are known as
 
 \begin{align}
     \bs{C}_{1:d} = \bs{S} \left(\hat{B}_M^d(0)\right)^{-1}\\
-    \bs{C}_{M+1:M+d} = \bs{E} \left(\hat{B}_M^d(M)\right)^{-1}
-\end{align}.
+    \bs{C}_{M+1:M+d} = \bs{E} \left(\hat{B}_M^d(M)\right)^{-1}.
+\end{align}
 
 \section{Minimum Snap Trajectory}
 
@@ -441,9 +440,9 @@ This is given as
  	\label{eq:min_integral_of_norm}
  	\begin{aligned}
  	&\min_{\bs{C}} trace {\bs{C} W_M^{d}(\bs{\rho}) \bs{C}^\top} \\
- 	&\text{subject to } \: \bs{C} \begin{bmatrix} B_M^d(0) & B_M^d(M) \end{bmatrix} = \begin{bmatrix} \bs{S} & \bs{E} \end{bmatrix}. 
+ 	&\text{subject to } \: \bs{C} \begin{bmatrix} B_M^d(0) & B_M^d(M) \end{bmatrix} = \begin{bmatrix} \bs{S} & \bs{E} \end{bmatrix},
  	\end{aligned}
- \end{equation},
+ \end{equation}
 
 where $W_M^{d}(\bs{\rho})$ is a mixing matrix that is defined later.
 
@@ -456,14 +455,14 @@ The objective for creating control points that minimizes the integral of an $\el
 
 \begin{equation}
     \label{eq:integral_constraint}
-    \bs{C}^\ast = \arg\min_{\bs{C}} \int_0^M \sum_{\ell=0}^L \left( \rho^\ell \norm{\bs{p}^{\ell}(t)}^2\right) \, dt
-\end{equation}.
+    \bs{C}^\ast = \arg\min_{\bs{C}} \int_0^M \sum_{\ell=0}^L \left( \rho^\ell \norm{\bs{p}^{\ell}(t)}^2\right) \, dt.
+\end{equation}
 
-Finding the generalized $\ell^{th}$ order derivative of a B-Spline is possible using the following.
+Finding the generalized $\ell^{th}$ order derivative of a B-Spline is possible.
 
 Define
  \[
- D_M^{d,\ell} \defeq D_M^d D_M^{d-1}\cdots D_M^{d-\ell}
+ D_M^{d,\ell} \defeq D_M^d D_M^{d-1}\cdots D_M^{d-\ell},
  \]
  implying that 
  \begin{align*}
@@ -477,13 +476,13 @@ If the matrices $S_M^k$ and $W_M^{d,l}$ are defined as
 \begin{align*}
     S_M^k &\defeq \int_0^M 	\bs{b}_M^{k}(t) {\bs{b}_M^{k}(t)}^\top \, dt \\
     W_M^{d,\ell} &\defeq D_M^{d,\ell-1} S_M^{d-\ell} {D_M^{d,\ell-1}}^\top,
-\end{align*},
+\end{align*}
 
 then the matrix $W_M^{d}(\bs{\rho})$ is defined as
 
 \begin{align}
     W_M^{d}(\bs{\rho}) \defeq \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell}.
-\end{align}.
+\end{align}
 
 This matrix becomes an objective function by relating the control points $\bs{C}$ to the specified derivative that is minimized over the entire path. 
 From this objective, a minimized solution may be derived.
@@ -503,8 +502,8 @@ The singular value decomposition of two concatenated and shifted $B$ matrices is
         \Sigma \\ 
         \bs{0} 
     \end{bmatrix} 
-    V^\top,
-\end{align}.
+    V^\top.
+\end{align}
 
 The analytical solution to the control points $\bs{C}^*$ for a minimum snap trajectory is given as
 
@@ -513,13 +512,14 @@ The analytical solution to the control points $\bs{C}^*$ for a minimum snap traj
     \begin{bmatrix} 
         \bs{S} & \bs{E} 
     \end{bmatrix}
-    Q_M^{d}(\bs{\rho})
+    Q_M^{d}(\bs{\rho}),
 \end{align}
 
 where
+
 \begin{align}
-     Q_M^{d}(\bs{\rho}) = V \Sigma^{-1} U_1^\top \left( I - W_M^{d}(\bs{\rho}) U_2 (U_2^\top W_M^{d}(\bs{\rho}) U_2 )^{-1} U_2^\top \right)
-\end{align}.
+     Q_M^{d}(\bs{\rho}) = V \Sigma^{-1} U_1^\top \left( I - W_M^{d}(\bs{\rho}) U_2 (U_2^\top W_M^{d}(\bs{\rho}) U_2 )^{-1} U_2^\top \right).
+\end{align}
 
 \section{Contributions}
 
@@ -537,8 +537,8 @@ Recall that the definition for the matrix used in the singular value decompositi
     B^d_{M,SE} =
     \begin{bmatrix} 
         B_M^d(0) & B_M^d(M) 
-    \end{bmatrix}
-\end{align},
+    \end{bmatrix},
+\end{align}
 
 where $B_M^d(t)$ is
 
@@ -546,8 +546,8 @@ where $B_M^d(t)$ is
 B_M^d(t) \doteq 
     \begin{bmatrix} 
         \bs{b}^d_M(t) & D_M^d \bs{b}^{d-1}_M(t) & \dots & D_M^d D_M^{d-1}\dots D_M^{d-\ell+1} \bs{b}^{d-\ell}_M(t)
- 	\end{bmatrix},
-\end{align}.
+ 	\end{bmatrix}.
+\end{align}
 
 For degrees $0$ to $5$ and all valid $M$ up to $M=100$, a $B^d_{M,SE}$ is generated and its singular value decomposition is found. 
 Each component is unique to a particular $M$ and $d$ as
@@ -561,8 +561,8 @@ Each component is unique to a particular $M$ and $d$ as
         \Sigma^d_M \\ 
         \bs{0} 
     \end{bmatrix} 
-    V^{d,\top}_M
-\end{align}.
+    V^{d,\top}_M.
+\end{align}
 
 These components are saved into their own corresponding lookup tables, with a key of $d$ and $M$ for each component. 
 Notice that the first three components of $Q_M^d(\rho)$ are $V \Sigma^{-1} U_1^\top$, which is the left pseudoinverse of $B^d_{M,SE}$, which is also stored in a lookup table for even faster computation. 
@@ -573,10 +573,11 @@ This is represented as $(B^d_{M,SE})^+ = V \Sigma^{-1} U_1^\top$ when finding a 
 The problematic portion of this formula is the part related to the matrix inverse
 
 \begin{align}
-    W_M^{d}(\bs{\rho}) U_2 (U_2^\top W_M^{d}(\bs{\rho}) U_2 )^{-1} U_2^\top
-\end{align}.
+    W_M^{d}(\bs{\rho}) U_2 (U_2^\top W_M^{d}(\bs{\rho}) U_2 )^{-1} U_2^\top.
+\end{align}
 
-This involves a lot of matrix multiplication, and a matrix inverse, which must be minimized as much as possible. 
+This involves several matrix multiplications and a matrix inverse.
+These computations are expensive, and real-time implementation must be minimized as much as possible. 
 To precompute as much of this as possible, some terms are defined as
 
 \begin{align}
@@ -586,42 +587,42 @@ To precompute as much of this as possible, some terms are defined as
 and
 
 \begin{align}
-    Z^d_M(\bs{\rho}) = (U^{d}_{2,M})^\top W_M^{d}(\bs{\rho}) U^d_{2,M}
-\end{align}.
+    Z^d_M(\bs{\rho}) = (U^{d}_{2,M})^\top W_M^{d}(\bs{\rho}) U^d_{2,M}.
+\end{align}
 
 The definition for $W_M^{d}(\bs{\rho})$ is
 
 \begin{align}
-    W_M^{d}(\bs{\rho}) \defeq \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell}
-\end{align}.
+    W_M^{d}(\bs{\rho}) \defeq \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell}.
+\end{align}
 
-Which may be substituted as
+This may be substituted as
 
 \begin{align}
     Y^d_M(\bs{\rho}) = \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell} U^d_{2,M}\\
-    Z^d_M(\bs{\rho}) = (U^{d}_{2,M})^\top \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell} U^d_{2,M} = \sum_{\ell=0}^L \rho^\ell (U^{d}_{2,M})^\top  W_M^{d,\ell} U^d_{2,M}
-\end{align}.
+    Z^d_M(\bs{\rho}) = (U^{d}_{2,M})^\top \sum_{\ell=0}^L \rho^\ell W_M^{d,\ell} U^d_{2,M} = \sum_{\ell=0}^L \rho^\ell (U^{d}_{2,M})^\top  W_M^{d,\ell} U^d_{2,M}.
+\end{align}
 
 Given
 
 \begin{align}
     Y^{d,l}_M = W_M^{d,\ell} U^d_{2,M}\\
-    Z^{d,l}_M = (U^{d}_{2,M})^\top  W_M^{d,\ell} U^d_{2,M}
-\end{align},
+    Z^{d,l}_M = (U^{d}_{2,M})^\top  W_M^{d,\ell} U^d_{2,M},
+\end{align}
 
 the original equations simplify to
 
 \begin{align}
     Y^d_M(\bs{\rho}) = \sum_{\ell=0}^L \rho^\ell Y^{d,l}_M\\
-    Z^d_M(\bs{\rho}) = \sum_{\ell=0}^L \rho^\ell Z^{d,l}_M
-\end{align}.
+    Z^d_M(\bs{\rho}) = \sum_{\ell=0}^L \rho^\ell Z^{d,l}_M.
+\end{align}
 
 Lookup tables are created over all applicable values for $d$, $l$, and $M$ for $Y^{d,l}_M$ and $Z^{d,l}_M$. 
 In the generator program, the definition of $Q_M^{d}(\bs{\rho})$ becomes
 
 \begin{align}
-    Q_M^{d}(\bs{\rho}) = (B^d_{M,SE})^+ \left(I - \sum_{\ell=0}^L \rho^\ell Y^{d,l}_M \left(\sum_{\ell=0}^L \rho^\ell Z^{d,l}_M\right)^{-1} U_2^\top \right)
-\end{align}.
+    Q_M^{d}(\bs{\rho}) = (B^d_{M,SE})^+ \left(I - \sum_{\ell=0}^L \rho^\ell Y^{d,l}_M \left(\sum_{\ell=0}^L \rho^\ell Z^{d,l}_M\right)^{-1} U_2^\top \right).
+\end{align}
 
 The equation for finding the remaining control points becomes
 
@@ -630,8 +631,8 @@ The equation for finding the remaining control points becomes
     \begin{bmatrix} 
         \bs{S} & \bs{E} 
     \end{bmatrix}
-    Q_M^{d}(\bs{\rho})
-\end{align}.
+    Q_M^{d}(\bs{\rho}).
+\end{align}
 
 If a mixing vector $\bs{\rho}$ is known beforehand, the entire $Q_M^{d}(\bs{\rho})$ matrix can be computed once, which would further reduce computation time. 
 
@@ -642,8 +643,8 @@ A spline was generated using the parameters
 \begin{align}
     d = 3\\
     M = 15\\
-    \rho = \left[1.0, 1.0, 1.0\right]
-\end{align},
+    \rho = \left[1.0, 1.0, 1.0\right],
+\end{align}
 
 and a set of 2D conditions as
 
@@ -681,8 +682,8 @@ and a set of 2D conditions as
     \begin{bmatrix}
         4.0\\
         0.0
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 This was run through a minimum snap trajectory generator, which yielded the plot in Fig. \ref{fig:minimumSnap2D}.
 Using the lookup table library, the total generation time for control points was $803.5$ microseconds.
@@ -695,7 +696,6 @@ Using the lookup table library, the total generation time for control points was
 \end{figure}
 
 The same set of parameters for $\rho$, $d$, and $M$ with the conditions of 
-
 
 \begin{align}
     p(0) =
@@ -737,8 +737,8 @@ The same set of parameters for $\rho$, $d$, and $M$ with the conditions of
         0.0\\
         0.0\\
         0.0
-    \end{bmatrix}
-\end{align}.
+    \end{bmatrix}.
+\end{align}
 
 These conditions yielded the 3D B-Spline in Fig. \ref{fig:minimumSnap3D}. 
 Using the lookup table library, the total control point generation time was $1.134$ milliseconds.
@@ -763,7 +763,7 @@ Although there are an infinite number of possible $\rho$ vectors, several common
     \rho_0 = \left[1,1,1\right],
     \rho_1 = \left[1,0,0\right]\\
     \rho_2 = \left[0,1,0\right]\\
-    \rho_3 = \left[0,0,1\right]\\
+    \rho_3 = \left[0,0,1\right],
 \end{align}
 
 among many other possibilities.
@@ -773,3 +773,6 @@ They were originally intended for the takeoff and landing trajectories for the e
 Using only start and end position, velocity, and acceleration conditions, it is not possible to create an entirely smooth trajectory for the VTOL.
 However, it may be possible to use minimum snap trajectories to stitch together larger trajectories from smaller groups of conditions.
 A future area of research would be optimizing sets of intermediate conditions, interpolated with minimum snap trajectories, to develop more complex UAV trajectories.
+
+
+
