@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  23 MAR 2026 23:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  25 MAR 2026 16:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1972,23 +1972,23 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `fig:Px4' on page 6 undefined on input line 27.
 
+<figs/chap1/Px4VTOL.png, id=777, 813.0375pt x 374.39874pt>
+File: figs/chap1/Px4VTOL.png Graphic file (type png)
+<use figs/chap1/Px4VTOL.png>
+Package pdftex.def Info: figs/chap1/Px4VTOL.png  used on input line 33.
+(pdftex.def)             Requested size: 164.63853pt x 75.81532pt.
+<figs/chap1/Px4VTOLFlightPath.jpg, id=780, 2022.55624pt x 1816.7875pt>
+File: figs/chap1/Px4VTOLFlightPath.jpg Graphic file (type jpg)
+<use figs/chap1/Px4VTOLFlightPath.jpg>
+Package pdftex.def Info: figs/chap1/Px4VTOLFlightPath.jpg  used on input line 4
+2.
+(pdftex.def)             Requested size: 164.63853pt x 147.86867pt.
 [6
 
 
 
 
 ]
-<figs/chap1/Px4VTOL.png, id=781, 813.0375pt x 374.39874pt>
-File: figs/chap1/Px4VTOL.png Graphic file (type png)
-<use figs/chap1/Px4VTOL.png>
-Package pdftex.def Info: figs/chap1/Px4VTOL.png  used on input line 33.
-(pdftex.def)             Requested size: 164.63853pt x 75.81532pt.
-<figs/chap1/Px4VTOLFlightPath.jpg, id=784, 2022.55624pt x 1816.7875pt>
-File: figs/chap1/Px4VTOLFlightPath.jpg Graphic file (type jpg)
-<use figs/chap1/Px4VTOLFlightPath.jpg>
-Package pdftex.def Info: figs/chap1/Px4VTOLFlightPath.jpg  used on input line 4
-2.
-(pdftex.def)             Requested size: 164.63853pt x 147.86867pt.
 LaTeX Font Info:    Font shape `T1/opensans-TLF/m/n' will be
 (Font)              scaled to size 10.40245pt on input line 67.
  [7 <./figs/chap1/Px4VTOL.png> <./figs/chap1/Px4VTOLFlightPath.jpg>]
@@ -3361,7 +3361,7 @@ type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/
 txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/
 texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1
 /public/newpx/zplri.pfb>
-Output written on main.pdf (132 pages, 21135436 bytes).
+Output written on main.pdf (132 pages, 21135424 bytes).
 PDF statistics:
  2586 PDF objects out of 2984 (max. 8388607)
  2138 compressed objects within 22 object streams
