@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  25 MAR 2026 16:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  30 MAR 2026 22:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1972,23 +1972,23 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `fig:Px4' on page 6 undefined on input line 27.
 
-<figs/chap1/Px4VTOL.png, id=777, 813.0375pt x 374.39874pt>
-File: figs/chap1/Px4VTOL.png Graphic file (type png)
-<use figs/chap1/Px4VTOL.png>
-Package pdftex.def Info: figs/chap1/Px4VTOL.png  used on input line 33.
-(pdftex.def)             Requested size: 164.63853pt x 75.81532pt.
-<figs/chap1/Px4VTOLFlightPath.jpg, id=780, 2022.55624pt x 1816.7875pt>
-File: figs/chap1/Px4VTOLFlightPath.jpg Graphic file (type jpg)
-<use figs/chap1/Px4VTOLFlightPath.jpg>
-Package pdftex.def Info: figs/chap1/Px4VTOLFlightPath.jpg  used on input line 4
-2.
-(pdftex.def)             Requested size: 164.63853pt x 147.86867pt.
 [6
 
 
 
 
 ]
+<figs/chap1/Px4VTOL.png, id=783, 813.0375pt x 374.39874pt>
+File: figs/chap1/Px4VTOL.png Graphic file (type png)
+<use figs/chap1/Px4VTOL.png>
+Package pdftex.def Info: figs/chap1/Px4VTOL.png  used on input line 33.
+(pdftex.def)             Requested size: 164.63853pt x 75.81532pt.
+<figs/chap1/Px4VTOLFlightPath.jpg, id=786, 2022.55624pt x 1816.7875pt>
+File: figs/chap1/Px4VTOLFlightPath.jpg Graphic file (type jpg)
+<use figs/chap1/Px4VTOLFlightPath.jpg>
+Package pdftex.def Info: figs/chap1/Px4VTOLFlightPath.jpg  used on input line 4
+2.
+(pdftex.def)             Requested size: 164.63853pt x 147.86867pt.
 LaTeX Font Info:    Font shape `T1/opensans-TLF/m/n' will be
 (Font)              scaled to size 10.40245pt on input line 67.
  [7 <./figs/chap1/Px4VTOL.png> <./figs/chap1/Px4VTOLFlightPath.jpg>]
@@ -2296,46 +2296,47 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:StepMetrics' on page 35 undefined on input line 1
 616.
 
-<figs/chap1/StepError/PosVelErrors.png, id=1202, 497.9403pt x 346.896pt>
+[35 <./figs/chap1/landing/ReferenceTrajectory.png>] [36 <./figs/chap1/landing/P
+osVelErrors.png> <./figs/chap1/landing/ForcesComparisons.png> <./figs/chap1/lan
+ding/DesiredActualTrajectory.png> <./figs/chap1/landing/Deltas.png> <./figs/cha
+p1/landing/Angles.png>]
+<figs/chap1/StepError/PosVelErrors.png, id=1218, 497.9403pt x 346.896pt>
 File: figs/chap1/StepError/PosVelErrors.png Graphic file (type png)
 <use figs/chap1/StepError/PosVelErrors.png>
 Package pdftex.def Info: figs/chap1/StepError/PosVelErrors.png  used on input l
 ine 1623.
 (pdftex.def)             Requested size: 164.63853pt x 114.69304pt.
-<figs/chap1/StepError/forcesComparison.png, id=1203, 462.528pt x 346.896pt>
+<figs/chap1/StepError/forcesComparison.png, id=1219, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/forcesComparison.png Graphic file (type png)
 <use figs/chap1/StepError/forcesComparison.png>
 Package pdftex.def Info: figs/chap1/StepError/forcesComparison.png  used on inp
 ut line 1630.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/StepError/PosComparisons.png, id=1204, 462.528pt x 346.896pt>
+<figs/chap1/StepError/PosComparisons.png, id=1220, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/PosComparisons.png Graphic file (type png)
 <use figs/chap1/StepError/PosComparisons.png>
 Package pdftex.def Info: figs/chap1/StepError/PosComparisons.png  used on input
  line 1640.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/StepError/VelComparisons.png, id=1205, 462.528pt x 346.896pt>
+<figs/chap1/StepError/VelComparisons.png, id=1221, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/VelComparisons.png Graphic file (type png)
 <use figs/chap1/StepError/VelComparisons.png>
 Package pdftex.def Info: figs/chap1/StepError/VelComparisons.png  used on input
  line 1647.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/StepError/Deltas2.png, id=1206, 462.528pt x 346.896pt>
+<figs/chap1/StepError/Deltas2.png, id=1222, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/Deltas2.png Graphic file (type png)
 <use figs/chap1/StepError/Deltas2.png>
 Package pdftex.def Info: figs/chap1/StepError/Deltas2.png  used on input line 1
 657.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-<figs/chap1/StepError/angles.png, id=1207, 462.528pt x 346.896pt>
+<figs/chap1/StepError/angles.png, id=1223, 462.528pt x 346.896pt>
 File: figs/chap1/StepError/angles.png Graphic file (type png)
 <use figs/chap1/StepError/angles.png>
 Package pdftex.def Info: figs/chap1/StepError/angles.png  used on input line 16
 64.
 (pdftex.def)             Requested size: 164.63853pt x 123.47975pt.
-[35 <./figs/chap1/landing/ReferenceTrajectory.png>] [36 <./figs/chap1/landing/P
-osVelErrors.png> <./figs/chap1/landing/ForcesComparisons.png> <./figs/chap1/lan
-ding/DesiredActualTrajectory.png> <./figs/chap1/landing/Deltas.png> <./figs/cha
-p1/landing/Angles.png>]
+
 
 Package caption Warning: \label without proper reference on input line 1668.
 See the caption package documentation for explanation.
@@ -2358,10 +2359,10 @@ File: figs/chap1/quadplane.jpg Graphic file (type jpg)
 Package pdftex.def Info: figs/chap1/quadplane.jpg  used on input line 1763.
 (pdftex.def)             Requested size: 343.0pt x 257.24951pt.
 [41]
-<figs/chap1/tiltbodyDesign.png, id=1276, 1352.05125pt x 414.54875pt>
+<figs/chap1/tiltbodyDesign.png, id=1277, 1352.05125pt x 414.54875pt>
 File: figs/chap1/tiltbodyDesign.png Graphic file (type png)
 <use figs/chap1/tiltbodyDesign.png>
-Package pdftex.def Info: figs/chap1/tiltbodyDesign.png  used on input line 1781
+Package pdftex.def Info: figs/chap1/tiltbodyDesign.png  used on input line 1784
 .
 (pdftex.def)             Requested size: 343.0pt x 105.16138pt.
 <figs/chap1/tiltbodyManeuver.png, id=1280, 1015.795pt x 499.8675pt>
@@ -3340,11 +3341,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40003 strings out of 469515
- 739305 string characters out of 5470807
- 1690450 words of memory out of 5000000
+ 40005 strings out of 469515
+ 739345 string characters out of 5470807
+ 1690445 words of memory out of 5000000
  66970 multiletter control sequences out of 15000+600000
- 774656 words of font info for 421 fonts, out of 8000000 for 9000
+ 774771 words of font info for 422 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  125i,19n,121p,1483b,3290s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXBMI.pfb></usr/share/texm
@@ -3361,7 +3362,7 @@ type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/
 txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/
 texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1
 /public/newpx/zplri.pfb>
-Output written on main.pdf (132 pages, 21135424 bytes).
+Output written on main.pdf (132 pages, 21135387 bytes).
 PDF statistics:
  2586 PDF objects out of 2984 (max. 8388607)
  2138 compressed objects within 22 object streams

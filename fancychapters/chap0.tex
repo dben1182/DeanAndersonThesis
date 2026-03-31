@@ -101,7 +101,7 @@ Some examples of existing VTOL craft are shown in Fig. \ref{fig:eVTOLExamples}.
     \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{figs/chap0/Archer_Midnight_top_view.jpg}
-        \caption{Archer Aviation Midnight eVTOL prototype aircraft. Image from “Archer Aviation Midnight (production aircraft),” eVTOL News, 2025, \url{https://evtol.news/archer/}. \cite{evtolnews_archer_image}}
+        \caption{Archer Aviation Midnight VTOL prototype aircraft. Image from “Archer Aviation Midnight (production aircraft),” eVTOL News, 2025, \url{https://evtol.news/archer/}. \cite{evtolnews_archer_image}}
         \label{fig:archer}
     \end{subfigure}
     \hfill
@@ -129,56 +129,56 @@ Some examples of existing VTOL craft are shown in Fig. \ref{fig:eVTOLExamples}.
         \label{fig:zipline}
     \end{subfigure}    
     
-    \caption{Four different commercial and defense eVTOL aircraft in various stages of development and use. Each design is specialized to the use case and developer's design philosophy. Figs. \ref{fig:archer} and \ref{fig:BetaTech} are commercial eVTOL air taxis in development from Archer Aviation and Beta Technologies, respectively. The V-22 Osprey in Fig. \ref{fig:osprey} is a famous VTOL that has seen extensive use by the U.S. Military. Fig. \ref{fig:zipline} is the Zipline VTOL, which is under development for food and package delivery.}
+    \caption{Four different commercial and defense VTOL aircraft in various stages of development and use. Each design is specialized to the use case and developer's design philosophy. Figs. \ref{fig:archer} and \ref{fig:BetaTech} are commercial VTOL air taxis in development from Archer Aviation and Beta Technologies, respectively. The V-22 Osprey in Fig. \ref{fig:osprey} is a famous VTOL that has seen extensive use by the U.S. Military. Fig. \ref{fig:zipline} is the Zipline VTOL, which is under development for food and package delivery.}
     \label{fig:eVTOLExamples}
 \end{figure}
 
 The most difficult challenge for VTOL control is transitioning. 
-Transition refers changing from rotorcraft hovering flight into airframe forward flight and vice versa. 
-The objective for a transition autopilot is to take the aircraft from hover to forward flight and back again as quickly, efficiently, and stabily as possible. 
-During takeoff transition, the aircraft needs to slowly gain altitude while simultaneously gaining forward airspeed to generate more lift, while the opposite is true for landing. 
-Unfortunately, during the transision, the aircraft is subject to uncertain dynamics and conditions that hold for neither mode of control. 
-For example, angle of attack $\alpha$ is often far larger than permissible for a standard airplane controller. 
+Transition refers to the change from hovering flight to forward flight, and vise versa. 
+The objective of a transition autopilot is to take the aircraft from hover to forward flight and back again as quickly, efficiently, and stability as possible. 
+During the takeoff transition, the aircraft needs to slowly gain altitude while simultaneously gaining forward airspeed to generate more lift, while the opposite is true for landing. 
+Unfortunately, during the transition, the aircraft is subject to uncertain dynamics and conditions that hold for neither mode of control. 
+For example, the angle of attack $\alpha$ is often much larger than is permissible for a standard airplane controller. 
 
-A problem with many current solutions is that they bifurcate the transition of aircraft into multiple parts. 
-In other words, aircraft are only thought of as fixed-wing aircraft or multicopter aircraft, and that an aircraft can only be one of those at a given time. 
+A problem with many current solutions is that they bifurcate the transition of the VTOL aircraft into multiple parts. 
+In other words, aircraft are only thought of as an airplane or as a rotorcraft, and an aircraft can only be one of those at a given time. 
 When the VTOL aircraft is moving at low lateral airspeed, it is considered to actually be a multicopter and thus uses a multicopter autopilot framework. 
-Likewise, when the aircraft is moving at a high lateral airspeed, the aircraft is considered to be a fixed-wing airplane with a fixed-wing autopilot framework. 
+Similarly, when the aircraft is moving at a high lateral airspeed, the aircraft is considered a fixed-wing airplane with a fixed-wing autopilot framework. 
 This mentality leads to a bifurcation in autopilot design; both fixed-wing and quadrotor control are excellent in their own domains, but their isolation from each other causes significant issues in bridging between the two. 
 
-In addition to the VTOL controller, several other tangential areas for control and planning were explored and developed.
+In addition to the VTOL controller, several other tangential areas of control and planning were explored and developed.
 First, during the first stages of development of the VTOL controller, it became apparent that the controller would be model dependent.
-Threfore, it was desired to obtain the aerodynamic coeffients for the vehicle.
+Therefore, it was desired to obtain the aerodynamic coefficients for the vehicle.
 There was no 3D CAD model of the first VTOL aircraft being developed, so it was not feasible to use aerodynamic software to determine a model for the aircraft.
 However, real flight data was and is readily accessible to the user after a fixed-wing flight.
 Therefore, a system identification scheme was developed that used flight data with an assumed system structure to recursively estimate the coefficients of aerodynamics.
-This system identification scheme was implemented for a fixed-wing simulation successfully identified the majority of coefficients of aerodynamics for the vehicle.
+This system identification scheme was implemented for a fixed-wing simulation, which successfully identified the majority of the coefficients of aerodynamics of the vehicle.
 
-The 2D VTOL quadplane controller requires a reference trajectory to be followed by the quadplane.
-This reference trajectory must include a reference position, velocity, and acceleration; each of these references are required for the VTOL to function.
-$3^{rd}$ degree basis splines (B-Splines) intrinsically include $1^{st}$ and $2^{nd}$ derivatives, which are easily calculated due to their polynomial composition; therefore $3^{rd}$ degree uniform B-Splines were used for the entirety of this paper to represent reference position.
+The 2D VTOL quadplane controller requires the quadplane to follow a defined reference trajectory.
+This reference trajectory must include a reference position, velocity, and acceleration; each of these references is required for the VTOL to function.
+Degree $3$ basis splines (B-Splines) intrinsically include $1^{st}$ and $2^{nd}$ derivatives, which are easily calculated due to their polynomial composition; therefore $3^{rd}$ degree uniform B-Splines were used throughout this paper for the reference position.
 Due to their practical applications, it is desired to generate B-Splines as quickly and computationally efficiently as possible.
 In order to facilitate this, a set of look up tables were created to efficiently generate a particular class of B-Splines trajectories, called minimum snap trajectories.
 In the implementation developed here, the control points that define a minimum-snap trajectory are generated using stored data in lookup tables.
 That data is then accessed and combined to generate the control points for the desired trajectory.
 
-However, this method is not able to account for obstacles in the environment. 
-The final contribution of this paper is a path planning algorithm that avoids obstacles and generates a B-Spline trajectory between a start and end point.
-This path planning method uses the Rapidly Exploring Random Trees (RRT) algorithm to generate a safe set of spaces or corridors between start and end points.
-Within this set of corridors a $3^{rd}$ degree B-Spline is generated as the actual flight path between start and end points.
-This algorithm further facilitates the generation of smooth paths without intersection of obstacles.
+However, this method cannot account for obstacles in the environment. 
+The final contribution of this paper is a path planning algorithm that avoids obstacles and generates a B-Spline trajectory between a start and an end point.
+This path planning method uses the Rapidly Exploring Random Trees (RRT) algorithm to generate a safe set of spaces or corridors between the start and end points.
+Within this set of corridors, a $3^{rd}$ degree B-Spline is generated as the actual flight path between the start and end points.
+This algorithm further facilitates the generation of smooth paths without the intersection of obstacles.
 
-Each of these components are part of the growing framework for the development of unmanned aerial robotics systems.
+Each of these components is part of the growing framework for the development of unmanned aerial robotics systems.
 
 \subsection{Contributions}
 
 The main contributions of this paper are
 
 \begin{itemize}
-    \item Differentially flat 2D quadplane controller
-    \item Aerodynamic coefficient system identification
-    \item B-Spline look up tables for minimum snap trajectory generation
-    \item Obstacle avoidance path planner using safe flight corridors and an optimized B-Spline path
+    \item A differentially flat 2D quadplane controller,
+    \item an aerodynamic coefficient estimation method,
+    \item a B-Spline lookup tables for minimum snap trajectory generation,
+    \item and an obstacle avoidance path planner using safe flight corridors and an optimized B-Spline path.
 \end{itemize}
 
 

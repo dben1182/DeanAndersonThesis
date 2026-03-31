@@ -6,23 +6,23 @@
 As discussed previously, a VTOL is a vehicle that can take off and land vertically.
 Quadplanes are a fairly common implementation of a VTOL, in part because of their relative simplicity compared to other VTOL designs.
 Quadplanes are a combination of two standardized hardware implementations: an airplane and a quadcopter.
-They also do not need a rotor tilting mechanism, which simplifies design complexity significantly.
+They also do not need a rotor tilting mechanism, which significantly simplifies design complexity.
 
-Most small airplanes have a naturally stable airframe, which means that the craft returns to flying a gentle, straight trajectory if the pilot lets go of the controls.
+Most small airplanes have a naturally stable airframe, which means that the craft can return to flying a gentle, straight trajectory if the pilot lets go of the controls.
 For this reason, airplanes can be flown by direct control surface inputs, without a stabilization flight controller, although this still requires great skill.
-On the other hand, most rotorcraft, such as quadrotors are not naturally stable aircraft.
-It is very difficult for rotorcraft to be controlled by a pilot using direct actuator inputs. 
+However, most rotorcraft, such as quadrotors, are not naturally stable aircraft.
+It is very difficult for a pilot to control a rotorcraft using direct actuator inputs. 
 When a pilot is manually flying a quadrotor via remote control, control stick inputs map to relative position and angle controls, so even manual flying includes some sort of control input.
 
-While recreational flying is certainly fun, most unmanned work requires some sort of autopilot to accurately control the aircraft.
+Although recreational flying is certainly fun, most unmanned work requires some sort of autopilot to accurately control the aircraft.
 There exist many open source autopilots available for public use, such as Ardupilot, Px4, Rosflight, and Betaflight.
 These autopilots include controllers for a variety of aircraft, such as airplanes, quadrotors, airships, flying wings, and many VTOL designs.
 They allow a pilot to manually control the aircraft while maintaining stability, as well as automatic trajectory tracking, such as waypoint following, orbiting, and spline tracking control laws.
-One may refer to \cite{uav_book} and \cite{vtol_book} for more information on the development of full autopilot stacks.
+Refer to \cite{uav_book} and \cite{vtol_book} for more information on the development of complete autopilot stacks.
 
 Although these autopilots include control for VTOL aircraft, these control laws are somewhat inefficient as they underutilize the physical capabilities of the system.
 For example, the Px4 controller for VTOLs aircraft controls the aircraft as either a rotorcraft or an airplane.
-When taking off, the aircraft ascends to a set altitude in multicopter (rotorcraft) mode and then slowly start the forward motor, or slowly tilt the forward rotors forward, until sufficient airspeed for foward flight has been reached. 
+When taking off, the aircraft ascends to a set altitude in multicopter (rotorcraft) mode and then slowly start sthe forward motor, or slowly tilts the forward rotors forward, until sufficient airspeed for forward flight has been reached. 
 The reverse happens during landing, where the aircraft slowly slows down until multicopter control takes effect, and the aircraft can descend.
 These methods are shown in Fig. \ref{fig:Px4}, and a video of transitioning may be found at \href{https://www.youtube.com/watch?v=f81n0aXdvKc}{https://www.youtube.com/watch?v=f81n0aXdvKc} \cite{transition_video}.
 
@@ -46,27 +46,27 @@ These methods are shown in Fig. \ref{fig:Px4}, and a video of transitioning may 
     \label{fig:Px4}
 \end{figure}
 
-While this method certainly works, it does not allow the aircraft to follow a generalized trajectory, nor does it utilize its actuators fully.
+Although this method works, it does not allow the aircraft to follow a generalized trajectory, nor does it utilize its actuators fully.
 It is desirable to develop an autopilot that follows any general type of trajectory, such as a circle or a parabola.
-The controller that is described in the following section generalizes the transition of the VTOL.
-An autopilot for a VTOL quadplane is developed that is able to follow a spline trajectory while hovering as a multicopter, flying forward as an airplane, and transitioning in between the two.
+The controller described in the following section generalizes the transition of the VTOL.
+An autopilot for a VTOL quadplane is developed that can follow a spline trajectory while hovering as a multicopter, flying forward as an airplane, and transitioning between the two.
 
 \section{Literature Review}
 
-Although the simplest and most common VTOL transition flight controller is described in the above section, hundreds of other flight control laws have been developed in control literature.
+Although the simplest and most common VTOL transition flight controller is described in the above section, hundreds of other flight control laws have been developed in the control literature.
 Several of these are reviewed in order to understand options for controlling VTOL controllers.
 
 \subsection{Gain Scheduling}
 
 One of the most prominent control methods for the transition of VTOL aircraft in particular, as well as all areas of aircraft experiencing nonlinearities is gain scheduling. 
-Gain scheduling control of a nonlinear system is typically Jacobian linearization of a nonlinear system around numerous setpoints, typically equilibrium points, of the system \cite{gain_scheduling}.
-In other words, it is linearization of the system around enough set states or operating regions of the sytem that the aircraft is expected to be able to stay controlled.
+Gain scheduling control of a nonlinear system is typically the Jacobian linearization of a nonlinear system around numerous setpoints, typically equilibrium points, of the system \cite{gain_scheduling}.
+In other words, it is linearization of the system around enough set states or operating regions of the system that the aircraft is expected to be able to stay controlled.
 In the introduction, it was shown that the Px4 autopilot does a sort of binary gain scheduling between two operating points; more sophisticated gain schedulers simply use more operating points.
 
 
 \subsubsection{Linear Parameter Varying Gain Scheduling}
 
-A more advanced segmend of gain scheduling is linear parameter varying (LPV) gain scheduling, which means modification of the equations of motion and the controller gains using a varying parameter as the aircraft changes state.
+A more advanced method of gain scheduling is linear parameter varying (LPV) gain scheduling, which means modification of the equations of motion and the controller gains using a varying parameter as the aircraft changes state.
 The state transition equations become 
 
 \begin{align}
@@ -76,49 +76,49 @@ The state transition equations become
 
 where $\theta$ is a function of time or state of the aircraft.
 As the VTOL changes its state during its transition, $\theta$ is altered accordingly, and the feedback matrix $K$ is updated using LQR, $H_\infty$, or another control law.
-$\theta$ can be chosen to represent airspeed, angle of attach $\alpha$, tiltrotor angle, or some other similar control method.
-For example, \cite{lpv_controller} presents an LPV controller for an octocopter plane using airspeed as the $\theta$ parameter.
-Using this method, they are able to guarantee stability for the aircraft in the specified flight regime, though admittedly not through a full flight transition.
+$\theta$ can be chosen to represent the airspeed, angle of attack $\alpha$, tiltrotor angle, or some other similar control method.
+For example, \cite{lpv_controller} presents an LPV controller for an octocopter plane using airspeed as the parameter $\theta$.
+Using this method, they are able to guarantee stability for the aircraft in the specified flight regime, although admittedly not through a full flight transition.
 
 \subsection{Model Predictive Control}
 
 Model Predictive Control (MPC) refers to a control method that iterates over short time intervals to bring the system to the desired state.
-In other words, MPC finds a control input $u$ that brings the system state closer to a reference state by running an optimization algorithm for that time interval.
+In other words, MPC finds a control input $u$ that brings the state  of the system closer to the reference state by running an optimization algorithm for that time interval.
 Because of this optimization, MPC converges on an optimal control input that takes into account all states and control inputs.
 This method is particularly useful for nonlinear systems with highly coupled dynamics, such as a VTOL during transition.
-A complete autopilot stack was developed in \cite{mpc_controller} for a tiltrotor VTOL, and was successfully implemented in hardware. 
-Using the dynamic model of the aircraft, an optimization function was developed that finds optimal actuator controls $\bs{\delta}$ for controlling the VTOL as desired.
-One section of the controller is an optimizer that finds the desired forces and moments that the should be actuated on the aircraft to take it to its desired trajectory.
+A complete autopilot stack was developed for a tiltrotor VTOL in \cite{mpc_controller}, and was successfully implemented in hardware. 
+Using the dynamic model of the aircraft, an optimization function was developed that finds optimal actuator controls $\bs{\delta}$ to control the VTOL as desired.
+One section of the controller is an optimizer that finds the desired forces and moments that should be actuated on the aircraft to take it to its desired trajectory.
 Another optimizer then finds the actuator values and tiltrotor angles that controls the aircraft to obtain those desired forces and moments.
 
 \subsection{Nonlinear Dynamic Inversion Controllers}
 
-Nonlinear dynamic inversion, is essentially feedback linearization for control systems.
+Nonlinear dynamic inversion is essentially feedback linearization for control systems.
 Feedback linearization cancels nonlinear dynamic terms in a system's dynamic equations of motion, which enables implementation of linear control laws for the system.
-This means that the controller automatically actuates opposite to the undesired, nonlinear term to cancel it out and make the system better behaved. 
-At each time step, the system is relinearized and an approximate state transition matrix is regenerated to be reinverted to drive the system to its desired state.
-One of the first papers on aircraft NDI \cite{ndi_firstPaper} improved control of the F-18 in sumulation in very large angles of attack,  which tends to have very nonlinear effects.
+This means that the controller automatically actuates opposite to the undesired nonlinear term to cancel it out and make the system better behaved. 
+At each time step, the system is re-linearized and an approximate state transition matrix is regenerated to be re-inverted to drive the system to its desired state.
+One of the first papers on aircraft NDI \cite{ndi_firstPaper} improved the control of the F-18 in simulation with very large angles of attack,  which tends to have very nonlinear effects.
 They claim that using NDI allowed them to control the aircraft at angles of attack that would normally be outside the stability envelope for standard flight controllers.
 NDI control requires that the system model is accurate so that a zeroing input actually removes undesired dynamic terms.
 Incremental nonlinear dynamic inversion (INDI) attempts to solve this problem using incremental sensor data to actively estimate the aircraft dynamics. 
-Doing so matches the controller to reality and reduces the probability of instability.
+Doing so matches the controller with reality and reduces the probability of instability.
 
-The large angles of attack during VTOL transition make INDI a particularly attractive solution as it can remove dynamic effects that would otherwise cause the craft to fail.
+The large angles of attack during the VTOL transition make INDI a particularly attractive solution, as it can remove dynamic effects that would otherwise cause the craft to fail.
 In \cite{incremental_nonlinear_dynamic_inversion}, two cascaded INDI flight controllers are used to control a quadplane in simulation, although it was not tested during transition.
-An INDI controller is developed for VTOL hovering in \cite{nasa_hover}, and is continued for forward flight and transition in \cite{nasa_hover_2}.
+An INDI controller is developed for a hovering VTOL in \cite{nasa_hover}, and it is continued for forward flight and transition in \cite{nasa_hover_2}.
 
 \subsection{Motivation for 2D VTOL Model and Controller}
 
 The solutions to the VTOL problem presented in the preceding section are all important parts of the attempt to control a VTOL aircraft during its transition phase.
 In this paper, another solution to the VTOL transition problem is presented.
-A 2D simplification of a VTOL simulation is developed to focus solely on transition control without stabilitation of degrees of freedom for roll, yaw, and east position.
+A 2D simplification of a VTOL simulation is developed to focus solely on transition control without stabilization of degrees of freedom for roll, yaw, and east position.
 This solution develops a differentially flat controller to make the quadplane track a B-Spline input trajectory.
 
 \section{2D VTOL Dynamic Model}
 
 This begins by simplifying a standard 3 dimensional dynamic design down to a 2 dimensional model. 
 Early 3D attempts resulted in instability in the aircraft.
-This begins with the following detail of the dynamics and mechanics of the aircraft operation in 2D.
+This begins with the following details of the dynamics and mechanics of the 2D aircraft operation.
 
 
 \begin{figure}[htb]
@@ -129,8 +129,8 @@ This begins with the following detail of the dynamics and mechanics of the aircr
 \end{figure}
 
 This model is represented by three degrees of freedom and their derivatives. 
-These are north position ($p_n$), down position ($p_d$), and pitch ($\theta$) with their derivatives $\dot{p_n}$, $\dot{p_d}$, and $\dot{\theta}$ respectively. 
-Velocity in the north and down directions are given as $v_n$ and $v_d$ respectively, while pitch rate is given $q$. 
+These are the north position ($p_n$), down position ($p_d$), ahd the pitch ($\theta$) with their derivatives $\dot{p_n}$, $\dot{p_d}$, and $\dot{\theta}$ respectively. 
+The velocities in the north and down directions are given as $v_n$ and $v_d$, respectively, while the pitch rate is given $q$. 
 These variables form the state vector as
 
 \begin{align}
@@ -147,8 +147,8 @@ These variables form the state vector as
 \subsection{Actuators}
 
 In this simplification, the planar VTOL has three rotors: two mounted vertically and one mounted horizontally. 
-The vertically oriented rotor on the front of the craft is denoted in subscript by $f$, the vertically oriented rotor on the rear by subscript $r$, and the horizontally-oriented thruster propeller by $t$. 
-The elevator is the sole control surface and is denoted in subscript as $e$. 
+The vertically oriented rotor on the front of the craft is denoted by $f$, the vertically oriented rotor on the rear by subscript $r$, and the horizontally-oriented thruster propeller by $t$. 
+The elevator is the sole control surface and is denoted in the subscript as $e$. 
 The possible control ranges for these actuators are given as
 
 \begin{align*}
@@ -159,8 +159,8 @@ The possible control ranges for these actuators are given as
 \end{align*}
 
 
-That is, the elevator can swing between the positive and negatives of $\Bar{\delta_e}$, while the throttles can assume values between zero and one. 
-The rotor normal vectors, or thrust directions, are given in the body frame as
+That is, the elevator can exist between the positive and negative values of $\Bar{\delta_e}$, while the throttles can assume values between zero and one. 
+The normal vectors for the rotors, or thrust directions, are given in the body frame as
 
 \begin{align}
     \hat{n}^b_{f} =
@@ -184,7 +184,7 @@ The rotor normal vectors, or thrust directions, are given in the body frame as
 
 \subsection{Equations of Motion}
 
-Dynamic equations of motion relate the state of a system $x$ and that system's control inputs $u$ to the derivative of the state vector $\dot{x}$ for the general nonlinear case and the special linear case as
+The dynamic equations of motion relate the state of a system $x$ and its control inputs $u$ to the derivative of the state $\dot{x}$ for the general nonlinear case and the special linear case as
 
 \begin{align}
   \dot{x} = f(x,u)\\
@@ -194,7 +194,7 @@ Dynamic equations of motion relate the state of a system $x$ and that system's c
 
 Let $\bs{p}_{a/b}^c\in\mathbb{R}^2$ and $\bs{v}_{a/b}^c\in\mathbb{R}^2$ represent the north and down position and velocity vectors for the state of the VTOL. 
 They are the position and velocity of frame $a$ relative to frame $b$ expressed in frame $c$. 
-$i$ represents the inertial or world frame, and $b$ represents the body frame of the aircraft. 
+$i$ represents the inertial or world frame and $b$ represents the body frame of the aircraft. 
 
 \begin{align}
     \bs{p}_{b/i}^i =
@@ -232,17 +232,17 @@ denote the rotation from frame $a$ to frame $b$ by angle $\vartheta$. The rigid 
 \end{subequations}
 
 where $\bs{F}^b \in \mathbb{R}^2$ is the non-gravitational force vector acting on the vehicle, expressed in the body frame. 
-$R_b^i(\theta)$ is the rotation matrix to rotate a vector from the body frame to the inertial frame of reference. 
+$R_b^i(\theta)$ is the rotation matrix that rotates a vector from the body frame to the inertial frame of reference. 
 $M\in\mathbf{R}$ is the pitch moment or torque acting on the aircraft and $J_y$ is the rotational inertia of the aircraft about the $y$ or pitch axis. 
-$\bs{e}_z^i=(0, 1)^\top$ is the direction of gravity expressed in the inertial or world frame, $g$ is acceleration due to gravity, which is $9.81 \frac{m}{s^2}$ and $m$ is the mass of the aircraft. 
+$\bs{e}_z^i=(0, 1)^\top$ is the direction of gravity expressed in the inertial or world frame, $g$ is the acceleration due to gravity, which is $9.81 \frac{m}{s^2}$ and $m$ is the mass of the aircraft. 
 The control vector in the body frame becomes: $\bs{u}^b=(\bs{F}^{b\top}, M)^\top$.
 
 \section{A note on 3D to 2D Projections}
 \label{sec:projections}
 
-There are many difficulties that exist with the relationship between the equations of motion of a 3D aircraft and a 2D aircraft. 
+There are many difficulties with the relationship between the equations of motion of a 3D aircraft and a 2D aircraft. 
 Specifically, there needs to be a change of frames of reference between the two worlds. 
-The aircraft operates within a 2D environment, which necessitates this change.
+The aircraft operates within a 2D environment, which requires this change.
 
 \subsection{3D Kinematics}
 
@@ -256,10 +256,10 @@ In the 3D frame, the position of an aircraft, with respect to a ground origin is
     .
 \end{align}
 
-Given the Euler angles roll, pitch, and yaw ($\phi, \theta, \psi$), a rotation matrix is created which rotates this vector to describe the aircraft's body frame as $R_i^b$ or vice versa. 
+Given the roll, pitch, and yaw Euler angles ($\phi, \theta, \psi$), a rotation matrix is created that rotates this vector to describe the body frame of the aircraft as $R_i^b$ or vise versa. 
 A significant problem with the simulation environments is that they exist in 3D, with a 3D setup which is well defined. 
 However, an environment with a 2D aircraft simulation existing in a 3D world is not well defined.
-One approach is to create a system of dynamical equations where one component is constrained to be zero.
+An approach is to create a system of dynamical equations in which one component is constrained to be zero.
 
 It is desirable to have a generalized 2D simulation existing in a 3D world in any particular coordinate frame, and not necessarily passing through the origin. 
 A 2D kinematic system may be defined on an arbitrary plane in the 3D world.
@@ -268,7 +268,7 @@ A 2D kinematic system may be defined on an arbitrary plane in the 3D world.
 \label{sec:2DProjection}
 
 A plane can be represented in 3D space with a known point on that plane and the vector normal to it.
-An algorithm is set forth in \cite{duffBuildingOrthonormalBasis} on the creation of an orthonormal basis, where one member of that basis is already specified. That is, finding the basis for a plane when the vector normal to that plane is already specified. In this case, that specified member of the orthonormal basis is the vector normal or orthogonal to the plane.
+An algorithm is set forth in \cite{duffBuildingOrthonormalBasis} for the creation of an orthonormal basis, where a member of that basis is already specified. That is, finding the basis for a plane when the normal vector or that plane is already specified. In this case, that specified member of the orthonormal basis is the vector normal or orthogonal to the plane.
 This algorithm is given as
 
 
@@ -313,11 +313,11 @@ $$
 \end{algorithm}.
 
 This algorithm is particularly interesting because it creates a consistent orthonormal basis in 3D, including the $\hat{n}$ vector. 
-It also creates a 2D orthonormal basis out of $u_1$ and $u_2$. 
+It also creates a 2D orthonormal basis from $u_1$ and $u_2$. 
 The basis vectors $u_1$ and $u_2$ span a 2D plane in 3D space.
 
 In order to have a plane that does not pass through the 3D origin, an offset vector is added to any point in 2D to the the corresponding 3D point. 
-This offset vector $o_{3D}$ then becomes the origin on the 2D vector. 
+This offset vector $o_{3D}$ then becomes the origin of the 2D vector. 
 The map between a 2D vector on the plane $v_{2D}$ and a 3D vector $v_{3D}$ is given as
 
 \begin{align}
@@ -334,9 +334,9 @@ The equations to map from a 3D point that sits on the plane to its 2D equivalent
 \end{align}
 
 Note that $U^+$ is the left pseudoinverse of $U$; it projects a 3D vector onto the plane to obtain its 2D equivalent. 
-In general, a 3D vector does not lie on the plane, but must be projected onto the plane.
-The component of the 3D vector that is orthogonal to the plane is removed, and then the projected vector is transformed from a 3D frame into a 2D frame. 
-An example of plane projection is shown in Fig. \ref{fig:orthogonal projection}.
+In general, a 3D vector does not lie on the plane but must be projected onto the plane.
+The component of the 3D vector that is orthogonal to the plane is removed and then the projected vector is transformed from a 3D frame into a 2D frame. 
+An example of a plane projection is shown in Fig. \ref{fig:orthogonal projection}.
 
 \begin{figure}
     \centering
@@ -347,10 +347,10 @@ An example of plane projection is shown in Fig. \ref{fig:orthogonal projection}.
 
 \subsection{2D VTOL application}
 
-This mathematical tool represents the 2D quadplane in 3D space.
-Apair of basis vectors must be found to represent the plane. 
+This mathematical tool represents the 2D quadplane in a 3D space.
+A pair of basis vectors must be found to represent the plane. 
 The working plane needs to be defined in the North-Down plane, with zero component in the east direction. 
-This limits the normal vector to be either $\hat{e}$ or $-\hat{e}$, that is, the positive or negative east vectors.
+This limits the normal vector to either $\hat{e}$ or $-\hat{e}$, that is, the positive or negative east vectors.
 Two bases are obtained using the Pixar algorithm, as
 
 \begin{align}
@@ -369,14 +369,14 @@ Two bases are obtained using the Pixar algorithm, as
     .
 \end{align}
 
-From these outputs, the latter is selected, because its north and down bases align with the north and down bases of the 3D case. 
-It has the disadvantage of having its normal vector point in the negative $\hat{e}$ direction, but this doesn't affect anything.
+From these outputs, the latter is selected because its north and down bases align with the north and down bases of the 3D case. 
+It has the disadvantage of having its normal vector point in the negative $\hat{e}$ direction, but this does not affect anything.
 To be clear, the actual equations of motion exist only in the 2D North-Down frame. 
-A set of orthonormal basis vectors was created to facilitate that, and to be able to map back and forth between the two domains.
+A set of orthonormal basis vectors was created to facilitate that and to be able to map back and forth between the two domains.
 
 \subsection{Aerodynamic Forces and Moments}
 
-Given the velocity vector $\bs{v}_{b/i}^b\doteq (u, w)^\top$, the airspeed $V_a$ and angle-of-attack $\alpha$ are computed as
+Given the velocity vector $\bs{v}_{b/i}^b\doteq (u, w)^\top$, the air speed $V_a$ and angle-of-attack $\alpha$ are calculated as
 
 \begin{align}
   V_a(\boldsymbol{v}_{b/i}^b) &= \norm{\boldsymbol{v}_{b/i}^b} = \sqrt{\dot{p}_n^2+\dot{p}_d^2} \\
@@ -384,7 +384,7 @@ Given the velocity vector $\bs{v}_{b/i}^b\doteq (u, w)^\top$, the airspeed $V_a$
   .
 \end{align}
 
-Given the angle of attack $\alpha$, the rotation matrix from the wind to body frame is given by
+Given the angle of attack $\alpha$, the rotation matrix from the wind frame to the body frame is given by
 \begin{align}
 %    R_w^b(\boldsymbol{v}_{b/i}^b) = 
     R_w^b(\alpha) = 
@@ -395,7 +395,7 @@ Given the angle of attack $\alpha$, the rotation matrix from the wind to body fr
     .
   \end{align}
 
-Following ~\cite{uav_book}, the lift coefficient on the aircraft is given by
+Following ~\cite{uav_book}, the lift coefficient for the aircraft is given by
 
 \begin{align}
     C_L(\alpha) = \left(1-\sigma(\alpha)\right) \left[C_{L_0} + C_{L_{\alpha}}\alpha \right] + \sigma(\alpha) \left[2\text{sign}(\alpha)\sin^2\alpha\cos\alpha \right],
@@ -454,7 +454,7 @@ where
 \end{align}
 
 where $\rho$ is air density, $V_a$ is airspeed, $c$ is the mean wing chord. 
-Similarly, from~\cite{uav_book}, the aerodynamic moment acting on the quadplane, with zero control inputs, is given by
+Similarly, from~\cite{uav_book}, the aerodynamic moment acting on the quadplane, with zero control input, is given by
 \begin{align}
     M(V_a, \alpha, q, \bs{C}) 
         = M_0(V_a, \alpha, \bs{C}) 
@@ -478,7 +478,7 @@ where
 
 Approximate equations for the total aerodynamic forces and moments experienced by the quadplane may be created.
 Such approximations are made to assist in creating the controller.
-These three equations for lift, drag, and pitching moment are denoted $\bs{F}_{lift}$, $\bs{F}_{drag}$, and $M$, and are given as
+These three equations for the lift, drag, and pitching moment are denoted $\bs{F}_{lift}$, $\bs{F}_{drag}$, and $M$, and are given as
 
 \begin{align}
     \label{eq:totalAerodynamicForcesMoments}
@@ -530,14 +530,14 @@ the state $x(t)$ and control inputs $u(t)$ can be reconstructed from the output 
 \end{align*}
 
 In addition to this, the components of the output $z$ must not be differentially related over time. 
-This means that the components of $z$ are not coupled together into a differential equation, for differential flatness to hold.
+This means that the components of $z$ are not coupled together in a differential equation to maintain differential flatness.
 
-Of particular importance, $u(t)$ may be represented as a function of the system output $z(t)$.
+Of particular importance, $u(t)$ can be represented as a function of the system output $z(t)$.
 For any given state of the system, with a reference input, a specific control input may be specified.
-A trajectory that specifies the reference position, velocity, and acceleration for the craft can be directly related to a desired actuator output $\delta$ for each of the actuators. 
+A trajectory that specifies the reference position, velocity, and acceleration of the craft can be directly related to the desired actuator output $\delta$ for each of the actuators. 
 If that desired actuator output remains within the physical parameters of the actuators, then the actual system state can converge to the reference state. 
 
-In order for this system to be differentially flat, the state variables $\bs{p}_{b/i}^i$, $\bs{v}_{b/i}^i$, $\theta$, $q$ and the input variables $\bs{F}^b$ and $M$ must all be expressed in terms of the flat outputs $\bs{z}_p^i$ and $z_\theta$ and their derivatives. 
+In order for this system to be differentially flat, the state variables $\bs{p}_{b/i}^i$, $\bs{v}_{b/i}^i$, $\theta$, $q$, and the input variables $\bs{F}^b$ and $M$ must all be expressed in terms of the flat outputs $\bs{z}_p^i$ and $z_\theta$ and their derivatives. 
 That is, the current position $\bs{z}_p^i$ and pitch $z_\theta$ of the system are measured and given as
 
 \begin{align}
@@ -548,9 +548,9 @@ That is, the current position $\bs{z}_p^i$ and pitch $z_\theta$ of the system ar
     \end{bmatrix}
 \end{align}
 
-The position states are directly expressed in the flat outputs as $\bs{p}_{b/i}^i = \bs{z}_p^i(t)$. 
+The position states are directly expressed in the flat output as $\bs{p}_{b/i}^i = \bs{z}_p^i(t)$. 
 The velocity states are directly expressed in the derivative of the flat outputs as $\bs{v}_{d/i}^i = \dot{\bs{z}}^i_p(t)$. 
-The pitch angle and pitch rate are directly expressed in terms of the flat output as $\theta(t)=z_\theta(t)$, and $q(t)=\dot{z}_\theta(t)$. 
+The pitch angle and pitch rate are expressed directly in terms of flat output as $\theta(t)=z_\theta(t)$, and $q(t)=\dot{z}_\theta(t)$. 
 The forces in the body frame are given by
 \(
 \bs{F}^b = R_b^{i\top}(z_\theta)\left(m\ddot{\bs{z}}_p^i - mg\bs{e}_z^i\right),
@@ -570,21 +570,21 @@ M(\bs{z}, \dot{\bs{z}}, \ddot{\bs{z}}) &= J_y\ddot{z}_\theta.
 \end{align}
 \end{subequations}.
 
-All states and control inputs of the system may be found with a simple knowledge of the position $\bs{z}^i_p$ and pitch $z_{\theta}$. 
-The real purpose of this exercise is to relate the reference output (where the aircraft shoule be) to a control input.
-Take for example the moment control, $M = J_y \ddot(z)_{\theta}$.
-If the input trajectory to the system provides a reference pitch $\theta$ for all timesteps, the moment that needs to be actuated on the aircraft may be calculated by taking the second derivative of theta.
+All states and control inputs of the system can be found with knowledge of position $\bs{z}^i_p$ and pitch $z_{\theta}$. 
+The real purpose of this exercise is to relate the reference output (where the aircraft should be) to a control input.
+Take, for example, the moment control, $M = J_y \ddot(z)_{\theta}$.
+If the input trajectory of the system provides a reference pitch $\theta$ for all time steps, the moment that must be actuated on the aircraft may be calculated by taking the second derivative of theta.
 This assumes that there is no error between the reference trajectory and the actual trajectory. 
-The forces and moment vector equations are modified to take into account error between the reference output $z_{ref}$ and the actual output $z$.
+The force and moment vector equations are modified to take into account the error between the reference output $z_{ref}$ and the actual output $z$.
 
 \section{Pitch Free Trajectory Tracking}
 \label{sec:PitchFree}
 
-The first section of the controller is to determine the force the actuators need to exert on the aircraft. 
-This is determined by the reference trajectory and the current state of the aircraft, at a particular point in time. 
-The desired position from the reference trajectory, is given as $\bs{z}_{p,ref}^{i}$, with its derivatives for position and velocity as $\dot{\bs{z}}_{p,ref}^{i}$ and $\ddot{\bs{z}}_{p,ref}^i$ respectively. 
+The first section of the controller is to determine the force that the actuators need to exert on the aircraft. 
+This is determined by the reference trajectory and the current state of the aircraft at a particular point in time. 
+The desired position from the reference trajectory is given as $\bs{z}_{p,ref}^{i}$, with its derivatives for position and velocity as $\dot{\bs{z}}_{p,ref}^{i}$ and $\ddot{\bs{z}}_{p,ref}^i$, respectively. 
 The advantage of using B-Splines for the reference trajectory is that they automatically produce this reference position, velocity, and acceleration. 
-Each $\bs{z}_{ref}$ is a vector containing information position, velocity, or acceleration for north and down respectively, given as
+Each $\bs{z}_{ref}$ is a vector that contains the position, velocity, or acceleration for north and down directions, respectively, given as
 
 \begin{align}
     \begin{bmatrix}
@@ -609,8 +609,8 @@ Define the error variables
     \tilde{\bs{v}}^i &\doteq \bs{v}_{b/i}^i-\dot{\bs{z}}_{p,ref}^i.
 \end{align*}
 
-These may be termed the differentially flat error variables. 
-In other words, it is the difference between what the output state should be, and what the ouptut state actually is.
+These may be termed differentially flat error variables. 
+In other words, it is the difference between what the output state should be and what the output state actually is.
 
 Differentiating and substituting equation \ref{eq:evtol_kinematics} gives
 
@@ -623,7 +623,7 @@ Differentiating and substituting equation \ref{eq:evtol_kinematics} gives
 \end{subequations}
 
 
-Let $\bs{F}^i=R_b^i(\theta)\bs{F}^b$ be the force in the inertial frame, and selecting the feedback linearizing input as
+Let $\bs{F}^i=R_b^i(\theta)\bs{F}^b$ be the force in the inertial frame, and select the feedback linearizing input as
 
 \begin{subequations}
 \label{eq:inputs_feedback_linearization}
@@ -642,7 +642,7 @@ gives
 \end{align}
 \end{subequations}
 
-The net acceleration on the system is set to be the net control input $\tilde{\bs{u}}_F^i$. 
+The net acceleration on the system is set to the net control input $\tilde{\bs{u}}_F^i$. 
 The system linear equations are then defined as
 
 \begin{align}
@@ -687,7 +687,7 @@ Combining Eqs. ~\eqref{eq:inputs_feedback_linearization} and~\eqref{eq:lqr}, and
 \end{align}
 \end{subequations}
 
-This relates the desired acceleration on the aircraft $\ddot{\bs{z}}_p^i$, the gravitational acceleration vector $g\bs{e}_z^i$, and state (position and velocity) error $\tilde{\bs{x}}^i$ to the desired force control input $\bs{F}_{des}^i$. 
+This relates the desired acceleration on the aircraft $\ddot{\bs{z}}_p^i$, the gravitational acceleration vector $g\bs{e}_z^i$, and the state error (position and velocity) $\tilde{\bs{x}}^i$ to the desired force control input $\bs{F}_{des}^i$. 
 The net acceleration on the aircraft, which is generated by the actuators and the airfoil, needs to match the reference acceleration from the trajectory, overcome gravity, and bring the state error down to zero. 
 The gain matrix $K$ is selected to tune the autopilot to its optimal performance. 
 
@@ -695,7 +695,7 @@ The gain matrix $K$ is selected to tune the autopilot to its optimal performance
 
 The next objective is to find the best pitch angle for a given desired force input given as $\bs{F}_{des}^i$. 
 An appropriate body frame must be found to actuate the desired force that is given in the inertial frame. 
-All of the body frame forces may be enumerated as
+All body frame forces may be enumerated as
 
 \begin{align}
     R_i^b(\theta)\bs{F}_{des}^i = \bs{F}_0^b + \bs{F}_q^b q + \bs{F}_{\delta_e}^b\delta_e + \bs{F}_p^b.
@@ -707,12 +707,12 @@ To prove that this is the case, the autopilot was tested with the aircraft flyin
 \begin{figure}
     \centering
     \includegraphics[width=0.75\linewidth]{figs/chap1/elevator and q force omission.png}
-    \caption{Q and elevator lift force omission. The q and elevator terms in the force optimization portion are ommitted because their magnitudes are negligible compared to the lift from angle of attack.}
+    \caption{Q and elevator lift force omission. The q and elevator terms in the force optimization portion are omitted because their magnitudes are negligible compared to the lift from angle of attack.}
     \label{fig:q_delta_e_omission}
 \end{figure}
 
-For comparison, the average of the absolute value of the $\delta_e$ and $q$ terms are $4.0$ and $0.34$ newtons respectively, while the average for the $F_0$ term is $112$ newtons. 
-While this is no proof, it shows a pattern of what is significant for the controller. 
+For comparison, the average absolute value of the terms $\delta_e$ and $q$ are $4.0$ and $0.34$ newtons, respectively, while the average for the term $F_0$ is $112$ newtons. 
+Although this is no proof, it shows a pattern of what is significant to the controller. 
 Therefore, those terms are omitted from the above equation, which reduces down to
 
 \begin{align}
@@ -741,7 +741,7 @@ If all wind is zero, then
 \section{Pitch Optimization}
 \label{sec:PitchOptimization}
 
-Solving for the desired propeller forces gives
+Solving for the desired propeller forces gives them as
 
 \begin{align}
     \bs{F}_p^b = R_i^b(\theta)\bs{F}_{des}^i - \bs{F}_0^b(V_a, \alpha).
@@ -756,7 +756,7 @@ To achieve this, a desired pitch is now generated as
     \bs{F}_{p,des}^b(\theta, \dot{\bs{z}}_p, \bs{F}^i_{des}) = R_i^b(\theta)\bs{F}_{des}^i - \bs{F}_0^b\left(\norm{\dot{\bs{z}}_p}, \theta-\gamma_{des}(\dot{\bs{z}}_p)\right).
 \end{equation}
 
-The desired forces to be acted on the aircraft in the inertial frame are already known, as are the current aerodyanmic forces acting on it, based on the state.
+The desired forces to be acted on the aircraft in the inertial frame are already known, as are the current aerodynamic forces acting on it, depending on the state.
 This equation finds the residual forces that must be actuated on the aircraft based on the current state and state error.
 However, $\theta$ is not a fixed variable that is directly derived from the trajectory.
 The pitch of the aircraft may be altered to maximize aerodynamic lift, and minimize needed rotor lift, given the current state of the aircraft.
@@ -775,23 +775,23 @@ The residual force equation is optimized with respect to $\theta$ to minimize th
 \end{aligned}
 \end{equation}
 
-When this optimization function runs, it produces the reference pitch for the aircraft that optimizes its aerodynamic lift.
+When this optimization function is run, it produces the reference pitch for the aircraft that optimizes its aerodynamic lift.
 It also produces the reference for the residual forces to be compensated for by the vertical propellers.
 
 \subsection{A Note on 1-Norm Minimization}
 \label{sec:one norm}
 
-The turning point for this controller is transitioning, which is changing from a multicopter controller into a fixed-wing controller. 
-As discussed earlier, most of the other VTOL flight controllers in the literature actually use the two different flight controllers, and have a set of conditions which must be satisfied to change from one regime to the other.
+The turning point for this controller is the transition, which is changing from a multicopter controller into a fixed-wing controller. 
+As discussed earlier, most of the other VTOL flight controllers in the literature actually use the two different flight controllers and have a set of conditions which must be satisfied to change from one regime to the other.
 
 The unique contribution of this chapter is a generalized flight controller that utilizes all of the lift-generating capabilities of the aircraft to follow a B-spline trajectory. 
 As discussed above, at the beginning of the takeoff flight plane, the aircraft operates exactly like a 2D multicopter. 
-It only uses the the two vertical rotors to generate lift and stabilize the aircraft. 
+Only the two vertical rotors are used to generate lift and stabilize the aircraft. 
 When the aircraft is flying at a constant airspeed in level flight, only the forward throttle and elevator are used, while the vertical rotors are all zero.
 
-In between these two states, the aircraft uses all three of the rotors, as well as the elevator, to stay aloft. 
-However, there is a very important point where the majority of the output switches from one regime to the other, which is called transition. 
-Recall equation \ref{eq:pitch_optimization}, where given a current velocity $\dot{\bs{z}}_p$ and desired inertial frame force $\bs{F}_{des}^i$, it runs
+In between these two states, the aircraft uses all three rotors, as well as the elevator, to stay aloft. 
+However, there is a very important point where the majority of the output switches from one regime to the other, which is called a transition. 
+Recall equation \ref{eq:pitch_optimization}, where, given a current velocity $\dot{\bs{z}}_p$ and the desired inertial frame force $\bs{F}_{des}^i$, it runs
 
 \begin{align}
     &\text{minimize} &&\|R_i^b(\theta)\bs{F}_{des}^i - \bs{F}_0^b\left(\norm{\dot{\bs{z}}_p}, \theta-\gamma_{des}(\dot{\bs{z}}_p)\right)\|_1 \\
@@ -811,7 +811,7 @@ The difference between the two forces is defined as
     \end{bmatrix}.
 \end{align}
 
-The $1$ norm of a vector is the sum of the absolute value of the components of the vector, which is given as
+The $1$ norm of a vector is the sum of the absolute values of the components of the vector, which is given as
 
 \begin{align}
     v = 
@@ -830,7 +830,7 @@ The optimization function then becomes
 \end{align}
 
 An example of the 1-Norm is shown in Fig. \ref{fig:one norm visual}, comparing the 1-Norm and 2-Norm of a set of vectors. 
-For any two vectors with the same 2-Norm magnitude, the vector which is more closely aligned to one of the axes has the smaller 1-Norm magnitude.
+For any two vectors with the same 2-Norm magnitude, the vector that is more closely aligned to one of the axes has a smaller 1-Norm magnitude.
 
 \begin{figure}
     \centering
@@ -840,17 +840,17 @@ For any two vectors with the same 2-Norm magnitude, the vector which is more clo
 \end{figure}
 
 The result of the 1-Norm for the pitch optimization algorithm is that it attempts to remain in one of two regimes to maintain a minimized force load. 
-In other words, the pitch controller prefers a state where all thrust is generated by either the vertical rotors or the forward rotor.
+In other words, the pitch controller prefers a state in which all thrust is generated by either the vertical rotors or the forward rotor.
 Using both rotor groups simultaneously increases the magnitude of the objective function more unfavorably than the use of just one group.
 
 \subsection{Moment Control}
 \label{sec:momentControl}
 
-It is desirable to find the necessary input moment on the system, given the system model and current state. 
-The pitch angle optimization function outputs a desired theta for each time step. 
-The object of this section is to find the moment needed to actuate the system to achieve that particular pitch angle $\theta$ reference.
+It is desirable to find the necessary input moment in the system, given the system model and current state. 
+The pitch angle optimization function outputs the desired theta for each time step. 
+The object of this section is to find the moment needed to actuate the system to achieve that particular pitch angle reference $\theta$.
 
-To derive this, the relationship between pitch moment $m$ and angular acceleration $\ddot{\theta}$, is given as
+To derive this, the relationship between the pitch moment $m$ and the angular acceleration $\ddot{\theta}$, is given as
 
 \begin{align*}
     \ddot{\theta} = \frac{1}{J_y} M.
@@ -863,16 +863,16 @@ If there is a desired $\ddot{\theta}_{ref}$, then there is a corresponding desir
 \end{align}
 
 This assumes that there is no error or disturbance in the system and that this controller tracks the desired pitch perfectly. 
-However, this is unlikely, a proportional and derivative gain is attached to this equation, which yields
+However, this is unlikely; a proportional and derivative gain is attached to this equation, which yields
 
 \begin{align}
     M_{des} = J_y \left(\ddot{\theta}_{ref} + k_d\left(\dot{\theta}_{ref} - q \right) + k_p\left(\theta_{ref} - \theta \right) \right).
 \end{align}
 
-This relationship can be shown in a flowchart in Fig. \ref{fig:feedforwardThetaMoment}. 
-Note that this does not yet relate to actuation controls.
-Rather, it relates a desired pitch angle in a given moment of time to a desired moment to be generated by the state of the craft and by actuation.
-In other words, the net moment that is desired to be controlled by the rotors and actuator is the output from this feedforward PID control.
+This relationship can be shown in a flow chart in Fig. \ref{fig:feedforwardThetaMoment}. 
+Note that this has not yet been related to actuation controls.
+Rather, it relates a desired pitch angle in a given moment in time to a desired moment that is generated by the state of the craft and by actuation.
+In other words, the net moment that is desired to be controlled by the rotors and actuator is the output of this feedforward PID control.
 
 \begin{figure}
     \centering
@@ -883,8 +883,8 @@ In other words, the net moment that is desired to be controlled by the rotors an
 
 \section{Elevator Control}
 
-This autopilot is created to maximize the possible control authority due to the airspeed from the aircraft.
-This was true for the residual desired force, and it is again true for desired moment.
+This autopilot is created to maximize the possible control authority due to the air speed of the aircraft.
+This was true for the residual desired force and is again true for the desired moment.
 The next task is to maximize control authority from elevator control, which minimizes needed moment control from the rotors.
 The net aircraft moment may be expanded as
 
@@ -905,9 +905,9 @@ where
     M_p = l_f T(\delta_{t,f}) - l_r T(\delta_{t,r}).
 \end{align}
 
-Note that $M_0$ contains the airfoil coefficient, the $\alpha$ coefficient, and $\alpha$ itself, while $M_q$ and $M_{\delta_e}$ do not contain $q$ and $\delta_e$ respectively. 
+Note that $M_0$ contains the airfoil coefficient, the coefficient $\alpha$, and $\alpha$ itself, while $M_q$ and $M_{\delta_e}$ do not contain $q$ and $\delta_e$ respectively. 
 $M_{total}$ is treated as the net moment on the quadplane and $M_{des}$ is treated as the desired net moment on the aircraft. 
-The term $M_0$ represents the torque generated by the aircraft's current state including its angle of attack, airspeed, and characteristic shape. 
+The term $M_0$ represents the torque generated by the current state of the aircraft, including its angle of attack, air speed, and characteristic shape. 
 $M_q q$ represents the moment of the aircraft given the current pitch rate and $M_{\delta_e} \delta_e$ represents the moment given the current elevator control.
 $M_p$ represents the moment caused by a differential vertical propeller control.
 
@@ -926,8 +926,8 @@ The equation is then solved for $\delta_e$ as
     \delta_e = \frac{M_{des} - M_0 - M_q q }{M_{\delta_e}}.
 \end{align}
 
-However, $\delta_e$ can only operate between values $[-\bar{\delta_e},\bar{\delta_e}]$, so this may become infeasible. 
-A saturation value is created based on the set bounds for $\delta_e$.
+However, $\delta_e$ can be between values $[-\bar{\delta_e},\bar{\delta_e}]$, so this may become infeasible. 
+A saturation value is created based on the set limits for $\delta_e$.
 The equation for $\delta_e$ is saturated as
 
 \begin{align}
@@ -942,11 +942,11 @@ With this $\delta_e^\ast$, the desired propeller moment may be found by rearrang
     M_p = M_{des} - M_0 - M_q q - M_{\delta_e} \delta_e^\ast.
 \end{equation}
 
-This is the desired moment that must be actuated by the vertical propellers, which is passed on to the rotor controller.
+This is the desired moment the vertical propellers must actuate, which is passed on to the rotor controller.
 
 \section{Rotor Control}
 
-Now with a desired vertical force, forward force, and pitch moment, the desired thrust from each of the three rotors is calculated.
+With a desired vertical force, forward force, and pitch moment, the desired thrust of each of the three rotors is calculated.
 These are: $T_t$, the forward propeller, $T_f$, the front vertical rotor, and $T_r$, the rear vertical rotor.
 It is seen from the design of the quadplane in Fig. \ref{fig:quadplane_2D} that each of the three rotors generates forces directly on the $\hat{n}$ and $\hat{d}$ vectors of the body frame. 
 The thrust vector for each rotor is given in the 2D body frame for front, rear, and forward thrusts as
@@ -973,9 +973,9 @@ The thrust vector for each rotor is given in the 2D body frame for front, rear, 
     \space T(\delta_t).
 \end{align}
 
-The two vertical rotors (front and rear) generate thrust in the up, or negative down direction, while the forward rotor generates thrust in the positive north direction. 
-This is rather convenient because the high level controller sets a desired force in the north (x) and down (z) direction.
-Therefore, there is no mixing matrix required to map the rotor thrust directions to the body frame axes.
+The two vertical rotors (front and rear) generate thrust in the up or negative down direction, whereas the forward rotor generates thrust in the positive north direction. 
+This is rather convenient because the high level controller sets a desired force in the north (x) and down (z) directions.
+Therefore, no mixing matrix is required to map the rotor thrust directions to the body frame axes.
 The desired propeller force vector may be decomposed as 
 
 \begin{align}
@@ -987,14 +987,14 @@ The desired propeller force vector may be decomposed as
 \end{align}
 
 $\bs{F}^b_{p,des,x}$ was defined as the force desired in the positive $x$ direction of the aircraft, and was calculated in the pitch optimization section \ref{sec:PitchOptimization}.
-The only force that acts in the positive $x$ direction is the forward rotor, so the desired force in the $x$ direction is defined as the desired thrust from the forward propeller as
+The only force that acts in the positive $x$ direction is the forward rotor, so the desired force in the $x$ direction is defined as the desired thrust of the forward propeller as
 
 \begin{equation}
     T_{t,des} = \bs{F}^b_{p,des,x}.
 \end{equation}
 
-It is assumed in this paper that the relationship between rotor thrust and control input is linear.
-The thrust for the forward thruster, given the control input $\delta_t$ is then $T(\delta_t) = T_{max} \cdot \delta_t$.
+In this paper, it is assumed that the relationship between the rotor thrust and the control input is linear.
+The thrust of the forward propeller, given the control input $\delta_t$, is then $T(\delta_t) = T_{max} \cdot \delta_t$.
 By rearranging this equation, the control input for forward thrust is given as
 
 \begin{equation}
@@ -1002,7 +1002,7 @@ By rearranging this equation, the control input for forward thrust is given as
 \end{equation}
 
 $\bs{F}^b_{p,des,z}$ is the residual desired force in the $z$ direction. 
-This produces two equations which are functions of the two vertical rotors $T_{f}$ and $T_{r}$ as
+This produces two equations, which are functions of the two vertical rotors $T_{f}$ and $T_{r}$ as
 
 \begin{align}
     \bs{F}^b_{p,des,z} = -T_f(\delta_f) - T_r(\delta_r)\\
@@ -1065,7 +1065,7 @@ Then, each control input is saturated to stay within the bounds of: $0 \leq \del
 
 \subsection{Review of Controller}
 
-The controller described in the previous sections is somewhat complicated, and it may be difficult to follow. 
+The controller described in the previous sections is somewhat complicated and may be difficult to follow. 
 Similar controllers in the literature are often called daisy chain or cascaded controllers.
 Fig. \ref{fig:ControllerOverview} 
 details the several stages of the controller. 
@@ -1073,19 +1073,19 @@ The two inputs are the reference trajectory $p_{ref}(t)$ and the quadplane state
 
 The pitch free trajectory tracker finds the desired net force to be actuated on the aircraft $F_{des}^i$, after taking into account state error $\tilde{x}$, gravity $g e_z$, and reference acceleration $\ddot{p}_{ref}(t)$.
 It does so using a state error gain matrix $K$, which is set using LQR.
-Pitch optimization finds the optimal pitch $\theta$ that minimizes the 1 norm error between desired force and aerodynamic force on the airframe.
+The pitch optimization finds the optimal pitch $\theta$ that minimizes the 1 norm error between the desired force and the aerodynamic force on the airframe.
 This finds the pitch that generates the largest possible lift from the airframe before rotor actuation is taken into account.
-Pitch optimization also finds the residual force $F^b_{p,des}$ that is necessary to be generated by the three quadplane rotors $\delta_t, \delta_f, \delta_r$.
+The pitch optimization also finds the residual force $F^b_{p,des}$ that is necessary to be generated by the three quadplane rotors $\delta_t, \delta_f, \delta_r$.
 
-Moment control finds the desired pitch moment to be actuated on the aircraft.
+Moment control finds the desired pitch moment to be actuated upon the aircraft.
 The second derivative of desired pitch $\theta$ input from pitch optimization is taken as $\ddot{\theta}$, or angular acceleration.
-If no pitch error $\tilde{\theta}$ or pitch rate error $\dot{\tilde{\theta}}$ exists, then the the desired moment is the angular acceleration $\ddot{\theta}$ times rotational inertia about the pitch axis $J_y$.
-If $\tilde{\theta}$ or $\dot{\tilde{\theta}}$ are nonzero, then they are added to net angular acceleration using proportional and derivative gains.
+If there is no pitch error $\tilde{\theta}$ or pitch rate error $\dot{\tilde{\theta}}$, then the desired moment is the angular acceleration $\ddot{\theta}$ times rotational inertia about the pitch axis $J_y$.
+If $\tilde{\theta}$ or $\dot{\tilde{\theta}}$ are nonzero, then they are added to the net angular acceleration using proportional and derivative gains.
 
-The elevator controller finds the elevator control $\delta_e$ to get net desired moment from moment control; this minimizes the moment that must be generated by the vertical rotors.
-Elevator controller is saturated to within elevator range $\left[-\bar{\delta_e}, \bar{\delta_e}\right]$
+The elevator controller finds the elevator control $\delta_e$ to obtain the net desired moment from the moment control; this minimizes the moment that must be generated by the vertical rotors.
+The elevator controller is saturated within the elevator range $\left[-\bar{\delta_e}, \bar{\delta_e}\right]$
 
-Rotor control allocation finds the control inputs to generate the remaining forces $F^b_{p,des}$ and moment $M_{des}$.
+The rotor control allocation function finds the control input to generate the remaining forces $F^b_{p,des}$ and the moment $M_{des}$.
 
 \begin{figure}
     \centering
@@ -1098,28 +1098,28 @@ Rotor control allocation finds the control inputs to generate the remaining forc
 \section{Path Planning}
 \label{sec:vtol path planning}
 
-A particularly difficult problem here is that a path needs to be created which provides a smooth transition from vertical hovering to forward flight. 
+A particularly difficult problem here is that a path needs to be created that provides a smooth transition from vertical hovering to forward flight. 
 This requires a path that goes from an initial vertical velocity to a horizontal velocity. 
-It is desirable to have a gradual acceleration from vertical takeoff velocity of around $1 \frac{m}{s}$ to a forward airspeed of $25 \frac{m}{s}$. 
-To do this, a flight path was developed in the shape of root functions, including a $2^{nd}, 3^{rd},$ and $4^{th}$ root shapes. 
+It is desirable to have a gradual acceleration from a vertical takeoff velocity of around $1 \frac{m}{s}$ to a forward airspeed of $25 \frac{m}{s}$. 
+To do this, a flight path was developed in the shape of root functions, including $2^{nd}, 3^{rd},$ and $4^{th}$ root shapes. 
 As the flight path progressed, the spacing gradually increased to meet the initial and final conditions.
 
 This required calculating the arc length of a section of the polynomial. 
-The simplest method for creating these curves was through parametric equations given as $n(t)$ representing the north position, and $a(t)$ representing the altitude. 
-The general form of arc length for the curve is
+The simplest method of creating these curves was by parametric equations given as $n(t)$ representing the north position and $a(t)$ representing the altitude. 
+The general form of the curve arc length is
 
 \begin{align}
     L = \int_a^b \sqrt{\left(\frac{d \space n(t)}{dt}\right)^2 + \left(\frac{d \space a(t)}{dt}\right)^2}.
 \end{align}
 
-This is computed numerically, and split up to gradually increase the spacing of control points to provide continuous increase of desired velocity.
+This is computed numerically and split up to gradually increase the spacing of control points to provide continuous increase of desired velocity.
 
 \subsection{Flight Path Shape}
 
 It is necessary to develop a useful flight path for the VTOL. 
-One might ask what shape of path provides a lower energy consumption while also providing stability.
-One possibility is a square root flight path, where the VTOL starts at the vertex in vertical lift-off mode, and slowly transitions into a forward trajectory. 
-At some point, the slope is close enough to flat to justify transition to forward flight.
+One might ask what shape of path provides a lower energy consumption, while also providing stability.
+One possibility is a square root flight path, where the VTOL starts at the vertex in vertical lift-off mode and slowly transitions into a forward trajectory. 
+At some point, the slope is close enough to flat to justify the transition to forward flight.
 
 \subsection{Root Flight Path}
 
@@ -1145,16 +1145,16 @@ The parametric derivative of that function is given as
     \frac{\partial a(t)}{\partial n(t)} = \frac{AB}{2t}.
 \end{align}
 
-The variable $t$ in this equation is not the actual trajectory time, but is the parameter needed to for the parametric equation. 
-$A$ and $B$ are vertical and horizontal scalars for the equations, and $n_0$ and $a_0$ represent the starting north and altitude positions respectively.
+The variable $t$ in this equation is not the actual trajectory time, but is the parameter needed for the parametric equation. 
+$A$ and $B$ are vertical and horizontal scalars for the equations, and $n_0$ and $a_0$ represent the starting north and altitude positions, respectively.
 
 \section{Controller Tuning}
 
 \subsection{LQR Tuning}
-This controller contrains two sets of tunable parameters. 
+This controller constrains two sets of tunable parameters. 
 The $K$ gain matrix from the pitch-free trajectory tracking, and the $p$ and $d$ gains from the moment control section.
 Recall from section \ref{sec:PitchFree} that $K$ must be selected for $\tilde{\bs{u}}_F^i = -K \tilde{\bs{x}}^i$.
-For an LQR controller, $Q$ and $R$ matrices must be selected. 
+For an LQR controller $Q$ and $R$ matrices must be selected. 
 In this realization, an integrator term was included as well. 
 For the results that follow, these were selected as
 
@@ -1169,7 +1169,7 @@ For the results that follow, these were selected as
     R = diag(1.0, 1.0).
 \end{align}
 
-$K$ and $k_i$ were then selected using the python control library LQR function.
+$K$ and $k_i$ were selected using the LQR function of the Python Control library.
 
 \subsection{Feedforward Control Tuning}
 
@@ -1179,7 +1179,7 @@ In subsection \ref{sec:momentControl} the control law for desired moment is
     m_{des} = J_y \left(\ddot{\theta}_{ref} + k_d\left(\dot{\theta}_{ref} - q \right) + k_p\left(\theta_{ref} - \theta \right) \right).
 \end{align}
 
-In this case, $k_p$ and $k_d$ were selected using rise time $t_r$ and damping coefficient $\zeta$ as
+In this case, $k_p$ and $k_d$ were selected using the rise time $t_r$ and the damping coefficient $\zeta$ as
 
 \begin{align}
     \omega_n = \frac{\pi}{2 t_r \sqrt{1 - \zeta^2}}\\
@@ -1195,7 +1195,7 @@ A 2D quadplane dynamic system was simulated to test and prove the viability of t
 A dynamic 2D quadplane model was developed in a Python repository using the equations of motion given in this chapter. 
 This dynamic system uses the Runge-Kutte algorithm to propagate dynamic systems described by systems of differential equations.
 
-For this implementation, the coeffecients of aerodynamics are set forth in table \ref{tb:vtolCoefficients}.
+For this implementation, the coefficients of aerodynamics are set forth in table \ref{tb:vtolCoefficients}.
 \begin{table}
 \label{tb:vtolCoefficients}
 \centering
@@ -1214,7 +1214,7 @@ For this implementation, the coeffecients of aerodynamics are set forth in table
 \end{table}
 
 To test this controller, several flight paths were created and tested. 
-Their results, including position and velocity errors, and the attached videos are presented in the following sections.
+Their results, including position and velocity errors, and the attached videos, are presented in the following sections.
 
 \subsubsection{A Note On Initial and Final Conditions}
 
@@ -1239,7 +1239,7 @@ These initial conditions are represented as
     \end{bmatrix}.
 \end{align}
 
-When the aircraft is at the end of the trajectory, it is $500$ meters north at an altitude of $100$ meters, with a forward airspeed of $25.0$ meters per second, and zero acceleration. 
+When the aircraft is at the end of the trajectory, it is $500$ meters north at an altitude of $100$ meters, with a forward airspeed of $25.0$ meters per second and zero acceleration. 
 This takes place at time $M$, and is shown mathematically as
 
 \begin{align}
@@ -1296,19 +1296,19 @@ This obtains three start and three end control points, as shown in Fig. \ref{fig
     \label{fig:startEndControlPoints}
 \end{figure}
 
-Now that these initial and final conditions are set, the intervening control points may be generated. 
-The final start control $C_3$ point is set as the apex of the square root function, and the first end control point $C_{M-d}$ is set as the final position. 
-The spacing between control points $C_2$ and $C_3$ as $C_3 - C_2$ becomes the start spacing.
-The spacing between control points $C_{M-d}$ and $C_{M-d+1}$ as $C_{M-d+1} - C_{M-d}$ are the final spacing of control points. 
-Along the trajectory, each successive control point is placed so that there is smooth change of spacing.
+Now that these initial and final conditions are set, the intervening control points can be generated. 
+The final start control point $C_3$ is set as the apex of the square root function, and the first end control point $C_{M-d}$ is set as the final position. 
+The spacing between control points $C_2$ and $C_3$ as $C_3 - C_2$ becomes the starting spacing.
+The spacing between control points $C_{M-d}$ and $C_{M-d+1}$ as $C_{M-d+1} - C_{M-d}$ is the final spacing of the control points. 
+Along the trajectory, each successive control point is placed so that there is a smooth change of spacing.
 This is done so that there is a relatively constant acceleration between start and finish.
 
 \subsection{Takeoff}
 
-The first segment of flight is takeoff. 
+The first segment of the flight is takeoff. 
 It is desirable to find a way to take the aircraft into the air and begin its path before transitioning to full fixed-wing flight. 
-To do this, an the square root function trajectory was generated as $y=\sqrt{x}$. 
-That is, the spatial shape of the trajectory is a sampled square root function, and shown in Fig. \ref{fig:TakeoffShape}.
+To do this, a square root function trajectory was generated as $y=\sqrt{x}$. 
+That is, the spatial shape of the trajectory is a sampled square root function and is shown in Fig. \ref{fig:TakeoffShape}.
 
 \begin{figure}[htbp]
     \centering
@@ -1329,11 +1329,11 @@ That is, the spatial shape of the trajectory is a sampled square root function, 
     \label{fig:TakeoffShape}
 \end{figure}
 
-The square root function was selected because at time $t=0$, the immediate direction of the B-Spline is directly vertical, which corresponds to vertical take off, and then a nearly level section, which corresponds to forward flight.
+The square root function was selected because at time $t=0$, the immediate direction of the B-Spline is directly vertical, which corresponds to vertical takeoff, and then a nearly level section, which corresponds to forward flight.
 
-This flight path was loaded into the controller, and the following results were collected. 
-A video of this flight path is viewable at \href{https://youtu.be/pRFlPvZbulI}{https://youtu.be/pRFlPvZbulI}. 
-The figures showing metrics for this controller are shown at \ref{fig:TakeoffMetrics}.
+This flight path was loaded into the controller and the following results were collected. 
+A video of this flight path can be viewed at \href{https://youtu.be/pRFlPvZbulI}{https://youtu.be/pRFlPvZbulI}. 
+The figures showing the metrics for this controller are shown at \ref{fig:TakeoffMetrics}.
 
 \begin{figure}[htbp]
     \centering
@@ -1384,8 +1384,8 @@ The figures showing metrics for this controller are shown at \ref{fig:TakeoffMet
 
 \subsection{Takeoff and Forward Flight}
 
-After the takeoff segment has been flown by the aircraft, the flight path may transition to a straight forward segment.
-In this test, the takeoff segment was identical to the previous segment, but a long segment for straight forward flight was also connected.
+After the takeoff segment has been flown by the aircraft, the flight path may transition to a straight and forward segment.
+In this test, the takeoff segment was identical to the previous segment, but a long segment for straight and forward flight was also connected.
 That is, the control points were placed for a reference trajectory of $25 \frac{m}{s}$.
 The metrics for this controller are shown in Fig. \ref{fig:TransitionMetrics}.
 
@@ -1522,15 +1522,15 @@ In simulation, the aircraft is started with the same conditions as the trajector
     \caption{Landing metrics and plots}
 \end{figure}
 
-In this case, it is immediately obvious that the aircraft does not follow the desired trajectory. Instead of slowing down and closely tracking the trajectory, the aircraft does not slow down, but keeps going forward at relatively the same velocity. 
+In this case, it is immediately obvious that the aircraft does not follow the desired trajectory. Instead of slowing down and closely tracking the trajectory, the aircraft does not slow down but keeps going forward at relatively the same velocity. 
 This phenomenon is discussed in more detail in the future work section. 
 If the trajectory requires a negative force, or negative acceleration, in the body frame north direction, the aircraft is unable to follow it.
 
 \subsection{Successive Ascent}
 
-Another test for the autopilot is with a series increasing slopes to test whether the aircraft can track those inputs. 
+Another test for the autopilot is with a series of increasing slopes to test whether the aircraft can track these inputs. 
 An example of this framework is shown in Fig. \ref{fig:successiveAscent}. 
-In this flight path, each section has a larger flight path angle $\gamma$ than the previous one. 
+In this flight path, each section has a larger flight path angle $\gamma$ than the previous. 
 In this test, the sections go $0^{\circ}$, $10^{\circ}$, $20^{\circ}$, $30^{\circ}$ respectively, with the same north spacing of $400$ meters for each segment. 
 
 \begin{figure}
@@ -1541,9 +1541,9 @@ In this test, the sections go $0^{\circ}$, $10^{\circ}$, $20^{\circ}$, $30^{\cir
 \end{figure}
 
 In this case, the aircraft starts out level, with an initial north velocity of $V_n = 25.0 \frac{m}{s}$. 
-This diagram shows the lines along which control points are placed. 
-The actual trajectory smooths out the corners somewhat.
-The control points are spaced in a manner such that the reference velocity remains $25.0 \frac{m}{s}$ for the entire trajectory. 
+This diagram shows the lines along which the control points are placed. 
+The actual trajectory somewhat smooths the corners.
+The control points are spaced in such a manner that the reference velocity remains $25.0 \frac{m}{s}$ throughout the  trajectory. 
 A full video of the simulation is available at \href{https://youtu.be/-ZMKCkmkpCI}{Successive Ascent Video}.
 
 \begin{figure}[htbp]
@@ -1592,10 +1592,10 @@ A full video of the simulation is available at \href{https://youtu.be/-ZMKCkmkpC
     \caption{Successive ascent metrics and plots.}
 \end{figure}
 
-In these successively steeper flight paths, the aircraft was successfully able to track the trajectory. 
-As the angle gets progressively steeper, the vertical propellers have to do more work to keep the aircraft on trajectory.
+In these successively steeper flight paths, the aircraft was able to successfully track the trajectory. 
+As the angle gets progressively steeper, the vertical propellers have to do more work to keep the aircraft on the trajectory.
 
-Notice from Fig. \ref{fig:SuccessiveVelComparison} that the actual velocities approach the desired velocities, but don't quite get there until the end of each segment.
+Notice that in Fig. \ref{fig:SuccessiveVelComparison}, the actual velocities approach the desired velocities, but do not quite get there until the end of each segment.
 For the velocity, this is an underdamped controller.  
 This may be tuned in the future for better performance.
 
@@ -1611,8 +1611,8 @@ This may be tuned in the future for better performance.
 The autopilot should also be subject to tests against error, to determine if the aircraft can converge to a trajectory when it does not start directly on the desired trajectory.
 A test was constructed with the forward input trajectory at a constant forward velocity of $25 \frac{m}{s}$.
 The altitude of the trajectory was $0$.
-The aircraft started with an initial altitude of $-25$ meters, and an initial forward velocity of $25 \frac{m}{s}$.
-This is the equivalent of a step input reference to the system for altitude. 
+The aircraft started with an initial altitude of $-25$ meters and an initial forward velocity of $25 \frac{m}{s}$.
+This is equivalent to a step input reference to the system for altitude. 
 The metrics for this experiment are shown in Fig. \ref{fig:StepMetrics}, and the video for this experiment is found at \href{https://youtu.be/AVDS21xf7JI}{https://youtu.be/AVDS21xf7JI}. 
 
 
@@ -1669,21 +1669,21 @@ The metrics for this experiment are shown in Fig. \ref{fig:StepMetrics}, and the
     \caption{Step metrics and plots.}
 \end{figure}
 
-In Fig. \ref{fig:StepMetrics}, the aircraft oscillates between north position and north velocity errors as it attempts to converge. 
+In Fig. \ref{fig:StepMetrics}, the aircraft oscillates between a north position error and north velocity error as it attempts to converge. 
 This issue can be fixed in the future with better tuning.
 
 \section{Current Issues and Future Work}
 
-In its present state, this autopilot is only partially completed.
-Significant improvement must be made before it can be successfully implemented on an actual hardware VTOL. 
-The following are some considerations for challenges which must be overcome for a complete solution.
+In its current state, this autopilot is only partially complete.
+Significant improvement must be made before it can be successfully implemented on a real hardware VTOL. 
+The following are some considerations for challenges that must be overcome for a complete solution.
 
 \subsection{Landing and Negative North Forces}
 
-The biggest issue with trajectory tracking for the aircraft is apparent during landing. 
+The biggest issue with aircraft trajectory tracking is apparent during landing. 
 During the landing segment, the aircraft is required to slow down in the body frame north direction.
 Therefore, the reference force in the body frame $n$ direction is negative.
-When this happens, the control allocator attempts to allocate that negative thrust to the forward rotor, where a negative force means a negative desired thrust.
+When this happens, the control allocator attempts to allocate that negative thrust to the forward rotor, where a negative force means a desired negative thrust.
 However, the aircraft cannot do this due to saturation constraints; this aircraft does not have unlimited actuation capacities, and most small UAVs do not have reverse thrust capacities.
 From Equation \ref{eq:thrustDirections}, the thrust generated by the forward thruster is given in 3D and 2D by
 
@@ -1711,7 +1711,7 @@ And recall that $T(\delta_t)$ can only assume a value in the range
 \end{align}
 
 This constrains the achievable thrust to be a positive value. 
-If the desired force in the north body direction from the forward thruster, after taking into account aerodynamic and gravitational forces, is negative there is no mechanism in the aircraft to achieve this outcome. 
+If the desired force in the north body direction from the forward thruster, after taking into account aerodynamic and gravitational forces, is negative, there is no mechanism in the aircraft to achieve this outcome. 
 Therefore, the aircraft diverges from its desired trajectory. 
 This is demonstrated as
 
@@ -1745,18 +1745,18 @@ A 3D implementation of the quadplane would include movement in the east $\hat{e}
 This model would also include four vertical rotors, instead of two, ailerons $\delta_a$, and rudder $\delta_r$.
 It must be demonstrated that this 3D model is differentially flat. 
 Doing so will allow for the development of a 3D trajectory tracking controller, coupled $\phi$, $\theta$, and $\psi$ controllers, and a 3D dynamically inverting low level controller.
-When this is completed, hardware implementation may move forward.
+When this is complete, the hardware implementation may proceed.
 
 \subsection{Hardware}
 
-Although this 2D quadplane controller is not ready for hardware testing, much hardware development has already taken place in this research group. 
+Although this 2D quadplane controller is not ready for hardware testing, a lot of hardware development has already taken place in this research group. 
 Unfortunately, VTOL aircraft are currently a somewhat niche product. 
-Even quadplanes tend to cost an order of magnitude more than their airplane and quadcopter counterpart, and often do not include replaceable parts. 
+Even quadplanes tend to cost an order of magnitude more than their airplane and quadcopter counterparts and often do not include replaceable parts. 
 For these reasons, the research team has invested heavily in 3D printing airframes, specifically quadplane VTOL airframes. 
 In the event of a crash that partially destroys a section of the airplane, that section can be reprinted and replaced quickly and cheaply.
-By 3D printing aircraft, the research group is able to make custom modifications and additions to airframes, such as lidar mounts, weathervanes, and payloads.
+By 3D printing aircraft, the research group can make custom modifications and additions to airframes, such as LiDAR mounts, weathervanes, and payloads.
 This is done using foaming filaments, such as HT-LW PLA and ASA Aero.
-Though 3D printing work extends to development of standard fixed-wing aircraft and quadrotor frames, the first fully functional 3D printed airframe has been a quadplane VTOL, as shown in Fig. \ref{fig:quadplane3DPrinted}.
+Although 3D printing work extends to the development of standard fixed-wing aircraft and quadrotor frames, the first fully functional 3D printed airframe has been a quadplane VTOL, as shown in Fig. \ref{fig:quadplane3DPrinted}.
 
 \begin{figure}
     \centering
@@ -1766,16 +1766,16 @@ Though 3D printing work extends to development of standard fixed-wing aircraft a
 \end{figure}
 
 It is worthwhile developing controllers for the quadplane platform due to its relative simplicity, as it combines the two well-studied aircraft models of a fixed-wing airplane and a quadcopter. 
-The aircraft can revert to a standard autopilot configuration, either quadrotor or airplane, as a failsafe in the case of failure of the experimental autopilot.
+The aircraft can revert to a standard autopilot configuration, either a quadrotor or airplane, as a failsafe in the event of a failure of the experimental autopilot.
 
-However, the quadplane is rather inefficient with its motor use.
-The vertical motors are only used during for a short period during takeoff and landing, while the forward rotor does most of the long-range work.
+However, the quadplane is rather inefficient in its motor use.
+The vertical motors are used only for a short period during takeoff and landing, while the forward rotor performs most of the long-range work.
 Four of five motors are not used for the majority of the flight, which means a reduced payload due to the extra weight, and increased drag from the vertical rotors.
-Some quadplanes use tilting mechanisms to utilize rotors as both vertical and forward thrusters, as described in \cite{tiltQuadplane}, though this adds complexity with the need for reliable motor tilting mechanisms.
+Some quadplanes use tilting mechanisms to utilize rotors as both vertical and forward thrusters, as described in \cite{tiltQuadplane}, although this adds complexity with the need for reliable motor tilting mechanisms.
 
 Another promising VTOL is the tilt body design, as described in \cite{lou_unified_energy_control_tilt_body}. 
-This aircraft has offset front and rear wings, with sets of propellers on both, as shown in Fig. \ref{fig:tiltbodyDesign}. 
-During takeoff, the two sets of rotors actuate differentially to rotate the aircraft to a vertical orientation for takeoff.
+This aircraft has offset front and rear wings, with sets of propellers attached to both, as shown in Fig. \ref{fig:tiltbodyDesign}. 
+During takeoff, the two sets of rotors use differential actuation to rotate the aircraft to a vertical orientation for takeoff.
 Using differential actuation of the rotors, the aircraft then rotates forward to move into fixed-wing flight. 
 A diagram of these maneuvers is shown in \ref{fig:tiltbodyControl}.
 
@@ -1807,8 +1807,8 @@ The current design is shown in Fig. \ref{fig:tiltbodyAdamDesign}.
 
 \subsection{Thrust Model}
 
-It was assumed that the relationship between $\delta$ control input and thrust from the motor can be modeled as $T(\delta_t) = T_{max} \delta_t$. 
-This was done for simplicity and stability in simulation. 
+The relationship between $\delta$ control input and thrust from the motor was assumed to be modeled as $T(\delta_t) = T_{max} \delta_t$. 
+This was done for simplicity and stability in the simulation environment. 
 Section 4.3 on page 55 of Small Unmanned Aircraft \cite{uav_book} contains a more accurate aerodynamic thrust and moment model. 
 Solutions for $\delta_t$ from these sets of equations would require another optimization step, which adds a potential failure point.
 Hardware implementation will require implementation of this or another accurate thrust model.
@@ -1820,57 +1820,57 @@ For example, when testing the autopilot for the takeoff controller, the followin
 The pitch-free trajectory tracker took $13.3 \space \mu s$, the pitch optimizer took $11.78 \space m s$, the moment controller took $15.9 \space \mu s$, and the elevator and thrust controllers took $145.0 \space \mu s$. 
 This means an average time of $11.95 \space \mu s$ per update. 
 For an autopilot operating at $100 Hz$, this is unreasonable, because computation alone is greater than the spacing between samples.
-The most time-expensive component is pitch optization, which is apparent for this non-convex optimization.
+The most time-expensive component is pitch optimization, which is apparent for this non-convex optimization.
 Future implementations will require an autopilot with a significantly reduced computational burden for pitch optimization.
 
 \section{Conclusion}
 
-Study for control of VTOL aircraft will continue to increase in importance over the coming years. 
+The study of VTOL aircraft control will continue to increase in importance in the coming years. 
 VTOL aircraft can fly long distances, due to their ability to operate like a fixed-wing aircraft. 
 They do not require a runway for landing, but can take off and land vertically in quadcopter mode. 
-Due to this flexibility, much research must be done to develop efficient controllers for transition from vertical to forward flight. 
+Due to this flexibility, much research must be done to develop efficient controllers for the transition from vertical to forward flight. 
 Historically, the standard approach to this problem has been to fly to a high altitude in multi-copter mode, and then slowly increase forward throttle until the aircraft can generate enough lift to stay airborne. 
 
 The new method presented in this paper is for a 2 Dimensional simplification of a standard quadplane. 
 This simplification reduces the state of the aircraft from north ($n$), east ($e$), and down ($d$) to just $n$ and $d$. 
-This reduces the rotations from roll ($\phi$), pitch ($\theta$), and yaw ($\psi$) about the $n$, $e$, and $d$ axes respectively to just pitch ($\theta$) about the fixed $e$ axis. 
+This reduces the rotations from roll ($\phi$), pitch ($\theta$), and yaw ($\psi$) about the $n$, $e$, and $d$ axes, respectively, to just pitch ($\theta$) about the fixed $e$ axis. 
 This simplification was done due to the complex dynamics of the 3D VTOL aircraft. 
-Reducing the number of state variables enabled the research to be focused on the transition from vertical to forward flight. 
+Reducing the number of state variables allowed the research to focus on the transition from vertical to forward flight without regard to roll, yaw, and y position. 
 
-In this 2D simplification, a differentially flat autopilot was developed, with a positional trajectory reference.
+In this 2D simplification, a differentially flat autopilot was developed with a positional trajectory reference.
 This autopilot is divided into five segments: pitch-free trajectory tracking, pitch optimization, moment control, elevator allocation, and rotor allocation.
 A positional trajectory is input to the system, which means that the position for each time step is referenced to the controller.
 The reference velocity and acceleration may be calculated by taking derivatives of the reference position.
 
 Pitch free trajectory tracking is a feedforward controller that calculates the desired force needed to keep the aircraft in the air following the trajectory.
-It accomplishes this by directly matching the reference input acceleration and adding a constant gravity term, for the zero error case.
-To overcome position and velocity error, a state error negative feedback control matrix $K$ is created using LQR to alter reference force.
-This controller outputs a total reference force that must be achieved by the aircraft aircrame and rotors in the inertial frame, $F_{des}^i$. 
+It accomplishes this by directly matching the reference input acceleration and adding a constant gravity term for the zero error case.
+To overcome position and velocity error, a state error negative feedback control matrix $K$ is created using LQR to alter the reference force.
+This controller outputs a total reference force that must be achieved by the aircraft airframe and rotors in the inertial frame, $F_{des}^i$. 
 
-Pitch optimization minimizes the difference between total desired force and force achievable by the airframe airspeed and pitch by adjusting pitch $\theta$.
+Pitch optimization minimizes the difference between the total desired force and the force achievable by airframe airspeed and pitch by adjusting the pitch $\theta$.
 That is, it finds a reference pitch that maximizes aerodynamic lift.
 This minimizes the lift that must be generated by the vertical rotors, which will minimize energy expenditure as the vertical quad rotors are less efficient than aerodynamic lift.
-The optimization is performed using the 1-Norm in the objective function, which ensures a relatively quick transition from vertical to forward flight, and vice versa.
-The output of this optimization are a reference pitch $\theta$ and a reference force for the aircraft rotors $f^b_{des,p}$.
+The optimization is performed using the 1-Norm in the objective function, which ensures a relatively quick transition from vertical to forward flight, and vise versa.
+The outputs of this optimization function are a reference pitch $\theta$ and a reference force for the aircraft rotors $f^b_{des,p}$.
 
-The moment controller takes in reference pitch $\theta$ and outputs a reference pitch for the elevator and propellers to generate.
+The moment controller takes in reference pitch $\theta$ and outputs a reference pitch that must be generated by the elevator and the propellers.
 Moment control takes in the reference pitch from the previous section and finds its first and second derivatives, which are angular rate $q$ and angular acceleration $\dot{q}$.
 This is another feedforward controller that sets the reference moment $M$ as the reference input angular acceleration $\dot{q}$ times the rotational inertia of the craft.
-With the presence of pitch error $\tilde{\theta}$ and pitch rate error $\tilde{q}$, these will be compensated for using proportional and derivative terms $k_p$ and $k_d$.
+With the presence of pitch error $\tilde{\theta}$ and pitch rate error $\tilde{q}$, these will be compensated for by using proportional and derivative terms $k_p$ and $k_d$.
 
-From the output $M$ reference, the elevator controller attempts to find the input that will maximize moment generated by the elevator.
-The elevator controller finds the difference between reference pitch and current feasible pitch and saturates to achieve the best moment.
-The output from this controller is $\delta_e$, and the residual moment needed to be achieved by propeller differential $M_p$.
+From the output reference $M$, the elevator controller attempts to find the input that maximizes the moment generated by the elevator.
+The elevator controller finds the difference between the reference pitch and the current feasible pitch and saturates to achieve the best moment.
+The output of this controller is $\delta_e$, and the residual moment needed to be achieved by the propeller differential $M_p$.
 
-Finally the propeller control allocation takes in $f^b_{des,p}$ and $M_p$ to find the needed thrust and control inputs from the three rotors.
-The thrust from the forward rotor is set to $f^b_{des,p,n}$.
-The two vertical rotors use the inverted mixing matrix fo satisfy both $f^b_{des,p,d}$ and $M_p$.
-The control inputs $\delta_f$, $\delta_r$, and $\delta_t$ are then calculated from the desired thrust by dividing by maximum thrust.
+Finally, the allocation of propeller control takes into account $f^b_{des,p}$ and $M_p$ to find the required thrust and control inputs of the three rotors.
+The thrust of the forward rotor is set to $f^b_{des,p,n}$.
+The two vertical rotors use the inverted mixing matrix to satisfy both $f^b_{des,p,d}$ and $M_p$.
+The control inputs $\delta_f$, $\delta_r$, and $\delta_t$ are then calculated from the desired thrust by dividing by the maximum thrust.
 
 This controller was tested on several different flight paths. 
 The first was a reference square root trajectory, which was tracked reasonably well and experienced a transition into forward flight.
-The second was a reverse for a landing trajectory, which was unable to be tracked due to the saturation constraints of the forward thruster.
-Others included the step error input, multiple inclines, and takeoff followed by a straight-line flight.
+The second was a reverse for a landing trajectory that could not be tracked due to the saturation constraints of the forward thruster.
+Other examples include step error input, multiple inclines, and takeoff followed by a straight-line flight.
 
 Each of these tests demonstrated the strengths and weaknesses of this aircraft setup.
 Much more work must happen before this autopilot is ready to fly an actual VTOL.
