@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {2.1}Introduction}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Literature Review}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Gain Scheduling}{7}{subsection.2.2.1}%
-\contentsline {subsubsection}{Linear Parameter Varying Gain Scheduling}{7}{subsection.2.2.1}%
+\contentsline {subsubsection}{Linear Parameter Varying Gain Scheduling}{8}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Model Predictive Control}{8}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Nonlinear Dynamic Inversion Controllers}{8}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Motivation for 2D VTOL Model and Controller}{9}{subsection.2.2.4}%

@@ -24,7 +24,7 @@ Although these autopilots include control for VTOL aircraft, these control laws 
 For example, the Px4 controller for VTOLs aircraft controls the aircraft as either a rotorcraft or an airplane.
 When taking off, the aircraft ascends to a set altitude in multicopter (rotorcraft) mode and then slowly starts the forward motor, or slowly tilts the forward rotors forward, until sufficient airspeed for forward flight has been reached. 
 The reverse happens during landing, where the aircraft slowly slows down until multicopter control takes effect, and the aircraft can descend.
-These methods are shown in Fig. \ref{fig:Px4}, and a video of transitioning can be found at \href{https://www.youtube.com/watch?v=f81n0aXdvKc}{https://www.youtube.com/watch?v=f81n0aXdvKc} \cite{transition_video}.
+These methods are shown in Fig. \ref{fig:Pixhawk}, and a video of transitioning can be found at \href{https://www.youtube.com/watch?v=f81n0aXdvKc}{https://www.youtube.com/watch?v=f81n0aXdvKc} \cite{transition_video}.
 
 \begin{figure}[htbp]
     \centering
@@ -43,7 +43,8 @@ These methods are shown in Fig. \ref{fig:Px4}, and a video of transitioning can 
         \caption{Flight path of Px4 controller compared with a more efficient path design.}
         \label{fig:Px4FlightPath}
     \end{subfigure} 
-    \label{fig:Px4}
+    \caption{Pixhawk VTOL transition controller.}
+    \label{fig:Pixhawk}
 \end{figure}
 
 Although this method works, it does not allow the aircraft to follow a generalized trajectory, nor does it fully utilize its actuators.
@@ -1197,7 +1198,6 @@ This dynamic system uses the Runge-Kutte algorithm to propagate dynamic systems 
 
 For this implementation, the coefficients of aerodynamics are set forth in table \ref{tb:vtolCoefficients}.
 \begin{table}
-\label{tb:vtolCoefficients}
 \centering
 \caption{Aerodynamic Coefficients for VTOL}
 \begin{tabular}{|c c !{\vrule width 1.2pt} c c !{\vrule width 1.2pt} c c|}
@@ -1211,6 +1211,7 @@ For this implementation, the coefficients of aerodynamics are set forth in table
     $C_{L_{\delta_e}}$ & 0.13 & $C_{D_{\delta_e}}$ & 0.0135 & $C_{M_{\delta_e}}$ & -0.99\\
     \hline
 \end{tabular}
+\label{tb:vtolCoefficients}
 \end{table}
 
 To test this controller, several flight paths were created and tested. 
@@ -1377,8 +1378,8 @@ The figures showing the metrics for this controller are shown at \ref{fig:Takeof
         \caption{Pitch, flight path angle, and angle of attack for the aircraft through takeoff trajectory.}
         \label{fig:TakeoffAngles}
     \end{subfigure}    
-    \label{fig:TakeoffMetrics}
     \caption{Takeoff metrics and plots}
+    \label{fig:TakeoffMetrics}
 \end{figure}
 
 
@@ -1431,8 +1432,8 @@ The metrics for this controller are shown in Fig. \ref{fig:TransitionMetrics}.
         \caption{Pitch, flight path angle, and angle of attack for the aircraft through takeoff trajectory.}
         \label{fig:TransitionAngles}
     \end{subfigure}    
-    \label{fig:TransitionMetrics}
     \caption{Transition metrics and plots}
+    \label{fig:TransitionMetrics}
 \end{figure}
 
 
@@ -1518,8 +1519,8 @@ In simulation, the aircraft is started with the same conditions as the trajector
         \caption{Pitch, flight path angle, and angle of attack for the aircraft through landing trajectory.}
         \label{fig:LandingAngles}
     \end{subfigure}    
-    \label{fig:LandingMetrics}
     \caption{Landing metrics and plots}
+    \label{fig:LandingMetrics}
 \end{figure}
 
 In this case, it is immediately obvious that the aircraft does not follow the desired trajectory. Instead of slowing down and closely tracking the trajectory, the aircraft does not slow down but keeps going forward at relatively the same velocity. 
@@ -1665,8 +1666,8 @@ The metrics for this experiment are shown in Fig. \ref{fig:StepMetrics}, and the
         \caption{Pitch, flight path angle, and angle of attack for the aircraft through successive ascent trajectory.}
         \label{fig:StepAngles}
     \end{subfigure}    
-    \label{fig:StepMetrics}
     \caption{Step metrics and plots.}
+    \label{fig:StepMetrics}
 \end{figure}
 
 In Fig. \ref{fig:StepMetrics}, the aircraft oscillates between a north position error and north velocity error as it attempts to converge. 
