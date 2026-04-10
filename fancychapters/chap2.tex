@@ -1,33 +1,33 @@
 \chapter{System Identification}
 \label{ch:ch2}
 
-In the preceding chapter, a model-dependent, differentially flat controller was introduced for the control of an eVTOL aircraft. 
-In order for that controller to work outside of simulation in hardware, the aerodynamic model of the aircraft must be very accurate. 
-That is, the mathematical aircraft model must closely approximate the physical aircraft. 
+In the preceding chapter, a model-dependent differentially flat controller was introduced for the control of a VTOL aircraft. 
+In order for that controller to work outside of the simulation in hardware, the aerodynamic model of the aircraft must be very accurate. 
+That is, the mathematical model of the aircraft must closely approximate the physical aircraft. 
 If this is not the case, the autopilot internally calculates forces and moments which do not accurately correspond to the actual forces and moments on the aircraft. 
 
 Recall from chapter \ref{ch:VTOL} Equations \ref{eq:totalAerodynamicForcesMoments} for aerodynamic Forces and Moments. 
 These equations are an approximation of the true forces and moments experienced by the aircraft. 
-These equations are utilized by the controller to produce certain desired forces and moments on the aircraft. 
+These equations are utilized by the controller to produce certain desired forces and moments in the aircraft. 
 For example, recall section \ref{sec:momentControl} in chapter \ref{ch:VTOL}, where elevator moment control was discussed. 
 For a given $M_{des}$ input, this section found the best possible $\delta_e$ in an attempt to match that desired moment to reality. 
-If the aerodynamic coefficients for pitch moment ($C_{M_0},C_{M_\alpha},C_{M_q},C_{M_{\delta_e}}$) are not accurate, an incorrect $\delta_e$ may be calculated. 
+If the aerodynamic coefficients for the pitch moment ($C_{M_0},C_{M_\alpha},C_{M_q},C_{M_{\delta_e}}$) are not accurate, an incorrect $\delta_e$ may be calculated. 
 If this control input has an error that is too large, then the aircraft may become unstable, which is especially true during the transition phase.
 
-One method to calculate these aerodynamic coefficients is aerodynamic modelling using CAD modelling and aerodynamic software. 
-Because of the development of 3D printed aircraft, this solution is becoming more feasible.
-Before the development of 3D printed aircraft, the 3D CAD models of the aircraft were not available which made software analysis difficult.
+One method of calculating these aerodynamic coefficients is aerodynamic modeling using CAD modeling and aerodynamic software. 
+Due to the development of 3D printed aircraft, this solution is becoming more feasible.
+Before the development of 3D printed aircraft, the 3D CAD models of the aircraft were not available, which made software analysis difficult.
 Another method is wind tunnel experimentation and data collection. 
-This is only feasible for relatively small airframes that can fit inside of the wind tunnels available at BYU.
-The last option is for flight data to be processed and analyzed to generate an estimate for the aerodynamic coefficients.
-This final option is possible if a general aerodynamic model of the aircraft exists, but only the specific values of the aerodynamic coefficients must be estimated.
+This is only feasible for relatively small airframes that can fit inside of the wind tunnels available at Brigham Young University.
+The last option is for flight data to be processed and analyzed to generate an estimate of aerodynamic coefficients.
+This final option is possible if there is a general aerodynamic model of the aircraft, but only the specific values of the aerodynamic coefficients must be estimated.
 
-In this section, a method is developed for estimating coefficients of aerodynamics gathered from flight data using a recursive least squares (RLS) algorithm.
+In this section, a method is developed for estimating aerodynamic coefficients gathered from flight data using a recursive least squares (RLS) algorithm.
 
 \section{Aerodynamic Coefficients}
 
 The VTOL model in chapter \ref{ch:VTOL} only included longitudinal coefficients of aerodynamics in table \ref{tb:longitudinalCoefficients}.
-However, all autopilots are benefited by a more accurate aircraft model, including standard airplane models. 
+However, all autopilots benefit a more accurate aircraft model, including standard airplane models. 
 For this reason, the lateral coefficients of aerodynamics, shown in table \ref{tb:lateralCoefficients}, are also included in this estimator.
 
 
@@ -71,38 +71,38 @@ For this reason, the lateral coefficients of aerodynamics, shown in table \ref{t
 
 \section{Aerodynamic Modes}
 
-The modes of a system are operational states or characateristic states of a dynamic system.
-Some of the aerodynamic modes of the aircraft are described below.
+The modes of a system are operational states or characteristic states of a dynamic system.
+Some of the aerodynamic modes of the aircraft are described in the following.
 
 \subsection{Phughoid Mode}
 
 One common aerodynamic mode is called the phughoid mode. 
 This effect is a vertical oscillation of the aircraft, as depicted in Fig. \ref{fig:phughoid_diagram}. 
-When the aircraft's phughoid mode is excited, the aircraft pitches up, ascends slightly, and loses airspeed.
-Then the aircraft pitches down, gains airspeed, and descends slightly before repeating the process. 
-In other words, the phughoid mode couples north velocity $\dot{n}$ with pitch $\theta$, and down position $d$. 
-According to chapter 6 in \cite{flightDynamicsPrinciples}, this mode is relatively slow, and lightly damped, so it takes some time return to normal. 
-When this mode is excited, the aircraft experiences a large change in angle of attack $\alpha$, pitch angular rate $q$, pitch angular acceleration $\dot{q}$, north acceleration $\ddot{n}$, and down acceleration $\ddot{d}$. 
+When the aircraft phughoid mode is excited, the aircraft pitches up, ascends slightly, and loses airspeed.
+The aircraft pitches down, gains airspeed, and descends slightly before repeating the process. 
+In other words, the phughoid mode couples the north velocity $\dot{n}$ with the pitch $\theta$, and the down position $d$. 
+According to chapter 6 in \cite{flightDynamicsPrinciples}, this mode is relatively slow and lightly damped, so it takes some time to return to normal. 
+When this mode is excited, the aircraft experiences a large change in the angle of attack $\alpha$, the pitch angular rate $q$, pitch angular acceleration $\dot{q}$, the north acceleration $\ddot{n}$, and the down acceleration $\ddot{d}$. 
 This mode may be induced by quick impulses on the elevator. 
-Excitation of this mode is useful as it produces large signals from internal sensors for estimate of coefficients of aerodynamics. 
+Excitation of this mode is useful because it produces large signals from internal sensors to estimate the coefficients of aerodynamics. 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figs/chap2/phughoid_mode_diagram.png}
-    \caption{Illustration of phugoid motion showing oscillations in altitude and airspeed over time. Image by Pilot Institute, from ``Phugoid Motion in Aviation: What It Is and Why It Matters'' (2025). \cite{pilotinstitute_phugoid}}
+    \caption{Illustration of phugoid motion showing oscillations in altitude and airspeed over time. Image by Pilot Institute, from "Phugoid Motion in Aviation: What It Is and Why It Matters" (2025). \cite{pilotinstitute_phugoid}}
     \label{fig:phughoid_diagram}
 \end{figure}
 
 \subsection{Dutch Roll Mode}
 
 Another common aerodynamic mode is called dutch roll, which is a coupling of both yaw and pitching moments, as described in \cite{cookLateralDirectionalDynamics}. 
-That is, the aircraft oscillates between yawing sharply, rolling sharply as yaw returns to zero, and then repeating in the other directions, according to chapter 7 of \cite{flightDynamicsPrinciples}. 
+That is, the aircraft oscillates between sharp yawing, rolling sharply as the yaw returns to zero, and then repeating in the other directions, according to chapter 7 of \cite{flightDynamicsPrinciples}. 
 This means that after an aircraft has rolled to the left and it returns upright, the aircraft yaws to the right, which causes the aircraft to roll to the right.
-The process then repeats itself, until aerodynamic damping causes the aircraft to return to stability.
+The process then repeats until aerodynamic damping causes the aircraft to return to stability.
 Just as excitation of the phughoid mode created large longitudinal signals, dutch roll creates large lateral signals. 
-For example, the the two roll moments $l$ and $n$ cause large signals for $p$, $r$, $\dot{p}$, and $\dot{r}$. 
+For example, the two roll moments $l$ and $n$ cause large signals for $p$, $r$, $\dot{p}$, and $\dot{r}$. 
 Large yaw $\psi$ maneuvers create large signals for east acceleration $\ddot{e}$ and sideslip angle $\beta$. 
-Intentional excitation of this mode is generally accomplished by rudder impulses, though this may also be enhanced with delayed aileron impulses.
+Intentional excitation of this mode is generally accomplished by rudder impulses, though this may also be enhanced by delayed aileron impulses.
 
 \begin{figure}
     \centering
@@ -119,7 +119,7 @@ This means that the signal associated with each aerodynamic coefficient may grow
 
 \section{Recursive Least Squares}
 
-While sensor data is being collected from the aircraft, an algorithm must run to calculate the coefficients of aerodynamics. 
+While sensor data is collected from the aircraft, an algorithm must run to calculate the coefficients of aerodynamics. 
 Such an algorithm would make the best estimate of the coefficients of aerodynamics, based on the acquired data. 
 For this reason, the recursive least squares (RLS) filter was selected. 
 The following explanation or derivation of an RLS filter is an adaptation of lecture slides created in \cite{beardRLS}.

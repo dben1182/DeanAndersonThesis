@@ -22,9 +22,9 @@ Refer to \cite{uav_book} and \cite{vtol_book} for more information on the develo
 
 Although these autopilots include control for VTOL aircraft, these control laws are somewhat inefficient as they underutilize the physical capabilities of the system.
 For example, the Px4 controller for VTOLs aircraft controls the aircraft as either a rotorcraft or an airplane.
-When taking off, the aircraft ascends to a set altitude in multicopter (rotorcraft) mode and then slowly start sthe forward motor, or slowly tilts the forward rotors forward, until sufficient airspeed for forward flight has been reached. 
+When taking off, the aircraft ascends to a set altitude in multicopter (rotorcraft) mode and then slowly starts the forward motor, or slowly tilts the forward rotors forward, until sufficient airspeed for forward flight has been reached. 
 The reverse happens during landing, where the aircraft slowly slows down until multicopter control takes effect, and the aircraft can descend.
-These methods are shown in Fig. \ref{fig:Px4}, and a video of transitioning may be found at \href{https://www.youtube.com/watch?v=f81n0aXdvKc}{https://www.youtube.com/watch?v=f81n0aXdvKc} \cite{transition_video}.
+These methods are shown in Fig. \ref{fig:Px4}, and a video of transitioning can be found at \href{https://www.youtube.com/watch?v=f81n0aXdvKc}{https://www.youtube.com/watch?v=f81n0aXdvKc} \cite{transition_video}.
 
 \begin{figure}[htbp]
     \centering
@@ -46,7 +46,7 @@ These methods are shown in Fig. \ref{fig:Px4}, and a video of transitioning may 
     \label{fig:Px4}
 \end{figure}
 
-Although this method works, it does not allow the aircraft to follow a generalized trajectory, nor does it utilize its actuators fully.
+Although this method works, it does not allow the aircraft to follow a generalized trajectory, nor does it fully utilize its actuators.
 It is desirable to develop an autopilot that follows any general type of trajectory, such as a circle or a parabola.
 The controller described in the following section generalizes the transition of the VTOL.
 An autopilot for a VTOL quadplane is developed that can follow a spline trajectory while hovering as a multicopter, flying forward as an airplane, and transitioning between the two.
