@@ -1,20 +1,20 @@
-[0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'main.blg'
-[146] biber:342> INFO - === Mon Apr 13, 2026, 15:34:36
-[175] Biber.pm:421> INFO - Reading 'main.bcf'
-[320] Biber.pm:1002> INFO - Found 52 citekeys in bib section 0
-[348] Biber.pm:4487> INFO - Processing section 0
-[364] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[367] bibtex.pm:1713> INFO - LaTeX decoding ...
-[479] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[1258] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1258] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1258] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[1258] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[1309] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[1343] bbl.pm:779> INFO - Output to main.bbl
-[1343] Biber.pm:132> WARN - legacy month field 'October' in entry 'Urmson_2003_8792' is not an integer - this will probably not sort properly.
-[1343] Biber.pm:132> WARN - legacy month field 'September' in entry 'Gammell-2014-7921' is not an integer - this will probably not sort properly.
-[1344] Biber.pm:132> WARN - ISBN '978-3-031-38313-7 978-3-031-38314-4' in entry 'lavretskyRobustAdaptiveControl2024' is invalid - run biber with '--validate_datamodel' for details.
-[1344] Biber.pm:132> WARN - BibTeX subsystem: /tmp/biber_tmp_4tgY/33e59b5ca9ec342068223d604c3f8d55_780872.utf8, line 444, warning: 11 characters of junk seen at toplevel
-[1344] Biber.pm:134> INFO - WARNINGS: 4
+[1] Config.pm:328> INFO - This is Biber 2.21
+[2] Config.pm:331> INFO - Logfile is 'main.blg'
+[389] biber:342> INFO - === Mon Apr 13, 2026, 16:59:02
+[458] Biber.pm:421> INFO - Reading 'main.bcf'
+[887] Biber.pm:1002> INFO - Found 52 citekeys in bib section 0
+[942] Biber.pm:4487> INFO - Processing section 0
+[963] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[969] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1300] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[2492] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2492] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2492] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[2493] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[2556] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[2605] bbl.pm:779> INFO - Output to main.bbl
+[2605] Biber.pm:132> WARN - legacy month field 'October' in entry 'Urmson_2003_8792' is not an integer - this will probably not sort properly.
+[2605] Biber.pm:132> WARN - legacy month field 'September' in entry 'Gammell-2014-7921' is not an integer - this will probably not sort properly.
+[2606] Biber.pm:132> WARN - ISBN '978-3-031-38313-7 978-3-031-38314-4' in entry 'lavretskyRobustAdaptiveControl2024' is invalid - run biber with '--validate_datamodel' for details.
+[2606] Biber.pm:132> WARN - BibTeX subsystem: /tmp/biber_tmp_H249/33e59b5ca9ec342068223d604c3f8d55_827040.utf8, line 444, warning: 11 characters of junk seen at toplevel
+[2606] Biber.pm:134> INFO - WARNINGS: 4
